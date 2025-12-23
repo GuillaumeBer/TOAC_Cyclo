@@ -6,7 +6,7 @@ import { ArrowLeft, Calendar, Quote } from 'lucide-react'
 
 export const metadata = {
   title: 'Édito du Président - TOAC Cyclotourisme',
-  description: 'L\'édito du président Jérôme P. pour la saison 2025 du TOAC Cyclotourisme'
+  description: 'L\'édito du président Jérôme P. pour la saison 2026 du TOAC Cyclotourisme'
 }
 
 export default function EditoPresident() {
@@ -37,7 +37,7 @@ export default function EditoPresident() {
               <p className="text-[#00b5e2] font-medium text-lg">Jérôme P.</p>
               <div className="flex items-center justify-center text-gray-500 text-sm mt-4">
                 <Calendar className="w-4 h-4 mr-2" />
-                Saison 2025
+                Saison 2026
               </div>
             </header>
 
@@ -54,7 +54,7 @@ export default function EditoPresident() {
               
               <p className="text-xl text-[#00205b] font-medium">Chers membres, chers amis cyclistes,</p>
               
-              <p>C'est avec beaucoup de fierté et d'enthousiasme que je m'adresse à vous pour cette nouvelle saison 2025. Une année qui s'annonce riche en pédalées, en rencontres et en moments de partage.</p>
+              <p>C'est avec beaucoup de fierté et d'enthousiasme que je m'adresse à vous pour cette nouvelle saison 2026. Une année qui s'annonce riche en pédalées, en rencontres et en moments de partage.</p>
 
               <h3 className="text-xl font-bold text-[#00205b] mt-8 mb-4">Une saison sous le signe du renouveau</h3>
 

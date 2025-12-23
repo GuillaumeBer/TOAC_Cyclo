@@ -67,7 +67,7 @@ export default function ClubSection() {
               <h3 className="text-xl md:text-2xl font-light text-[#00205b] mb-4 leading-relaxed italic">
                 "Notre club n'est pas qu'une association sportive, c'est une <span className="font-bold">famille</span>. Une famille qui roule ensemble, qui partage, qui s'entraide."
               </h3>
-              <p className="text-sm text-gray-500 mb-4">— Édito Saison 2025</p>
+              <p className="text-sm text-gray-500 mb-4">— Édito Saison 2026</p>
               <a href="/edito-president" className="text-[#00205b] font-bold border-b-2 border-[#00b5e2] pb-1 hover:text-[#00b5e2] transition-colors uppercase text-sm tracking-wide">
                 Lire l'édito complet
               </a>
