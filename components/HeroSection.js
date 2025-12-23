@@ -1,0 +1,44 @@
+import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
+
+export default function HeroSection() {
+  return (
+    <div className="relative h-[85vh] flex items-center bg-[#00205b] overflow-hidden pt-20">
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
+          alt="Cyclistes en action" 
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#00205b]/95 via-[#00205b]/80 to-transparent" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-3xl space-y-8 animate-fade-in-up">
+          <div>
+            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6 font-sans">
+              "Des tours de quoi ?", <br/>
+              <span className="text-[#89d3e8]">qu'em'dit.</span><br/>
+              <span className="text-white">Des tours d'vélo pardi !</span>
+            </h1>
+            <div className="h-1 w-20 bg-[#00b5e2] mb-6"></div>
+            <p className="text-lg text-gray-300 italic font-medium mb-8">
+              — Extrait de « A bicyclette » de Bourvil
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button className="px-8 py-4 bg-[#00b5e2] hover:bg-[#009dc4] text-[#00205b] font-bold rounded-sm transition-all flex items-center justify-center gap-2 text-lg shadow-lg">
+              Devenir Membre <ArrowRight className="w-5 h-5" />
+            </button>
+            <button className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#00205b] font-bold rounded-sm transition-all flex items-center justify-center text-lg">
+              En savoir plus
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
