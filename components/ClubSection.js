@@ -52,11 +52,11 @@ export default function ClubSection() {
             <div className="md:w-1/4 text-center flex-shrink-0">
               <div className="inline-block p-1 border border-gray-300 mb-4 bg-white">
                 <Image 
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" 
+                  src="/images/president.jpg" 
                   alt="Président du club" 
                   width={160}
                   height={160}
-                  className="w-40 h-40 object-cover grayscale hover:grayscale-0 transition-all duration-500" 
+                  className="w-40 h-40 object-cover hover:grayscale-0 transition-all duration-500" 
                 />
               </div>
               <h3 className="text-xl font-bold text-[#00205b]">Alain D.</h3>
@@ -65,11 +65,12 @@ export default function ClubSection() {
             <div className="md:w-3/4 relative">
               <Quote className="absolute -top-4 -left-4 w-10 h-10 text-[#00b5e2] opacity-20" />
               <h3 className="text-xl md:text-2xl font-light text-[#00205b] mb-4 leading-relaxed italic">
-                "Notre section continue de grandir avec toujours la même philosophie : <span className="font-bold">le plaisir de rouler ensemble</span>. Cette saison 2025 s'annonce riche en défis !"
+                "Je suis heureux de vous annoncer que je me représente pour un nouveau mandat ! Avec la même envie de <span className="font-bold">faire avancer notre club</span>, de partager de beaux moments et de continuer cette belle aventure ensemble."
               </h3>
-              <button className="text-[#00205b] font-bold border-b-2 border-[#00b5e2] pb-1 hover:text-[#00b5e2] transition-colors uppercase text-sm tracking-wide">
+              <p className="text-sm text-gray-500 mb-4">— Extrait de l'Assemblée Générale 2025</p>
+              <a href="/edito-president" className="text-[#00205b] font-bold border-b-2 border-[#00b5e2] pb-1 hover:text-[#00b5e2] transition-colors uppercase text-sm tracking-wide">
                 Lire l'édito complet
-              </button>
+              </a>
             </div>
           </div>
         </div>
