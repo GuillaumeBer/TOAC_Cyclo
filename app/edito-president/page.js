@@ -2,11 +2,11 @@ import NavigationBar from '@/components/NavigationBar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowLeft, Calendar } from 'lucide-react'
+import { ArrowLeft, Calendar, Quote } from 'lucide-react'
 
 export const metadata = {
   title: 'Édito du Président - TOAC Cyclotourisme',
-  description: 'Discours du président lors de l\'Assemblée Générale 2025 du TOAC Cyclotourisme'
+  description: 'L\'édito du président Jérôme P. pour la saison 2025 du TOAC Cyclotourisme'
 }
 
 export default function EditoPresident() {
@@ -14,104 +14,83 @@ export default function EditoPresident() {
     <>
       <NavigationBar />
       <main className="pt-28 pb-16 min-h-screen bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <Link href="/#club" className="inline-flex items-center text-[#00b5e2] hover:text-[#00205b] mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" /> Retour au site
           </Link>
           
-          <div className="bg-white p-8 md:p-12 shadow-sm border border-gray-100">
+          <article className="bg-white p-8 md:p-12 shadow-sm border border-gray-100">
             
             {/* Header */}
-            <div className="flex flex-col md:flex-row gap-8 items-center mb-12 pb-8 border-b border-gray-200">
-              <div className="flex-shrink-0">
-                <div className="p-1 border border-gray-300 bg-white">
-                  <Image 
-                    src="/images/president.jpg" 
-                    alt="Alain D. - Président" 
-                    width={150}
-                    height={150}
-                    className="w-36 h-36 object-cover"
-                  />
-                </div>
+            <header className="text-center mb-12">
+              <div className="inline-block p-1 border border-gray-300 bg-white mb-6">
+                <Image 
+                  src="/images/president.jpg" 
+                  alt="Jérôme P. - Président" 
+                  width={120}
+                  height={120}
+                  className="w-28 h-28 object-cover"
+                />
               </div>
-              <div>
-                <h1 className="text-3xl md:text-4xl font-bold text-[#00205b] mb-2">Édito du Président</h1>
-                <h2 className="text-xl text-[#00b5e2] font-medium mb-3">Alain D.</h2>
-                <div className="flex items-center text-gray-500 text-sm">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  Assemblée Générale du 6 décembre 2024
-                </div>
+              <h1 className="text-3xl md:text-4xl font-bold text-[#00205b] mb-2">Édito du Président</h1>
+              <p className="text-[#00b5e2] font-medium text-lg">Jérôme P.</p>
+              <div className="flex items-center justify-center text-gray-500 text-sm mt-4">
+                <Calendar className="w-4 h-4 mr-2" />
+                Saison 2025
               </div>
+            </header>
+
+            {/* Quote */}
+            <div className="relative bg-[#00205b] text-white p-8 md:p-10 mb-10">
+              <Quote className="absolute top-4 left-4 w-8 h-8 text-[#00b5e2] opacity-30" />
+              <p className="text-xl md:text-2xl font-light italic leading-relaxed text-center">
+                "Faire avancer notre club, partager de beaux moments et continuer cette belle aventure ensemble."
+              </p>
             </div>
 
             {/* Content */}
             <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
               
-              <p className="text-xl text-[#00205b] font-medium">Mesdames, Messieurs,</p>
+              <p className="text-xl text-[#00205b] font-medium">Chers membres, chers amis cyclistes,</p>
               
-              <p>C'est avec un immense plaisir que je déclare ouverte notre assemblée générale 2025.</p>
+              <p>C'est avec beaucoup de fierté et d'enthousiasme que je m'adresse à vous pour cette nouvelle saison 2025. Une année qui s'annonce riche en pédalées, en rencontres et en moments de partage.</p>
 
-              <p>Avant toute chose, je tiens à exprimer ma profonde gratitude à Patrick Lecuyer pour sa présence parmi nous aujourd'hui. Jean-Paul, quant à lui, n'a pas pu se joindre à nous mais adresse à chacun ses vœux de réussite pour cette assemblée générale. Je les remercie tous deux pour leur soutien indéfectible, leur engagement et leur fidélité, qui comptent énormément pour nous.</p>
+              <h3 className="text-xl font-bold text-[#00205b] mt-8 mb-4">Une saison sous le signe du renouveau</h3>
 
-              <p>J'aimerais également que nous ayons une pensée pour Lulu, qui nous a quittés il y a déjà un an, ainsi que pour Georges Gout, disparu plus récemment.</p>
+              <p>2024 nous a offert son lot de défis et de satisfactions. Notre <strong>Randonnée des Rameaux</strong>, malgré les caprices de la météo, a démontré une fois de plus la motivation et l'esprit de notre communauté. 70 participants sous la pluie, c'est la preuve que rien ne peut arrêter un vrai cycliste du TOAC !</p>
 
-              <p>Un mot maintenant pour l'équipe du bureau sortant : merci à chacun pour son engagement, son sérieux et la bonne humeur qui ont marqué toute cette année.</p>
+              <p>Cette année, nous revenons à notre traditionnel week-end du <span className="text-[#00b5e2] font-bold">29 mars 2026</span>. Une date à bloquer dès maintenant dans vos agendas.</p>
 
-              <p>Je souhaite également adresser un remerciement particulier à René et Thierry pour leur investissement et leur présence auprès de la FSGT et de la FF Vélo. Merci à vous deux.</p>
+              <h3 className="text-xl font-bold text-[#00205b] mt-8 mb-4">Les temps forts de l'année écoulée</h3>
 
-              <h3 className="text-xl font-bold text-[#00205b] mt-8 mb-4">Retour sur l'année écoulée</h3>
+              <p>Comment ne pas mentionner le <strong>Brevet des 150 km</strong>, inspiré de l'étape Toulouse-Toulouse du Tour de France ? Une météo idéale, une ambiance chaleureuse et une belle performance de nos grimpeurs sur l'ascension des Canalets.</p>
 
-              <p>Avant de poursuivre, prenons un instant pour revenir sur l'année qui s'achève. La ligne d'arrivée approche, et c'est le moment idéal pour jeter un regard en arrière et apprécier le chemin parcouru.</p>
+              <p>Grande nouveauté cette année : la <strong>sortie des anciens</strong> ! 100 km, 14 participants au sourire contagieux et un restaurant bien mérité à l'arrivée. Une initiative que nous reconduirons avec plaisir.</p>
 
-              <h4 className="text-lg font-bold text-[#00205b] mt-6 mb-3">Notre sortie annuelle</h4>
+              <p>Mention spéciale à nos aventuriers qui ont défendu nos couleurs sur le périple <strong>Londres – Édimbourg – Londres</strong>, ainsi qu'à ceux qui ont traversé les Pyrénées en une semaine. Chapeau !</p>
 
-              <p>Eh bien... disons-le honnêtement : ce n'était pas le millésime du siècle. Avec seulement 70 participants, une météo digne d'un mois de novembre et un week-end à rallonge, il fallait être sacrément motivé pour être au départ !</p>
+              <h3 className="text-xl font-bold text-[#00205b] mt-8 mb-4">Se souvenir et avancer</h3>
 
-              <p><strong>La bonne nouvelle</strong>, c'est que l'an prochain, nous revenons à notre traditionnel week-end du <span className="text-[#00b5e2] font-bold">29 mars</span>. Vous pouvez d'ores et déjà bloquer la date — et peut-être commander le soleil, on ne sait jamais !</p>
+              <p>Notre <strong>Journée du Souvenir à Mérenvielle</strong> reste un moment important du calendrier. Ce rendez-vous d'octobre, empreint de sérénité, nous permet d'honorer la mémoire de ceux qui ont fait l'histoire de notre club.</p>
 
-              <p>Nous espérons pouvoir compter sur plus de volontaires pour l'organisation des Rameaux, afin que tout se déroule sereinement. Votre aide permettrait de mieux préparer cet événement et de partager un beau moment tous ensemble !</p>
+              <h3 className="text-xl font-bold text-[#00205b] mt-8 mb-4">Cap sur 2025 !</h3>
 
-              <h4 className="text-lg font-bold text-[#00205b] mt-6 mb-3">Brevet des 150 km : à la découverte du Tour de France</h4>
+              <p>Je me suis représenté pour un nouveau mandat avec une conviction intacte : notre club n'est pas qu'une association sportive, c'est une <strong>famille</strong>. Une famille qui roule ensemble, qui partage, qui s'entraide.</p>
 
-              <p>Le brevet des 150 km, inspiré de l'étape Toulouse-Toulouse du Tour de France, s'est déroulé dans des conditions parfaites. Un petit peloton de sept cyclistes a pris le départ, profitant d'une météo idéale et d'une ambiance chaleureuse tout au long du parcours. Seul petit bémol : un ravitaillement un peu plus long que prévu, qui n'a toutefois pas entamé la bonne humeur du groupe.</p>
+              <p>N'hésitez pas à proposer vos idées pour 2026 — même les plus audacieuses ! Nous ferons le tri... toujours avec humour et bienveillance.</p>
 
-              <p>Bravo à Xavier et Patrick Bernard pour leur belle performance lors de l'ascension des Canalets, véritable point d'orgue de cette sortie sportive réussie.</p>
+              <p>Je vous souhaite une excellente saison cycliste : profitez de chaque sortie, de chaque kilomètre parcouru et de chaque moment partagé avec vos compagnons de route.</p>
 
-              <h4 className="text-lg font-bold text-[#00205b] mt-6 mb-3">La sortie des anciens – La nouveauté 2025 !</h4>
+              <p className="text-[#00205b] font-bold mt-8 text-lg">À très vite sur les routes !</p>
 
-              <p>Grande première cette année : la sortie des anciens ! Un 100 km au compteur, 14 participants au sourire contagieux, une météo idéale et bien sûr, un bon resto à la clé. Tout s'est déroulé à merveille, à part la petite glissade de Guillaume, sans gravité heureusement — juste de quoi tester la solidité du bitume et la réactivité des copains.</p>
-
-              <p>Un immense merci à Alain Malard pour un circuit vraiment top, avec ce qu'il faut de bosses pour réveiller les appétits.</p>
-
-              <h4 className="text-lg font-bold text-[#00205b] mt-6 mb-3">Journée du Souvenir à Mérenvielle</h4>
-
-              <p>À la mi-octobre, sous un ciel lumineux mais légèrement frais et voilé d'un léger brouillard, nous nous sommes réunis à Mérenvielle pour la Journée du Souvenir. Dix-huit participants étaient présents pour honorer la mémoire de nos anciens du club disparus.</p>
-
-              <p>Ce moment de recueillement et de partage, empreint de sérénité, restera désormais associé à cette belle période de l'année : la cérémonie se tiendra dorénavant chaque mois d'octobre.</p>
-
-              <h3 className="text-xl font-bold text-[#00205b] mt-8 mb-4">Bravo à toutes et à tous !</h3>
-
-              <p>Un immense bravo à celles et ceux qui défendent nos couleurs, que ce soit dans d'autres régions ou même chez nos voisins anglais, pour leur périple Londres – Édimbourg – Londres ! Une belle aventure, malheureusement interrompue par la tempête... preuve que là-bas, le soleil reste parfois un concept théorique.</p>
-
-              <p>Chapeau également à Jean-Marc Juvan et Patrick Rizzi, qui ont traversé les Pyrénées en seulement une semaine : messieurs, respect !</p>
-
-              <p>Un grand merci au CSE, toujours prêt à nous soutenir, notamment pour ce périple anglais.</p>
-
-              <div className="bg-[#00205b] text-white p-6 rounded-sm my-8">
-                <p className="text-lg font-medium mb-0">Et pour finir... <strong>je suis heureux de vous annoncer que je me représente pour un nouveau mandat !</strong> Avec la même envie de faire avancer notre club, de partager de beaux moments et de continuer cette belle aventure ensemble.</p>
-              </div>
-
-              <p>Alors, n'hésitez pas : posez vos questions et partagez vos idées pour 2026 — même les plus audacieuses ! Promis, on fera le tri... toujours avec humour et bienveillance.</p>
-
-              <p>Je vous souhaite dès maintenant d'excellentes fêtes de fin d'année : profitez de vos proches, reposez-vous et revenez en pleine forme pour de nouvelles aventures, sportives et humaines !</p>
-
-              <p className="text-[#00205b] font-medium mt-8">Merci à tous pour votre attention.</p>
-
-              <p className="text-right text-gray-500 italic mt-8">— Alain D., Président du TOAC Cyclotourisme</p>
+              <p className="text-right text-gray-500 italic mt-8 border-t pt-6">
+                Jérôme P.<br/>
+                <span className="text-sm">Président du TOAC Cyclotourisme</span>
+              </p>
 
             </div>
-          </div>
+          </article>
         </div>
       </main>
       <Footer />

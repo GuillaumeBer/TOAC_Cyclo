@@ -59,15 +59,15 @@ export default function ClubSection() {
                   className="w-40 h-40 object-cover hover:grayscale-0 transition-all duration-500" 
                 />
               </div>
-              <h3 className="text-xl font-bold text-[#00205b]">Alain D.</h3>
+              <h3 className="text-xl font-bold text-[#00205b]">Jérôme P.</h3>
               <p className="text-sm text-gray-500 uppercase tracking-widest mt-1">Président</p>
             </div>
             <div className="md:w-3/4 relative">
               <Quote className="absolute -top-4 -left-4 w-10 h-10 text-[#00b5e2] opacity-20" />
               <h3 className="text-xl md:text-2xl font-light text-[#00205b] mb-4 leading-relaxed italic">
-                "Je suis heureux de vous annoncer que je me représente pour un nouveau mandat ! Avec la même envie de <span className="font-bold">faire avancer notre club</span>, de partager de beaux moments et de continuer cette belle aventure ensemble."
+                "Notre club n'est pas qu'une association sportive, c'est une <span className="font-bold">famille</span>. Une famille qui roule ensemble, qui partage, qui s'entraide."
               </h3>
-              <p className="text-sm text-gray-500 mb-4">— Extrait de l'Assemblée Générale 2025</p>
+              <p className="text-sm text-gray-500 mb-4">— Édito Saison 2025</p>
               <a href="/edito-president" className="text-[#00205b] font-bold border-b-2 border-[#00b5e2] pb-1 hover:text-[#00b5e2] transition-colors uppercase text-sm tracking-wide">
                 Lire l'édito complet
               </a>

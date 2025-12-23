@@ -34,7 +34,7 @@ export default function MentionsLegales() {
                 </p>
                 <p>
                   <strong>Email :</strong> contact@toac-cyclo.com<br />
-                  <strong>Président :</strong> Alain D.
+                  <strong>Président :</strong> Jérôme P.
                 </p>
               </section>
 
