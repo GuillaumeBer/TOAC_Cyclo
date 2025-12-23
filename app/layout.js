@@ -5,6 +5,10 @@ export const metadata = {
   description: 'TOAC Cyclotourisme - Le club cycliste historique du TOAC à Toulouse. Découvrez nos sorties, événements et rejoignez notre communauté de passionnés.',
   keywords: ['cyclotourisme', 'vélo', 'Toulouse', 'TOAC', 'club cycliste', 'randonnée vélo'],
   authors: [{ name: 'TOAC Cyclotourisme' }],
+  icons: {
+    icon: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: 'TOAC Cyclotourisme - Club de vélo Toulouse',
     description: 'Le club cycliste historique du TOAC à Toulouse. La passion du vélo, l\'excellence de l\'organisation.',
