@@ -58,7 +58,7 @@ export default function EditoPresident() {
 
               <h3 className="text-xl font-bold text-[#00205b] mt-8 mb-4">Une saison sous le signe du renouveau</h3>
 
-              <p>2024 nous a offert son lot de défis et de satisfactions. Notre <strong>Randonnée des Rameaux</strong>, malgré les caprices de la météo, a démontré une fois de plus la motivation et l'esprit de notre communauté. 70 participants sous la pluie, c'est la preuve que rien ne peut arrêter un vrai cycliste du TOAC !</p>
+              <p>2025 nous a offert son lot de défis et de satisfactions. Notre <strong>Randonnée des Rameaux</strong>, malgré les caprices de la météo, a démontré une fois de plus la motivation et l'esprit de notre communauté. 70 participants sous la pluie, c'est la preuve que rien ne peut arrêter un vrai cycliste du TOAC !</p>
 
               <p>Cette année, nous revenons à notre traditionnel week-end du <span className="text-[#00b5e2] font-bold">29 mars 2026</span>. Une date à bloquer dès maintenant dans vos agendas.</p>
 
@@ -74,7 +74,7 @@ export default function EditoPresident() {
 
               <p>Notre <strong>Journée du Souvenir à Mérenvielle</strong> reste un moment important du calendrier. Ce rendez-vous d'octobre, empreint de sérénité, nous permet d'honorer la mémoire de ceux qui ont fait l'histoire de notre club.</p>
 
-              <h3 className="text-xl font-bold text-[#00205b] mt-8 mb-4">Cap sur 2025 !</h3>
+              <h3 className="text-xl font-bold text-[#00205b] mt-8 mb-4">Cap sur 2026 !</h3>
 
               <p>Je me suis représenté pour un nouveau mandat avec une conviction intacte : notre club n'est pas qu'une association sportive, c'est une <strong>famille</strong>. Une famille qui roule ensemble, qui partage, qui s'entraide.</p>
 
