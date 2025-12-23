@@ -58,7 +58,7 @@ export default function EditoPresident() {
 
               <h3 className="text-xl font-bold text-[#00205b] mt-8 mb-4">Une saison sous le signe du renouveau</h3>
 
-              <p>2025 nous a offert son lot de défis et de satisfactions. Notre <strong>Randonnée des Rameaux</strong>, malgré les caprices de la météo, a démontré une fois de plus la motivation et l'esprit de notre communauté. 70 participants sous la pluie, c'est la preuve que rien ne peut arrêter un vrai cycliste du TOAC !</p>
+              <p>2025 nous a offert son lot de défis et de satisfactions. Notre <strong>Randonnée des Rameaux</strong>, malgré les caprices de la météo, a démontré une fois de plus la motivation et l'esprit de notre communauté. 70 participants sous la pluie, c'est la preuve que rien ne peut arrêter un vrai cycliste !</p>
 
               <p>Cette année, nous revenons à notre traditionnel week-end du <span className="text-[#00b5e2] font-bold">29 mars 2026</span>. Une date à bloquer dès maintenant dans vos agendas.</p>
 
