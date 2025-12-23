@@ -44,7 +44,7 @@ export default function Footer() {
           <ul className="space-y-4 text-gray-300">
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#00b5e2] mt-0.5 flex-shrink-0" />
-              <span>Complexe Sportif TOAC<br/>Toulouse, France</span>
+              <a href="https://www.google.com/maps/place/TOAC+Omnisports/@43.6217039,1.4065251,17z" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Complexe Sportif TOAC<br/>Toulouse, France</a>
             </li>
             <li className="flex items-center gap-3">
               <Info className="w-5 h-5 text-[#00b5e2] flex-shrink-0" />

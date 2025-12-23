@@ -3,11 +3,11 @@ import { ArrowRight } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <div className="relative h-[85vh] flex items-center bg-[#00205b] overflow-hidden pt-20">
+    <div id="top" className="relative h-[85vh] flex items-center bg-[#00205b] overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
         <Image 
-          src="https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
-          alt="Cyclistes en action" 
+          src="/images/hero-toac.jpg" 
+          alt="Équipe TOAC Cyclotourisme" 
           fill
           className="object-cover"
           priority

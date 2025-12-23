@@ -28,7 +28,7 @@ export default function NavigationBar() {
           </Link>
           
           <div className="hidden lg:flex items-center gap-4">
-            <NavItem name="Accueil" href="/" />
+            <NavItem name="Accueil" href="#top" />
             <NavItem name="Événements" href="#evenements" />
             <NavItem name="Le Club" href="#club" />
             <NavItem name="Actualités" href="#actualites" />
@@ -59,7 +59,7 @@ export default function NavigationBar() {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-[#00205b] border-t border-white/10">
           <div className="px-4 pt-2 pb-4 space-y-2 flex flex-col">
-            <Link href="/" className="px-4 py-3 text-sm font-bold uppercase tracking-wider text-white hover:text-[#00b5e2]" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link href="#top" className="px-4 py-3 text-sm font-bold uppercase tracking-wider text-white hover:text-[#00b5e2]" onClick={() => setIsMobileMenuOpen(false)}>
               Accueil
             </Link>
             <Link href="#evenements" className="px-4 py-3 text-sm font-bold uppercase tracking-wider text-white hover:text-[#00b5e2]" onClick={() => setIsMobileMenuOpen(false)}>

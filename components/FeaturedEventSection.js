@@ -30,7 +30,7 @@ export default function FeaturedEventSection() {
                    </div>
                    <div>
                       <div className="text-xs text-[#00b5e2] uppercase font-bold tracking-wider mb-1">Date</div>
-                      <div className="text-lg font-bold">Dim. 13 Avril</div>
+                      <div className="text-lg font-bold">Dim. 29 Mars</div>
                       <div className="text-sm text-gray-400">Départ 08h00</div>
                    </div>
                 </div>
@@ -40,7 +40,7 @@ export default function FeaturedEventSection() {
                    </div>
                    <div>
                       <div className="text-xs text-[#00b5e2] uppercase font-bold tracking-wider mb-1">Lieu</div>
-                      <div className="text-lg font-bold">Complexe TOAC</div>
+                      <a href="https://www.google.com/maps/place/TOAC+Omnisports/@43.6217039,1.4065251,17z" target="_blank" rel="noopener noreferrer" className="text-lg font-bold hover:text-[#00b5e2] transition-colors">Complexe TOAC ↗</a>
                       <div className="text-sm text-gray-400">Toulouse</div>
                    </div>
                 </div>
@@ -55,33 +55,14 @@ export default function FeaturedEventSection() {
              <div className="relative group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#00b5e2] to-blue-600 opacity-20 blur-lg rounded-lg group-hover:opacity-30 transition duration-500"></div>
                 
-                <div className="relative rounded-sm overflow-hidden border-4 border-white/10 shadow-2xl bg-[#001845] aspect-[4/3]">
+                <div className="relative rounded-sm overflow-hidden border-4 border-white/10 shadow-2xl bg-white">
                    <Image 
-                      src="https://images.unsplash.com/photo-1596736209867-27b34b9d0b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
-                      alt="Cyclistes au printemps" 
-                      fill
-                      className="object-cover transform transition duration-700 group-hover:scale-105 opacity-80" 
+                      src="/images/rameaux-2026.jpg" 
+                      alt="Randonnée des Rameaux 2026" 
+                      width={800}
+                      height={450}
+                      className="w-full h-auto transform transition duration-700 group-hover:scale-105" 
                    />
-                   
-                   <div className="absolute inset-0 bg-gradient-to-t from-[#00205b] via-transparent to-transparent"></div>
-                   
-                   <div className="absolute top-6 right-6 bg-[#00b5e2] text-[#00205b] font-bold px-4 py-2 text-sm uppercase tracking-wider shadow-lg transform rotate-3">
-                     Édition 2025
-                   </div>
-
-                   <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <div className="text-center border-2 border-[#00b5e2]/30 bg-[#00205b]/80 backdrop-blur-sm p-6 rounded-sm">
-                         <h3 className="text-2xl font-bold text-white mb-2 font-sans tracking-tight">RANDONNÉE DES RAMEAUX</h3>
-                         <div className="w-16 h-1 bg-[#00b5e2] mx-auto mb-4"></div>
-                         <div className="flex justify-center gap-3 text-sm font-medium text-gray-300">
-                            <span className="flex items-center gap-1"><Bike className="w-4 h-4 text-[#00b5e2]"/> 50km</span>
-                            <span className="text-[#00b5e2]">•</span>
-                            <span className="flex items-center gap-1"><Bike className="w-4 h-4 text-[#00b5e2]"/> 70km</span>
-                            <span className="text-[#00b5e2]">•</span>
-                            <span className="flex items-center gap-1"><Bike className="w-4 h-4 text-[#00b5e2]"/> 90km</span>
-                         </div>
-                      </div>
-                   </div>
                 </div>
              </div>
           </div>
