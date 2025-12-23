@@ -24,11 +24,11 @@ export default function NavigationBar() {
           {/* Logo Area */}
           <Link href="/" className="flex items-center gap-3 cursor-pointer">
             <Image 
-              src="/images/logo-toac.png" 
+              src="/images/logo-toac.jpg" 
               alt="Logo TOAC Cyclo" 
               width={50}
               height={50}
-              className="w-12 h-12"
+              className="w-12 h-12 rounded"
             />
             <div className="font-bold text-2xl tracking-tight leading-none">
               TOAC<span className="text-[#00b5e2]">CYCLO</span>
