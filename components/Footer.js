@@ -66,6 +66,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
+              <a href="https://www.cyclotourisme-31.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+                FSGT Cyclotourisme 31 <ExternalLink className="w-3 h-3 opacity-50"/>
+              </a>
+            </li>
+            <li>
               <a href="https://openrunner.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
                 OpenRunner <ExternalLink className="w-3 h-3 opacity-50"/>
               </a>
