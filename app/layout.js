@@ -6,8 +6,8 @@ export const metadata = {
   keywords: ['cyclotourisme', 'vélo', 'Toulouse', 'TOAC', 'club cycliste', 'randonnée vélo'],
   authors: [{ name: 'TOAC Cyclotourisme' }],
   icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
+    icon: '/favicon.jpg',
+    apple: '/favicon.jpg',
   },
   openGraph: {
     title: 'TOAC Cyclotourisme - Club de vélo Toulouse',
