@@ -45,10 +45,6 @@ export default function FeaturedEventSection() {
                    </div>
                 </div>
              </div>
-
-             <button className="w-full sm:w-auto px-8 py-4 bg-white text-[#00205b] font-bold uppercase tracking-wide hover:bg-[#00b5e2] hover:text-white transition-all rounded-sm shadow-lg">
-                S'inscrire à l'événement
-             </button>
           </div>
 
           <div className="lg:w-1/2 w-full">

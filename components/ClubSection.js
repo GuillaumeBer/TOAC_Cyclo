@@ -20,7 +20,7 @@ export default function ClubSection() {
         
         {/* Titre de section */}
         <div className="mb-12 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#00205b] mb-3">L'Esprit TOAC</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#00205b] mb-3">L'Esprit TOAC Cyclo</h2>
           <div className="h-1 w-16 bg-[#00b5e2] mx-auto mb-4"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Plus qu'un club, une institution toulousaine où la performance rencontre la convivialité.
@@ -37,7 +37,7 @@ export default function ClubSection() {
           <InfoBlock 
             icon={Award} 
             title="Double Affiliation" 
-            desc="Affilié FFCT pour la randonnée et FSGT pour le sport. Une structure solide pour tous." 
+            desc="Affilié FF Vélo pour la randonnée et FSGT pour le sport. Une structure solide pour tous." 
           />
           <InfoBlock 
             icon={Shield} 
