@@ -3,7 +3,7 @@ import { Calendar, MapPin, Bike, Target } from 'lucide-react'
 
 export default function FeaturedEventSection() {
   return (
-    <div id="evenements" className="bg-[#00205b] text-white min-h-screen flex items-center relative overflow-hidden border-t border-white/10 pt-16 md:pt-24">
+    <div id="evenements" className="bg-[#00205b] text-white min-h-screen flex items-center relative overflow-hidden border-t border-white/10 pt-16 md:pt-24 pb-16 md:pb-8">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-10 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
