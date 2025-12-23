@@ -40,7 +40,7 @@ export default function FeaturedEventSection() {
                    </div>
                    <div>
                       <div className="text-xs text-[#00b5e2] uppercase font-bold tracking-wider mb-1">Lieu</div>
-                      <a href="https://www.google.com/maps/place/TOAC+Omnisports/@43.6217039,1.4065251,17z" target="_blank" rel="noopener noreferrer" className="text-lg font-bold hover:text-[#00b5e2] transition-colors">Complexe TOAC ↗</a>
+                      <a href="https://www.google.com/maps/search/?api=1&query=TOAC+Omnisports+Toulouse" target="_blank" rel="noopener noreferrer" className="text-lg font-bold hover:text-[#00b5e2] transition-colors">Complexe TOAC ↗</a>
                       <div className="text-sm text-gray-400">Toulouse</div>
                    </div>
                 </div>
