@@ -102,76 +102,122 @@ export default function AdhesionPage() {
 
           <h3 className="text-2xl font-bold text-[#00205b] flex items-center gap-2">
              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#00205b] text-white text-sm">3</span>
-            Documentation & Tarifs
+            Tarifs 2026
           </h3>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* FFVélo */}
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-              <div className="flex items-center justify-between mb-4">
-                <h4 className="font-bold text-[#00205b] text-lg">FFVélo</h4>
-                <span className="px-2 py-1 bg-gray-100 text-xs font-bold text-gray-500 rounded">Cyclotourisme</span>
+          <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100 space-y-8">
+            <p className="text-gray-600">
+              Le coût total de votre inscription comprend l'adhésion au club (obligatoire) et le coût de la licence fédérale (au choix).
+            </p>
+
+            {/* Part 1: Adhésion Club */}
+            <div>
+              <h4 className="font-bold text-[#00205b] text-lg mb-4 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-[#00b5e2] text-white flex items-center justify-center text-xs">A</span>
+                Cotisation Club (Obligatoire)
+              </h4>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="font-bold text-[#00205b] mb-2">Groupe Airbus</div>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="flex justify-between">
+                      <span>Salarié Airbus Opérations</span>
+                      <span className="font-bold">20€</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Ayant-droit Airbus Opérations</span>
+                      <span className="font-bold">20€</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Retraité Airbus Opérations</span>
+                      <span className="font-bold">20€</span>
+                    </li>
+                    <li className="flex justify-between">
+                      <span>Autre Airbus</span>
+                      <span className="font-bold">40€</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="font-bold text-[#00205b] mb-2">Extérieurs & Offres</div>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                    <li className="flex justify-between">
+                      <span>Extérieur</span>
+                      <span className="font-bold">40€</span>
+                    </li>
+                    <li className="flex justify-between text-[#00b5e2]">
+                      <span>Nouvelle adhérente féminine</span>
+                      <span className="font-bold">GRATUIT</span>
+                    </li>
+                    <li className="text-xs text-gray-500 mt-2 italic">
+                      *Gratuit la 1ère année pour les nouvelles adhérentes.
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <ul className="space-y-3">
-                <li>
-                  <a href="https://drive.google.com/file/d/1Ux-Hh2NXmt0P5FC6BOO6vCUdHppTadSz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-[#00b5e2] transition-colors group">
-                    <FileText className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                    <span className="text-sm underline">Tarifs Clubs 2026</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://drive.google.com/file/d/1R2gDzUmdbSEw7e3Sy2Kal_aEQAW-WvvL/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-[#00b5e2] transition-colors group">
-                    <Shield className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                    <span className="text-sm underline">Guide Assurances</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://drive.google.com/file/d/1zKx-XCw90qtjslxFdxp2mSF4rBWX_KVS/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-[#00b5e2] transition-colors group">
-                    <FileText className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                    <span className="text-sm underline">Notice d'information</span>
-                  </a>
-                </li>
-                 <li>
-                  <a href="https://drive.google.com/file/d/1zo6v8kWxDUfC_uyUn0heT_FY3rSn7cnj/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-[#00b5e2] transition-colors group">
-                    <CheckCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                    <span className="text-sm underline">Questionnaire Santé</span>
-                  </a>
-                </li>
-              </ul>
             </div>
 
-            {/* FSGT */}
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-               <div className="flex items-center justify-between mb-4">
-                <h4 className="font-bold text-[#00205b] text-lg">FSGT</h4>
-                 <span className="px-2 py-1 bg-gray-100 text-xs font-bold text-gray-500 rounded">Omnisports</span>
+            <div className="border-t border-gray-100"></div>
+
+            {/* Part 2: Licences */}
+            <div>
+              <h4 className="font-bold text-[#00205b] text-lg mb-4 flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-[#00b5e2] text-white flex items-center justify-center text-xs">B</span>
+                Licence Fédérale (Au choix)
+              </h4>
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* FFVélo */}
+                <div className="bg-white rounded-lg border border-gray-200 p-4 hover:border-[#00b5e2] transition-colors">
+                  <div className="flex items-center justify-between mb-3">
+                    <h5 className="font-bold text-[#00205b]">FFVélo</h5>
+                    <span className="px-2 py-1 bg-gray-100 text-xs font-bold text-gray-500 rounded">Cyclotourisme</span>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-4 h-10">Pour les amateurs de randonnée pure et de voyages à vélo.</p>
+                  <ul className="space-y-2">
+                    <li>
+                      <a href="https://drive.google.com/file/d/1Ux-Hh2NXmt0P5FC6BOO6vCUdHppTadSz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-[#00b5e2] hover:underline">
+                        <FileText className="w-4 h-4" /> Tarifs Licences 2026
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://drive.google.com/file/d/1R2gDzUmdbSEw7e3Sy2Kal_aEQAW-WvvL/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#00b5e2]">
+                        <Shield className="w-4 h-4" /> Guide Assurances
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://drive.google.com/file/d/1zKx-XCw90qtjslxFdxp2mSF4rBWX_KVS/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#00b5e2]">
+                        <FileText className="w-4 h-4" /> Notice d'information
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* FSGT */}
+                <div className="bg-white rounded-lg border border-gray-200 p-4 hover:border-[#00b5e2] transition-colors">
+                  <div className="flex items-center justify-between mb-3">
+                    <h5 className="font-bold text-[#00205b]">FSGT</h5>
+                    <span className="px-2 py-1 bg-gray-100 text-xs font-bold text-gray-500 rounded">Omnisports</span>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-4 h-10">Une licence multisports accessible et solidaire.</p>
+                   <ul className="space-y-2">
+                    <li>
+                      <a href="https://drive.google.com/file/d/1uN_LoOmrDZa3_KfuXBaIK226zK3RuXqN/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-[#00b5e2] hover:underline">
+                        <FileText className="w-4 h-4" /> Demande de Licence 2026
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://drive.google.com/file/d/1yv0lbDVUL8Gv1TKzMHc4sOtpJ36_LCqh/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#00b5e2]">
+                        <Shield className="w-4 h-4" /> Guide Assurances
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://drive.google.com/file/d/1PgY_HNQrEMe8y3hrQGue2zkJs4wJJO-Q/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#00b5e2]">
+                        <FileText className="w-4 h-4" /> Notice Assurance IA
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <ul className="space-y-3">
-                <li>
-                  <a href="https://drive.google.com/file/d/1uN_LoOmrDZa3_KfuXBaIK226zK3RuXqN/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-[#00b5e2] transition-colors group">
-                    <FileText className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                    <span className="text-sm underline">Demande de Licence 2026</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://drive.google.com/file/d/1yv0lbDVUL8Gv1TKzMHc4sOtpJ36_LCqh/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-[#00b5e2] transition-colors group">
-                    <Shield className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                    <span className="text-sm underline">Guide Assurances</span>
-                  </a>
-                </li>
-                 <li>
-                  <a href="https://drive.google.com/file/d/1PgY_HNQrEMe8y3hrQGue2zkJs4wJJO-Q/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-[#00b5e2] transition-colors group">
-                    <FileText className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                    <span className="text-sm underline">Notice Assurance IA</span>
-                  </a>
-                </li>
-                 <li>
-                  <a href="https://drive.google.com/file/d/1ZzmLIBLU4U10dzGiiRAsVCWFF_5l7ShW/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-[#00b5e2] transition-colors group">
-                    <CheckCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                    <span className="text-sm underline">Questionnaire Santé</span>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>

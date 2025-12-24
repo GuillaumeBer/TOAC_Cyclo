@@ -114,9 +114,7 @@ export default function NewsSection() {
             <h2 className="text-3xl lg:text-4xl font-bold text-[#00205b] mb-3">Actualités du Club</h2>
             <div className="h-1 w-16 bg-[#00b5e2]"></div>
           </div>
-          <Link href="/actualites" className="hidden md:flex items-center px-6 py-3 bg-white text-[#00205b] font-bold border border-gray-200 rounded-sm hover:border-[#00b5e2] hover:text-[#00b5e2] transition-colors shadow-sm">
-            Toutes les actualités <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
+
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -126,11 +124,7 @@ export default function NewsSection() {
 
         </div>
         
-        <div className="mt-12 text-center md:hidden">
-          <Link href="/actualites" className="inline-flex items-center px-6 py-3 bg-white text-[#00205b] font-bold border border-gray-200 rounded-sm hover:border-[#00b5e2] hover:text-[#00b5e2] transition-colors shadow-sm">
-            Toutes les actualités <ArrowRight className="w-4 h-4 ml-2" />
-          </Link>
-        </div>
+
       </div>
     </div>
   )
