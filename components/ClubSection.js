@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Users, Award, Shield, Quote } from 'lucide-react'
 
 function InfoBlock({ title, icon: Icon, desc }) {
@@ -22,9 +23,15 @@ export default function ClubSection() {
         <div className="mb-12 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-[#00205b] mb-3">L'Esprit TOAC Cyclo</h2>
           <div className="h-1 w-16 bg-[#00b5e2] mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Plus qu'un club, une institution toulousaine où la performance rencontre la convivialité.
+          <p className="text-gray-600 max-w-2xl mx-auto mb-6">
+            Plus qu'un club, une institution toulousaine où l'accomplissement de défis rencontre la convivialité.
           </p>
+          <Link 
+            href="/histoire" 
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#00205b] text-white font-bold rounded-sm hover:bg-[#00b5e2] transition-colors text-sm"
+          >
+            Découvrir notre histoire →
+          </Link>
         </div>
 
         {/* Valeurs du club */}
@@ -32,17 +39,17 @@ export default function ClubSection() {
           <InfoBlock 
             icon={Users} 
             title="Convivialité & Respect" 
-            desc="Nos sorties dominicales sont sacrées. Pas de compétition, juste le plaisir de rouler ensemble." 
+            desc="Nos sorties du vendredi, du dimanche matin et des jours fériés sont sacrées. Pas de compétition, juste le plaisir de rouler ensemble." 
           />
           <InfoBlock 
             icon={Award} 
             title="Double Affiliation" 
-            desc="Affilié FF Vélo pour la randonnée et FSGT pour le sport. Une structure solide pour tous." 
+            desc="Affilié FF Vélo et FSGT, deux fédérations dédiées à la randonnée cyclo. Une structure solide pour tous." 
           />
           <InfoBlock 
             icon={Shield} 
             title="Sécurité & Formation" 
-            desc="Des capitaines de route formés, des rappels réguliers. Rouler au TOAC, c'est rouler serein." 
+            desc="Les membres veillent les uns sur les autres pour assurer la sécurité de tous. Rouler au TOAC, c'est rouler serein." 
           />
         </div>
 

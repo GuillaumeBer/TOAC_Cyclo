@@ -1,28 +1,92 @@
-import { Calendar, ArrowRight, FileText } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Calendar, ArrowRight, MapPin, FileText } from 'lucide-react'
+
+const NEWS_ITEMS = [
+  {
+    category: "Séjour Club",
+    title: "Montagnarde 2026 : Direction le Cantal !",
+    date: "14-17 Mai 2026",
+    location: "Maurs (15)",
+    summary: "Rendez-vous dans le sud du Cantal au Domaine La Châtaigneraie pour notre séjour annuel. Au programme : convivialité et parcours vallonnés.",
+    image: "/images/montagnarde-2026.jpg", // Image à générer
+    link: "/actualites/montagnarde-2026"
+  }
+]
+
+function NewsCard({ item }) {
+  return (
+    <div className="group bg-white flex flex-col h-full shadow-lg rounded-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <div className="h-48 md:h-56 relative overflow-hidden bg-gray-200">
+        {/* Placeholder gradient si l'image n'existe pas encore */}
+        <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-blue-600 flex items-center justify-center">
+             <span className="text-white font-bold opacity-30 text-2xl">Montagnarde 2026</span>
+        </div>
+        {/*
+        <Image 
+          src={item.image} 
+          alt={item.title} 
+          width={400} 
+          height={300} 
+          className="w-full h-full object-cover transition duration-700 group-hover:scale-110" 
+        />
+        */}
+        <div className="absolute top-4 left-4">
+          <span className="px-3 py-1 bg-[#00b5e2] text-[#00205b] text-xs font-bold uppercase tracking-wider rounded-sm shadow-md">
+            {item.category}
+          </span>
+        </div>
+      </div>
+      
+      <div className="p-6 flex flex-col flex-1">
+        <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+          <div className="flex items-center">
+            <Calendar className="w-4 h-4 mr-1 text-[#00b5e2]" /> {item.date}
+          </div>
+          {item.location && (
+            <div className="flex items-center">
+              <MapPin className="w-4 h-4 mr-1 text-[#00b5e2]" /> {item.location}
+            </div>
+          )}
+        </div>
+        
+        <h3 className="text-xl font-bold text-[#00205b] mb-3 leading-snug group-hover:text-[#00b5e2] transition-colors">
+          {item.title}
+        </h3>
+        
+        <p className="text-gray-600 text-sm mb-6 leading-relaxed flex-1">
+          {item.summary}
+        </p>
+        
+        <div className="mt-auto pt-6 border-t border-gray-100">
+          <Link href={item.link} className="inline-flex items-center text-[#00205b] font-bold text-sm uppercase tracking-wide hover:text-[#00b5e2] transition-colors">
+            Lire la suite <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 function PlaceholderCard({ index }) {
   return (
-    <div className="group bg-white flex flex-col h-full shadow-sm border border-gray-100 border-dashed">
-      <div className="h-48 md:h-56 overflow-hidden relative bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-        <FileText className="w-16 h-16 text-gray-300" />
-        <div className="absolute bottom-0 left-0 bg-gray-400 text-white text-xs font-bold px-4 py-2 uppercase tracking-wider">
+    <div className="group bg-white flex flex-col h-full shadow-sm border border-gray-100 border-dashed rounded-lg overflow-hidden opacity-75 hover:opacity-100 transition-opacity">
+      <div className="h-48 md:h-56 relative bg-gray-50 flex items-center justify-center">
+        <FileText className="w-12 h-12 text-gray-300" />
+        <div className="absolute bottom-4 left-4 bg-gray-200 text-gray-500 text-xs font-bold px-3 py-1 uppercase tracking-wider rounded-sm">
           À venir
         </div>
       </div>
-      <div className="p-8 flex flex-col flex-1">
+      <div className="p-6 flex flex-col flex-1">
         <div className="text-sm font-medium text-gray-400 mb-3 flex items-center">
           <Calendar className="w-4 h-4 mr-2" /> Prochainement
         </div>
-        <h3 className="text-xl font-bold text-gray-400 mb-3 leading-snug">
-          Article à venir #{index}
+        <h3 className="text-lg font-bold text-gray-400 mb-2">
+          Actualité #{index}
         </h3>
-        <p className="text-gray-400 text-sm mb-6 leading-relaxed flex-1">
-          Cette section sera bientôt enrichie avec les dernières nouvelles du club. Restez connectés !
-        </p>
-        
-        <div className="mt-auto pt-6 border-t border-gray-100 flex items-center text-gray-400 font-bold text-sm uppercase tracking-wide">
-          Bientôt disponible <ArrowRight className="w-4 h-4 ml-2" />
-        </div>
+        <div className="h-2 w-24 bg-gray-100 rounded mb-4"></div>
+        <div className="h-2 w-full bg-gray-100 rounded mb-2"></div>
+        <div className="h-2 w-2/3 bg-gray-100 rounded"></div>
       </div>
     </div>
   )
@@ -30,25 +94,32 @@ function PlaceholderCard({ index }) {
 
 export default function NewsSection() {
   return (
-    <div id="actualites" className="min-h-screen flex items-center pt-16 md:pt-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-      <div className="flex justify-between items-end mb-12">
-        <div>
-          <h2 className="text-3xl font-bold text-[#00205b] mb-3">Actualités Récentes</h2>
-          <div className="h-1 w-12 bg-[#00b5e2]"></div>
+    <div id="actualites" className="min-h-screen flex items-center bg-gray-50 py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#00205b] mb-3">Actualités du Club</h2>
+            <div className="h-1 w-16 bg-[#00b5e2]"></div>
+          </div>
+          <Link href="/actualites" className="hidden md:flex items-center px-6 py-3 bg-white text-[#00205b] font-bold border border-gray-200 rounded-sm hover:border-[#00b5e2] hover:text-[#00b5e2] transition-colors shadow-sm">
+            Toutes les actualités <ArrowRight className="w-4 h-4 ml-2" />
+          </Link>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {NEWS_ITEMS.map((item, index) => (
+            <NewsCard key={index} item={item} />
+          ))}
+          <PlaceholderCard index={2} />
+          <PlaceholderCard index={3} />
+        </div>
+        
+        <div className="mt-12 text-center md:hidden">
+          <Link href="/actualites" className="inline-flex items-center px-6 py-3 bg-white text-[#00205b] font-bold border border-gray-200 rounded-sm hover:border-[#00b5e2] hover:text-[#00b5e2] transition-colors shadow-sm">
+            Toutes les actualités <ArrowRight className="w-4 h-4 ml-2" />
+          </Link>
         </div>
       </div>
-      
-      <div className="grid md:grid-cols-3 gap-8">
-        <PlaceholderCard index={1} />
-        <PlaceholderCard index={2} />
-        <PlaceholderCard index={3} />
-      </div>
-      
-      <div className="text-center mt-12 text-gray-500">
-        <p className="italic">Les actualités du club seront bientôt disponibles ici.</p>
-      </div>
-    </div>
     </div>
   )
 }

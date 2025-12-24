@@ -20,7 +20,7 @@ export default function ClubValuesSection() {
         <h2 className="text-3xl font-bold text-[#00205b] mb-3">L'Esprit TOAC</h2>
         <div className="h-1 w-12 bg-[#00b5e2] mb-4"></div>
         <p className="text-gray-600 max-w-2xl">
-          Plus qu'un club, une institution toulousaine où la performance rencontre la convivialité.
+          Plus qu'un club, une institution toulousaine où l'accomplissement de défis rencontre la convivialité.
         </p>
       </div>
 
@@ -28,7 +28,7 @@ export default function ClubValuesSection() {
         <InfoBlock 
           icon={Users} 
           title="Convivialité & Respect" 
-          desc="Nos sorties dominicales sont sacrées. Pas de compétition, juste le plaisir de rouler ensemble. Le respect du code de la route et des autres usagers est notre priorité absolue." 
+          desc="Nos sorties du vendredi, du dimanche matin et des jours fériés sont sacrées. Pas de compétition, juste le plaisir de rouler ensemble. Le respect du code de la route et des autres usagers est notre priorité absolue." 
         />
         <InfoBlock 
           icon={Award} 
@@ -38,7 +38,7 @@ export default function ClubValuesSection() {
         <InfoBlock 
           icon={Shield} 
           title="Sécurité & Formation" 
-          desc="Des capitaines de route formés, des rappels réguliers des règles de sécurité. Rouler au TOAC, c'est rouler l'esprit tranquille." 
+          desc="Les membres veillent les uns sur les autres pour assurer la sécurité de tous. Rouler au TOAC, c'est rouler l'esprit tranquille." 
         />
       </div>
     </div>

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Calendar, MapPin, Bike, Target } from 'lucide-react'
 
 export default function FeaturedEventSection() {
@@ -44,6 +45,15 @@ export default function FeaturedEventSection() {
                       <div className="text-sm text-gray-400">Toulouse</div>
                    </div>
                 </div>
+             </div>
+
+             <div className="pt-6">
+                <Link 
+                   href="/rando-rameaux" 
+                   className="inline-flex items-center gap-2 px-6 py-3 bg-[#00b5e2] text-[#00205b] font-bold rounded-sm hover:bg-white transition-colors"
+                >
+                   En savoir plus →
+                </Link>
              </div>
           </div>
 
