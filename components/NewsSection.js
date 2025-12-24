@@ -9,8 +9,26 @@ const NEWS_ITEMS = [
     date: "14-17 Mai 2026",
     location: "Maurs (15)",
     summary: "Rendez-vous dans le sud du Cantal au Domaine La Châtaigneraie pour notre séjour annuel. Au programme : convivialité et parcours vallonnés.",
-    image: "/images/montagnarde-2026.jpg", // Image à générer
+    image: "/images/montagnarde.jpg", // Image à générer
     link: "/actualites/montagnarde-2026"
+  },
+  {
+    category: "Vie du Club",
+    title: "Campagne d'adhésion 2026",
+    date: "Saison 2026",
+    location: "En ligne",
+    summary: "Rejoignez-nous pour une nouvelle année de vélo ! La campagne d'adhésion est ouverte pour tous les passionnés.",
+    image: "/images/hero-toac.jpg",
+    link: "/adhesion"
+  },
+  {
+    category: "Vie du Club",
+    title: "Retour sur l'AG 2025",
+    date: "06 Déc 2025",
+    location: "Toulouse",
+    summary: "Bilan moral, nouveautés 2026 et élection du bureau : découvrez le résumé de notre Assemblée Générale.",
+    image: "/images/TOAC2.jpg",
+    link: "/actualites/ag-2025"
   }
 ]
 
@@ -18,19 +36,14 @@ function NewsCard({ item }) {
   return (
     <div className="group bg-white flex flex-col h-full shadow-lg rounded-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <div className="h-48 md:h-56 relative overflow-hidden bg-gray-200">
-        {/* Placeholder gradient si l'image n'existe pas encore */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-blue-600 flex items-center justify-center">
-             <span className="text-white font-bold opacity-30 text-2xl">Montagnarde 2026</span>
-        </div>
-        {/*
         <Image 
           src={item.image} 
           alt={item.title} 
           width={400} 
           height={300} 
           className="w-full h-full object-cover transition duration-700 group-hover:scale-110" 
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        */}
         <div className="absolute top-4 left-4">
           <span className="px-3 py-1 bg-[#00b5e2] text-[#00205b] text-xs font-bold uppercase tracking-wider rounded-sm shadow-md">
             {item.category}
@@ -110,8 +123,7 @@ export default function NewsSection() {
           {NEWS_ITEMS.map((item, index) => (
             <NewsCard key={index} item={item} />
           ))}
-          <PlaceholderCard index={2} />
-          <PlaceholderCard index={3} />
+
         </div>
         
         <div className="mt-12 text-center md:hidden">

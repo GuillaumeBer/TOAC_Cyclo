@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, Calendar, MapPin, Bike, Home, Clock, Users } from 'lucide-react'
 
@@ -7,8 +8,21 @@ export default function Montagnarde2026Page() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Header */}
       <div className="bg-[#00205b] text-white pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/montagnarde.jpg"
+            alt="Paysage Cantal"
+            fill
+            className="object-cover opacity-20"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#00205b] to-[#00205b]/80"></div>
+        </div>
+        
          <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-start">
           <Link 
             href="/#actualites" 
             className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8"
@@ -142,11 +156,12 @@ export default function Montagnarde2026Page() {
                 </div>
 
                 <div className="pt-4 border-t border-gray-100">
+                  <p className="text-sm text-gray-600 mb-2">📧 Contact :</p>
                   <a 
-                    href="/#contact" 
+                    href="mailto:tfillion@me.com" 
                     className="block w-full py-3 bg-[#00b5e2] text-[#00205b] font-bold text-center rounded-sm hover:bg-[#009bc2] transition-colors"
                   >
-                    Demander des infos
+                    Contacter Thierry Fillion
                   </a>
                 </div>
               </div>

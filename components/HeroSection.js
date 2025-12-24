@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
 export default function HeroSection() {
@@ -11,6 +12,7 @@ export default function HeroSection() {
           fill
           className="object-cover"
           priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#00205b]/95 via-[#00205b]/80 to-transparent" />
       </div>
@@ -30,12 +32,13 @@ export default function HeroSection() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 bg-[#00b5e2] hover:bg-[#009dc4] text-[#00205b] font-bold rounded-sm transition-all flex items-center justify-center gap-2 text-lg shadow-lg">
+            <Link 
+              href="/adhesion"
+              className="px-8 py-4 bg-[#00b5e2] hover:bg-[#009dc4] text-[#00205b] font-bold rounded-sm transition-all flex items-center justify-center gap-2 text-lg shadow-lg"
+            >
               Devenir Membre <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#00205b] font-bold rounded-sm transition-all flex items-center justify-center text-lg">
-              En savoir plus
-            </button>
+            </Link>
+
           </div>
         </div>
       </div>

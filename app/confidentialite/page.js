@@ -24,7 +24,7 @@ export default function Confidentialite() {
             
             <div className="prose prose-lg max-w-none text-gray-600">
               
-              <p className="text-sm text-gray-500 mb-8">Dernière mise à jour : Décembre 2024</p>
+              <p className="text-sm text-gray-500 mb-8">Dernière mise à jour : Décembre 2025</p>
 
               <section className="mb-8">
                 <h2 className="text-xl font-bold text-[#00205b] mb-4">1. Introduction</h2>

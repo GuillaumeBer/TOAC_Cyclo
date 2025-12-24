@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeft, Calendar, Users, Trophy, Heart, Bike } from 'lucide-react'
 
 export default function HistoirePage() {
@@ -7,7 +8,7 @@ export default function HistoirePage() {
     <div className="min-h-screen bg-gradient-to-b from-[#00205b] to-[#001540]">
       {/* Header */}
       <div className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto flex flex-col items-start">
           <Link 
             href="/" 
             className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8"
@@ -107,6 +108,14 @@ export default function HistoirePage() {
                 mais le club reste <strong className="text-[#00b5e2]">ouvert aux personnes extérieures</strong> 
                 (sous réserve d'approbation par le bureau).
               </p>
+              <div className="mt-4 relative h-64 md:h-96 rounded-lg overflow-hidden shadow-sm mb-4">
+                <Image 
+                  src="/images/TOAC2.jpg" 
+                  alt="Le Club TOAC aujourd'hui" 
+                  fill 
+                  className="object-cover" 
+                />
+              </div>
               <p className="text-gray-300 leading-relaxed">
                 Nos <strong className="text-white">sorties club</strong> ont lieu le vendredi et les jours fériés. 
                 Les <strong className="text-white">randonnées interclubs</strong> se déroulent le dimanche matin, de mi-février à fin octobre.
