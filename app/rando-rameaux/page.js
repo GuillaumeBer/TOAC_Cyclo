@@ -7,7 +7,7 @@ export default function RandoRameauxPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#00205b] to-[#001540]">
       {/* Header */}
-      <div className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+      <div className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto flex flex-col items-start">
           <Link 
             href="/#evenements" 

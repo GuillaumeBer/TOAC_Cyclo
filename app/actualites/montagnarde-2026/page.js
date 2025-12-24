@@ -7,7 +7,7 @@ export default function Montagnarde2026Page() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Header */}
-      <div className="bg-[#00205b] text-white pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="bg-[#00205b] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image

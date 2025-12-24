@@ -12,7 +12,7 @@ export default function Confidentialite() {
   return (
     <>
       <NavigationBar />
-      <main className="pt-28 pb-16 min-h-screen bg-gray-50">
+      <main className="pt-20 pb-16 min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <Link href="/" className="inline-flex items-center text-[#00b5e2] hover:text-[#00205b] mb-8 transition-colors">
