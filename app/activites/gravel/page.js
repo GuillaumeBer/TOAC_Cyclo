@@ -9,22 +9,22 @@ export default function GravelPage() {
       <div className="bg-[#00205b] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
         <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-start">
-          <Link 
-            href="/#activites" 
+          <Link
+            href="/#activites"
             className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Retour aux activités
           </Link>
-          
+
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00b5e2]/20 border border-[#00b5e2] rounded-sm text-[#00b5e2] text-xs font-bold uppercase tracking-widest mb-6">
             Section Gravel
           </div>
-          
+
           <h1 className="text-3xl md:text-5xl font-bold mb-6">
             Sorties Gravel & Aventure
           </h1>
-          
+
           <p className="text-xl text-gray-300 max-w-2xl">
             Découvrez la pratique Gravel au TOAC : des sorties afterwork conviviales aux aventures longue distance en autonomie.
           </p>
@@ -33,7 +33,7 @@ export default function GravelPage() {
 
       {/* Contenu */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
-        
+
         {/* Afterwork */}
         <div className="bg-white rounded-lg shadow-sm p-8 border-l-4 border-[#00b5e2]">
           <div className="flex flex-wrap items-center gap-3 mb-4">
@@ -50,15 +50,15 @@ export default function GravelPage() {
               <Calendar className="w-5 h-5 text-orange-600" />
               <span>1 semaine sur 2 (Avril à Septembre)</span>
             </div>
-             <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-md">
+            <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-md">
               <Clock className="w-5 h-5 text-orange-600" />
               <span>Le Jeudi, départ 18h30/19h00</span>
             </div>
-             <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-md">
+            <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-md">
               <MapPin className="w-5 h-5 text-orange-600" />
               <span>Blagnac ou Saint-Martin</span>
             </div>
-             <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-md">
+            <div className="flex items-center gap-3 p-3 bg-orange-50 rounded-md">
               <Mountain className="w-5 h-5 text-orange-600" />
               <span>30-50 km + Guinguette 🍻</span>
             </div>
@@ -75,7 +75,7 @@ export default function GravelPage() {
               Ces événements sont organisés par des clubs tiers. Des membres du TOAC Cyclo y participent régulièrement — pourquoi pas vous ?
             </p>
           </div>
-          
+
           <div className="space-y-4">
             {/* POU100 */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md">
@@ -85,7 +85,7 @@ export default function GravelPage() {
               </div>
               <p className="text-gray-600 mb-4">
                 100 km (ou 100 mi) le samedi ou dimanche, ou 250 km sur le week-end de Pâques.
-                <br/>
+                <br />
                 <span className="text-sm italic text-gray-500">Esprit : Groupe (fraternité, bienveillance) mais autonomie (bivouac).</span>
               </p>
               <a href="https://727bikepacking.fr/pou100/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-[#00205b] font-bold text-sm transition-colors">
@@ -96,7 +96,7 @@ export default function GravelPage() {
             {/* Occitanie 600 */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                 <h3 className="text-xl font-bold text-[#00205b]">Occitanie 600</h3>
+                <h3 className="text-xl font-bold text-[#00205b]">Occitanie 600</h3>
                 <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">18-23 Avril</span>
               </div>
               <p className="text-gray-600 mb-4">
@@ -107,10 +107,10 @@ export default function GravelPage() {
               </a>
             </div>
 
-             {/* Toulouse Grand Tour */}
+            {/* Toulouse Grand Tour */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                 <h3 className="text-xl font-bold text-[#00205b]">Toulouse Grand Tour</h3>
+                <h3 className="text-xl font-bold text-[#00205b]">Toulouse Grand Tour</h3>
                 <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">30 Mai</span>
               </div>
               <p className="text-gray-600">
@@ -118,15 +118,15 @@ export default function GravelPage() {
               </p>
             </div>
 
-             {/* g727 */}
+            {/* g727 */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                 <h3 className="text-xl font-bold text-[#00205b]">g727 (Grand Départ)</h3>
+                <h3 className="text-xl font-bold text-[#00205b]">g727 (Grand Départ)</h3>
                 <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">22-27 Sept</span>
               </div>
               <p className="text-gray-600 mb-4">
                 Une grande boucle de 727 km (réductible à 550, 450 ou 250 km).
-                <br/>
+                <br />
                 <span className="text-sm italic text-gray-500">Bivouac, autonomie, sans délai.</span>
               </p>
               <a href="https://727bikepacking.fr/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-[#00205b] font-bold text-sm transition-colors">
@@ -140,7 +140,7 @@ export default function GravelPage() {
         <div className="bg-blue-50 rounded-lg p-6 border border-blue-100">
           <h3 className="font-bold text-[#00205b] mb-2">📧 Contact</h3>
           <p className="text-gray-600 text-sm">
-            Pour tout renseignement sur les activités Gravel, contactez <a href="mailto:antoine.heulin@airbus.com" className="text-[#00b5e2] hover:underline font-bold">Antoine Heulin</a>.
+            Pour tout renseignement sur les activités Gravel, contactez <a href="mailto:contact@toac-cyclo.com?subject=[Gravel]" className="text-[#00b5e2] hover:underline font-bold">le bureau du TOAC cyclo</a>.
           </p>
         </div>
 

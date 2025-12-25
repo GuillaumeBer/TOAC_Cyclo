@@ -6,9 +6,9 @@ export default function HeroSection() {
   return (
     <div id="top" className="relative h-[85vh] flex items-center bg-[#00205b] overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
-        <Image 
-          src="/images/hero-toac.jpg" 
-          alt="Équipe TOAC Cyclotourisme" 
+        <Image
+          src="/images/hero-toac.jpg"
+          alt="Équipe TOAC Cyclotourisme"
           fill
           className="object-cover"
           priority
@@ -21,18 +21,20 @@ export default function HeroSection() {
         <div className="max-w-3xl space-y-8 animate-fade-in-up">
           <div>
             <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6 font-sans">
-              "Des tours de quoi ?", <br/>
-              <span className="text-[#89d3e8]">qu'em'dit.</span><br/>
+              "Des tours de quoi ?", <br />
+              <span className="text-[#89d3e8]">qu'em'dit.</span><br />
               <span className="text-white">Des tours d'vélo pardi !</span>
             </h1>
             <div className="h-1 w-20 bg-[#00b5e2] mb-6"></div>
             <p className="text-lg text-gray-300 italic font-medium mb-8">
-              — Extrait de « A bicyclette » de Bourvil
+              <a href="https://www.youtube.com/watch?v=WizGTZtjgvo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                — Extrait de « A bicyclette » de Bourvil
+              </a>
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link 
+            <Link
               href="/adhesion"
               className="px-8 py-4 bg-[#00b5e2] hover:bg-[#009dc4] text-[#00205b] font-bold rounded-sm transition-all flex items-center justify-center gap-2 text-lg shadow-lg"
             >
