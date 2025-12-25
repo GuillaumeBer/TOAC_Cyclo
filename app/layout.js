@@ -17,9 +17,11 @@ export const metadata = {
   },
 }
 
+import { Analytics } from '@vercel/analytics/react'
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -27,6 +29,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="font-sans antialiased text-gray-900 bg-white">
         {children}
+        <Analytics />
       </body>
     </html>
   )

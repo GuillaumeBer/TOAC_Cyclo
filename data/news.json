@@ -1,0 +1,29 @@
+[
+    {
+        "category": "Séjour Club",
+        "title": "Montagnarde 2026 : Direction le Cantal !",
+        "date": "14-17 Mai 2026",
+        "location": "Maurs (15)",
+        "summary": "Rendez-vous dans le sud du Cantal au Domaine La Châtaigneraie pour notre séjour annuel. Au programme : convivialité et parcours vallonnés.",
+        "image": "/images/montagnarde.jpg",
+        "link": "/actualites/montagnarde-2026"
+    },
+    {
+        "category": "Vie du Club",
+        "title": "Campagne d'adhésion 2026",
+        "date": "Saison 2026",
+        "location": "En ligne",
+        "summary": "Rejoignez-nous pour une nouvelle année de vélo ! La campagne d'adhésion est ouverte pour tous les passionnés.",
+        "image": "/images/hero-toac.jpg",
+        "link": "/adhesion"
+    },
+    {
+        "category": "Vie du Club",
+        "title": "Retour sur l'AG 2025",
+        "date": "06 Déc 2025",
+        "location": "Toulouse",
+        "summary": "Bilan moral, nouveautés 2026 et élection du bureau : découvrez le résumé de notre Assemblée Générale.",
+        "image": "/images/TOAC2.jpg",
+        "link": "/actualites/ag-2025"
+    }
+]

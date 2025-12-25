@@ -1,47 +1,22 @@
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, ArrowRight, MapPin, FileText } from 'lucide-react'
 
-const NEWS_ITEMS = [
-  {
-    category: "Séjour Club",
-    title: "Montagnarde 2026 : Direction le Cantal !",
-    date: "14-17 Mai 2026",
-    location: "Maurs (15)",
-    summary: "Rendez-vous dans le sud du Cantal au Domaine La Châtaigneraie pour notre séjour annuel. Au programme : convivialité et parcours vallonnés.",
-    image: "/images/montagnarde.jpg", // Image à générer
-    link: "/actualites/montagnarde-2026"
-  },
-  {
-    category: "Vie du Club",
-    title: "Campagne d'adhésion 2026",
-    date: "Saison 2026",
-    location: "En ligne",
-    summary: "Rejoignez-nous pour une nouvelle année de vélo ! La campagne d'adhésion est ouverte pour tous les passionnés.",
-    image: "/images/hero-toac.jpg",
-    link: "/adhesion"
-  },
-  {
-    category: "Vie du Club",
-    title: "Retour sur l'AG 2025",
-    date: "06 Déc 2025",
-    location: "Toulouse",
-    summary: "Bilan moral, nouveautés 2026 et élection du bureau : découvrez le résumé de notre Assemblée Générale.",
-    image: "/images/TOAC2.jpg",
-    link: "/actualites/ag-2025"
-  }
-]
+import newsData from '@/data/news.json'
+
+const NEWS_ITEMS = newsData
 
 function NewsCard({ item }) {
   return (
     <div className="group bg-white flex flex-col h-full shadow-lg rounded-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <div className="h-48 md:h-56 relative overflow-hidden bg-gray-200">
-        <Image 
-          src={item.image} 
-          alt={item.title} 
-          width={400} 
-          height={300} 
-          className="w-full h-full object-cover transition duration-700 group-hover:scale-110" 
+        <Image
+          src={item.image}
+          alt={item.title}
+          width={400}
+          height={300}
+          className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute top-4 left-4">
@@ -50,7 +25,7 @@ function NewsCard({ item }) {
           </span>
         </div>
       </div>
-      
+
       <div className="p-6 flex flex-col flex-1">
         <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
           <div className="flex items-center">
@@ -62,15 +37,15 @@ function NewsCard({ item }) {
             </div>
           )}
         </div>
-        
+
         <h3 className="text-xl font-bold text-[#00205b] mb-3 leading-snug group-hover:text-[#00b5e2] transition-colors">
           {item.title}
         </h3>
-        
+
         <p className="text-gray-600 text-sm mb-6 leading-relaxed flex-1">
           {item.summary}
         </p>
-        
+
         <div className="mt-auto pt-6 border-t border-gray-100">
           <Link href={item.link} className="inline-flex items-center text-[#00205b] font-bold text-sm uppercase tracking-wide hover:text-[#00b5e2] transition-colors">
             Lire la suite <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -116,14 +91,14 @@ export default function NewsSection() {
           </div>
 
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {NEWS_ITEMS.map((item, index) => (
             <NewsCard key={index} item={item} />
           ))}
 
         </div>
-        
+
 
       </div>
     </div>

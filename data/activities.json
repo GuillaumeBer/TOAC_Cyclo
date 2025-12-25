@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Gravel & Aventure",
+        "desc": "Sorties afterwork, week-ends bikepacking et ultra-distance. L'esprit d'aventure hors des sentiers battus.",
+        "iconName": "Bike",
+        "image": "/images/gravel.png",
+        "link": "/activites/gravel",
+        "color": "from-[#00205b] to-[#003d8f]"
+    },
+    {
+        "title": "Longue Distance",
+        "desc": "Brevets randonneurs (BRM), préparations Paris-Brest-Paris 2027 et défis d'endurance.",
+        "iconName": "Map",
+        "image": "/images/longue-distance.png",
+        "link": "/activites/longue-distance",
+        "color": "from-[#00b5e2] to-[#0077b6]"
+    },
+    {
+        "title": "Cyclomontagnardes",
+        "desc": "Les plus beaux sommets de France. Défiez les cols mythiques des Alpes, Pyrénées, Vosges et Jura.",
+        "iconName": "Mountain",
+        "image": "/images/cyclomontagnardes.png",
+        "link": "/activites/cyclomontagnardes",
+        "color": "from-[#00205b] via-[#003d8f] to-[#00b5e2]"
+    }
+]
