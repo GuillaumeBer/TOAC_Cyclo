@@ -9,22 +9,22 @@ export default function AG2025Page() {
       <div className="bg-[#00205b] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
         <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-start">
-          <Link 
-            href="/#actualites" 
+          <Link
+            href="/#actualites"
             className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Retour aux actualités
           </Link>
-          
+
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00b5e2]/20 border border-[#00b5e2] rounded-sm text-[#00b5e2] text-xs font-bold uppercase tracking-widest mb-6">
             Vie du Club
           </div>
-          
+
           <h1 className="text-3xl md:text-5xl font-bold mb-6">
             Assemblée Générale 2025
           </h1>
-          
+
           <div className="flex flex-wrap gap-6 text-gray-300">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5 text-[#00b5e2]" />
@@ -36,8 +36,8 @@ export default function AG2025Page() {
       </div>
 
       {/* Contenu */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
-        
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-12">
+
         {/* Intro */}
         <div className="bg-white rounded-lg shadow-sm p-8 border-l-4 border-[#00b5e2]">
           <p className="text-gray-600 leading-relaxed text-lg">
@@ -47,11 +47,11 @@ export default function AG2025Page() {
 
         {/* Bilan 2024 */}
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="space-y-6">
+          <div className="flex flex-col gap-6">
             <h2 className="text-2xl font-bold text-[#00205b] flex items-center gap-2">
               <Award className="w-6 h-6 text-[#00b5e2]" /> Rétrospective 2024
             </h2>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-full">
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-auto md:h-full">
               <ul className="space-y-4 text-gray-600">
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00b5e2] mt-2 flex-shrink-0"></span>
@@ -61,7 +61,7 @@ export default function AG2025Page() {
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00b5e2] mt-2 flex-shrink-0"></span>
                   <span><strong>Journée du Souvenir :</strong> Désormais pérennisée chaque mois d'octobre à Mérenvielle.</span>
                 </li>
-                 <li className="flex items-start gap-2">
+                <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00b5e2] mt-2 flex-shrink-0"></span>
                   <span><strong>Exploits :</strong> Traversée des Pyrénées en une semaine et périple anglais Londres-Édimbourg (malgré la tempête !).</span>
                 </li>
@@ -69,11 +69,11 @@ export default function AG2025Page() {
             </div>
           </div>
 
-          <div className="space-y-6">
+          <div className="flex flex-col gap-6">
             <h2 className="text-2xl font-bold text-[#00205b] flex items-center gap-2">
               <Target className="w-6 h-6 text-[#00b5e2]" /> Cap sur 2026
             </h2>
-             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-full">
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-auto md:h-full">
               <ul className="space-y-4 text-gray-600">
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00b5e2] mt-2 flex-shrink-0"></span>
@@ -83,7 +83,7 @@ export default function AG2025Page() {
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00b5e2] mt-2 flex-shrink-0"></span>
                   <span><strong>Montagnarde :</strong> Direction le Cantal (Maurs) en mai.</span>
                 </li>
-                 <li className="flex items-start gap-2">
+                <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00b5e2] mt-2 flex-shrink-0"></span>
                   <span><strong>Paris-Brest-Paris 2027 :</strong> Les brevets 2026 seront qualificatifs pour une inscription prioritaire.</span>
                 </li>
@@ -116,7 +116,7 @@ export default function AG2025Page() {
 
         {/* Documents */}
         <div className="bg-blue-50 rounded-lg p-6 border border-blue-100">
-           <h3 className="font-bold text-[#00205b] mb-4 flex items-center gap-2">
+          <h3 className="font-bold text-[#00205b] mb-4 flex items-center gap-2">
             <FileText className="w-5 h-5" /> Documents officiels
           </h3>
           <p className="text-sm text-gray-600 mb-4">

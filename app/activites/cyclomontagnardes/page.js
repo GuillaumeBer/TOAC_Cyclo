@@ -9,22 +9,22 @@ export default function CyclomontagnardesPage() {
       <div className="bg-[#00205b] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
         <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-start">
-          <Link 
-            href="/#activites" 
+          <Link
+            href="/#activites"
             className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Retour aux activités
           </Link>
-          
+
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00b5e2]/20 border border-[#00b5e2] rounded-sm text-[#00b5e2] text-xs font-bold uppercase tracking-widest mb-6">
             Montagne
           </div>
-          
+
           <h1 className="text-3xl md:text-5xl font-bold mb-6">
             Cyclomontagnardes 2026
           </h1>
-          
+
           <p className="text-xl text-gray-300 max-w-2xl">
             Des défis d'exception au cœur des massifs français. Dénivelé, paysages grandioses et dépassement de soi au programme.
           </p>
@@ -33,7 +33,7 @@ export default function CyclomontagnardesPage() {
 
       {/* Contenu */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
-        
+
         {/* Liste des événements */}
         <div className="space-y-6">
           <div>
@@ -60,7 +60,7 @@ export default function CyclomontagnardesPage() {
             </div>
 
             {/* Volcans */}
-            <ActivityCard 
+            <ActivityCard
               title="Cyclomontagnarde des Volcans"
               date="30-31 Mai"
               location="Mozac (63)"
@@ -70,7 +70,7 @@ export default function CyclomontagnardesPage() {
               link="https://puy-de-dome.ffvelo.fr/cmv/"
             />
             {/* Haute Savoie */}
-            <ActivityCard 
+            <ActivityCard
               title="Cyclomontagnarde de Haute-Savoie"
               date="06-07 Juin"
               location="Annecy-le-Vieux (74)"
@@ -80,7 +80,7 @@ export default function CyclomontagnardesPage() {
               link="https://www.cyclomontagnarde-annecy.com/"
             />
             {/* Jura */}
-            <ActivityCard 
+            <ActivityCard
               title="Cyclomontagnarde du Jura"
               date="20-21 Juin"
               location="Lons-le-Saunier (39)"
@@ -90,7 +90,7 @@ export default function CyclomontagnardesPage() {
               link="https://ffvelo.fr/evenements/cyclomontagnarde-du-jura-2026/"
             />
             {/* Vosges */}
-            <ActivityCard 
+            <ActivityCard
               title="Cyclomontagnarde Vosges Alsace"
               date="27-28 Juin"
               location="Wihr-au-Val (68)"
@@ -100,7 +100,7 @@ export default function CyclomontagnardesPage() {
               link="https://www.cmvalsace.fr/"
             />
             {/* Luchon-Bayonne */}
-            <ActivityCard 
+            <ActivityCard
               title="Cyclomontagnarde Luchon-Bayonne"
               date="27-28 Juin"
               location="Luchon → Bayonne"
@@ -110,7 +110,7 @@ export default function CyclomontagnardesPage() {
               link="https://www.luchonbayonne.fr/"
             />
             {/* Pyrénées */}
-            <ActivityCard 
+            <ActivityCard
               title="Cyclomontagnarde du Massif Pyrénéen"
               date="04-05 Juillet"
               location="Saint-Bertrand-de-Comminges (31)"
@@ -120,6 +120,14 @@ export default function CyclomontagnardesPage() {
               link="https://ffvelo.fr/evenements/cyclomontagnarde-du-massif-pyreneen/"
             />
           </div>
+        </div>
+
+        {/* Contact */}
+        <div className="bg-blue-50 rounded-lg p-6 border border-blue-100">
+          <h3 className="font-bold text-[#00205b] mb-2">📧 Contact</h3>
+          <p className="text-gray-600 text-sm">
+            Pour tout renseignement sur les activités Montagne, contactez <a href="mailto:contact@toac-cyclo.com?subject=[Montagnarde 2026]" className="text-[#00b5e2] hover:underline font-bold">le bureau du TOAC cyclo</a>.
+          </p>
         </div>
 
       </div>
@@ -147,12 +155,12 @@ function ActivityCard({ title, date, location, distance, denivele, details, high
           <span className="px-3 py-1 bg-[#00205b] text-white text-sm font-bold rounded-sm mb-1">{date}</span>
         </div>
       </div>
-      
+
       <div className="flex items-center gap-6 mb-4 text-sm font-bold text-gray-700">
         <span className="flex items-center gap-1"><Route className="w-4 h-4 text-gray-400" /> {distance}</span>
         <span className="flex items-center gap-1"><Mountain className="w-4 h-4 text-gray-400" /> {denivele} D+</span>
       </div>
-      
+
       <p className="text-sm text-gray-600">
         <span className="font-semibold">Cols :</span> {details}
       </p>
