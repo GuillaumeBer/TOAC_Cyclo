@@ -20,25 +20,25 @@ export default function Montagnarde2026Page() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#00205b] to-[#00205b]/80"></div>
         </div>
-        
-         <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
         <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-start">
-          <Link 
-            href="/#actualites" 
+          <Link
+            href="/#actualites"
             className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Retour aux actualités
           </Link>
-          
+
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00b5e2]/20 border border-[#00b5e2] rounded-sm text-[#00b5e2] text-xs font-bold uppercase tracking-widest mb-6">
             Séjour Club
           </div>
-          
+
           <h1 className="text-3xl md:text-5xl font-bold mb-6">
             Montagnarde 2026 : Direction le Cantal !
           </h1>
-          
+
           <div className="flex flex-wrap gap-6 text-gray-300">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5 text-[#00b5e2]" />
@@ -55,18 +55,18 @@ export default function Montagnarde2026Page() {
       {/* Contenu */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-3 gap-8">
-          
+
           {/* Colonne principale */}
           <div className="md:col-span-2 space-y-8">
             <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100">
               <h2 className="text-2xl font-bold text-[#00205b] mb-4">Le Séjour</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Pour l'édition 2026, le TOAC Cyclo met le cap sur le Cantal ! Nous serons basés à 
-                <strong className="text-[#00205b]"> Maurs (15600)</strong>, surnommée "La Nice du Cantal", 
+                Pour l'édition 2026, le TOAC Cyclo met le cap sur le Cantal ! Nous serons basés à
+                <strong className="text-[#00205b]"> Maurs (15600)</strong>, surnommée "La Nice du Cantal",
                 située idéalement à la jonction de la Dordogne et de l'Aveyron.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Ce séjour est l'occasion idéale de partager des moments conviviaux tout en découvrant 
+                Ce séjour est l'occasion idéale de partager des moments conviviaux tout en découvrant
                 de nouvelles routes dans un cadre magnifique.
               </p>
             </div>
@@ -92,14 +92,14 @@ export default function Montagnarde2026Page() {
               <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-100">
                 <h3 className="font-bold text-[#00205b] mb-2">Les Parcours</h3>
                 <p className="text-sm text-gray-600">
-                  Des circuits adaptés seront proposés : brevets BPF pour les chasseurs de tampons, 
-                  et parcours plus sportifs avec du dénivelé. Le relief du sud Cantal est vallonné ("casse-pattes") 
+                  Des circuits adaptés seront proposés : brevets BPF pour les chasseurs de tampons,
+                  et parcours plus sportifs avec du dénivelé. Le relief du sud Cantal est vallonné ("casse-pattes")
                   sans être de la haute montagne.
                 </p>
               </div>
             </div>
 
-             <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100">
+            <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100">
               <h2 className="text-2xl font-bold text-[#00205b] mb-4 flex items-center gap-2">
                 <Home className="w-6 h-6 text-[#00b5e2]" /> Hébergement
               </h2>
@@ -108,16 +108,16 @@ export default function Montagnarde2026Page() {
               </p>
               <ul className="grid sm:grid-cols-2 gap-4">
                 <li className="flex items-center gap-2 text-gray-600">
-                    <div className="w-2 h-2 rounded-full bg-[#00b5e2]"></div> Chambres ou gîtes
+                  <div className="w-2 h-2 rounded-full bg-[#00b5e2]"></div> Chambres ou gîtes
                 </li>
-                 <li className="flex items-center gap-2 text-gray-600">
-                    <div className="w-2 h-2 rounded-full bg-[#00b5e2]"></div> Piscine couverte/chauffée
+                <li className="flex items-center gap-2 text-gray-600">
+                  <div className="w-2 h-2 rounded-full bg-[#00b5e2]"></div> Piscine couverte/chauffée
                 </li>
-                 <li className="flex items-center gap-2 text-gray-600">
-                    <div className="w-2 h-2 rounded-full bg-[#00b5e2]"></div> Restauration sur place
+                <li className="flex items-center gap-2 text-gray-600">
+                  <div className="w-2 h-2 rounded-full bg-[#00b5e2]"></div> Restauration sur place
                 </li>
-                 <li className="flex items-center gap-2 text-gray-600">
-                    <div className="w-2 h-2 rounded-full bg-[#00b5e2]"></div> Cadre verdoyant
+                <li className="flex items-center gap-2 text-gray-600">
+                  <div className="w-2 h-2 rounded-full bg-[#00b5e2]"></div> Cadre verdoyant
                 </li>
               </ul>
             </div>
@@ -129,39 +129,39 @@ export default function Montagnarde2026Page() {
               <h3 className="font-bold text-[#00205b] mb-4 flex items-center gap-2">
                 <Clock className="w-5 h-5 text-[#00b5e2]" /> Infos Pratiques
               </h3>
-              
+
               <div className="space-y-4">
                 <div>
-                   <div className="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">Accès</div>
-                   <p className="text-gray-600 text-sm">
-                     ~204 km de Toulouse<br/>
-                     2h30 via A20<br/>
-                     ou 184 km par routes secondaires
-                   </p>
-                   <a 
-                     href="https://www.google.com/maps/search/?api=1&query=Domaine+La+Châtaigneraie+Maurs" 
-                     target="_blank" 
-                     rel="noopener noreferrer"
-                     className="text-sm font-bold text-[#00b5e2] hover:underline flex items-center gap-1 mt-2"
-                   >
-                     Voir sur Google Maps ↗
-                   </a>
+                  <div className="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">Accès</div>
+                  <p className="text-gray-600 text-sm">
+                    ~204 km de Toulouse<br />
+                    2h30 via A20<br />
+                    ou 184 km par routes secondaires
+                  </p>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Domaine+La+Châtaigneraie+Maurs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-bold text-[#00b5e2] hover:underline flex items-center gap-1 mt-2"
+                  >
+                    Voir sur Google Maps ↗
+                  </a>
                 </div>
-                
-                 <div>
-                   <div className="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">Repas</div>
-                   <p className="text-gray-600 text-sm">
-                     Pension complète du déjeuner du jeudi au déjeuner du dimanche.
-                   </p>
+
+                <div>
+                  <div className="text-xs text-gray-400 uppercase font-bold tracking-wider mb-1">Repas</div>
+                  <p className="text-gray-600 text-sm">
+                    Pension complète du déjeuner du jeudi au déjeuner du dimanche.
+                  </p>
                 </div>
 
                 <div className="pt-4 border-t border-gray-100">
                   <p className="text-sm text-gray-600 mb-2">📧 Contact :</p>
-                  <a 
-                    href="mailto:tfillion@me.com" 
+                  <a
+                    href="mailto:contact@toac-cyclo.com?subject=[montagnarde 2026]"
                     className="block w-full py-3 bg-[#00b5e2] text-[#00205b] font-bold text-center rounded-sm hover:bg-[#009bc2] transition-colors"
                   >
-                    Contacter Thierry Fillion
+                    Contacter le bureau du TOAC cyclo
                   </a>
                 </div>
               </div>

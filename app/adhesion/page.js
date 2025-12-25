@@ -197,11 +197,7 @@ export default function AdhesionPage() {
         </div>
 
         {/* Contact */}
-        <div className="bg-gray-100 rounded-lg p-6 text-center text-sm text-gray-600">
-          <p>
-            Des questions ? Contactez le <a href="mailto:contact@toac-cyclo.com" className="font-bold hover:text-[#00b5e2] transition-colors">bureau</a>.
-          </p>
-        </div>
+
 
       </div>
     </div>
