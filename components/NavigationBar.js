@@ -120,7 +120,12 @@ export default function NavigationBar() {
                 key={item.name}
                 href={item.href}
                 className="px-4 py-3 text-sm font-bold uppercase tracking-wider text-white hover:text-[#00b5e2]"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  if (item.href === '/#top') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                  }
+                }}
               >
                 {item.name}
               </Link>
