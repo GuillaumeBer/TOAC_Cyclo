@@ -18,7 +18,7 @@ export default function ClubSection() {
   return (
     <div id="club" className="bg-gradient-to-b from-white to-[#f2f4f7] pt-20 md:pt-28 pb-12 md:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        
+
         {/* Titre de section */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div>
@@ -28,8 +28,8 @@ export default function ClubSection() {
               Plus qu'un club, une institution toulousaine où l'accomplissement de défis rencontre la convivialité.
             </p>
           </div>
-          <Link 
-            href="/histoire" 
+          <Link
+            href="/histoire"
             className="hidden md:flex items-center px-6 py-3 bg-[#00205b] text-white font-bold rounded-sm hover:bg-[#00b5e2] transition-colors text-sm shadow-sm flex-shrink-0"
           >
             Découvrir notre histoire →
@@ -38,26 +38,26 @@ export default function ClubSection() {
 
         {/* Valeurs du club */}
         <div className="grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-10 md:mb-16">
-          <InfoBlock 
-            icon={Users} 
-            title="Convivialité & Respect" 
-            desc="Nos sorties du vendredi, du dimanche matin et des jours fériés sont sacrées. Pas de compétition, juste le plaisir de rouler ensemble." 
+          <InfoBlock
+            icon={Users}
+            title="Convivialité & Respect"
+            desc="Nos sorties du vendredi, du dimanche matin et des jours fériés sont sacrées. Pas de compétition, juste le plaisir de rouler ensemble."
           />
-          <InfoBlock 
-            icon={Award} 
-            title="Double Affiliation" 
-            desc="Affilié FF Vélo et FSGT, deux fédérations dédiées à la randonnée cyclo. Une structure solide pour tous." 
+          <InfoBlock
+            icon={Award}
+            title="Double Affiliation"
+            desc="Affilié FF Vélo et FSGT, deux fédérations dédiées à la randonnée cyclo. Une structure solide pour tous."
           />
-          <InfoBlock 
-            icon={Shield} 
-            title="Sécurité & Formation" 
-            desc="Les membres veillent les uns sur les autres pour assurer la sécurité de tous. Rouler au TOAC, c'est rouler serein." 
+          <InfoBlock
+            icon={Shield}
+            title="Sécurité & Formation"
+            desc="Les membres veillent les uns sur les autres pour assurer la sécurité de tous. Rouler au TOAC, c'est rouler serein."
           />
         </div>
 
         <div className="text-center mb-12 md:hidden">
-          <Link 
-            href="/histoire" 
+          <Link
+            href="/histoire"
             className="inline-flex items-center px-6 py-3 bg-[#00205b] text-white font-bold rounded-sm hover:bg-[#00b5e2] transition-colors text-sm shadow-sm"
           >
             Découvrir notre histoire →
@@ -69,12 +69,12 @@ export default function ClubSection() {
           <div className="flex flex-col md:flex-row gap-8 lg:gap-12 items-center">
             <div className="md:w-1/4 text-center flex-shrink-0">
               <div className="inline-block p-1 border border-gray-300 mb-4 bg-white">
-                <Image 
-                  src="/images/president.jpg" 
-                  alt="Président du club" 
+                <Image
+                  src="/images/president_caricature.png"
+                  alt="Président du club"
                   width={160}
                   height={160}
-                  className="w-40 h-40 object-cover hover:grayscale-0 transition-all duration-500" 
+                  className="w-40 h-40 object-cover hover:grayscale-0 transition-all duration-500"
                 />
               </div>
               <h3 className="text-xl font-bold text-[#00205b]">Jérôme P.</h3>

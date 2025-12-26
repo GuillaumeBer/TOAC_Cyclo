@@ -15,7 +15,7 @@
         "location": "En ligne",
         "summary": "Rejoignez-nous pour une nouvelle année de vélo ! La campagne d'adhésion est ouverte pour tous les passionnés.",
         "image": "/images/hero-toac.jpg",
-        "link": "/adhesion"
+        "link": "/adhesion?from=news"
     },
     {
         "category": "Vie du Club",

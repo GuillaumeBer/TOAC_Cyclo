@@ -2,8 +2,21 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, FileText, CreditCard, Shield, AlertCircle, CheckCircle, Mail } from 'lucide-react'
+import { useSearchParams } from 'next/navigation'
+import { Suspense } from 'react'
 
-export default function AdhesionPage() {
+function AdhesionContent() {
+  const searchParams = useSearchParams()
+  const from = searchParams.get('from')
+
+  let backLink = '/'
+  let backText = "Retour à l'accueil"
+
+  if (from === 'news') {
+    backLink = '/#actualites'
+    backText = 'Retour aux actualités'
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -11,11 +24,11 @@ export default function AdhesionPage() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
         <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-start">
           <Link
-            href="/"
+            href={backLink}
             className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
-            Retour à l'accueil
+            {backText}
           </Link>
 
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
@@ -29,7 +42,6 @@ export default function AdhesionPage() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
 
-        {/* Intro */}
         {/* Intro */}
         <div className="bg-white rounded-lg shadow-sm p-8 border-l-4 border-[#00b5e2]">
           <div className="grid md:grid-cols-3 gap-8 items-center">
@@ -196,10 +208,15 @@ export default function AdhesionPage() {
           </div>
         </div>
 
-        {/* Contact */}
-
-
       </div>
     </div>
+  )
+}
+
+export default function AdhesionPage() {
+  return (
+    <Suspense>
+      <AdhesionContent />
+    </Suspense>
   )
 }

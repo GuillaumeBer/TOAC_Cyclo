@@ -137,12 +137,7 @@ export default function GravelPage() {
         </div>
 
         {/* Contact */}
-        <div className="bg-blue-50 rounded-lg p-6 border border-blue-100">
-          <h3 className="font-bold text-[#00205b] mb-2">📧 Contact</h3>
-          <p className="text-gray-600 text-sm">
-            Pour tout renseignement sur les activités Gravel, contactez <a href="mailto:contact@toac-cyclo.com?subject=[Gravel]" className="text-[#00b5e2] hover:underline font-bold">le bureau du TOAC cyclo</a>.
-          </p>
-        </div>
+
 
       </div>
     </div>

@@ -15,19 +15,19 @@ export default function EditoPresident() {
       <NavigationBar />
       <main className="pt-20 pb-16 min-h-screen bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <Link href="/#club" className="inline-flex items-center text-[#00b5e2] hover:text-[#00205b] mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" /> Retour au site
           </Link>
-          
+
           <article className="bg-white p-8 md:p-12 shadow-sm border border-gray-100">
-            
+
             {/* Header */}
             <header className="text-center mb-12">
               <div className="inline-block p-1 border border-gray-300 bg-white mb-6">
-                <Image 
-                  src="/images/president.jpg" 
-                  alt="Jérôme P. - Président" 
+                <Image
+                  src="/images/president_caricature.png"
+                  alt="Jérôme P. - Président"
                   width={120}
                   height={120}
                   className="w-28 h-28 object-cover"
@@ -51,9 +51,9 @@ export default function EditoPresident() {
 
             {/* Content */}
             <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-              
+
               <p className="text-xl text-[#00205b] font-medium">Chers membres, chers amis cyclistes,</p>
-              
+
               <p>C'est avec beaucoup de fierté et d'enthousiasme que je m'adresse à vous pour cette nouvelle saison 2026. Une année qui s'annonce riche en pédalées, en rencontres et en moments de partage.</p>
 
               <h3 className="text-xl font-bold text-[#00205b] mt-8 mb-4">Une saison sous le signe du renouveau</h3>
@@ -85,7 +85,7 @@ export default function EditoPresident() {
               <p className="text-[#00205b] font-bold mt-8 text-lg">À très vite sur les routes !</p>
 
               <p className="text-right text-gray-500 italic mt-8 border-t pt-6">
-                Jérôme P.<br/>
+                Jérôme P.<br />
                 <span className="text-sm">Président du TOAC Cyclotourisme</span>
               </p>
 
