@@ -20,7 +20,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl space-y-8 animate-fade-in-up">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6 font-sans">
+            <h1 className="text-3xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6 font-sans">
               "Des tours de quoi ?", <br />
               <span className="text-[#89d3e8]">qu'em'dit.</span><br />
               <span className="text-white">Des tours d'vélo pardi !</span>

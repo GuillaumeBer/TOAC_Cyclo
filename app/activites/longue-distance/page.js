@@ -110,59 +110,61 @@ export default function LongueDistancePage() {
             Ces événements sont organisés par des clubs tiers. Cliquez sur le nom pour accéder au site officiel.
           </p>
           <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
-            <table className="w-full text-left text-sm text-gray-600">
-              <thead className="bg-[#00205b] text-white">
-                <tr>
-                  <th className="p-4">Événement</th>
-                  <th className="p-4">Distance</th>
-                  <th className="p-4">Date</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                <tr>
-                  <td className="p-4 font-medium">
-                    <a href="https://www.cyclo-club-montebourg-saint-germain-de-tournebut.com/longue-distance/2026-1/les-travers%C3%A9es-de-france-la-vie-de-ch%C3%A2teau/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">La vie de Château (34→49) ↗</a>
-                  </td>
-                  <td className="p-4">1500 / 1950 km</td>
-                  <td className="p-4">31.05</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium">
-                    <a href="https://www.cyclo-randonneurs.fr/spip.php?article590" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Les Sources de la Loire (03) ↗</a>
-                  </td>
-                  <td className="p-4">600 km (8000D+)</td>
-                  <td className="p-4">13.06</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium">
-                    <a href="https://raacyclo.blogspot.com/p/nos-organisations.html" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Les Monédières (33) ↗</a>
-                  </td>
-                  <td className="p-4">600 km (8000D+)</td>
-                  <td className="p-4">13.06</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium">
-                    <a href="http://www.assas-cyclisme-evasion.fr/calendrier/a-venir-liste/event/642-b-r-m-1000km-a-la-rencontre-de-l-ocean-atlantique-assas-mimizan-plage-assas" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Assas Mimizan & retour (34) ↗</a>
-                  </td>
-                  <td className="p-4">1000 km</td>
-                  <td className="p-4">25.06</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium">
-                    <a href="https://1200desraa.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Ronde Aliénor d'Aquitaine (33) ↗</a>
-                  </td>
-                  <td className="p-4">1200 km</td>
-                  <td className="p-4">05.07</td>
-                </tr>
-                <tr>
-                  <td className="p-4 font-medium">
-                    <a href="https://bcbcyclotourismevttbollene.clubeo.com/page/calendrier-brm-2026.html" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Vercors Lure Ventoux (84) ↗</a>
-                  </td>
-                  <td className="p-4">600 km (11000D+)</td>
-                  <td className="p-4">12.09</td>
-                </tr>
-              </tbody>
-            </table>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm text-gray-600">
+                <thead className="bg-[#00205b] text-white">
+                  <tr>
+                    <th className="p-4 whitespace-nowrap">Événement</th>
+                    <th className="p-4 whitespace-nowrap">Distance</th>
+                    <th className="p-4 whitespace-nowrap">Date</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  <tr>
+                    <td className="p-4 font-medium min-w-[200px]">
+                      <a href="https://www.cyclo-club-montebourg-saint-germain-de-tournebut.com/longue-distance/2026-1/les-travers%C3%A9es-de-france-la-vie-de-ch%C3%A2teau/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">La vie de Château (34→49) ↗</a>
+                    </td>
+                    <td className="p-4 whitespace-nowrap">1500 / 1950 km</td>
+                    <td className="p-4 whitespace-nowrap">31.05</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-medium">
+                      <a href="https://www.cyclo-randonneurs.fr/spip.php?article590" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Les Sources de la Loire (03) ↗</a>
+                    </td>
+                    <td className="p-4 whitespace-nowrap">600 km (8000D+)</td>
+                    <td className="p-4 whitespace-nowrap">13.06</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-medium">
+                      <a href="https://raacyclo.blogspot.com/p/nos-organisations.html" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Les Monédières (33) ↗</a>
+                    </td>
+                    <td className="p-4 whitespace-nowrap">600 km (8000D+)</td>
+                    <td className="p-4 whitespace-nowrap">13.06</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-medium">
+                      <a href="http://www.assas-cyclisme-evasion.fr/calendrier/a-venir-liste/event/642-b-r-m-1000km-a-la-rencontre-de-l-ocean-atlantique-assas-mimizan-plage-assas" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Assas Mimizan & retour (34) ↗</a>
+                    </td>
+                    <td className="p-4 whitespace-nowrap">1000 km</td>
+                    <td className="p-4 whitespace-nowrap">25.06</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-medium">
+                      <a href="https://1200desraa.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Ronde Aliénor d'Aquitaine (33) ↗</a>
+                    </td>
+                    <td className="p-4 whitespace-nowrap">1200 km</td>
+                    <td className="p-4 whitespace-nowrap">05.07</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 font-medium">
+                      <a href="https://bcbcyclotourismevttbollene.clubeo.com/page/calendrier-brm-2026.html" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Vercors Lure Ventoux (84) ↗</a>
+                    </td>
+                    <td className="p-4 whitespace-nowrap">600 km (11000D+)</td>
+                    <td className="p-4 whitespace-nowrap">12.09</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
