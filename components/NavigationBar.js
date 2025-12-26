@@ -16,6 +16,12 @@ export default function NavigationBar() {
     if (pathname !== '/') return
 
     const handleScroll = () => {
+      // Check if we're at the bottom of the page
+      if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50) {
+        setActiveSection('contact')
+        return
+      }
+
       const sections = ['top', 'evenements', 'actualites', 'activites', 'club', 'contact']
       const scrollPosition = window.scrollY + 100 // Offset pour la navbar
 
