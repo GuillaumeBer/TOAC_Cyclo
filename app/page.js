@@ -13,9 +13,9 @@ export default function Home() {
       <main>
         <HeroSection />
         <FeaturedEventSection />
+        <NewsSection />
         <ActivitiesSection />
         <ClubSection />
-        <NewsSection />
       </main>
       <Footer />
     </>

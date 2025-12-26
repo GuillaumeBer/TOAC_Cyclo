@@ -16,7 +16,7 @@ export default function NavigationBar() {
     if (pathname !== '/') return
 
     const handleScroll = () => {
-      const sections = ['top', 'evenements', 'activites', 'club', 'actualites', 'contact']
+      const sections = ['top', 'evenements', 'actualites', 'activites', 'club', 'contact']
       const scrollPosition = window.scrollY + 100 // Offset pour la navbar
 
       for (const section of sections) {
@@ -44,7 +44,7 @@ export default function NavigationBar() {
 
   const NavItem = ({ name, href, sectionId }) => {
     const active = isActive(href, sectionId)
-    
+
     return (
       <Link
         href={href}
@@ -65,9 +65,9 @@ export default function NavigationBar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo Area */}
           <Link href="/#top" className="flex items-center gap-3 cursor-pointer">
-            <Image 
-              src="/images/logo-toac-header.png" 
-              alt="Logo TOAC Cyclo" 
+            <Image
+              src="/images/logo-toac-header.png"
+              alt="Logo TOAC Cyclo"
               width={50}
               height={50}
               className="w-12 h-12 rounded"
@@ -77,13 +77,13 @@ export default function NavigationBar() {
               TOAC<span className="text-[#00b5e2]">CYCLO</span>
             </div>
           </Link>
-          
+
           <div className="hidden lg:flex items-center gap-4">
             <NavItem name="Accueil" href="/#top" sectionId="top" />
             <NavItem name="Événements" href="/#evenements" sectionId="evenements" />
+            <NavItem name="Actualités" href="/#actualites" sectionId="actualites" />
             <NavItem name="Activités" href="/#activites" sectionId="activites" />
             <NavItem name="Le Club" href="/#club" sectionId="club" />
-            <NavItem name="Actualités" href="/#actualites" sectionId="actualites" />
             <NavItem name="Contact" href="/#contact" sectionId="contact" />
           </div>
 
@@ -105,15 +105,15 @@ export default function NavigationBar() {
             {[
               { name: 'Accueil', href: '/#top' },
               { name: 'Événements', href: '/#evenements' },
+              { name: 'Actualités', href: '/#actualites' },
               { name: 'Activités', href: '/#activites' },
               { name: 'Le Club', href: '/#club' },
-              { name: 'Actualités', href: '/#actualites' },
               { name: 'Contact', href: '/#contact' },
             ].map((item) => (
-              <Link 
+              <Link
                 key={item.name}
-                href={item.href} 
-                className="px-4 py-3 text-sm font-bold uppercase tracking-wider text-white hover:text-[#00b5e2]" 
+                href={item.href}
+                className="px-4 py-3 text-sm font-bold uppercase tracking-wider text-white hover:text-[#00b5e2]"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.name}
