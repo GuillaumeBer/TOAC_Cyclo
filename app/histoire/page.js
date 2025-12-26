@@ -9,20 +9,20 @@ export default function HistoirePage() {
       {/* Header */}
       <div className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto flex flex-col items-start">
-          <Link 
-            href="/" 
+          <Link
+            href="/#club"
             className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
-            Retour à l'accueil
+            Retour au Club
           </Link>
-          
+
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Notre Histoire
           </h1>
-          
+
           <p className="text-xl text-gray-300 leading-relaxed max-w-3xl">
-            Depuis 1976, le TOAC Cyclo rassemble les passionnés de vélo autour de valeurs 
+            Depuis 1976, le TOAC Cyclo rassemble les passionnés de vélo autour de valeurs
             communes : convivialité, entraide et plaisir de rouler ensemble.
           </p>
         </div>
@@ -31,7 +31,7 @@ export default function HistoirePage() {
       {/* Timeline */}
       <div className="px-4 sm:px-6 lg:px-8 pb-16">
         <div className="max-w-4xl mx-auto">
-          
+
           {/* 1976 - Fondation */}
           <div className="relative pl-8 pb-12 border-l-2 border-[#00b5e2]/30">
             <div className="absolute left-0 top-0 w-4 h-4 -translate-x-1/2 rounded-full bg-[#00b5e2]"></div>
@@ -41,8 +41,8 @@ export default function HistoirePage() {
                 <h2 className="text-2xl font-bold text-white">Fondation du Club</h2>
               </div>
               <p className="text-gray-300 leading-relaxed mb-4">
-                <strong className="text-white">André Lafarge</strong> fonde la section Cyclotourisme du TOAC 
-                (Toulouse Olympique Aéronautique Club). Le club naît avec une philosophie claire : 
+                <strong className="text-white">André Lafarge</strong> fonde la section Cyclotourisme du TOAC
+                (Toulouse Olympique Aéronautique Club). Le club naît avec une philosophie claire :
                 pas de compétition, mais le <strong className="text-[#00b5e2]">plaisir de rouler ensemble</strong>.
               </p>
               <div className="flex items-center gap-2 text-[#00b5e2]">
@@ -85,7 +85,7 @@ export default function HistoirePage() {
                 <h2 className="text-2xl font-bold text-white">Trophée André Lafarge</h2>
               </div>
               <p className="text-gray-300 leading-relaxed mb-4">
-                En hommage au fondateur, le club crée le <strong className="text-amber-400">Trophée André Lafarge</strong>, 
+                En hommage au fondateur, le club crée le <strong className="text-amber-400">Trophée André Lafarge</strong>,
                 décerné chaque année lors de la Randonnée des Rameaux au club le plus représenté.
               </p>
               <div className="flex items-center gap-2 text-amber-400">
@@ -104,20 +104,20 @@ export default function HistoirePage() {
                 <h2 className="text-2xl font-bold text-white">Un Club Ouvert</h2>
               </div>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Le TOAC Cyclo accueille principalement des employés et retraités d'Airbus et leurs ayants droit, 
-                mais le club reste <strong className="text-[#00b5e2]">ouvert aux personnes extérieures</strong> 
+                Le TOAC Cyclo accueille principalement des employés et retraités d'Airbus et leurs ayants droit,
+                mais le club reste <strong className="text-[#00b5e2]">ouvert aux personnes extérieures</strong>
                 (sous réserve d'approbation par le bureau).
               </p>
               <div className="mt-4 relative h-64 md:h-96 rounded-lg overflow-hidden shadow-sm mb-4">
-                <Image 
-                  src="/images/TOAC2.jpg" 
-                  alt="Le Club TOAC aujourd'hui" 
-                  fill 
-                  className="object-cover" 
+                <Image
+                  src="/images/TOAC2.jpg"
+                  alt="Le Club TOAC aujourd'hui"
+                  fill
+                  className="object-cover"
                 />
               </div>
               <p className="text-gray-300 leading-relaxed">
-                Nos <strong className="text-white">sorties club</strong> ont lieu le vendredi et les jours fériés. 
+                Nos <strong className="text-white">sorties club</strong> ont lieu le vendredi et les jours fériés.
                 Les <strong className="text-white">randonnées interclubs</strong> se déroulent le dimanche matin, de mi-février à fin octobre.
               </p>
             </div>
