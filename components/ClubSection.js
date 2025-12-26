@@ -20,7 +20,7 @@ export default function ClubSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         {/* Titre de section */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
           <div>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#00205b] mb-3">L'Esprit TOAC Cyclo</h2>
             <div className="h-1 w-16 bg-[#00b5e2]"></div>

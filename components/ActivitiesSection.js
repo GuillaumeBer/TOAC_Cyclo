@@ -22,10 +22,10 @@ export default function ActivitiesSection() {
     <div id="activites" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="text-center mb-16">
+        <div className="mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-[#00205b] mb-4">Nos Activités</h2>
-          <div className="h-1 w-20 bg-[#00b5e2] mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <div className="h-1 w-16 bg-[#00b5e2] mb-6"></div>
+          <p className="text-gray-600 max-w-2xl text-lg">
             Au-delà des sorties club hebdomadaires, le TOAC Cyclo vous propose des défis variés pour tous les goûts.
           </p>
         </div>
