@@ -161,12 +161,11 @@ export default function RandoRameauxPage() {
 
           {/* CTA */}
           <div className="text-center pt-8">
-            <a
-              href="mailto:contact@toac-cyclo.com?subject=[rando rameaux 2026]"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-[#00b5e2] text-[#00205b] font-bold rounded-lg hover:bg-white transition-colors"
-            >
-              Contacter le bureau du TOAC Cyclo
-            </a>
+            <div className="inline-block px-8 py-4 bg-[#00b5e2]/10 border border-[#00b5e2] rounded-lg">
+              <p className="text-xl text-white font-bold">
+                Les inscriptions se feront sur place le matin de la randonnée.
+              </p>
+            </div>
           </div>
 
         </div>
