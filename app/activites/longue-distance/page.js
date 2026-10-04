@@ -45,9 +45,18 @@ export default function LongueDistancePage() {
             La 21ème édition du mythique <a href="https://www.paris-brest-paris.org/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline font-bold">Paris-Brest-Paris</a> aura lieu du 22 au 26 août 2027.
             Plusieurs membres du TOAC Cyclo envisagent d'y participer !
           </p>
-          <p className="text-gray-600 leading-relaxed text-sm">
-            Les conditions de qualification et d'inscription (brevets à valider, priorités de départ) sont détaillées sur le site officiel de l'événement.
-          </p>
+          <ul className="text-gray-600 leading-relaxed text-sm space-y-2">
+            <li>
+              <strong>Qualification :</strong> valider les 4 BRM (200, 300, 400 et 600 km) entre le 1er novembre 2026 et le 30 juin 2027.
+            </li>
+            <li>
+              <strong>Pré-inscription (optionnelle, 50 €) :</strong> ouverte à partir du 16 janvier 2027, et d'autant plus tôt que le plus long BRM validé en 2026 est long. Sans BRM en 2026, elle ouvre le 27 mars 2027. Elle permet de choisir sa vague de départ.
+            </li>
+            <li>
+              <strong>Inscription définitive :</strong> du 29 mai au 4 juillet 2027, avec au moins 3 des 4 BRM déjà validés.
+            </li>
+          </ul>
+          <p className="text-xs text-gray-500 mt-3">Infos à vérifier sur le site officiel de l'événement avant de vous inscrire.</p>
         </div>
 
         {/* BRM Locaux */}
@@ -67,7 +76,7 @@ export default function LongueDistancePage() {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-bold text-[#00205b] text-lg"><a href="https://www.ccc31.fr/les-differents-brevets-organises-par-le-ccc/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b5e2] transition-colors">Castanet ↗</a></h3>
+                <h3 className="font-bold text-[#00205b] text-lg"><a href="https://www.ccc31.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b5e2] transition-colors">Castanet ↗</a></h3>
                 
               </div>
               <p className="text-sm text-gray-600">200, 300, 400 et 600 km</p>
@@ -103,7 +112,7 @@ export default function LongueDistancePage() {
             <div className="flex items-start gap-3 bg-blue-50 p-4 rounded-md text-blue-900 text-sm mb-6">
               <Calendar className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" />
               <p>
-                <strong>Calendrier 2027 à venir :</strong> les dates de la prochaine saison seront ajoutées dès que les organisateurs les auront publiées.
+                <strong>Calendrier en cours de publication :</strong> les dates ci-dessous sont celles annoncées par les organisateurs ; d'autres seront ajoutées au fil de la saison.
               </p>
             </div>
           <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
@@ -119,45 +128,31 @@ export default function LongueDistancePage() {
                 <tbody className="divide-y divide-gray-100">
                   <tr>
                     <td className="p-4 font-medium min-w-[200px]">
-                      <a href="https://www.cyclo-club-montebourg-saint-germain-de-tournebut.com/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">La vie de Château (34→49) ↗</a>
+                      <a href="https://www.bordeauxsaintmalo.com/en" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Bordeaux - Saint-Malo ↗</a>
                     </td>
-                    <td className="p-4 whitespace-nowrap">1500 / 1950 km</td>
-                    <td className="p-4 whitespace-nowrap">À venir</td>
+                    <td className="p-4">840 km (ou 430 km en « Little BSM »)</td>
+                    <td className="p-4 whitespace-nowrap">12-16 mai</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-medium min-w-[200px]">
-                      <a href="https://www.cyclo-randonneurs.fr/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Les Sources de la Loire (03) ↗</a>
+                      <a href="https://ffvelo.fr/voyages-velo/2027-tour-cyclotouriste/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Tour cyclotouriste FFVélo (Épinal) ↗</a>
                     </td>
-                    <td className="p-4 whitespace-nowrap">600 km (8000D+)</td>
-                    <td className="p-4 whitespace-nowrap">À venir</td>
+                    <td className="p-4">~2 800 km en 21 jours</td>
+                    <td className="p-4 whitespace-nowrap">5-27 juin</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-medium min-w-[200px]">
-                      <a href="https://raacyclo.blogspot.com/p/nos-organisations.html" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Les Monédières (33) ↗</a>
+                      <a href="https://www.raceacrossseries.com/race-across-france" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Race Across France ↗</a>
                     </td>
-                    <td className="p-4 whitespace-nowrap">600 km (8000D+)</td>
-                    <td className="p-4 whitespace-nowrap">À venir</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-medium min-w-[200px]">
-                      <a href="http://www.assas-cyclisme-evasion.fr/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Assas Mimizan & retour (34) ↗</a>
-                    </td>
-                    <td className="p-4 whitespace-nowrap">1000 km</td>
-                    <td className="p-4 whitespace-nowrap">À venir</td>
+                    <td className="p-4">200 à 2 500 km</td>
+                    <td className="p-4 whitespace-nowrap">16-27 juin</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-medium min-w-[200px]">
                       <a href="https://1200desraa.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Ronde Aliénor d'Aquitaine (33) ↗</a>
                     </td>
-                    <td className="p-4 whitespace-nowrap">1200 km</td>
-                    <td className="p-4 whitespace-nowrap">À venir</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-medium min-w-[200px]">
-                      <a href="https://bcbcyclotourismevttbollene.clubeo.com/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Vercors Lure Ventoux (84) ↗</a>
-                    </td>
-                    <td className="p-4 whitespace-nowrap">600 km (11000D+)</td>
-                    <td className="p-4 whitespace-nowrap">À venir</td>
+                    <td className="p-4">1 200 km</td>
+                    <td className="p-4 whitespace-nowrap">Dates à venir (début 2027)</td>
                   </tr>
                 </tbody>
               </table>
