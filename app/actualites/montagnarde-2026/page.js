@@ -32,7 +32,7 @@ export default function Montagnarde2026Page() {
           </Link>
 
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00b5e2]/20 border border-[#00b5e2] rounded-sm text-[#00b5e2] text-xs font-bold uppercase tracking-widest mb-6">
-            Séjour Club
+            Séjour Club · Édition terminée
           </div>
 
           <h1 className="text-3xl md:text-5xl font-bold mb-6">

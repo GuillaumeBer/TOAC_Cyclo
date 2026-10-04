@@ -36,10 +36,11 @@ export default function RandoRameauxPage() {
       {/* Image Section */}
       <div className="px-4 sm:px-6 lg:px-8 pb-12">
         <div className="max-w-4xl mx-auto">
+          <p className="text-sm text-gray-400 mb-2">Affiche de l'édition 2026 — l'affiche 2027 sera publiée prochainement.</p>
           <div className="relative rounded-lg overflow-hidden border-4 border-white/10 shadow-2xl bg-white">
             <Image
               src="/images/rameaux-2026.jpg"
-              alt="Randonnée des Rameaux"
+              alt="Affiche de la Randonnée des Rameaux 2026"
               width={1200}
               height={600}
               className="w-full h-auto"
@@ -61,7 +62,7 @@ export default function RandoRameauxPage() {
                 </div>
                 <div>
                   <div className="text-xs text-[#00b5e2] uppercase font-bold tracking-wider mb-1">Prochaine édition</div>
-                  <div className="text-2xl font-bold text-white">Dimanche 29 Mars 2026</div>
+                  <div className="text-2xl font-bold text-white">Dimanche 21 Mars 2027</div>
                   <div className="text-gray-400">Départ à partir de 08h00</div>
                 </div>
               </div>

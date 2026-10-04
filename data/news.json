@@ -1,21 +1,20 @@
 [
     {
-        "category": "Séjour Club",
-        "title": "Montagnarde 2026 : Direction le Cantal !",
-        "date": "14-17 Mai 2026",
-        "location": "Maurs (15)",
-        "summary": "Rendez-vous dans le sud du Cantal au Domaine La Châtaigneraie pour notre séjour annuel. Au programme : convivialité et parcours vallonnés.",
-        "image": "/images/montagnarde.jpg",
-        "link": "/actualites/montagnarde-2026"
+        "category": "Événement Club",
+        "title": "Randonnée des Rameaux 2027",
+        "date": "Dim. 21 Mars 2027",
+        "location": "Toulouse",
+        "summary": "Notre rendez-vous annuel du printemps approche : parcours pour tous les niveaux dans les côteaux du Gers. Inscriptions sur place le matin même.",
+        "image": "/images/TOAC1.jpg",
+        "link": "/rando-rameaux"
     },
     {
-        "category": "Vie du Club",
-        "title": "Campagne d'adhésion 2026",
-        "date": "Saison 2026",
-        "location": "En ligne",
-        "summary": "Rejoignez-nous pour une nouvelle année de vélo ! La campagne d'adhésion est ouverte pour tous les passionnés.",
-        "image": "/images/hero-toac.jpg",
-        "link": "/adhesion?from=news"
+        "category": "Séjour Club",
+        "title": "Montagnarde 2027 : à vos agendas !",
+        "date": "Week-end de l'Ascension 2027",
+        "location": "Destination à définir",
+        "summary": "Notre séjour annuel aura lieu pendant le week-end de l'Ascension. Lieu et programme seront annoncés prochainement.",
+        "image": "/images/montagnarde.jpg"
     },
     {
         "category": "Vie du Club",
