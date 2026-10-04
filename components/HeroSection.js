@@ -21,11 +21,11 @@ export default function HeroSection() {
         <div className="max-w-3xl space-y-8 animate-fade-in-up">
           <div>
             <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6 font-sans">
-              Le club de cyclotourisme <span className="text-[#89d3e8]">de Toulouse</span>
+              Roulez avec <span className="text-[#89d3e8]">le TOAC Cyclo</span>
             </h1>
             <div className="h-1 w-20 bg-[#00b5e2] mb-6"></div>
             <p className="text-xl md:text-2xl text-gray-100 font-light leading-relaxed mb-4 max-w-2xl">
-              Sorties conviviales, tous niveaux, sans compétition. Venez essayer, on vous accueille.
+              La section cyclotourisme du TOAC, à Toulouse : sorties conviviales, tous niveaux, sans compétition. Venez essayer, on vous accueille.
             </p>
             <p className="text-sm text-gray-300 italic mb-8">
               « Des tours de quoi ? Des tours d'vélo pardi ! »{' '}
