@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Sortie club du vendredi",
+        "iconName": "Bike",
+        "when": "Tous les vendredis",
+        "where": "Complexe sportif TOAC, Toulouse",
+        "detail": "Horaire de départ à confirmer",
+        "desc": "La sortie conviviale de la semaine : on roule ensemble, à l'allure du groupe, sans compétition."
+    },
+    {
+        "title": "Rando interclubs du dimanche",
+        "iconName": "Users",
+        "when": "Dimanche matin, de mi-février à fin octobre",
+        "where": "Départs variables selon le club organisateur",
+        "detail": "Plusieurs distances au choix",
+        "desc": "Les randonnées organisées par les clubs de la région : l'occasion de découvrir de nouvelles routes et de rencontrer d'autres cyclos."
+    }
+]

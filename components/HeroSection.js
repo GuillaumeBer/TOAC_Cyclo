@@ -20,31 +20,33 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl space-y-8 animate-fade-in-up">
           <div>
-            <h1 className="text-3xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6 font-sans">
-              "Des tours de quoi ?", <br />
-              <span className="text-[#89d3e8]">qu'em'dit.</span><br />
-              <span className="text-white">Des tours d'vélo pardi !</span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6 font-sans">
+              Le club de cyclotourisme <span className="text-[#89d3e8]">de Toulouse</span>
             </h1>
             <div className="h-1 w-20 bg-[#00b5e2] mb-6"></div>
-            <p className="text-lg text-gray-200 italic font-medium mb-8">
-              <a href="https://www.youtube.com/watch?v=WizGTZtjgvo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                — Extrait de « A bicyclette » de Bourvil
+            <p className="text-xl md:text-2xl text-gray-100 font-light leading-relaxed mb-4 max-w-2xl">
+              Sorties conviviales, tous niveaux, sans compétition. Venez essayer, on vous accueille.
+            </p>
+            <p className="text-sm text-gray-300 italic mb-8">
+              « Des tours de quoi ? Des tours d'vélo pardi ! »{' '}
+              <a href="https://www.youtube.com/watch?v=WizGTZtjgvo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors underline-offset-2 hover:underline">
+                — Bourvil, « A bicyclette »
               </a>
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/adhesion"
+              href="/rejoindre"
               className="px-8 py-4 bg-[#00b5e2] hover:bg-white text-[#00205b] font-bold rounded-sm transition-all flex items-center justify-center gap-2 text-lg shadow-lg"
             >
-              Devenir Membre <ArrowRight className="w-5 h-5" />
+              Venir essayer <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
-              href="/#activites"
+              href="/#sorties"
               className="px-8 py-4 border-2 border-white/60 hover:border-white hover:bg-white/10 text-white font-bold rounded-sm transition-all flex items-center justify-center text-lg"
             >
-              Nos activités
+              Voir les sorties
             </Link>
 
           </div>
