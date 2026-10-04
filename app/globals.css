@@ -5,6 +5,7 @@
   --color-airbus-dark: #00205b;
   --color-airbus-light: #00b5e2;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-display), var(--font-inter), system-ui, sans-serif;
 }
 
 /* Custom animations */
@@ -21,6 +22,17 @@
 
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Titres : police condensée plus sportive */
+h1,
+h2 {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size-adjust: 0.55;
 }
 
 /* Smooth scrolling */

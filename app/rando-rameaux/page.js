@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { SITE_URL } from '@/lib/site'
+import ShareButton from '@/components/ShareButton'
 import { Calendar, MapPin, Trophy, Users, Heart, ArrowLeft, Bike } from 'lucide-react'
 
 export const metadata = {
@@ -56,6 +57,7 @@ export default function RandoRameauxPage() {
             par le TOAC Cyclo. Un événement qui rassemble cyclistes de tous horizons pour une journée
             de convivialité au cœur des côteaux du Gers.
           </p>
+          <ShareButton title="Randonnée des Rameaux - TOAC Cyclo" className="mt-6" />
         </div>
       </div>
 

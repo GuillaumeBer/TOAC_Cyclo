@@ -1,5 +1,5 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Inter, Barlow_Condensed } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import NavigationBar from '@/components/NavigationBar'
 import Footer from '@/components/Footer'
@@ -10,6 +10,13 @@ const inter = Inter({
   weight: ['300', '400', '500', '600', '700', '800'],
   display: 'swap',
   variable: '--font-inter',
+})
+
+const barlow = Barlow_Condensed({
+  subsets: ['latin'],
+  weight: ['600', '700'],
+  display: 'swap',
+  variable: '--font-display',
 })
 
 export const metadata = {
@@ -52,7 +59,7 @@ const clubJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={inter.variable} suppressHydrationWarning>
+    <html lang="fr" className={`${inter.variable} ${barlow.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased text-gray-900 bg-white">
         <script
           type="application/ld+json"

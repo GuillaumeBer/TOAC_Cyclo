@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, Calendar, MapPin, Bike, Home, Mail } from 'lucide-react'
+import ShareButton from '@/components/ShareButton'
 
 export const metadata = {
   title: 'Montagnarde 2027 : à vos agendas',
@@ -53,6 +54,7 @@ export default function Montagnarde2027Page() {
               <span>Destination à définir</span>
             </div>
           </div>
+          <ShareButton title="Montagnarde 2027 - TOAC Cyclo" className="mt-6" />
         </div>
       </div>
 

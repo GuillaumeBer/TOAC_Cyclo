@@ -4,6 +4,7 @@ import FeaturedEventSection from '@/components/FeaturedEventSection'
 import ClubSection from '@/components/ClubSection'
 import ActivitiesSection from '@/components/ActivitiesSection'
 import NewsSection from '@/components/NewsSection'
+import JoinBanner from '@/components/JoinBanner'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <NewsSection />
       <ActivitiesSection />
       <ClubSection />
+      <JoinBanner />
     </>
   )
 }

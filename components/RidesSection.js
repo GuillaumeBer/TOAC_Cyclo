@@ -13,7 +13,7 @@ export default function RidesSection() {
           <div className="h-1 w-16 bg-[#00b5e2] mb-4"></div>
           <p className="text-gray-600 max-w-2xl text-lg">
             Pas besoin d'être un champion : on roule à l'allure du groupe, tous niveaux, dans la bonne humeur.
-            Venez essayer, on vous accueille.
+            Le club est ouvert à tous, salariés Airbus ou non. Venez essayer, on vous accueille.
           </p>
         </div>
 
