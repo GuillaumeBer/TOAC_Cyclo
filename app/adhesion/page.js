@@ -4,6 +4,9 @@ import Image from 'next/image'
 import { ArrowLeft, FileText, CreditCard, Shield, AlertCircle, CheckCircle, Mail } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
+import adhesion from '@/data/adhesion.json'
+
+const { season, nextSeason, campaignOpen } = adhesion
 
 function AdhesionContent() {
   const searchParams = useSearchParams()
@@ -35,7 +38,7 @@ function AdhesionContent() {
             Devenir Membre
           </h1>
           <p className="text-xl text-gray-300">
-            Rejoignez le TOAC Cyclo pour la saison 2026
+            {campaignOpen ? `Rejoignez le TOAC Cyclo pour la saison ${season}` : `Rejoignez le TOAC Cyclo pour la saison ${nextSeason}`}
           </p>
         </div>
       </div>
@@ -46,14 +49,20 @@ function AdhesionContent() {
         <div className="bg-white rounded-lg shadow-sm p-8 border-l-4 border-[#00b5e2]">
           <div className="grid md:grid-cols-3 gap-8 items-center">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-[#00205b] mb-4">Campagne d'adhésion 2026</h2>
+              <h2 className="text-2xl font-bold text-[#00205b] mb-4">
+                {campaignOpen ? `Campagne d'adhésion ${season}` : `Adhésion ${nextSeason} : bientôt ouverte`}
+              </h2>
               <p className="text-gray-600 leading-relaxed mb-6">
-                La campagne d'adhésion pour la nouvelle saison est ouverte ! Que vous souhaitiez renouveler votre licence ou nous rejoindre pour la première fois, voici la marche à suivre.
+                {campaignOpen
+                  ? "La campagne d'adhésion pour la nouvelle saison est ouverte ! Que vous souhaitiez renouveler votre licence ou nous rejoindre pour la première fois, voici la marche à suivre."
+                  : `La campagne d'adhésion ${nextSeason} n'est pas encore ouverte. Les tarifs et documents de la nouvelle saison seront publiés ici dès son lancement. Si vous souhaitez nous rejoindre ou découvrir le club, contactez dès maintenant le bureau.`}
               </p>
               <div className="flex items-start gap-3 bg-blue-50 p-4 rounded-md text-blue-900 text-sm">
                 <AlertCircle className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" />
                 <p>
-                  <strong>Important :</strong> Veuillez lire attentivement les instructions ci-dessous avant de commencer votre démarche.
+                  {campaignOpen
+                    ? <><strong>Important :</strong> Veuillez lire attentivement les instructions ci-dessous avant de commencer votre démarche.</>
+                    : <><strong>À noter :</strong> les tarifs {season} ci-dessous sont donnés à titre indicatif et peuvent évoluer pour {nextSeason}.</>}
                 </p>
               </div>
             </div>
@@ -88,7 +97,7 @@ function AdhesionContent() {
           </div>
 
           <h3 className="text-2xl font-bold text-[#00205b] flex items-center gap-2">
-            Tarifs 2026
+            {campaignOpen ? `Tarifs ${season}` : `Rappel des tarifs ${season} (indicatifs)`}
           </h3>
 
           <div className="bg-white rounded-lg shadow-sm p-8 border border-gray-100 space-y-8">
@@ -162,7 +171,7 @@ function AdhesionContent() {
                   <ul className="space-y-2">
                     <li>
                       <a href="https://drive.google.com/file/d/1Ux-Hh2NXmt0P5FC6BOO6vCUdHppTadSz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-[#00b5e2] hover:underline">
-                        <FileText className="w-4 h-4" /> Tarifs Licences 2026
+                        <FileText className="w-4 h-4" /> Tarifs Licences {season}
                       </a>
                     </li>
                     <li>
@@ -188,7 +197,7 @@ function AdhesionContent() {
                   <ul className="space-y-2">
                     <li>
                       <a href="https://drive.google.com/file/d/1uN_LoOmrDZa3_KfuXBaIK226zK3RuXqN/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-[#00b5e2] hover:underline">
-                        <FileText className="w-4 h-4" /> Demande de Licence 2026
+                        <FileText className="w-4 h-4" /> Demande de Licence {season}
                       </a>
                     </li>
                     <li>
