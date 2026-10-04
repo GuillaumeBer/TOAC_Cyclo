@@ -42,7 +42,7 @@ export default function CalendrierPage() {
                 className="group block bg-white rounded-lg shadow-sm p-6 border-l-4 border-[#00b5e2] hover:shadow-md transition-shadow"
               >
                 <span className="inline-block px-2 py-0.5 bg-[#00205b] text-white text-xs font-bold uppercase tracking-wider rounded mb-3">{e.category}</span>
-                <h3 className="text-xl font-bold text-[#00205b] group-hover:text-[#00b5e2] transition-colors">{e.title}</h3>
+                <h3 className="text-xl font-bold text-[#00205b] group-hover:text-[#0077b6] transition-colors">{e.title}</h3>
                 <p className="flex items-center gap-2 text-gray-700 font-medium mt-2">
                   <Calendar className="w-4 h-4 text-[#00b5e2]" /> {e.dateLabel}
                 </p>
@@ -50,7 +50,7 @@ export default function CalendrierPage() {
                   <MapPin className="w-4 h-4 text-[#00b5e2]" /> {e.location}
                 </p>
                 <p className="text-sm text-gray-600 mt-2">{e.detail}</p>
-                <span className="inline-flex items-center gap-1 text-sm font-bold text-[#00205b] mt-4 group-hover:text-[#00b5e2] transition-colors">
+                <span className="inline-flex items-center gap-1 text-sm font-bold text-[#00205b] mt-4 group-hover:text-[#0077b6] transition-colors">
                   Plus d'infos <ArrowRight className="w-4 h-4" />
                 </span>
               </Link>
@@ -66,7 +66,7 @@ export default function CalendrierPage() {
             {calendrier.rendezVousAnnuels.map((r) => {
               const content = (
                 <>
-                  <p className="text-xs font-bold uppercase tracking-wider text-[#00b5e2] mb-1">{r.when}</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#0077b6] mb-1">{r.when}</p>
                   <h3 className="font-bold text-[#00205b]">{r.title}</h3>
                   <p className="text-sm text-gray-600 mt-1">{r.detail}</p>
                 </>
@@ -86,7 +86,7 @@ export default function CalendrierPage() {
           <p className="text-gray-300 mb-6">Venez essayer une sortie avant de vous décider.</p>
           <Link
             href="/rejoindre"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#00b5e2] text-[#00205b] font-bold rounded-sm hover:bg-white transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors"
           >
             Venir essayer <ArrowRight className="w-5 h-5" />
           </Link>

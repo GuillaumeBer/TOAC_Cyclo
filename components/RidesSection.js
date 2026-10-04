@@ -45,8 +45,8 @@ export default function RidesSection() {
         </div>
 
         <div className="mt-10 flex flex-col lg:flex-row items-stretch gap-6">
-          <div className="flex-1 flex items-start gap-4 bg-[#00b5e2]/10 border border-[#00b5e2]/40 rounded-lg p-6">
-            <div className="w-12 h-12 rounded-full bg-[#00b5e2] flex items-center justify-center flex-shrink-0">
+          <div className="flex-1 flex items-start gap-4 bg-[#fcd34d]/25 border border-[#fcd34d] rounded-lg p-6">
+            <div className="w-12 h-12 rounded-full bg-[#fcd34d] flex items-center justify-center flex-shrink-0">
               <Gift className="w-6 h-6 text-[#00205b]" />
             </div>
             <div>
@@ -58,7 +58,7 @@ export default function RidesSection() {
           </div>
           <Link
             href="/rejoindre"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#00205b] text-white font-bold rounded-sm hover:bg-[#00b5e2] hover:text-[#00205b] transition-colors text-lg"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors text-lg shadow-sm"
           >
             Venir essayer une sortie <ArrowRight className="w-5 h-5" />
           </Link>

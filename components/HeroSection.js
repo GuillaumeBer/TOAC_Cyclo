@@ -38,7 +38,7 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/rejoindre"
-              className="px-8 py-4 bg-[#00b5e2] hover:bg-white text-[#00205b] font-bold rounded-sm transition-all flex items-center justify-center gap-2 text-lg shadow-lg"
+              className="px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-all flex items-center justify-center gap-2 text-lg shadow-lg"
             >
               Venir essayer <ArrowRight className="w-5 h-5" />
             </Link>

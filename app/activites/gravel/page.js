@@ -93,7 +93,7 @@ export default function GravelPage() {
                 <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">Dates à venir</span>
               </div>
               <p className="text-gray-600">Week-end de Pâques : 100 km (ou 100 mi), ou 250 km sur le week-end.</p>
-              <a href="https://727bikepacking.fr/pou100/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-[#00205b] font-bold text-sm transition-colors mt-4">
+              <a href="https://727bikepacking.fr/pou100/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#0077b6] hover:text-[#00205b] font-bold text-sm transition-colors mt-4">
                 En savoir plus →
               </a>
             </div>
@@ -103,7 +103,7 @@ export default function GravelPage() {
                 <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">Dates à venir</span>
               </div>
               <p className="text-gray-600">600 km en autonomie à travers la région. Pas de compétition, juste l'aventure.</p>
-              <a href="https://ogravel.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-[#00205b] font-bold text-sm transition-colors mt-4">
+              <a href="https://ogravel.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#0077b6] hover:text-[#00205b] font-bold text-sm transition-colors mt-4">
                 En savoir plus →
               </a>
             </div>
@@ -120,7 +120,7 @@ export default function GravelPage() {
                 <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">Dates à venir</span>
               </div>
               <p className="text-gray-600">Une grande boucle de 727 km, réductible. Bivouac, autonomie, sans délai.</p>
-              <a href="https://727bikepacking.fr/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-[#00205b] font-bold text-sm transition-colors mt-4">
+              <a href="https://727bikepacking.fr/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#0077b6] hover:text-[#00205b] font-bold text-sm transition-colors mt-4">
                 En savoir plus →
               </a>
             </div>

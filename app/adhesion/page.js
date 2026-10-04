@@ -126,7 +126,7 @@ export default function AdhesionPage() {
                       <span>Extérieur</span>
                       <span className="font-bold">40€</span>
                     </li>
-                    <li className="flex justify-between text-[#00b5e2]">
+                    <li className="flex justify-between text-[#0077b6]">
                       <span>Nouvelle adhérente féminine</span>
                       <span className="font-bold">GRATUIT</span>
                     </li>
@@ -156,17 +156,17 @@ export default function AdhesionPage() {
                   <p className="text-sm text-gray-600 mb-4 h-10">Pour les amateurs de randonnée pure et de voyages à vélo.</p>
                   <ul className="space-y-2">
                     <li>
-                      <a href="https://drive.google.com/file/d/1Ux-Hh2NXmt0P5FC6BOO6vCUdHppTadSz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-[#00b5e2] hover:underline">
+                      <a href="https://drive.google.com/file/d/1Ux-Hh2NXmt0P5FC6BOO6vCUdHppTadSz/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-[#0077b6] hover:underline">
                         <FileText className="w-4 h-4" /> Tarifs Licences {season}
                       </a>
                     </li>
                     <li>
-                      <a href="https://drive.google.com/file/d/1R2gDzUmdbSEw7e3Sy2Kal_aEQAW-WvvL/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#00b5e2]">
+                      <a href="https://drive.google.com/file/d/1R2gDzUmdbSEw7e3Sy2Kal_aEQAW-WvvL/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0077b6]">
                         <Shield className="w-4 h-4" /> Guide Assurances
                       </a>
                     </li>
                     <li>
-                      <a href="https://drive.google.com/file/d/1zKx-XCw90qtjslxFdxp2mSF4rBWX_KVS/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#00b5e2]">
+                      <a href="https://drive.google.com/file/d/1zKx-XCw90qtjslxFdxp2mSF4rBWX_KVS/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0077b6]">
                         <FileText className="w-4 h-4" /> Notice d'information
                       </a>
                     </li>
@@ -182,17 +182,17 @@ export default function AdhesionPage() {
                   <p className="text-sm text-gray-600 mb-4 h-10">Une licence multisports accessible et solidaire.</p>
                   <ul className="space-y-2">
                     <li>
-                      <a href="https://drive.google.com/file/d/1uN_LoOmrDZa3_KfuXBaIK226zK3RuXqN/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-[#00b5e2] hover:underline">
+                      <a href="https://drive.google.com/file/d/1uN_LoOmrDZa3_KfuXBaIK226zK3RuXqN/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-[#0077b6] hover:underline">
                         <FileText className="w-4 h-4" /> Demande de Licence {season}
                       </a>
                     </li>
                     <li>
-                      <a href="https://drive.google.com/file/d/1yv0lbDVUL8Gv1TKzMHc4sOtpJ36_LCqh/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#00b5e2]">
+                      <a href="https://drive.google.com/file/d/1yv0lbDVUL8Gv1TKzMHc4sOtpJ36_LCqh/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0077b6]">
                         <Shield className="w-4 h-4" /> Guide Assurances
                       </a>
                     </li>
                     <li>
-                      <a href="https://drive.google.com/file/d/1PgY_HNQrEMe8y3hrQGue2zkJs4wJJO-Q/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#00b5e2]">
+                      <a href="https://drive.google.com/file/d/1PgY_HNQrEMe8y3hrQGue2zkJs4wJJO-Q/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0077b6]">
                         <FileText className="w-4 h-4" /> Notice Assurance IA
                       </a>
                     </li>

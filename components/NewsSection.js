@@ -38,7 +38,7 @@ function NewsCard({ item }) {
           )}
         </div>
 
-        <h3 className="text-xl font-bold text-[#00205b] mb-3 leading-snug group-hover:text-[#00b5e2] transition-colors">
+        <h3 className="text-xl font-bold text-[#00205b] mb-3 leading-snug group-hover:text-[#0077b6] transition-colors">
           {item.title}
         </h3>
 
@@ -48,7 +48,7 @@ function NewsCard({ item }) {
 
         {item.link && (
           <div className="mt-auto pt-6 border-t border-gray-100">
-            <Link href={item.link} className="inline-flex items-center text-[#00205b] font-bold text-sm uppercase tracking-wide hover:text-[#00b5e2] transition-colors">
+            <Link href={item.link} className="inline-flex items-center text-[#00205b] font-bold text-sm uppercase tracking-wide hover:text-[#0077b6] transition-colors">
               Lire la suite <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>

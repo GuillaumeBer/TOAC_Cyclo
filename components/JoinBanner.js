@@ -22,7 +22,7 @@ export default function JoinBanner() {
         </div>
         <Link
           href="/rejoindre"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#00b5e2] hover:bg-white text-[#00205b] font-bold rounded-sm transition-colors text-lg shadow-lg flex-shrink-0"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors text-lg shadow-lg flex-shrink-0"
         >
           Venir essayer <ArrowRight className="w-5 h-5" />
         </Link>

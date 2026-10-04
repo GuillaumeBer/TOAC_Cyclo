@@ -102,7 +102,7 @@ function ActivityCard({ title, location, link }) {
     <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
       <div className="flex flex-col md:flex-row justify-between md:items-start gap-4">
         <div>
-          <a href={link} target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-[#00205b] hover:text-[#00b5e2] transition-colors">
+          <a href={link} target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-[#00205b] hover:text-[#0077b6] transition-colors">
             {title} ↗
           </a>
           <div className="flex items-center gap-2 text-sm text-gray-500 mt-1">

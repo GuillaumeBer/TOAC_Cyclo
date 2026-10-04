@@ -112,7 +112,7 @@ export default function NavigationBar() {
             <NavItem name="Contact" href="/#contact" sectionId="contact" />
             <Link
               href="/rejoindre"
-              className="ml-2 px-5 py-2.5 bg-[#00b5e2] hover:bg-white text-[#00205b] text-sm font-bold uppercase tracking-wider rounded-sm transition-colors"
+              className="ml-2 px-5 py-2.5 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] text-sm font-bold uppercase tracking-wider rounded-sm transition-colors"
             >
               Rejoindre
             </Link>

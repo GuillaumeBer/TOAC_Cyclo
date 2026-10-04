@@ -42,7 +42,7 @@ export default function LongueDistancePage() {
         <div className="bg-white rounded-lg shadow-sm p-8 border-l-4 border-[#00b5e2]">
           <h2 className="text-2xl font-bold text-[#00205b] mb-4">Paris-Brest-Paris 2027</h2>
           <p className="text-gray-600 leading-relaxed mb-4">
-            La 21ème édition du mythique <a href="https://www.paris-brest-paris.org/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline font-bold">Paris-Brest-Paris</a> aura lieu du 22 au 26 août 2027.
+            La 21ème édition du mythique <a href="https://www.paris-brest-paris.org/" target="_blank" rel="noopener noreferrer" className="text-[#0077b6] hover:underline font-bold">Paris-Brest-Paris</a> aura lieu du 22 au 26 août 2027.
             Plusieurs membres du TOAC Cyclo envisagent d'y participer !
           </p>
           <ul className="text-gray-600 leading-relaxed text-sm space-y-2">
@@ -76,7 +76,7 @@ export default function LongueDistancePage() {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-bold text-[#00205b] text-lg"><a href="https://www.ccc31.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b5e2] transition-colors">Castanet ↗</a></h3>
+                <h3 className="font-bold text-[#00205b] text-lg"><a href="https://www.ccc31.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-[#0077b6] transition-colors">Castanet ↗</a></h3>
                 
               </div>
               <p className="text-sm text-gray-600">200, 300, 400 et 600 km</p>
@@ -84,7 +84,7 @@ export default function LongueDistancePage() {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-bold text-[#00205b] text-lg"><a href="https://crmuret.org/brevet-200-km/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b5e2] transition-colors">Muret ↗</a></h3>
+                <h3 className="font-bold text-[#00205b] text-lg"><a href="https://crmuret.org/brevet-200-km/" target="_blank" rel="noopener noreferrer" className="hover:text-[#0077b6] transition-colors">Muret ↗</a></h3>
                 
               </div>
               <p className="text-sm text-gray-600">200 km</p>
@@ -92,7 +92,7 @@ export default function LongueDistancePage() {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-bold text-[#00205b] text-lg"><a href="http://lesdejantes81.free.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b5e2] transition-colors">L'Isle sur Tarn ↗</a></h3>
+                <h3 className="font-bold text-[#00205b] text-lg"><a href="http://lesdejantes81.free.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-[#0077b6] transition-colors">L'Isle sur Tarn ↗</a></h3>
                 
               </div>
               <p className="text-sm text-gray-600">200 km et 1000 km</p>
@@ -128,28 +128,28 @@ export default function LongueDistancePage() {
                 <tbody className="divide-y divide-gray-100">
                   <tr>
                     <td className="p-4 font-medium min-w-[200px]">
-                      <a href="https://www.bordeauxsaintmalo.com/en" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Bordeaux - Saint-Malo ↗</a>
+                      <a href="https://www.bordeauxsaintmalo.com/en" target="_blank" rel="noopener noreferrer" className="text-[#0077b6] hover:underline">Bordeaux - Saint-Malo ↗</a>
                     </td>
                     <td className="p-4">840 km (ou 430 km en « Little BSM »)</td>
                     <td className="p-4 whitespace-nowrap">12-16 mai</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-medium min-w-[200px]">
-                      <a href="https://ffvelo.fr/voyages-velo/2027-tour-cyclotouriste/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Tour cyclotouriste FFVélo (Épinal) ↗</a>
+                      <a href="https://ffvelo.fr/voyages-velo/2027-tour-cyclotouriste/" target="_blank" rel="noopener noreferrer" className="text-[#0077b6] hover:underline">Tour cyclotouriste FFVélo (Épinal) ↗</a>
                     </td>
                     <td className="p-4">~2 800 km en 21 jours</td>
                     <td className="p-4 whitespace-nowrap">5-27 juin</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-medium min-w-[200px]">
-                      <a href="https://www.raceacrossseries.com/race-across-france" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Race Across France ↗</a>
+                      <a href="https://www.raceacrossseries.com/race-across-france" target="_blank" rel="noopener noreferrer" className="text-[#0077b6] hover:underline">Race Across France ↗</a>
                     </td>
                     <td className="p-4">200 à 2 500 km</td>
                     <td className="p-4 whitespace-nowrap">16-27 juin</td>
                   </tr>
                   <tr>
                     <td className="p-4 font-medium min-w-[200px]">
-                      <a href="https://1200desraa.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Ronde Aliénor d'Aquitaine (33) ↗</a>
+                      <a href="https://1200desraa.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-[#0077b6] hover:underline">Ronde Aliénor d'Aquitaine (33) ↗</a>
                     </td>
                     <td className="p-4">1 200 km</td>
                     <td className="p-4 whitespace-nowrap">Dates à venir (début 2027)</td>

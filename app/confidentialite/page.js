@@ -12,7 +12,7 @@ export default function Confidentialite() {
       <div className="pt-20 pb-16 min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <Link href="/" className="inline-flex items-center text-[#00b5e2] hover:text-[#00205b] mb-8 transition-colors">
+          <Link href="/" className="inline-flex items-center text-[#0077b6] hover:text-[#00205b] mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" /> Retour à l'accueil
           </Link>
           
@@ -95,7 +95,7 @@ export default function Confidentialite() {
                   Pour exercer vos droits ou pour toute question concernant cette politique, contactez-nous :
                   <br /><br />
                   <strong>TOAC Cyclotourisme</strong><br />
-                  Email : <a href="mailto:toac.cyclo@gmail.com" className="text-[#00b5e2] hover:underline">toac.cyclo@gmail.com</a>
+                  Email : <a href="mailto:toac.cyclo@gmail.com" className="text-[#0077b6] hover:underline">toac.cyclo@gmail.com</a>
                 </p>
               </section>
 

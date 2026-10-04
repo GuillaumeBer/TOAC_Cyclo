@@ -68,7 +68,7 @@ export default function RejoindrePage() {
           </p>
           <a
             href="mailto:toac.cyclo@gmail.com?subject=Je souhaite essayer une sortie"
-            className="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-[#00b5e2] hover:bg-white text-[#00205b] font-bold rounded-sm transition-colors text-lg"
+            className="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors text-lg"
           >
             <Mail className="w-5 h-5" /> Demander une sortie d'essai
           </a>
@@ -112,8 +112,8 @@ export default function RejoindrePage() {
         </section>
 
         {/* Offre */}
-        <section className="bg-[#00b5e2]/10 border border-[#00b5e2]/40 rounded-lg p-6 flex items-start gap-4">
-          <div className="w-12 h-12 rounded-full bg-[#00b5e2] flex items-center justify-center flex-shrink-0">
+        <section className="bg-[#fcd34d]/25 border border-[#fcd34d] rounded-lg p-6 flex items-start gap-4">
+          <div className="w-12 h-12 rounded-full bg-[#fcd34d] flex items-center justify-center flex-shrink-0">
             <Gift className="w-6 h-6 text-[#00205b]" />
           </div>
           <div>
@@ -147,7 +147,7 @@ export default function RejoindrePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:toac.cyclo@gmail.com?subject=Je souhaite essayer une sortie"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#00b5e2] text-[#00205b] font-bold rounded-sm hover:bg-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors"
             >
               <Mail className="w-5 h-5" /> Nous écrire
             </a>
