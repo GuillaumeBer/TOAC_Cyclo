@@ -19,7 +19,7 @@ const ACTIVITIES = activitiesData.map(activity => ({
 
 export default function ActivitiesSection() {
   return (
-    <div id="activites" className="py-20 bg-white">
+    <div id="activites" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="mb-12">
@@ -50,17 +50,17 @@ export default function ActivitiesSection() {
               </div>
 
               <div className="absolute inset-0 p-8 flex flex-col justify-end text-white z-10">
-                <div className="mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                <div className="mb-4 md:transform md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300">
                   <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-4">
                     <activity.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold mb-2">{activity.title}</h3>
-                  <p className="text-gray-100 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                  <p className="text-gray-100 mb-6 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 delay-100">
                     {activity.desc}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-2 font-bold text-sm uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200 translate-y-4 group-hover:translate-y-0">
+                <div className="flex items-center gap-2 font-bold text-sm uppercase tracking-wider md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 delay-200 md:translate-y-4 md:group-hover:translate-y-0">
                   Découvrir <ArrowRight className="w-4 h-4" />
                 </div>
               </div>

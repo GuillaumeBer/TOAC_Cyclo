@@ -14,7 +14,8 @@
         "date": "Week-end de l'Ascension 2027",
         "location": "Destination à définir",
         "summary": "Notre séjour annuel aura lieu pendant le week-end de l'Ascension. Lieu et programme seront annoncés prochainement.",
-        "image": "/images/montagnarde.jpg"
+        "image": "/images/montagnarde.jpg",
+        "link": "/actualites/montagnarde-2027"
     },
     {
         "category": "Vie du Club",

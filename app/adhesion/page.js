@@ -1,25 +1,11 @@
-'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, FileText, CreditCard, Shield, AlertCircle, CheckCircle, Mail } from 'lucide-react'
-import { useSearchParams } from 'next/navigation'
-import { Suspense } from 'react'
 import adhesion from '@/data/adhesion.json'
 
 const { season, nextSeason, campaignOpen } = adhesion
 
-function AdhesionContent() {
-  const searchParams = useSearchParams()
-  const from = searchParams.get('from')
-
-  let backLink = '/'
-  let backText = "Retour à l'accueil"
-
-  if (from === 'news') {
-    backLink = '/#actualites'
-    backText = 'Retour aux actualités'
-  }
-
+export default function AdhesionPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -27,11 +13,11 @@ function AdhesionContent() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
         <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-start">
           <Link
-            href={backLink}
+            href="/"
             className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
-            {backText}
+            Retour à l'accueil
           </Link>
 
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
@@ -219,13 +205,5 @@ function AdhesionContent() {
 
       </div>
     </div>
-  )
-}
-
-export default function AdhesionPage() {
-  return (
-    <Suspense>
-      <AdhesionContent />
-    </Suspense>
   )
 }

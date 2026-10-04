@@ -1,6 +1,10 @@
-'use client'
 import Link from 'next/link'
 import { ArrowLeft, Calendar, Users, Target, Award, FileText } from 'lucide-react'
+
+export const metadata = {
+  title: 'Assemblée Générale 2025',
+  description: "Compte rendu de l'Assemblée Générale 2025 du TOAC Cyclo.",
+}
 
 export default function AG2025Page() {
   return (

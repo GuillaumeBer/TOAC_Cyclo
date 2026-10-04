@@ -1,7 +1,10 @@
-'use client'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Calendar, MapPin, Trophy, Users, Heart, ArrowLeft, Bike } from 'lucide-react'
+
+export const metadata = {
+  title: 'Randonnée des Rameaux',
+  description: 'La randonnée cyclo annuelle du TOAC Cyclo : parcours, infos pratiques et Trophée André Lafarge.',
+}
 
 export default function RandoRameauxPage() {
   return (
@@ -30,22 +33,6 @@ export default function RandoRameauxPage() {
             par le TOAC Cyclo. Un événement qui rassemble cyclistes de tous horizons pour une journée
             de convivialité au cœur des côteaux du Gers.
           </p>
-        </div>
-      </div>
-
-      {/* Image Section */}
-      <div className="px-4 sm:px-6 lg:px-8 pb-12">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-sm text-gray-400 mb-2">Affiche de l'édition 2026 — l'affiche 2027 sera publiée prochainement.</p>
-          <div className="relative rounded-lg overflow-hidden border-4 border-white/10 shadow-2xl bg-white">
-            <Image
-              src="/images/rameaux-2026.jpg"
-              alt="Affiche de la Randonnée des Rameaux 2026"
-              width={1200}
-              height={600}
-              className="w-full h-auto"
-            />
-          </div>
         </div>
       </div>
 

@@ -4,7 +4,7 @@
 @theme {
   --color-airbus-dark: #00205b;
   --color-airbus-light: #00b5e2;
-  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
 /* Custom animations */
@@ -27,6 +27,31 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+}
+
+/* Accessibilité : focus clavier visible et sélection aux couleurs du club */
+:focus-visible {
+  outline: 2px solid #00b5e2;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #00b5e2;
+  color: #00205b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Custom scrollbar */

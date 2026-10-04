@@ -1,6 +1,10 @@
-'use client'
 import Link from 'next/link'
 import { ArrowLeft, Mountain, Sunset, Calendar, MapPin, Clock } from 'lucide-react'
+
+export const metadata = {
+  title: 'Sorties Gravel & Aventure',
+  description: 'Sorties afterwork gravel, bikepacking et événements gravel du TOAC Cyclo.',
+}
 
 export default function GravelPage() {
   return (
@@ -65,78 +69,59 @@ export default function GravelPage() {
           </div>
         </div>
 
-        {/* Programme 2026 - Événements tiers */}
+        {/* Événements tiers */}
         <div className="space-y-6">
           <div>
             <h2 className="text-2xl font-bold text-[#00205b] flex items-center gap-2">
-              <Calendar className="w-6 h-6 text-[#00b5e2]" /> Événements Gravel — édition 2026
+              <Calendar className="w-6 h-6 text-[#00b5e2]" /> Événements Gravel — 2027
             </h2>
-            <p className="text-gray-500 text-sm mt-2">
+            <p className="text-gray-500 text-sm mt-2 mb-4">
               Ces événements sont organisés par des clubs tiers. Des membres du TOAC Cyclo y participent régulièrement — pourquoi pas vous ?
             </p>
-            <div className="flex items-start gap-3 bg-blue-50 p-4 rounded-md text-blue-900 text-sm">
+            <div className="flex items-start gap-3 bg-blue-50 p-4 rounded-md text-blue-900 text-sm ">
               <Calendar className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" />
               <p>
-                <strong>Calendrier 2027 à venir :</strong> les dates de la prochaine saison seront ajoutées dès que les organisateurs les auront publiées. Les dates ci-dessous correspondent à l'édition 2026.
+                <strong>Calendrier 2027 à venir :</strong> les dates de la prochaine saison seront ajoutées dès que les organisateurs les auront publiées.
               </p>
             </div>
           </div>
 
           <div className="space-y-4">
-            {/* POU100 */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                 <h3 className="text-xl font-bold text-[#00205b]">POU100</h3>
-                <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">04-05 Avril</span>
+                <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">Dates à venir</span>
               </div>
-              <p className="text-gray-600 mb-4">
-                100 km (ou 100 mi) le samedi ou dimanche, ou 250 km sur le week-end de Pâques.
-                <br />
-                <span className="text-sm italic text-gray-500">Esprit : Groupe (fraternité, bienveillance) mais autonomie (bivouac).</span>
-              </p>
-              <a href="https://727bikepacking.fr/pou100/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-[#00205b] font-bold text-sm transition-colors">
-                En savoir plus sur le POU100 →
+              <p className="text-gray-600">Week-end de Pâques : 100 km (ou 100 mi), ou 250 km sur le week-end.</p>
+              <a href="https://727bikepacking.fr/pou100/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-[#00205b] font-bold text-sm transition-colors mt-4">
+                En savoir plus →
               </a>
             </div>
-
-            {/* Occitanie 600 */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                 <h3 className="text-xl font-bold text-[#00205b]">Occitanie 600</h3>
-                <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">18-23 Avril</span>
+                <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">Dates à venir</span>
               </div>
-              <p className="text-gray-600 mb-4">
-                600 km en autonomie à travers la région. Pas de compétition, juste l'aventure.
-              </p>
-              <a href="https://ogravel.com/occitanie-600-a-biso-de-nas-2026-les-inscriptions-sont-lancees/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-[#00205b] font-bold text-sm transition-colors">
-                En savoir plus sur l'Occitanie 600 →
+              <p className="text-gray-600">600 km en autonomie à travers la région. Pas de compétition, juste l'aventure.</p>
+              <a href="https://ogravel.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-[#00205b] font-bold text-sm transition-colors mt-4">
+                En savoir plus →
               </a>
             </div>
-
-            {/* Toulouse Grand Tour */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                 <h3 className="text-xl font-bold text-[#00205b]">Toulouse Grand Tour</h3>
-                <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">30 Mai</span>
+                <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">Dates à venir</span>
               </div>
-              <p className="text-gray-600">
-                L'exploration locale avec plusieurs parcours au choix (200, 110, 75, 50, 20 km).
-              </p>
+              <p className="text-gray-600">L'exploration locale avec plusieurs parcours au choix.</p>
             </div>
-
-            {/* g727 */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 transition-all hover:shadow-md">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                 <h3 className="text-xl font-bold text-[#00205b]">g727 (Grand Départ)</h3>
-                <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">22-27 Sept</span>
+                <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-full">Dates à venir</span>
               </div>
-              <p className="text-gray-600 mb-4">
-                Une grande boucle de 727 km (réductible à 550, 450 ou 250 km).
-                <br />
-                <span className="text-sm italic text-gray-500">Bivouac, autonomie, sans délai.</span>
-              </p>
-              <a href="https://727bikepacking.fr/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-[#00205b] font-bold text-sm transition-colors">
-                En savoir plus sur le g727 →
+              <p className="text-gray-600">Une grande boucle de 727 km, réductible. Bivouac, autonomie, sans délai.</p>
+              <a href="https://727bikepacking.fr/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-[#00205b] font-bold text-sm transition-colors mt-4">
+                En savoir plus →
               </a>
             </div>
           </div>

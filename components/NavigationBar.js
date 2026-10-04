@@ -10,6 +10,21 @@ export default function NavigationBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
   const [activeSection, setActiveSection] = useState('')
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return
+    const onKey = (e) => e.key === 'Escape' && setIsMobileMenuOpen(false)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [isMobileMenuOpen])
 
   // Gestion du scrollspy pour la page d'accueil uniquement
   useEffect(() => {
@@ -54,6 +69,7 @@ export default function NavigationBar() {
     return (
       <Link
         href={href}
+        aria-current={active ? 'true' : undefined}
         className={`relative px-4 py-4 text-sm font-bold uppercase tracking-wider transition-colors duration-200 
           ${active ? 'text-[#00b5e2]' : 'text-white hover:text-[#00b5e2]'}`}
       >
@@ -66,7 +82,10 @@ export default function NavigationBar() {
   }
 
   return (
-    <nav className="fixed w-full z-50 top-0 bg-[#00205b] text-white shadow-md">
+    <nav
+      aria-label="Navigation principale"
+      className={`fixed w-full z-50 top-0 bg-[#00205b]/95 backdrop-blur text-white transition-shadow duration-300 ${scrolled ? 'shadow-lg' : 'shadow-none'}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo Area */}
@@ -97,6 +116,8 @@ export default function NavigationBar() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-white p-2"
+              aria-label={isMobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>

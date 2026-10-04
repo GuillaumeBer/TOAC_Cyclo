@@ -1,7 +1,11 @@
-'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, Calendar, Users, Trophy, Heart, Bike } from 'lucide-react'
+
+export const metadata = {
+  title: 'Notre Histoire',
+  description: "Depuis 1976, l'histoire de la section cyclotourisme du TOAC à Toulouse.",
+}
 
 export default function HistoirePage() {
   return (

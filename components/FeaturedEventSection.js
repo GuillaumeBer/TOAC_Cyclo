@@ -5,7 +5,7 @@ import event from '@/data/featured-event.json'
 
 export default function FeaturedEventSection() {
   return (
-    <div id="evenements" className="bg-[#00205b] text-white min-h-screen flex items-center relative overflow-hidden border-t border-white/10 pt-16 md:pt-24 pb-16 md:pb-8">
+    <div id="evenements" className="bg-[#00205b] text-white relative overflow-hidden py-16 md:py-24">
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-10 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -25,7 +25,7 @@ export default function FeaturedEventSection() {
                 </p>
              </div>
 
-             <div className="grid grid-cols-2 gap-6 pt-4 border-t border-white/10">
+             <div className="grid sm:grid-cols-2 gap-6 pt-4 border-t border-white/10">
                 <div className="flex items-start gap-4">
                    <div className="w-12 h-12 rounded-sm bg-[#00b5e2] flex items-center justify-center text-[#00205b]">
                       <Calendar className="w-6 h-6" />

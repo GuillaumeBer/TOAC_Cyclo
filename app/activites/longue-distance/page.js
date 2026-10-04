@@ -1,6 +1,10 @@
-'use client'
 import Link from 'next/link'
 import { ArrowLeft, Map, Download, Calendar, ExternalLink } from 'lucide-react'
+
+export const metadata = {
+  title: 'Brevets & Randonnées',
+  description: "Brevets randonneurs (BRM), préparation Paris-Brest-Paris et défis d'endurance au TOAC Cyclo.",
+}
 
 export default function LongueDistancePage() {
   return (
@@ -42,61 +46,48 @@ export default function LongueDistancePage() {
             Plusieurs membres du TOAC Cyclo envisagent d'y participer !
           </p>
           <p className="text-gray-600 leading-relaxed text-sm">
-            Les brevets validés en 2026 ne sont pas obligatoires, mais ils donnent la priorité à l'inscription :
-            plus le brevet validé en 2026 est long, plus tôt vous pourrez choisir votre horaire de départ.
+            Les conditions de qualification et d'inscription (brevets à valider, priorités de départ) sont détaillées sur le site officiel de l'événement.
           </p>
         </div>
 
         {/* BRM Locaux */}
         <div>
-          <h2 className="text-2xl font-bold text-[#00205b] flex items-center gap-2 mb-6">
-            <Map className="w-6 h-6 text-[#00b5e2]" /> BRM Près de chez nous — édition 2026
+          <h2 className="text-2xl font-bold text-[#00205b] flex items-center gap-2 mb-2">
+            <Map className="w-6 h-6 text-[#00b5e2]" /> BRM Près de chez nous — 2027
           </h2>
+          <p className="text-gray-500 text-sm mb-4">Les calendriers 2027 seront publiés par les clubs organisateurs : cliquez sur le nom pour accéder à leur site.</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* TOAC Cyclo */}
             <div className="bg-white p-6 rounded-lg shadow-sm border-2 border-[#00b5e2]">
               <div className="flex items-center gap-2 mb-2">
                 <h3 className="font-bold text-[#00205b] text-lg">TOAC Cyclo</h3>
                 <span className="px-2 py-0.5 bg-[#00205b] text-white text-xs font-bold rounded">Interne</span>
               </div>
-              <p className="text-xs text-gray-500 mb-3">Sorties réservées aux membres du club</p>
-              <div className="space-y-2 text-sm text-gray-600">
-                <div className="flex justify-between border-b pb-1"><span>100 km</span> <strong>12.09</strong></div>
-                <div className="flex justify-between"><span>150 km</span> <strong>12.09</strong></div>
-              </div>
+              <p className="text-sm text-gray-600">Sorties réservées aux membres du club</p>
+              <p className="text-xs text-gray-500 mt-2">Dates 2027 à venir</p>
             </div>
-            {/* Castanet */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <h3 className="font-bold text-[#00205b] mb-2 text-lg">
-                <a href="https://www.ccc31.fr/les-differents-brevets-organises-par-le-ccc/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b5e2] transition-colors">Castanet ↗</a>
-              </h3>
-              <div className="space-y-2 text-sm text-gray-600">
-                <div className="flex justify-between border-b pb-1"><span>200 km</span> <strong>21.03</strong></div>
-                <div className="flex justify-between border-b pb-1"><span>300 km</span> <strong>11.04</strong></div>
-                <div className="flex justify-between border-b pb-1"><span>400 km</span> <strong>08.05</strong></div>
-                <div className="flex justify-between"><span>600 km</span> <strong>06.06</strong></div>
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="font-bold text-[#00205b] text-lg"><a href="https://www.ccc31.fr/les-differents-brevets-organises-par-le-ccc/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b5e2] transition-colors">Castanet ↗</a></h3>
+                
               </div>
+              <p className="text-sm text-gray-600">200, 300, 400 et 600 km</p>
+              <p className="text-xs text-gray-500 mt-2">Dates 2027 à venir</p>
             </div>
-
-            {/* Muret */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <h3 className="font-bold text-[#00205b] mb-2 text-lg">
-                <a href="https://crmuret.org/brevet-200-km/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b5e2] transition-colors">Muret ↗</a>
-              </h3>
-              <div className="space-y-2 text-sm text-gray-600">
-                <div className="flex justify-between"><span>200 km</span> <strong>28.03</strong></div>
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="font-bold text-[#00205b] text-lg"><a href="https://crmuret.org/brevet-200-km/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b5e2] transition-colors">Muret ↗</a></h3>
+                
               </div>
+              <p className="text-sm text-gray-600">200 km</p>
+              <p className="text-xs text-gray-500 mt-2">Dates 2027 à venir</p>
             </div>
-
-            {/* L'Isle sur Tarn */}
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <h3 className="font-bold text-[#00205b] mb-2 text-lg">
-                <a href="http://lesdejantes81.free.fr/calendrier2026.php" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b5e2] transition-colors">L'Isle sur Tarn ↗</a>
-              </h3>
-              <div className="space-y-2 text-sm text-gray-600">
-                <div className="flex justify-between border-b pb-1"><span>200 km</span> <strong>25.04</strong></div>
-                <div className="flex justify-between"><span>1000 km</span> <strong>11.06</strong></div>
+              <div className="flex items-center gap-2 mb-2">
+                <h3 className="font-bold text-[#00205b] text-lg"><a href="http://lesdejantes81.free.fr/" target="_blank" rel="noopener noreferrer" className="hover:text-[#00b5e2] transition-colors">L'Isle sur Tarn ↗</a></h3>
+                
               </div>
+              <p className="text-sm text-gray-600">200 km et 1000 km</p>
+              <p className="text-xs text-gray-500 mt-2">Dates 2027 à venir</p>
             </div>
           </div>
         </div>
@@ -104,17 +95,17 @@ export default function LongueDistancePage() {
         {/* Événements Notables */}
         <div>
           <h2 className="text-2xl font-bold text-[#00205b] flex items-center gap-2 mb-2">
-            <Calendar className="w-6 h-6 text-[#00b5e2]" /> Autres Événements Notables — édition 2026
+            <Calendar className="w-6 h-6 text-[#00b5e2]" /> Autres Événements Notables — 2027
           </h2>
           <p className="text-gray-500 text-sm mb-6">
             Ces événements sont organisés par des clubs tiers. Cliquez sur le nom pour accéder au site officiel.
           </p>
-          <div className="flex items-start gap-3 bg-blue-50 p-4 rounded-md text-blue-900 text-sm mb-6">
-            <Calendar className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" />
-            <p>
-              <strong>Calendrier 2027 à venir :</strong> les dates de la prochaine saison seront ajoutées dès que les organisateurs les auront publiées. Les dates ci-dessous correspondent à l'édition 2026.
-            </p>
-          </div>
+            <div className="flex items-start gap-3 bg-blue-50 p-4 rounded-md text-blue-900 text-sm mb-6">
+              <Calendar className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" />
+              <p>
+                <strong>Calendrier 2027 à venir :</strong> les dates de la prochaine saison seront ajoutées dès que les organisateurs les auront publiées.
+              </p>
+            </div>
           <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm text-gray-600">
@@ -128,45 +119,45 @@ export default function LongueDistancePage() {
                 <tbody className="divide-y divide-gray-100">
                   <tr>
                     <td className="p-4 font-medium min-w-[200px]">
-                      <a href="https://www.cyclo-club-montebourg-saint-germain-de-tournebut.com/longue-distance/2026-1/les-travers%C3%A9es-de-france-la-vie-de-ch%C3%A2teau/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">La vie de Château (34→49) ↗</a>
+                      <a href="https://www.cyclo-club-montebourg-saint-germain-de-tournebut.com/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">La vie de Château (34→49) ↗</a>
                     </td>
                     <td className="p-4 whitespace-nowrap">1500 / 1950 km</td>
-                    <td className="p-4 whitespace-nowrap">31.05</td>
+                    <td className="p-4 whitespace-nowrap">À venir</td>
                   </tr>
                   <tr>
-                    <td className="p-4 font-medium">
-                      <a href="https://www.cyclo-randonneurs.fr/spip.php?article590" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Les Sources de la Loire (03) ↗</a>
+                    <td className="p-4 font-medium min-w-[200px]">
+                      <a href="https://www.cyclo-randonneurs.fr/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Les Sources de la Loire (03) ↗</a>
                     </td>
                     <td className="p-4 whitespace-nowrap">600 km (8000D+)</td>
-                    <td className="p-4 whitespace-nowrap">13.06</td>
+                    <td className="p-4 whitespace-nowrap">À venir</td>
                   </tr>
                   <tr>
-                    <td className="p-4 font-medium">
+                    <td className="p-4 font-medium min-w-[200px]">
                       <a href="https://raacyclo.blogspot.com/p/nos-organisations.html" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Les Monédières (33) ↗</a>
                     </td>
                     <td className="p-4 whitespace-nowrap">600 km (8000D+)</td>
-                    <td className="p-4 whitespace-nowrap">13.06</td>
+                    <td className="p-4 whitespace-nowrap">À venir</td>
                   </tr>
                   <tr>
-                    <td className="p-4 font-medium">
-                      <a href="http://www.assas-cyclisme-evasion.fr/calendrier/a-venir-liste/event/642-b-r-m-1000km-a-la-rencontre-de-l-ocean-atlantique-assas-mimizan-plage-assas" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Assas Mimizan & retour (34) ↗</a>
+                    <td className="p-4 font-medium min-w-[200px]">
+                      <a href="http://www.assas-cyclisme-evasion.fr/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Assas Mimizan & retour (34) ↗</a>
                     </td>
                     <td className="p-4 whitespace-nowrap">1000 km</td>
-                    <td className="p-4 whitespace-nowrap">25.06</td>
+                    <td className="p-4 whitespace-nowrap">À venir</td>
                   </tr>
                   <tr>
-                    <td className="p-4 font-medium">
+                    <td className="p-4 font-medium min-w-[200px]">
                       <a href="https://1200desraa.blogspot.com/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Ronde Aliénor d'Aquitaine (33) ↗</a>
                     </td>
                     <td className="p-4 whitespace-nowrap">1200 km</td>
-                    <td className="p-4 whitespace-nowrap">05.07</td>
+                    <td className="p-4 whitespace-nowrap">À venir</td>
                   </tr>
                   <tr>
-                    <td className="p-4 font-medium">
-                      <a href="https://bcbcyclotourismevttbollene.clubeo.com/page/calendrier-brm-2026.html" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Vercors Lure Ventoux (84) ↗</a>
+                    <td className="p-4 font-medium min-w-[200px]">
+                      <a href="https://bcbcyclotourismevttbollene.clubeo.com/" target="_blank" rel="noopener noreferrer" className="text-[#00b5e2] hover:underline">Vercors Lure Ventoux (84) ↗</a>
                     </td>
                     <td className="p-4 whitespace-nowrap">600 km (11000D+)</td>
-                    <td className="p-4 whitespace-nowrap">12.09</td>
+                    <td className="p-4 whitespace-nowrap">À venir</td>
                   </tr>
                 </tbody>
               </table>

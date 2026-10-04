@@ -1,6 +1,10 @@
-'use client'
 import Link from 'next/link'
 import { ArrowLeft, Mountain, Map, Route, Calendar } from 'lucide-react'
+
+export const metadata = {
+  title: 'Cyclomontagnardes',
+  description: 'Les cyclomontagnardes auxquelles participent les cyclos du TOAC : Alpes, Pyrénées, Vosges et Jura.',
+}
 
 export default function CyclomontagnardesPage() {
   return (
@@ -38,91 +42,48 @@ export default function CyclomontagnardesPage() {
         <div className="space-y-6">
           <div>
             <h2 className="text-2xl font-bold text-[#00205b] flex items-center gap-2">
-              <Mountain className="w-6 h-6 text-[#00b5e2]" /> Calendrier — édition 2026
+              <Mountain className="w-6 h-6 text-[#00b5e2]" /> Calendrier 2027
             </h2>
-            <p className="text-gray-500 text-sm mt-2">
+            <p className="text-gray-500 text-sm mt-2 mb-4">
               Ces événements sont organisés par la Fédération Française de Cyclotourisme. Plusieurs membres du TOAC Cyclo y participent chaque année — rejoignez-nous !
             </p>
-            <div className="flex items-start gap-3 bg-blue-50 p-4 rounded-md text-blue-900 text-sm">
+            <div className="flex items-start gap-3 bg-blue-50 p-4 rounded-md text-blue-900 text-sm ">
               <Calendar className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" />
               <p>
-                <strong>Calendrier 2027 à venir :</strong> les dates de la prochaine saison seront ajoutées dès que les organisateurs les auront publiées. Les dates ci-dessous correspondent à l'édition 2026.
+                <strong>Calendrier 2027 à venir :</strong> les dates de la prochaine saison seront ajoutées dès que les organisateurs les auront publiées.
               </p>
             </div>
           </div>
 
           <div className="grid gap-6">
-            {/* Alpes Sud - ANNULÉE */}
-            <div className="bg-gray-100 p-6 rounded-lg border border-gray-200 opacity-60">
-              <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-2">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-500 line-through">Cyclomontagnarde des Alpes du Sud</h3>
-                  <div className="flex items-center gap-2 text-sm text-gray-400 mt-1">
-                    <Map className="w-4 h-4" /> Vaison-la-Romaine (84)
-                  </div>
-                </div>
-                <span className="px-3 py-1 bg-red-500 text-white text-sm font-bold rounded-sm">ANNULÉE</span>
-              </div>
-            </div>
-
-            {/* Volcans */}
             <ActivityCard
               title="Cyclomontagnarde des Volcans"
-              date="30-31 Mai"
               location="Mozac (63)"
-              distance="230 km"
-              denivele="4400 m"
-              details="Vulcania, Guéry, Croix Morand, Croix Saint-Robert, Geneste"
               link="https://puy-de-dome.ffvelo.fr/cmv/"
             />
-            {/* Haute Savoie */}
             <ActivityCard
               title="Cyclomontagnarde de Haute-Savoie"
-              date="06-07 Juin"
               location="Annecy-le-Vieux (74)"
-              distance="218 km"
-              denivele="4318 m"
-              details="Colombière, Romme, Joux Plane, Gêts"
               link="https://www.cyclomontagnarde-annecy.com/"
             />
-            {/* Jura */}
             <ActivityCard
               title="Cyclomontagnarde du Jura"
-              date="20-21 Juin"
               location="Lons-le-Saunier (39)"
-              distance="240 km"
-              denivele="3990 m"
-              details="Baume-les-Messieurs, Nanchez, Onoz, Saint-Amour"
-              link="https://ffvelo.fr/evenements/cyclomontagnarde-du-jura-2026/"
+              link="https://ffvelo.fr/"
             />
-            {/* Vosges */}
             <ActivityCard
               title="Cyclomontagnarde Vosges Alsace"
-              date="27-28 Juin"
               location="Wihr-au-Val (68)"
-              distance="204 km"
-              denivele="4210 m"
-              details="Breitfirst, Grosse Pierre, Calvaire, Labaroche"
               link="https://www.cmvalsace.fr/"
             />
-            {/* Luchon-Bayonne */}
             <ActivityCard
               title="Cyclomontagnarde Luchon-Bayonne"
-              date="27-28 Juin"
               location="Luchon → Bayonne"
-              distance="320 km"
-              denivele="5257 m"
-              details="Peyresourde, Aspin, Tourmalet, Soulor, Aubisque, Osquich"
               link="https://www.luchonbayonne.fr/"
             />
-            {/* Pyrénées */}
             <ActivityCard
               title="Cyclomontagnarde du Massif Pyrénéen"
-              date="04-05 Juillet"
               location="Saint-Bertrand-de-Comminges (31)"
-              distance="223 km"
-              denivele="4208 m"
-              details="Ares, Menté, Peyresourde, Val Louron Azet"
               link="https://ffvelo.fr/evenements/cyclomontagnarde-du-massif-pyreneen/"
             />
           </div>
@@ -136,36 +97,20 @@ export default function CyclomontagnardesPage() {
   )
 }
 
-function ActivityCard({ title, date, location, distance, denivele, details, highlight, link }) {
+function ActivityCard({ title, location, link }) {
   return (
-    <div className={`bg-white p-6 rounded-lg shadow-sm border ${highlight ? 'border-[#00b5e2] ring-1 ring-[#00b5e2]' : 'border-gray-100'} hover:shadow-md transition-shadow`}>
-      <div className="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-4">
+    <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+      <div className="flex flex-col md:flex-row justify-between md:items-start gap-4">
         <div>
-          {link ? (
-            <a href={link} target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-[#00205b] hover:text-[#00b5e2] transition-colors">
-              {title} ↗
-            </a>
-          ) : (
-            <h3 className="text-xl font-bold text-[#00205b]">{title}</h3>
-          )}
+          <a href={link} target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-[#00205b] hover:text-[#00b5e2] transition-colors">
+            {title} ↗
+          </a>
           <div className="flex items-center gap-2 text-sm text-gray-500 mt-1">
             <Map className="w-4 h-4" /> {location}
           </div>
         </div>
-        <div className="flex flex-col items-end">
-          <span className="px-3 py-1 bg-[#00205b] text-white text-sm font-bold rounded-sm mb-1">{date}</span>
-        </div>
+        <span className="px-3 py-1 bg-gray-100 text-gray-600 text-sm font-bold rounded-sm self-start">Dates à venir</span>
       </div>
-
-      <div className="flex items-center gap-6 mb-4 text-sm font-bold text-gray-700">
-        <span className="flex items-center gap-1"><Route className="w-4 h-4 text-gray-400" /> {distance}</span>
-        <span className="flex items-center gap-1"><Mountain className="w-4 h-4 text-gray-400" /> {denivele} D+</span>
-      </div>
-
-      <p className="text-sm text-gray-600">
-        <span className="font-semibold">Cols :</span> {details}
-      </p>
     </div>
   )
 }
-

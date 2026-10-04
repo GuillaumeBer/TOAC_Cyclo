@@ -1,18 +1,15 @@
-import NavigationBar from '@/components/NavigationBar'
-import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
 export const metadata = {
-  title: 'Mentions Légales - TOAC Cyclotourisme',
+  title: 'Mentions Légales',
   description: 'Mentions légales du site TOAC Cyclotourisme'
 }
 
 export default function MentionsLegales() {
   return (
     <>
-      <NavigationBar />
-      <main className="pt-20 pb-16 min-h-screen bg-gray-50">
+      <div className="pt-20 pb-16 min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <Link href="/" className="inline-flex items-center text-[#00b5e2] hover:text-[#00205b] mb-8 transition-colors">
@@ -33,7 +30,7 @@ export default function MentionsLegales() {
                   31000 Toulouse, France
                 </p>
                 <p>
-                  <strong>Email :</strong> contact@toac-cyclo.com<br />
+                  <strong>Email :</strong> toac.cyclo@gmail.com<br />
                   <strong>Président :</strong> Jérôme PARDUILLAR
                 </p>
               </section>
@@ -78,8 +75,8 @@ export default function MentionsLegales() {
                 <h2 className="text-xl font-bold text-[#00205b] mb-4">6. Contact</h2>
                 <p>
                   Pour toute question concernant ces mentions légales, vous pouvez nous contacter à l'adresse : 
-                  <a href="mailto:contact@toac-cyclo.com" className="text-[#00b5e2] hover:underline ml-1">
-                    contact@toac-cyclo.com
+                  <a href="mailto:toac.cyclo@gmail.com" className="text-[#00b5e2] hover:underline ml-1">
+                    toac.cyclo@gmail.com
                   </a>
                 </p>
               </section>
@@ -87,8 +84,7 @@ export default function MentionsLegales() {
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
+      </div>
     </>
   )
 }

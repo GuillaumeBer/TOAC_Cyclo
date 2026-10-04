@@ -1,18 +1,15 @@
-import NavigationBar from '@/components/NavigationBar'
-import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
 export const metadata = {
-  title: 'Politique de Confidentialité - TOAC Cyclotourisme',
+  title: 'Politique de Confidentialité',
   description: 'Politique de confidentialité et protection des données personnelles du site TOAC Cyclotourisme'
 }
 
 export default function Confidentialite() {
   return (
     <>
-      <NavigationBar />
-      <main className="pt-20 pb-16 min-h-screen bg-gray-50">
+      <div className="pt-20 pb-16 min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <Link href="/" className="inline-flex items-center text-[#00b5e2] hover:text-[#00205b] mb-8 transition-colors">
@@ -98,15 +95,14 @@ export default function Confidentialite() {
                   Pour exercer vos droits ou pour toute question concernant cette politique, contactez-nous :
                   <br /><br />
                   <strong>TOAC Cyclotourisme</strong><br />
-                  Email : <a href="mailto:contact@toac-cyclo.com" className="text-[#00b5e2] hover:underline">contact@toac-cyclo.com</a>
+                  Email : <a href="mailto:toac.cyclo@gmail.com" className="text-[#00b5e2] hover:underline">toac.cyclo@gmail.com</a>
                 </p>
               </section>
 
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
+      </div>
     </>
   )
 }

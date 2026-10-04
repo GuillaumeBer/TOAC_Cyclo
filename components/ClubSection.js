@@ -15,7 +15,7 @@ function InfoBlock({ title, icon: Icon, desc }) {
 
 export default function ClubSection() {
   return (
-    <div id="club" className="bg-gradient-to-b from-white to-[#f2f4f7] pt-20 md:pt-28 pb-12 md:pb-16">
+    <div id="club" className="bg-gradient-to-b from-white to-[#f2f4f7] py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
 
         {/* Titre de section */}

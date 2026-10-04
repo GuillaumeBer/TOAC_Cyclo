@@ -84,12 +84,13 @@ function PlaceholderCard({ index }) {
 
 export default function NewsSection() {
   return (
-    <div id="actualites" className="min-h-screen flex items-center bg-gray-50 py-20">
+    <div id="actualites" className="bg-gray-50 py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
           <div>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#00205b] mb-3">Actualités du Club</h2>
-            <div className="h-1 w-16 bg-[#00b5e2]"></div>
+            <div className="h-1 w-16 bg-[#00b5e2] mb-4"></div>
+            <p className="text-gray-600 max-w-2xl">Événements, séjours et vie de la section.</p>
           </div>
 
         </div>

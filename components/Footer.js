@@ -1,42 +1,48 @@
 import Link from 'next/link'
-import { MapPin, Info, ExternalLink, Facebook, Instagram } from 'lucide-react'
+import { MapPin, Mail, ExternalLink, Facebook, Instagram } from 'lucide-react'
+import social from '@/data/social.json'
 
-// Strava icon component (not in lucide)
+// Strava n'existe pas dans lucide
 function StravaIcon({ className }) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
       <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169" />
     </svg>
   )
 }
 
+const SOCIAL_ICONS = { Facebook, Instagram, Strava: StravaIcon }
+
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-[#00205b] text-white py-8">
+    <footer id="contact" className="bg-[#00205b] text-white pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8 text-sm">
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-2 mb-6">
             <span className="font-bold text-2xl tracking-tight">TOAC<span className="text-[#00b5e2]">CYCLO</span></span>
           </div>
-          <p className="mb-6 max-w-sm text-gray-300 leading-relaxed">
+          <p className="max-w-sm text-gray-300 leading-relaxed">
             Le club cycliste historique du TOAC à Toulouse.
             La passion du vélo, l'excellence de l'organisation.
           </p>
 
-          {/* Social Media Icons */}
-          <div className="flex gap-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
-              className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#00b5e2] transition-colors group">
-              <Facebook className="w-5 h-5 text-white group-hover:text-[#00205b]" />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-              className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#00b5e2] transition-colors group">
-              <Instagram className="w-5 h-5 text-white group-hover:text-[#00205b]" />
-            </a>
-            <a href="https://strava.com" target="_blank" rel="noopener noreferrer"
-              className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#00b5e2] transition-colors group">
-              <StravaIcon className="w-5 h-5 text-white group-hover:text-[#00205b]" />
-            </a>
+          {/* URL à renseigner dans data/social.json (placeholders pour le moment) */}
+          <div className="flex gap-4 mt-6">
+            {social.map(({ name, url }) => {
+              const Icon = SOCIAL_ICONS[name]
+              return (
+                <a
+                  key={name}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#00b5e2] transition-colors group"
+                >
+                  <Icon className="w-5 h-5 text-white group-hover:text-[#00205b]" />
+                </a>
+              )
+            })}
           </div>
         </div>
         <div>
@@ -47,8 +53,8 @@ export default function Footer() {
               <a href="https://www.google.com/maps/search/?api=1&query=TOAC+Omnisports+Toulouse" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Complexe Sportif TOAC<br />Toulouse, France</a>
             </li>
             <li className="flex items-center gap-3">
-              <Info className="w-5 h-5 text-[#00b5e2] flex-shrink-0" />
-              <a href="mailto:contact@toac-cyclo.com" className="hover:text-white transition-colors">contact@toac-cyclo.com</a>
+              <Mail className="w-5 h-5 text-[#00b5e2] flex-shrink-0" />
+              <a href="mailto:toac.cyclo@gmail.com" className="hover:text-white transition-colors">toac.cyclo@gmail.com</a>
             </li>
           </ul>
         </div>
