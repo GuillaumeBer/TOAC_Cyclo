@@ -1,6 +1,5 @@
-import Image from 'next/image'
 import Link from 'next/link'
-import { Users, Award, Shield, Quote } from 'lucide-react'
+import { Users, Award, Shield } from 'lucide-react'
 
 function InfoBlock({ title, icon: Icon, desc }) {
   return (
@@ -62,35 +61,6 @@ export default function ClubSection() {
           >
             Découvrir notre histoire →
           </Link>
-        </div>
-
-        {/* Mot du Président */}
-        <div className="bg-white rounded-sm shadow-lg p-8 lg:p-12 border border-gray-100">
-          <div className="flex flex-col md:flex-row gap-8 lg:gap-12 items-center">
-            <div className="md:w-1/4 text-center flex-shrink-0">
-              <div className="inline-block p-1 border border-gray-300 mb-4 bg-white">
-                <Image
-                  src="/images/president_caricature.png"
-                  alt="Président du club"
-                  width={160}
-                  height={160}
-                  className="w-40 h-40 object-cover hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-              <h3 className="text-xl font-bold text-[#00205b]">Jérôme P.</h3>
-              <p className="text-sm text-gray-500 uppercase tracking-widest mt-1">Président</p>
-            </div>
-            <div className="md:w-3/4 relative">
-              <Quote className="absolute -top-4 -left-4 w-10 h-10 text-[#00b5e2] opacity-20" />
-              <h3 className="text-xl md:text-2xl font-light text-[#00205b] mb-4 leading-relaxed italic">
-                "Notre club n'est pas qu'une association sportive, c'est une <span className="font-bold">famille</span>. Une famille qui roule ensemble, qui partage, qui s'entraide."
-              </h3>
-              <p className="text-sm text-gray-500 mb-4">— Édito Saison 2026</p>
-              <a href="/edito-president" className="text-[#00205b] font-bold border-b-2 border-[#00b5e2] pb-1 hover:text-[#00b5e2] transition-colors uppercase text-sm tracking-wide">
-                Lire l'édito complet
-              </a>
-            </div>
-          </div>
         </div>
 
       </div>
