@@ -62,6 +62,9 @@ export default function Footer() {
           <h4 className="font-bold mb-6 text-lg text-[#00b5e2]">Liens Utiles</h4>
           <ul className="space-y-3 text-gray-300">
             <li>
+              <Link href="/calendrier" className="hover:text-white transition-colors">Calendrier 2027</Link>
+            </li>
+            <li>
               <a href="https://meteofrance.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
                 Météo France <ExternalLink className="w-3 h-3 opacity-50" />
               </a>

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import NavigationBar from '@/components/NavigationBar'
 import Footer from '@/components/Footer'
+import { SITE_URL, CLUB } from '@/lib/site'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -12,7 +13,7 @@ const inter = Inter({
 })
 
 export const metadata = {
-  metadataBase: new URL('https://toac-cyclo.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'TOAC Cyclotourisme - Club de vélo Toulouse',
     template: '%s | TOAC Cyclotourisme',
@@ -37,10 +38,26 @@ export const viewport = {
   themeColor: '#00205b',
 }
 
+const clubJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SportsClub',
+  name: CLUB.name,
+  description: 'Section cyclotourisme du TOAC à Toulouse : sorties conviviales, tous niveaux, sans compétition.',
+  url: SITE_URL,
+  email: CLUB.email,
+  foundingDate: CLUB.foundingDate,
+  sport: 'Cyclotourisme',
+  address: { '@type': 'PostalAddress', ...CLUB.address },
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="fr" className={inter.variable} suppressHydrationWarning>
       <body className="font-sans antialiased text-gray-900 bg-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(clubJsonLd) }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#00b5e2] focus:text-[#00205b] focus:font-bold focus:rounded-sm"

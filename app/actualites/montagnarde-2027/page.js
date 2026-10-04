@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, MapPin, Bike, Home, Mail } from 'lucide-react'
 export const metadata = {
   title: 'Montagnarde 2027 : à vos agendas',
   description: "Le séjour annuel du TOAC Cyclo aura lieu pendant le week-end de l'Ascension 2027. Lieu et programme à venir.",
+  openGraph: { images: ['/images/montagnarde.jpg'] },
 }
 
 export default function Montagnarde2027Page() {

@@ -1,14 +1,37 @@
 import Link from 'next/link'
+import { SITE_URL } from '@/lib/site'
 import { Calendar, MapPin, Trophy, Users, Heart, ArrowLeft, Bike } from 'lucide-react'
 
 export const metadata = {
   title: 'Randonnée des Rameaux',
   description: 'La randonnée cyclo annuelle du TOAC Cyclo : parcours, infos pratiques et Trophée André Lafarge.',
+  openGraph: { images: ['/images/TOAC1.jpg'] },
+}
+
+const eventJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SportsEvent',
+  name: 'Randonnée des Rameaux 2027',
+  startDate: '2027-03-21T08:00',
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  location: {
+    '@type': 'Place',
+    name: 'Complexe Sportif TOAC',
+    address: { '@type': 'PostalAddress', addressLocality: 'Toulouse', addressCountry: 'FR' },
+  },
+  organizer: { '@type': 'SportsClub', name: 'TOAC Cyclotourisme', url: SITE_URL },
+  image: `${SITE_URL}/images/TOAC1.jpg`,
+  description: 'Randonnée cyclo annuelle du TOAC Cyclo, parcours pour tous les niveaux. Inscriptions sur place le matin même.',
 }
 
 export default function RandoRameauxPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#00205b] to-[#001540]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
+      />
       {/* Header */}
       <div className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto flex flex-col items-start">

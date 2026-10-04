@@ -92,6 +92,12 @@ export default function NewsSection() {
             <div className="h-1 w-16 bg-[#00b5e2] mb-4"></div>
             <p className="text-gray-600 max-w-2xl">Événements, séjours et vie de la section.</p>
           </div>
+          <Link
+            href="/calendrier"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#00205b] text-white font-bold rounded-sm hover:bg-[#00b5e2] hover:text-[#00205b] transition-colors text-sm flex-shrink-0"
+          >
+            Tout le calendrier 2027 <ArrowRight className="w-4 h-4" />
+          </Link>
 
         </div>
 

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Users, Award, Shield } from 'lucide-react'
+import chiffres from '@/data/chiffres.json'
 
 function InfoBlock({ title, icon: Icon, desc }) {
   return (
@@ -34,6 +35,19 @@ export default function ClubSection() {
             Découvrir notre histoire →
           </Link>
         </div>
+
+        {/* Chiffres clés */}
+        <dl className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-10 md:mb-12">
+          {chiffres.map((c) => (
+            <div key={c.label} className="bg-[#00205b] text-white rounded-lg p-5 md:p-6 text-center">
+              <dt className="sr-only">{c.label}</dt>
+              <dd>
+                <span className="block text-3xl md:text-4xl font-extrabold text-[#00b5e2]">{c.value}</span>
+                <span className="block text-xs md:text-sm text-gray-300 mt-2 leading-snug">{c.label}</span>
+              </dd>
+            </div>
+          ))}
+        </dl>
 
         {/* Valeurs du club */}
         <div className="grid md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-10 md:mb-16">
