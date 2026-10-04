@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Calendar, MapPin, Bike, Target } from 'lucide-react'
+import { Calendar, MapPin, Target } from 'lucide-react'
+import event from '@/data/featured-event.json'
 
 export default function FeaturedEventSection() {
   return (
@@ -12,15 +13,15 @@ export default function FeaturedEventSection() {
           
           <div className="lg:w-1/2 space-y-8">
              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00b5e2]/10 border border-[#00b5e2] rounded-sm text-[#00b5e2] text-xs font-bold uppercase tracking-widest">
-                <Target className="w-4 h-4" /> Événement Club
+                <Target className="w-4 h-4" /> {event.category}
              </div>
              
              <div>
                 <h2 className="text-4xl md:text-5xl font-bold font-sans leading-tight mb-4">
-                   Randonnée des Rameaux
+                   {event.title}
                 </h2>
                 <p className="text-xl text-gray-300 font-light leading-relaxed">
-                   Le rendez-vous incontournable du printemps organisé par le TOAC. Venez découvrir nos parcours au cœur des côteaux du Gers.
+                   {event.description}
                 </p>
              </div>
 
@@ -31,8 +32,8 @@ export default function FeaturedEventSection() {
                    </div>
                    <div>
                       <div className="text-xs text-[#00b5e2] uppercase font-bold tracking-wider mb-1">Date</div>
-                      <div className="text-lg font-bold">Dim. 29 Mars</div>
-                      <div className="text-sm text-gray-400">Départ 08h00</div>
+                      <div className="text-lg font-bold">{event.dateLabel}</div>
+                      <div className="text-sm text-gray-400">{event.dateDetail}</div>
                    </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -41,15 +42,15 @@ export default function FeaturedEventSection() {
                    </div>
                    <div>
                       <div className="text-xs text-[#00b5e2] uppercase font-bold tracking-wider mb-1">Lieu</div>
-                      <a href="https://www.google.com/maps/search/?api=1&query=TOAC+Omnisports+Toulouse" target="_blank" rel="noopener noreferrer" className="text-lg font-bold hover:text-[#00b5e2] transition-colors">Complexe TOAC ↗</a>
-                      <div className="text-sm text-gray-400">Toulouse</div>
+                      <a href={event.locationLink} target="_blank" rel="noopener noreferrer" className="text-lg font-bold hover:text-[#00b5e2] transition-colors">{event.locationLabel} ↗</a>
+                      <div className="text-sm text-gray-400">{event.locationDetail}</div>
                    </div>
                 </div>
              </div>
 
              <div className="pt-6">
                 <Link 
-                   href="/rando-rameaux" 
+                   href={event.link} 
                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#00b5e2] text-[#00205b] font-bold rounded-sm hover:bg-white transition-colors"
                 >
                    En savoir plus →
@@ -63,10 +64,10 @@ export default function FeaturedEventSection() {
                 
                 <div className="relative rounded-sm overflow-hidden border-4 border-white/10 shadow-2xl bg-white">
                    <Image 
-                      src="/images/rameaux-2026.jpg" 
-                      alt="Randonnée des Rameaux 2026" 
+                      src={event.image} 
+                      alt={event.imageAlt} 
                       width={800}
-                      height={450}
+                      height={600}
                       className="w-full h-auto transform transition duration-700 group-hover:scale-105" 
                    />
                 </div>

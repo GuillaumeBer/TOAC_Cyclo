@@ -42,15 +42,15 @@ export default function LongueDistancePage() {
             Plusieurs membres du TOAC Cyclo envisagent d'y participer !
           </p>
           <p className="text-gray-600 leading-relaxed text-sm">
-            Pour être prioritaire à l'inscription, il est conseillé de valider des brevets dès 2026.
-            Plus le brevet validé en 2026 est long, plus tôt vous pourrez choisir votre horaire de départ.
+            Les brevets validés en 2026 ne sont pas obligatoires, mais ils donnent la priorité à l'inscription :
+            plus le brevet validé en 2026 est long, plus tôt vous pourrez choisir votre horaire de départ.
           </p>
         </div>
 
         {/* BRM Locaux */}
         <div>
           <h2 className="text-2xl font-bold text-[#00205b] flex items-center gap-2 mb-6">
-            <Map className="w-6 h-6 text-[#00b5e2]" /> BRM Près de chez nous
+            <Map className="w-6 h-6 text-[#00b5e2]" /> BRM Près de chez nous — édition 2026
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* TOAC Cyclo */}
@@ -104,11 +104,17 @@ export default function LongueDistancePage() {
         {/* Événements Notables */}
         <div>
           <h2 className="text-2xl font-bold text-[#00205b] flex items-center gap-2 mb-2">
-            <Calendar className="w-6 h-6 text-[#00b5e2]" /> Autres Événements Notables 2026
+            <Calendar className="w-6 h-6 text-[#00b5e2]" /> Autres Événements Notables — édition 2026
           </h2>
           <p className="text-gray-500 text-sm mb-6">
             Ces événements sont organisés par des clubs tiers. Cliquez sur le nom pour accéder au site officiel.
           </p>
+          <div className="flex items-start gap-3 bg-blue-50 p-4 rounded-md text-blue-900 text-sm mb-6">
+            <Calendar className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" />
+            <p>
+              <strong>Calendrier 2027 à venir :</strong> les dates de la prochaine saison seront ajoutées dès que les organisateurs les auront publiées. Les dates ci-dessous correspondent à l'édition 2026.
+            </p>
+          </div>
           <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm text-gray-600">

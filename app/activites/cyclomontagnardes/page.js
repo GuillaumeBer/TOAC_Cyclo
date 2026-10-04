@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { ArrowLeft, Mountain, Map, Route } from 'lucide-react'
+import { ArrowLeft, Mountain, Map, Route, Calendar } from 'lucide-react'
 
 export default function CyclomontagnardesPage() {
   return (
@@ -22,7 +22,7 @@ export default function CyclomontagnardesPage() {
           </div>
 
           <h1 className="text-3xl md:text-5xl font-bold mb-6">
-            Cyclomontagnardes 2026
+            Cyclomontagnardes
           </h1>
 
           <p className="text-xl text-gray-300 max-w-2xl">
@@ -38,11 +38,17 @@ export default function CyclomontagnardesPage() {
         <div className="space-y-6">
           <div>
             <h2 className="text-2xl font-bold text-[#00205b] flex items-center gap-2">
-              <Mountain className="w-6 h-6 text-[#00b5e2]" /> Calendrier 2026
+              <Mountain className="w-6 h-6 text-[#00b5e2]" /> Calendrier — édition 2026
             </h2>
             <p className="text-gray-500 text-sm mt-2">
               Ces événements sont organisés par la Fédération Française de Cyclotourisme. Plusieurs membres du TOAC Cyclo y participent chaque année — rejoignez-nous !
             </p>
+            <div className="flex items-start gap-3 bg-blue-50 p-4 rounded-md text-blue-900 text-sm">
+              <Calendar className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" />
+              <p>
+                <strong>Calendrier 2027 à venir :</strong> les dates de la prochaine saison seront ajoutées dès que les organisateurs les auront publiées. Les dates ci-dessous correspondent à l'édition 2026.
+              </p>
+            </div>
           </div>
 
           <div className="grid gap-6">

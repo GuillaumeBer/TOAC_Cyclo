@@ -1,0 +1,13 @@
+{
+    "category": "Événement Club",
+    "title": "Randonnée des Rameaux",
+    "description": "Le rendez-vous incontournable du printemps organisé par le TOAC. Venez découvrir nos parcours au cœur des côteaux du Gers.",
+    "dateLabel": "Dim. 21 Mars 2027",
+    "dateDetail": "Départ à partir de 08h00",
+    "locationLabel": "Complexe TOAC",
+    "locationDetail": "Toulouse",
+    "locationLink": "https://www.google.com/maps/search/?api=1&query=TOAC+Omnisports+Toulouse",
+    "image": "/images/TOAC1.jpg",
+    "imageAlt": "Cyclistes du TOAC Cyclo",
+    "link": "/rando-rameaux"
+}
