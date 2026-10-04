@@ -69,11 +69,17 @@ export default function GravelPage() {
         <div className="space-y-6">
           <div>
             <h2 className="text-2xl font-bold text-[#00205b] flex items-center gap-2">
-              <Calendar className="w-6 h-6 text-[#00b5e2]" /> Événements Gravel 2026
+              <Calendar className="w-6 h-6 text-[#00b5e2]" /> Événements Gravel — édition 2026
             </h2>
             <p className="text-gray-500 text-sm mt-2">
               Ces événements sont organisés par des clubs tiers. Des membres du TOAC Cyclo y participent régulièrement — pourquoi pas vous ?
             </p>
+            <div className="flex items-start gap-3 bg-blue-50 p-4 rounded-md text-blue-900 text-sm">
+              <Calendar className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" />
+              <p>
+                <strong>Calendrier 2027 à venir :</strong> les dates de la prochaine saison seront ajoutées dès que les organisateurs les auront publiées. Les dates ci-dessous correspondent à l'édition 2026.
+              </p>
+            </div>
           </div>
 
           <div className="space-y-4">
