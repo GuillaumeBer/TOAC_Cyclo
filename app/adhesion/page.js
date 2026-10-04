@@ -75,7 +75,7 @@ export default function AdhesionPage() {
             </p>
             <a
               href="mailto:toac.cyclo@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#00205b] text-white font-bold rounded-sm hover:bg-[#00b5e2] transition-colors text-lg"
+              className="inline-flex max-w-full items-center gap-2 px-4 sm:px-6 py-3 bg-[#00205b] text-white font-bold rounded-sm hover:bg-[#00b5e2] transition-colors text-base sm:text-lg break-all"
             >
               <Mail className="w-5 h-5" />
               toac.cyclo@gmail.com

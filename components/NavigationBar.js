@@ -70,7 +70,7 @@ export default function NavigationBar() {
       <Link
         href={href}
         aria-current={active ? 'true' : undefined}
-        className={`relative px-4 py-4 text-sm font-bold uppercase tracking-wider transition-colors duration-200 
+        className={`relative whitespace-nowrap px-3 2xl:px-4 py-4 text-sm font-bold uppercase tracking-wider transition-colors duration-200 
           ${active ? 'text-[#00b5e2]' : 'text-white hover:text-[#00b5e2]'}`}
       >
         {name}
@@ -103,7 +103,7 @@ export default function NavigationBar() {
             </div>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden xl:flex items-center gap-2 2xl:gap-4">
             <NavItem name="Accueil" href="/#top" sectionId="top" />
             <NavItem name="Événements" href="/#evenements" sectionId="evenements" />
             <NavItem name="Actualités" href="/#actualites" sectionId="actualites" />
@@ -118,7 +118,7 @@ export default function NavigationBar() {
             </Link>
           </div>
 
-          <div className="-mr-2 flex lg:hidden">
+          <div className="-mr-2 flex xl:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-white p-2"
@@ -133,7 +133,7 @@ export default function NavigationBar() {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#00205b] border-t border-white/10">
+        <div className="xl:hidden bg-[#00205b] border-t border-white/10">
           <div className="px-4 pt-2 pb-4 space-y-2 flex flex-col">
             {[
               { name: 'Accueil', href: '/#top' },

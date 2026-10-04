@@ -14,7 +14,8 @@ export default function HeroSection() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#00205b]/95 via-[#00205b]/80 to-transparent" />
+        <div className="absolute inset-0 bg-[#00205b]/70 md:bg-transparent" />
+        <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-[#00205b]/95 via-[#00205b]/80 to-transparent" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
