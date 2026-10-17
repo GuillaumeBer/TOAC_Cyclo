@@ -4,7 +4,7 @@
         "desc": "Sorties afterwork, week-ends bikepacking et ultra-distance. L'esprit d'aventure hors des sentiers battus.",
         "iconName": "Bike",
         "image": "/images/gravel.jpg",
-        "link": "/activites/gravel",
+        "link": "/activites#gravel",
         "color": "from-[#00205b] to-[#003d8f]"
     },
     {
@@ -12,7 +12,7 @@
         "desc": "Brevets randonneurs (BRM), préparations Paris-Brest-Paris 2027 et défis d'endurance.",
         "iconName": "Map",
         "image": "/images/longue-distance.jpg",
-        "link": "/activites/longue-distance",
+        "link": "/activites#longue-distance",
         "color": "from-[#00b5e2] to-[#0077b6]"
     },
     {
@@ -20,7 +20,7 @@
         "desc": "Les plus beaux sommets de France. Défiez les cols mythiques des Alpes, Pyrénées, Vosges et Jura.",
         "iconName": "Mountain",
         "image": "/images/cyclomontagnardes.jpg",
-        "link": "/activites/cyclomontagnardes",
+        "link": "/activites#cyclomontagnardes",
         "color": "from-[#00205b] via-[#003d8f] to-[#00b5e2]"
     }
 ]

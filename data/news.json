@@ -19,11 +19,11 @@
     },
     {
         "category": "Vie du Club",
-        "title": "Retour sur l'AG 2025",
-        "date": "06 Déc 2025",
-        "location": "Toulouse",
-        "summary": "Bilan moral, nouveautés 2026 et élection du bureau : découvrez le résumé de notre Assemblée Générale.",
-        "image": "/images/TOAC2.jpg",
-        "link": "/actualites/ag-2025"
+        "title": "Afterwork gravel : le jeudi soir",
+        "date": "Avril à septembre",
+        "location": "Blagnac ou Saint-Martin",
+        "summary": "Une semaine sur deux, 30 à 50 km sur les chemins après le travail, et la guinguette à l'arrivée.",
+        "image": "/images/gravel.jpg",
+        "link": "/activites#gravel"
     }
 ]

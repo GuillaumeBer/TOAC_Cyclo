@@ -33,7 +33,7 @@ export default function JoinBanner() {
             Venir essayer <ArrowRight className="w-5 h-5" />
           </Link>
           <Link
-            href="/adhesion"
+            href="/rejoindre#adhesion"
             className="inline-flex items-center justify-center px-8 py-3 border-2 border-white/60 hover:border-white hover:bg-white/10 text-white font-bold rounded-sm transition-colors"
           >
             Adhésion et tarifs

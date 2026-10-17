@@ -1,27 +1,19 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
-const ACTIVITIES = [
-  { href: '/activites/gravel', title: 'Gravel & aventure', text: 'Chemins, bikepacking et grandes boucles' },
-  { href: '/activites/longue-distance', title: 'Brevets & longue distance', text: 'Du 200 km à Paris-Brest-Paris' },
-  { href: '/activites/cyclomontagnardes', title: 'Cyclomontagnardes', text: 'Les grands cols, de mai à juillet' },
-]
-
-const GENERAL = [
+const ITEMS = [
   { href: '/calendrier', title: 'Calendrier 2027', text: 'Tous les rendez-vous de la saison' },
-  { href: '/rejoindre', title: 'Venir essayer le club', text: 'Une sortie d\'essai, sans engagement' },
-  { href: '/adhesion', title: 'Adhésion et tarifs', text: 'Cotisation et licences' },
+  { href: '/activites', title: 'Nos activités', text: 'Gravel, longue distance, cyclomontagnardes' },
+  { href: '/rejoindre', title: 'Rejoindre le club', text: "Essai, adhésion et tarifs" },
 ]
 
-// Bloc « Voir aussi » en bas de page : relie les pages entre elles.
-// group="activites" liste les autres activités ; group="general" les pages clés du site.
-export default function SeeAlso({ group = 'general', current, dark = false }) {
-  const list = (group === 'activites' ? ACTIVITIES : GENERAL).filter((i) => i.href !== current)
-  const title = group === 'activites' ? 'Découvrir les autres activités' : 'Pour aller plus loin'
+// Bloc « Pour aller plus loin » en bas de page : relie les pages principales entre elles.
+export default function SeeAlso({ current, dark = false }) {
+  const list = ITEMS.filter((i) => i.href !== current)
 
   return (
     <section aria-labelledby="see-also-title">
-      <h2 id="see-also-title" className={`text-xl font-bold mb-4 ${dark ? 'text-white' : 'text-[#00205b]'}`}>{title}</h2>
+      <h2 id="see-also-title" className={`text-xl font-bold mb-4 ${dark ? 'text-white' : 'text-[#00205b]'}`}>Pour aller plus loin</h2>
       <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {list.map((item) => (
           <li key={item.href}>

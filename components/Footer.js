@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { MapPin, Mail, ExternalLink, Facebook, Instagram } from 'lucide-react'
 import social from '@/data/social.json'
-import { NAV_ITEMS } from '@/lib/navigation'
+import { SITE_MAP } from '@/lib/navigation'
 
 // Strava n'existe pas dans lucide
 function StravaIcon({ className }) {
@@ -62,13 +62,11 @@ export default function Footer() {
         <nav aria-label="Plan du site">
           <h2 className="font-bold mb-6 text-lg text-[#00b5e2]">Le site</h2>
           <ul className="space-y-3 text-gray-300">
-            {NAV_ITEMS.filter((i) => i.children).flatMap((i) => i.children)
-              .filter((c) => !c.href.includes('#'))
-              .map((c) => (
-                <li key={c.href}>
-                  <Link href={c.href} className="hover:text-white transition-colors">{c.name}</Link>
-                </li>
-              ))}
+            {SITE_MAP.map((c) => (
+              <li key={c.href}>
+                <Link href={c.href} className="hover:text-white transition-colors">{c.name}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
         <div>

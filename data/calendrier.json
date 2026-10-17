@@ -31,7 +31,7 @@
             "dateLabel": "Du 22 au 26 août 2027",
             "detail": "Événement organisé par l'Audax Club Parisien, plusieurs membres du TOAC Cyclo envisagent d'y participer",
             "location": "Paris - Brest - Paris",
-            "link": "/activites/longue-distance"
+            "link": "/activites#longue-distance"
         }
     ],
     "rendezVousAnnuels": [
@@ -49,13 +49,13 @@
             "title": "Cyclomontagnardes",
             "when": "De mai à juillet",
             "detail": "Alpes, Pyrénées, Vosges, Jura, Massif Central : dates 2027 à venir",
-            "link": "/activites/cyclomontagnardes"
+            "link": "/activites#cyclomontagnardes"
         },
         {
             "title": "Brevets randonneurs (BRM)",
             "when": "De mars à juin, et plus tard dans la saison",
             "detail": "200 à 1000 km près de Toulouse : dates 2027 à venir",
-            "link": "/activites/longue-distance"
+            "link": "/activites#longue-distance"
         }
     ]
 }

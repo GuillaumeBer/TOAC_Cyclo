@@ -57,7 +57,7 @@ export default function NextUp() {
         </li>
       )}
       <li>
-        <Link href="/adhesion" className={`${cardBase} h-full justify-between`}>
+        <Link href="/rejoindre#adhesion" className={`${cardBase} h-full justify-between`}>
           <span className="min-w-0">
             <span className="block text-[11px] font-bold uppercase tracking-[0.2em] text-[#89d3e8]">Rejoindre le club</span>
             <span className="block font-bold text-white">Adhésion et tarifs</span>

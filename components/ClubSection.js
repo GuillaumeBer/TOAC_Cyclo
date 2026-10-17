@@ -76,7 +76,7 @@ export default function ClubSection() {
         <Reveal>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
-              href="/adhesion"
+              href="/rejoindre#adhesion"
               className="inline-flex items-center justify-center px-7 py-3.5 border-2 border-[#00205b] text-[#00205b] font-bold rounded-sm hover:bg-[#00205b] hover:text-white transition-colors"
             >
               Adhésion et tarifs →
