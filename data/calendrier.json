@@ -9,7 +9,29 @@
             "dateLabel": "Dimanche 21 mars 2027",
             "detail": "Départ à partir de 08h00",
             "location": "Complexe TOAC, Toulouse",
-            "link": "/rando-rameaux"
+            "link": "/calendrier#rameaux-2027",
+            "details": [
+                {
+                    "icon": "Route",
+                    "label": "Parcours",
+                    "text": "Plusieurs circuits pour tous les niveaux, sur des routes peu fréquentées : environ 50 km (découverte), 80 km (intermédiaire) et 100 km et plus (sportif)."
+                },
+                {
+                    "icon": "ClipboardList",
+                    "label": "Inscriptions",
+                    "text": "Sur place, le matin de la randonnée."
+                },
+                {
+                    "icon": "Trophy",
+                    "label": "Trophée André Lafarge",
+                    "text": "Créé en 2014 en hommage au fondateur de la section (1976), il récompense chaque année le club le plus représenté."
+                },
+                {
+                    "icon": "Users",
+                    "label": "Organisation",
+                    "text": "Le seul moment de l'année où tous les membres du club sont mobilisés : accueil des participants, ravitaillement, assistance technique."
+                }
+            ]
         },
         {
             "id": "montagnarde-2027",
@@ -20,7 +42,29 @@
             "dateLabel": "Week-end de l'Ascension, à partir du jeudi 6 mai 2027",
             "detail": "Programme à venir",
             "location": "Destination à définir",
-            "link": "/#montagnarde-2027"
+            "link": "/calendrier#montagnarde-2027",
+            "details": [
+                {
+                    "icon": "Calendar",
+                    "label": "Dates",
+                    "text": "À partir du jeudi 6 mai 2027, pendant le week-end de l'Ascension."
+                },
+                {
+                    "icon": "MapPin",
+                    "label": "Destination",
+                    "text": "À définir : elle sera annoncée prochainement."
+                },
+                {
+                    "icon": "Bike",
+                    "label": "Au programme",
+                    "text": "Randonnées à la journée pour tous les niveaux, avec des circuits plus sportifs pour ceux qui le souhaitent. Détails à venir."
+                },
+                {
+                    "icon": "Home",
+                    "label": "Hébergement",
+                    "text": "Le lieu d'hébergement sera communiqué avec la destination."
+                }
+            ]
         },
         {
             "id": "pbp-2027",
@@ -29,9 +73,35 @@
             "start": "2027-08-22",
             "end": "2027-08-26",
             "dateLabel": "Du 22 au 26 août 2027",
-            "detail": "Événement organisé par l'Audax Club Parisien, plusieurs membres du TOAC Cyclo envisagent d'y participer",
+            "detail": "Plusieurs membres du TOAC Cyclo envisagent d'y participer",
             "location": "Paris - Brest - Paris",
-            "link": "/activites#longue-distance"
+            "link": "/calendrier#pbp-2027",
+            "details": [
+                {
+                    "icon": "ClipboardList",
+                    "label": "Qualification",
+                    "text": "Valider les 4 BRM (200, 300, 400 et 600 km) entre le 1er novembre 2026 et le 30 juin 2027."
+                },
+                {
+                    "icon": "Calendar",
+                    "label": "Pré-inscription",
+                    "text": "Optionnelle (50 €), à partir du 16 janvier 2027, et d'autant plus tôt que le plus long BRM validé en 2026 est long. Sans BRM en 2026, elle ouvre le 27 mars 2027. Elle permet de choisir sa vague de départ."
+                },
+                {
+                    "icon": "Calendar",
+                    "label": "Inscription définitive",
+                    "text": "Du 29 mai au 4 juillet 2027, avec au moins 3 des 4 BRM déjà validés."
+                },
+                {
+                    "icon": "Users",
+                    "label": "Organisateur",
+                    "text": "Audax Club Parisien. Les infos sont à vérifier sur le site officiel avant de vous inscrire.",
+                    "link": {
+                        "href": "https://www.paris-brest-paris.org/",
+                        "label": "Site officiel"
+                    }
+                }
+            ]
         }
     ],
     "rendezVousAnnuels": [

@@ -3,10 +3,15 @@ import Link from 'next/link'
 import { Calendar, MapPin, ArrowRight } from 'lucide-react'
 import event from '@/data/featured-event.json'
 import agenda from '@/data/agenda.json'
+import calendrier from '@/data/calendrier.json'
 import Reveal from '@/components/Reveal'
 import ExpandableEvent from '@/components/ExpandableEvent'
+import Disclosure from '@/components/Disclosure'
+import EventDetails from '@/components/EventDetails'
 import SectionHeading from '@/components/SectionHeading'
 import ElevationProfile from '@/components/ElevationProfile'
+
+const detailsOf = (id) => calendrier.evenements.find((e) => e.id === id).details
 
 // Prochains rendez-vous : l'événement phare en grand, puis les autres rendez-vous datés.
 export default function AgendaSection() {
@@ -36,7 +41,7 @@ export default function AgendaSection() {
           </Reveal>
 
           {/* Événement phare */}
-          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          <div id="rameaux-2027" className="scroll-mt-24 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             <Reveal className="lg:w-1/2 space-y-6">
               <p className="text-xs font-bold uppercase tracking-widest text-[#00b5e2]">{event.category}</p>
               <div>
@@ -67,12 +72,11 @@ export default function AgendaSection() {
                 </div>
               </div>
 
-              <Link
-                href={event.link}
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#00b5e2] text-[#00205b] font-bold rounded-sm hover:bg-white transition-colors"
-              >
-                En savoir plus →
-              </Link>
+              <div>
+                <Disclosure hashId="rameaux-2027" variant="solid" closedLabel="En savoir plus" openLabel="Masquer le détail">
+                  <EventDetails dark single details={detailsOf('rameaux-2027')} className="border-t border-white/10 pt-6" />
+                </Disclosure>
+              </div>
             </Reveal>
 
             <Reveal className="lg:w-1/2 w-full" delay={150}>
@@ -97,7 +101,7 @@ export default function AgendaSection() {
             {agenda.map((item, i) => (
               <li key={item.title}>
                 <Reveal delay={i * 120}>
-                  <ExpandableEvent id="montagnarde-2027" item={item} />
+                  <ExpandableEvent id="montagnarde-2027" item={item} details={detailsOf('montagnarde-2027')} />
                 </Reveal>
               </li>
             ))}

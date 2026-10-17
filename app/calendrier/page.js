@@ -1,15 +1,35 @@
 import Link from 'next/link'
 import { ArrowLeft, Calendar, MapPin, ArrowRight, Repeat } from 'lucide-react'
 import calendrier from '@/data/calendrier.json'
+import EventCard from '@/components/EventCard'
+import { SITE_URL } from '@/lib/site'
 
 export const metadata = {
   title: 'Calendrier 2027',
   description: "Les grands rendez-vous du TOAC Cyclo en 2027 : Randonnée des Rameaux, Montagnarde, Paris-Brest-Paris et rendez-vous annuels du club.",
 }
 
+const eventJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SportsEvent',
+  name: 'Randonnée des Rameaux 2027',
+  startDate: '2027-03-21T08:00',
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  location: {
+    '@type': 'Place',
+    name: 'Complexe Sportif TOAC',
+    address: { '@type': 'PostalAddress', addressLocality: 'Toulouse', addressCountry: 'FR' },
+  },
+  organizer: { '@type': 'SportsClub', name: 'TOAC Cyclotourisme', url: SITE_URL },
+  image: `${SITE_URL}/images/TOAC1.jpg`,
+  description: 'Randonnée cyclo annuelle du TOAC Cyclo, parcours pour tous les niveaux. Inscriptions sur place le matin même.',
+}
+
 export default function CalendrierPage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }} />
       <div className="bg-[#00205b] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
         <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-start">
@@ -30,24 +50,7 @@ export default function CalendrierPage() {
           </h2>
           <div className="space-y-4">
             {calendrier.evenements.map((e) => (
-              <Link
-                key={e.id}
-                href={e.link}
-                className="group block bg-white rounded-lg shadow-sm p-6 border-l-4 border-[#00b5e2] hover:shadow-md transition-shadow"
-              >
-                <span className="inline-block px-2 py-0.5 bg-[#00205b] text-white text-xs font-bold uppercase tracking-wider rounded mb-3">{e.category}</span>
-                <h3 className="text-xl font-bold text-[#00205b] group-hover:text-[#0077b6] transition-colors">{e.title}</h3>
-                <p className="flex items-center gap-2 text-gray-700 font-medium mt-2">
-                  <Calendar className="w-4 h-4 text-[#00b5e2]" /> {e.dateLabel}
-                </p>
-                <p className="flex items-center gap-2 text-sm text-gray-500 mt-1">
-                  <MapPin className="w-4 h-4 text-[#00b5e2]" /> {e.location}
-                </p>
-                <p className="text-sm text-gray-600 mt-2">{e.detail}</p>
-                <span className="inline-flex items-center gap-1 text-sm font-bold text-[#00205b] mt-4 group-hover:text-[#0077b6] transition-colors">
-                  Plus d'infos <ArrowRight className="w-4 h-4" />
-                </span>
-              </Link>
+              <EventCard key={e.id} event={e} />
             ))}
           </div>
         </section>
