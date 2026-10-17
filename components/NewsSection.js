@@ -104,7 +104,7 @@ export default function NewsSection() {
           />
         </Reveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {NEWS_ITEMS.map((item, index) => (
             <Reveal key={index} delay={index * 120}>
               <NewsCard item={item} />

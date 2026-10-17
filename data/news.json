@@ -1,14 +1,5 @@
 [
     {
-        "category": "Événement Club",
-        "title": "Randonnée des Rameaux 2027",
-        "date": "Dim. 21 Mars 2027",
-        "location": "Toulouse",
-        "summary": "Notre rendez-vous annuel du printemps approche : parcours pour tous les niveaux autour de Toulouse. Inscriptions sur place le matin même.",
-        "image": "/images/TOAC1.jpg",
-        "link": "/rando-rameaux"
-    },
-    {
         "category": "Séjour Club",
         "title": "Montagnarde 2027 : à vos agendas !",
         "date": "Week-end de l'Ascension 2027",

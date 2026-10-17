@@ -16,13 +16,13 @@ const SOCIAL_ICONS = { Facebook, Instagram, Strava: StravaIcon }
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-[#00205b] text-white pt-12 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 lg:grid-cols-5 gap-8 text-sm">
-        <div className="md:col-span-2">
-          <div className="flex items-center gap-2 mb-6">
+    <footer id="contact" className="bg-[#00205b] text-white pt-10 pb-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1.5fr_1fr] gap-x-8 gap-y-6 text-sm">
+        <div>
+          <div className="flex items-center gap-2 mb-1 md:mb-3">
             <span className="font-bold text-2xl tracking-tight">TOAC<span className="text-[#00b5e2]">CYCLO</span></span>
           </div>
-          <p className="max-w-sm text-gray-300 leading-relaxed">
+          <p className="max-w-sm text-gray-300 leading-relaxed hidden md:block">
             Le club cycliste historique du TOAC à Toulouse.
             La passion du vélo, l'excellence de l'organisation.
           </p>
@@ -47,8 +47,8 @@ export default function Footer() {
           </div>}
         </div>
         <div>
-          <h2 className="font-bold mb-6 text-lg text-[#00b5e2]">Contact</h2>
-          <ul className="space-y-4 text-gray-300">
+          <h2 className="font-bold mb-3 text-base text-[#00b5e2]">Contact</h2>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 md:block md:space-y-2 text-gray-300">
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#00b5e2] mt-0.5 flex-shrink-0" />
               <a href="https://www.google.com/maps/search/?api=1&query=TOAC+Omnisports+Toulouse" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Complexe Sportif TOAC<br />Toulouse, France</a>
@@ -60,42 +60,42 @@ export default function Footer() {
           </ul>
         </div>
         <nav aria-label="Plan du site">
-          <h2 className="font-bold mb-6 text-lg text-[#00b5e2]">Le site</h2>
-          <ul className="space-y-1 text-gray-300">
+          <h2 className="font-bold mb-3 text-base text-[#00b5e2]">Le site</h2>
+          <ul className="columns-2 gap-x-6 text-gray-300">
             {SITE_MAP.map((c) => (
-              <li key={c.href}>
-                <Link href={c.href} className="inline-block py-1.5 hover:text-white transition-colors">{c.name}</Link>
+              <li key={c.href} className="break-inside-avoid">
+                <Link href={c.href} className="inline-block py-1 hover:text-white transition-colors">{c.name}</Link>
               </li>
             ))}
           </ul>
         </nav>
         <div>
-          <h2 className="font-bold mb-6 text-lg text-[#00b5e2]">Liens Utiles</h2>
-          <ul className="space-y-1 text-gray-300">
+          <h2 className="font-bold mb-3 text-base text-[#00b5e2]">Liens Utiles</h2>
+          <ul className="flex flex-wrap gap-x-5 lg:block text-gray-300">
             <li>
-              <a href="https://meteofrance.com" target="_blank" rel="noopener noreferrer" className="py-1.5 hover:text-white transition-colors flex items-center gap-2">
+              <a href="https://meteofrance.com" target="_blank" rel="noopener noreferrer" className="py-1 hover:text-white transition-colors flex items-center gap-2">
                 Météo France <ExternalLink className="w-3 h-3 opacity-50" />
               </a>
             </li>
             <li>
-              <a href="https://ffvelo.fr" target="_blank" rel="noopener noreferrer" className="py-1.5 hover:text-white transition-colors flex items-center gap-2">
+              <a href="https://ffvelo.fr" target="_blank" rel="noopener noreferrer" className="py-1 hover:text-white transition-colors flex items-center gap-2">
                 FF Vélo <ExternalLink className="w-3 h-3 opacity-50" />
               </a>
             </li>
             <li>
-              <a href="https://www.cyclotourisme-31.com/" target="_blank" rel="noopener noreferrer" className="py-1.5 hover:text-white transition-colors flex items-center gap-2">
+              <a href="https://www.cyclotourisme-31.com/" target="_blank" rel="noopener noreferrer" className="py-1 hover:text-white transition-colors flex items-center gap-2">
                 FSGT Cyclotourisme 31 <ExternalLink className="w-3 h-3 opacity-50" />
               </a>
             </li>
             <li>
-              <a href="https://openrunner.com" target="_blank" rel="noopener noreferrer" className="py-1.5 hover:text-white transition-colors flex items-center gap-2">
+              <a href="https://openrunner.com" target="_blank" rel="noopener noreferrer" className="py-1 hover:text-white transition-colors flex items-center gap-2">
                 OpenRunner <ExternalLink className="w-3 h-3 opacity-50" />
               </a>
             </li>
           </ul>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 mt-8 pt-8 border-t border-white/10 text-center text-xs text-gray-400 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-7xl mx-auto px-4 mt-6 pt-2 border-t border-white/10 text-center text-xs text-gray-400 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>© {new Date().getFullYear()} TOAC Cyclotourisme. Tous droits réservés.</p>
         <div className="flex gap-6">
           <Link href="/mentions-legales" className="inline-block py-2 hover:text-white transition-colors">Mentions Légales</Link>

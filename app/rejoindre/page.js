@@ -1,6 +1,5 @@
 import Link from 'next/link'
-import { ArrowLeft, Mail, Bike, Users, ShieldCheck, Gift, CheckCircle, ChevronDown, FileText, Shield, AlertCircle, CreditCard } from 'lucide-react'
-import sorties from '@/data/sorties.json'
+import { ArrowLeft, Mail, Bike, ShieldCheck, Gift, CheckCircle, ChevronDown, FileText, Shield, AlertCircle, CreditCard } from 'lucide-react'
 import adhesion from '@/data/adhesion.json'
 
 const { season, nextSeason, campaignOpen } = adhesion
@@ -127,24 +126,6 @@ export default function RejoindrePage() {
                 </div>
                 <h3 className="font-bold text-[#00205b] mb-2">{etape.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{etape.text}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Sorties */}
-        <section>
-          <h2 className="text-3xl font-bold text-[#00205b] mb-6 flex items-center gap-2">
-            <Users className="w-6 h-6 text-[#00b5e2]" aria-hidden="true" /> Où et quand nous rejoindre
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {sorties.map((s) => (
-              <div key={s.title} className="bg-white rounded-lg shadow-sm p-6 border border-gray-100">
-                <h3 className="font-bold text-[#00205b] text-lg">{s.title}</h3>
-                <p className="text-sm text-gray-600 mt-1 mb-3">{s.desc}</p>
-                <p className="text-sm text-gray-700"><strong>Quand :</strong> {s.when}</p>
-                <p className="text-sm text-gray-700"><strong>Où :</strong> {s.where}</p>
-                <p className="text-xs text-gray-500 mt-1">{s.detail}</p>
               </div>
             ))}
           </div>
