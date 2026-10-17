@@ -1,11 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { Calendar, MapPin, Target } from 'lucide-react'
+import { Calendar, MapPin, ArrowRight } from 'lucide-react'
 import event from '@/data/featured-event.json'
+import agenda from '@/data/agenda.json'
 import Reveal from '@/components/Reveal'
+import ExpandableEvent from '@/components/ExpandableEvent'
+import SectionHeading from '@/components/SectionHeading'
 import ElevationProfile from '@/components/ElevationProfile'
 
-export default function FeaturedEventSection() {
+// Prochains rendez-vous : l'événement phare en grand, puis les autres rendez-vous datés.
+export default function AgendaSection() {
   return (
     <div id="evenements">
       <div className="bg-white">
@@ -15,15 +19,29 @@ export default function FeaturedEventSection() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-10 translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            <Reveal className="lg:w-1/2 space-y-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00b5e2]/10 border border-[#00b5e2] rounded-sm text-[#00b5e2] text-xs font-bold uppercase tracking-widest">
-                <Target className="w-4 h-4" aria-hidden="true" /> {event.category}
-              </div>
+          <Reveal>
+            <SectionHeading
+              light
+              eyebrow="À l'agenda"
+              title="Prochains rendez-vous"
+              action={
+                <Link
+                  href="/calendrier"
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/60 hover:border-white hover:bg-white/10 text-white font-bold rounded-sm transition-colors text-sm flex-shrink-0 self-start md:self-auto"
+                >
+                  Tout le calendrier 2027 <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              }
+            />
+          </Reveal>
 
+          {/* Événement phare */}
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+            <Reveal className="lg:w-1/2 space-y-6">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#00b5e2]">{event.category}</p>
               <div>
-                <h2 className="display text-5xl sm:text-6xl lg:text-7xl font-bold mb-5">{event.title}</h2>
-                <p className="text-xl text-gray-300 font-light leading-relaxed">{event.description}</p>
+                <h3 className="display text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">{event.title}</h3>
+                <p className="text-lg text-gray-300 font-light leading-relaxed">{event.description}</p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-6 pt-6 border-t border-white/10">
@@ -73,6 +91,17 @@ export default function FeaturedEventSection() {
               </div>
             </Reveal>
           </div>
+
+          {/* Autres rendez-vous : le détail se déplie sur place */}
+          <ul className="mt-14 md:mt-20 grid gap-6">
+            {agenda.map((item, i) => (
+              <li key={item.title}>
+                <Reveal delay={i * 120}>
+                  <ExpandableEvent id="montagnarde-2027" item={item} />
+                </Reveal>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

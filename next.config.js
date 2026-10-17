@@ -18,6 +18,7 @@ nextConfig.redirects = async () => [
   { source: '/activites/cyclomontagnardes', destination: '/activites#cyclomontagnardes', permanent: true },
   { source: '/adhesion', destination: '/rejoindre#adhesion', permanent: true },
   { source: '/actualites/ag-2025', destination: '/', permanent: true },
+  { source: '/actualites/montagnarde-2027', destination: '/#montagnarde-2027', permanent: true },
 ]
 
 module.exports = nextConfig

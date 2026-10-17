@@ -182,14 +182,6 @@ export default function ActivitesPage() {
             {CMV.map((e) => <EventRow key={e.title} {...e} />)}
           </ul>
         </section>
-
-        <div className="bg-[#00205b] text-white rounded-lg p-8 text-center">
-          <h2 className="display text-3xl md:text-4xl font-bold mb-3">Envie d'essayer ?</h2>
-          <p className="text-gray-300 mb-6">Venez rouler avec nous, on vous indique la sortie adaptée à votre niveau.</p>
-          <Link href="/rejoindre" className="inline-flex items-center justify-center px-6 py-3 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors">
-            Rejoindre le club
-          </Link>
-        </div>
       </div>
     </div>
   )

@@ -5,7 +5,6 @@ const ROUTES = [
   { path: '/rejoindre', priority: 0.9 },
   { path: '/calendrier', priority: 0.8 },
   { path: '/rando-rameaux', priority: 0.8 },
-  { path: '/actualites/montagnarde-2027', priority: 0.6 },
   { path: '/activites', priority: 0.7 },
   { path: '/histoire', priority: 0.5 },
   { path: '/mentions-legales', priority: 0.2 },

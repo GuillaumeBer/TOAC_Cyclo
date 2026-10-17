@@ -8,7 +8,7 @@ const VALEURS = [
   {
     icon: Users,
     title: 'Convivialité & respect',
-    desc: 'Nos sorties du vendredi, du dimanche matin et des jours fériés sont sacrées. Pas de compétition, juste le plaisir de rouler ensemble.',
+    desc: "Chacun roule à son rythme et personne n'est laissé derrière : le plaisir de rouler ensemble passe avant la performance.",
   },
   {
     icon: Award,
@@ -44,16 +44,16 @@ export default function ClubSection() {
 
         {/* Chiffres clés */}
         <Reveal>
-          <dl className="grid grid-cols-2 lg:grid-cols-4 mb-14 md:mb-20 border-y border-[#00205b]/15">
+          <dl className="grid grid-cols-3 mb-14 md:mb-20 border-y border-[#00205b]/15">
             {chiffres.map((c, i) => (
               <div
                 key={c.label}
-                className={`py-8 px-4 md:px-6 text-center lg:text-left ${i > 0 ? 'lg:border-l border-[#00205b]/15' : ''} ${i % 2 === 1 ? 'border-l lg:border-l border-[#00205b]/15' : ''}`}
+                className={`py-8 px-2 md:px-6 min-w-0 text-center md:text-left ${i > 0 ? 'border-l border-[#00205b]/15' : ''}`}
               >
                 <dt className="sr-only">{c.label}</dt>
                 <dd>
                   <span className="display block whitespace-nowrap text-5xl sm:text-6xl md:text-7xl font-bold text-[#00205b]">{c.value}</span>
-                  <span className="block text-sm text-gray-600 mt-3 leading-snug max-w-[16rem] mx-auto lg:mx-0">{c.label}</span>
+                  <span className="block text-xs md:text-sm text-gray-600 mt-3 leading-snug max-w-[16rem] mx-auto md:mx-0 [overflow-wrap:anywhere]">{c.label}</span>
                 </dd>
               </div>
             ))}
@@ -73,16 +73,6 @@ export default function ClubSection() {
           ))}
         </div>
 
-        <Reveal>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Link
-              href="/rejoindre#adhesion"
-              className="inline-flex items-center justify-center px-7 py-3.5 border-2 border-[#00205b] text-[#00205b] font-bold rounded-sm hover:bg-[#00205b] hover:text-white transition-colors"
-            >
-              Adhésion et tarifs →
-            </Link>
-          </div>
-        </Reveal>
       </div>
     </div>
   )

@@ -1,24 +1,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
 import activitiesData from '@/data/activities.json'
 import Reveal from '@/components/Reveal'
+import SectionHeading from '@/components/SectionHeading'
 
 // Aperçu visuel des activités : le détail est sur la page « Activités ».
 export default function ActivitiesSection() {
   return (
-    <div id="activites" className="py-14 md:py-20 bg-white">
+    <div id="activites" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <div className="flex items-end justify-between gap-6 mb-6">
-            <h2 className="display text-3xl sm:text-4xl font-bold text-[#00205b]">Nos activités</h2>
-            <Link
-              href="/activites"
-              className="inline-flex items-center gap-2 py-2 text-sm font-bold uppercase tracking-wider text-[#0077b6] hover:text-[#00205b] transition-colors"
-            >
-              Tout voir <ArrowRight className="w-4 h-4" aria-hidden="true" />
-            </Link>
-          </div>
+          <SectionHeading eyebrow="Plus loin, plus haut" title="Nos activités" text="Gravel, longue distance, cyclomontagnardes : trois façons de se dépasser, à son rythme." />
         </Reveal>
 
         <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6">

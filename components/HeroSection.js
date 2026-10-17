@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import NextUp from '@/components/NextUp'
 import ElevationProfile from '@/components/ElevationProfile'
 
 export default function HeroSection() {
@@ -41,18 +40,11 @@ export default function HeroSection() {
               >
                 Venir essayer <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link
-                href="/calendrier"
-                className="px-8 py-4 border-2 border-white/60 hover:border-white hover:bg-white/10 text-white font-bold rounded-sm transition-all flex items-center justify-center text-lg"
-              >
-                Voir le calendrier
-              </Link>
             </div>
           </div>
 
           <div className="mt-12 md:mt-16">
-            <NextUp />
-            <p className="mt-4 text-xs text-gray-300 italic">
+            <p className="text-xs text-gray-300 italic">
               « Des tours de quoi ? Des tours d'vélo pardi ! »{' '}
               <a href="https://www.youtube.com/watch?v=WizGTZtjgvo" target="_blank" rel="noopener noreferrer" className="hover:text-white underline-offset-2 hover:underline">
                 — Bourvil, « A bicyclette »

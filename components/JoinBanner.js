@@ -22,23 +22,15 @@ export default function JoinBanner() {
         <div className="max-w-2xl">
           <h2 className="display text-5xl md:text-7xl font-bold text-white">Et si vous rouliez avec nous ?</h2>
           <p className="text-lg text-gray-200 mt-4">
-            Une sortie d'essai, une question, un conseil : écrivez-nous, on vous répond vite.
+            Venez faire une sortie d'essai : on vous accueille et on s'adapte à votre rythme.
           </p>
         </div>
-        <div className="flex flex-col gap-3 flex-shrink-0">
-          <Link
-            href="/rejoindre"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors text-lg shadow-lg"
-          >
-            Venir essayer <ArrowRight className="w-5 h-5" />
-          </Link>
-          <Link
-            href="/rejoindre#adhesion"
-            className="inline-flex items-center justify-center px-8 py-3 border-2 border-white/60 hover:border-white hover:bg-white/10 text-white font-bold rounded-sm transition-colors"
-          >
-            Adhésion et tarifs
-          </Link>
-        </div>
+        <Link
+          href="/rejoindre"
+          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors text-lg shadow-lg flex-shrink-0"
+        >
+          Venir essayer <ArrowRight className="w-5 h-5" />
+        </Link>
       </div>
     </div>
     </div>

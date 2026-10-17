@@ -74,17 +74,6 @@ export default function CalendrierPage() {
             })}
           </div>
         </section>
-
-        <section className="bg-[#00205b] text-white rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-3">Envie de nous rejoindre ?</h2>
-          <p className="text-gray-300 mb-6">Venez essayer une sortie avant de vous décider.</p>
-          <Link
-            href="/rejoindre"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors"
-          >
-            Venir essayer <ArrowRight className="w-5 h-5" />
-          </Link>
-        </section>
       </div>
     </div>
   )

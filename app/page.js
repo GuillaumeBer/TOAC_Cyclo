@@ -1,9 +1,8 @@
 import HeroSection from '@/components/HeroSection'
 import RidesSection from '@/components/RidesSection'
-import FeaturedEventSection from '@/components/FeaturedEventSection'
+import AgendaSection from '@/components/AgendaSection'
 import ClubSection from '@/components/ClubSection'
 import ActivitiesSection from '@/components/ActivitiesSection'
-import NewsSection from '@/components/NewsSection'
 import JoinBanner from '@/components/JoinBanner'
 
 export default function Home() {
@@ -11,8 +10,7 @@ export default function Home() {
     <>
       <HeroSection />
       <RidesSection />
-      <FeaturedEventSection />
-      <NewsSection />
+      <AgendaSection />
       <ActivitiesSection />
       <ClubSection />
       <JoinBanner />

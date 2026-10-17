@@ -4,7 +4,6 @@
         "iconName": "Bike",
         "when": "Tous les vendredis",
         "where": "Complexe sportif TOAC, Toulouse",
-        "detail": "Horaire de départ à confirmer",
         "desc": "La sortie conviviale de la semaine : on roule ensemble, à l'allure du groupe, sans compétition.",
         "badge": "VEN"
     },
@@ -16,5 +15,14 @@
         "detail": "Plusieurs distances au choix",
         "desc": "Les randonnées organisées par les clubs de la région : l'occasion de découvrir de nouvelles routes et de rencontrer d'autres cyclos.",
         "badge": "DIM"
+    },
+    {
+        "title": "Afterwork gravel du jeudi",
+        "iconName": "Bike",
+        "badge": "JEU",
+        "when": "Un jeudi sur deux, d'avril à septembre",
+        "where": "Blagnac ou Saint-Martin",
+        "detail": "Départ 18h30-19h, 30 à 50 km, guinguette à l'arrivée",
+        "desc": "Pour décompresser après le travail sur les chemins et profiter des soirées d'été."
     }
 ]
