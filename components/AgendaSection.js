@@ -20,7 +20,7 @@ export default function AgendaSection() {
       <div className="bg-white">
         <ElevationProfile fill="#00205b" className="-mb-px" />
       </div>
-      <div className="bg-[#00205b] bg-grain text-white relative overflow-hidden pb-20 md:pb-28 pt-6">
+      <div className="bg-[#00205b] bg-grain text-white relative overflow-hidden pb-10 md:pb-14 pt-6">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-10 translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

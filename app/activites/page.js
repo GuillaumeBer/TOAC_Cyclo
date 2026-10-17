@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowLeft, Bike, Map, Mountain, Sunset, Calendar, Clock, MapPin, ExternalLink } from 'lucide-react'
 
 export const metadata = {
@@ -42,16 +43,22 @@ const TABS = [
   { id: 'cyclomontagnardes', label: 'Cyclomontagnardes', icon: Mountain },
 ]
 
-function SectionTitle({ icon: Icon, eyebrow, title, text }) {
+function SectionTitle({ icon: Icon, eyebrow, title, text, image }) {
   return (
     <div className="mb-6">
-      <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#0077b6] mb-3">
-        <span className="h-px w-10 bg-[#0077b6]" aria-hidden="true" /> {eyebrow}
-      </p>
-      <h2 className="display text-4xl md:text-5xl font-bold text-[#00205b] flex items-center gap-3">
-        <Icon className="w-8 h-8 text-[#00b5e2]" aria-hidden="true" /> {title}
-      </h2>
-      {text && <p className="mt-3 text-gray-600 max-w-2xl">{text}</p>}
+      <div className="relative h-44 md:h-60 rounded-2xl overflow-hidden mb-5 shadow-md">
+        <Image src={image} alt="" fill sizes="(min-width: 896px) 896px, 100vw" className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#00205b]/90 via-[#00205b]/40 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 text-white">
+          <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#89d3e8] mb-2">
+            <span className="h-px w-10 bg-[#89d3e8]" aria-hidden="true" /> {eyebrow}
+          </p>
+          <h2 className="display text-4xl md:text-5xl font-bold flex items-center gap-3">
+            <Icon className="w-8 h-8 text-[#00b5e2]" aria-hidden="true" /> {title}
+          </h2>
+        </div>
+      </div>
+      {text && <p className="text-gray-600 max-w-2xl">{text}</p>}
     </div>
   )
 }
@@ -110,7 +117,7 @@ export default function ActivitesPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
         {/* Gravel */}
         <section id="gravel" className="scroll-mt-24">
-          <SectionTitle icon={Bike} eyebrow="Section Gravel" title="Gravel & aventure" text="Des sorties afterwork conviviales aux aventures longue distance en autonomie." />
+          <SectionTitle image="/images/gravel.jpg" icon={Bike} eyebrow="Section Gravel" title="Gravel & aventure" text="Des sorties afterwork conviviales aux aventures longue distance en autonomie." />
 
           <div className="bg-white rounded-lg shadow-sm p-6 md:p-8 border-l-4 border-[#00b5e2] mb-8">
             <div className="flex flex-wrap items-center gap-3 mb-3">
@@ -143,7 +150,7 @@ export default function ActivitesPage() {
 
         {/* Longue distance */}
         <section id="longue-distance" className="scroll-mt-24">
-          <SectionTitle icon={Map} eyebrow="Brevets et randonnées" title="Longue distance" text="Préparez Paris-Brest-Paris 2027 : brevets des randonneurs mondiaux (BRM) et défis d'endurance." />
+          <SectionTitle image="/images/longue-distance.jpg" icon={Map} eyebrow="Brevets et randonnées" title="Longue distance" text="Préparez Paris-Brest-Paris 2027 : brevets des randonneurs mondiaux (BRM) et défis d'endurance." />
 
           <div className="bg-white rounded-lg shadow-sm p-6 md:p-8 border-l-4 border-[#00b5e2] mb-8">
             <h3 className="text-xl font-bold text-[#00205b] mb-3">Paris-Brest-Paris 2027 : du 22 au 26 août</h3>
@@ -177,7 +184,7 @@ export default function ActivitesPage() {
 
         {/* Cyclomontagnardes */}
         <section id="cyclomontagnardes" className="scroll-mt-24">
-          <SectionTitle icon={Mountain} eyebrow="Montagne" title="Cyclomontagnardes" text="Des défis d'exception au cœur des massifs français, organisés par la FFVélo. Plusieurs membres du TOAC y participent chaque année. Dates 2027 à venir." />
+          <SectionTitle image="/images/cyclomontagnardes.jpg" icon={Mountain} eyebrow="Montagne" title="Cyclomontagnardes" text="Des défis d'exception au cœur des massifs français, organisés par la FFVélo. Plusieurs membres du TOAC y participent chaque année. Dates 2027 à venir." />
           <ul className="space-y-3">
             {CMV.map((e) => <EventRow key={e.title} {...e} />)}
           </ul>

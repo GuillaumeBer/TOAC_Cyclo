@@ -11,7 +11,7 @@ export default function RidesSection() {
           <SectionHeading
             eyebrow="Rouler avec nous"
             title="Nos sorties régulières"
-            text="Pas besoin d'être un champion : on roule à l'allure du groupe, dans la bonne humeur. Le club est ouvert à tous, salariés Airbus ou non."
+            text="Pas besoin d'être un champion : on roule à l'allure du groupe, dans la bonne humeur. Le club est ouvert à tous, salariés Airbus ou non. Pour aller plus loin, il propose aussi du gravel, des brevets longue distance et des cyclomontagnardes."
           />
         </Reveal>
 
