@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { SITE_URL } from '@/lib/site'
 import { Calendar, MapPin, Trophy, Users, Heart, ArrowLeft, Bike } from 'lucide-react'
-import SeeAlso from '@/components/SeeAlso'
 
 export const metadata = {
   title: 'Randonnée des Rameaux',
@@ -181,7 +180,6 @@ export default function RandoRameauxPage() {
             </div>
           </div>
 
-          <SeeAlso current="/rando-rameaux" />
         </div>
       </div>
     </div>
