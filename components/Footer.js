@@ -61,34 +61,34 @@ export default function Footer() {
         </div>
         <nav aria-label="Plan du site">
           <h2 className="font-bold mb-6 text-lg text-[#00b5e2]">Le site</h2>
-          <ul className="space-y-3 text-gray-300">
+          <ul className="space-y-1 text-gray-300">
             {SITE_MAP.map((c) => (
               <li key={c.href}>
-                <Link href={c.href} className="hover:text-white transition-colors">{c.name}</Link>
+                <Link href={c.href} className="inline-block py-1.5 hover:text-white transition-colors">{c.name}</Link>
               </li>
             ))}
           </ul>
         </nav>
         <div>
           <h2 className="font-bold mb-6 text-lg text-[#00b5e2]">Liens Utiles</h2>
-          <ul className="space-y-3 text-gray-300">
+          <ul className="space-y-1 text-gray-300">
             <li>
-              <a href="https://meteofrance.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+              <a href="https://meteofrance.com" target="_blank" rel="noopener noreferrer" className="py-1.5 hover:text-white transition-colors flex items-center gap-2">
                 Météo France <ExternalLink className="w-3 h-3 opacity-50" />
               </a>
             </li>
             <li>
-              <a href="https://ffvelo.fr" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+              <a href="https://ffvelo.fr" target="_blank" rel="noopener noreferrer" className="py-1.5 hover:text-white transition-colors flex items-center gap-2">
                 FF Vélo <ExternalLink className="w-3 h-3 opacity-50" />
               </a>
             </li>
             <li>
-              <a href="https://www.cyclotourisme-31.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+              <a href="https://www.cyclotourisme-31.com/" target="_blank" rel="noopener noreferrer" className="py-1.5 hover:text-white transition-colors flex items-center gap-2">
                 FSGT Cyclotourisme 31 <ExternalLink className="w-3 h-3 opacity-50" />
               </a>
             </li>
             <li>
-              <a href="https://openrunner.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+              <a href="https://openrunner.com" target="_blank" rel="noopener noreferrer" className="py-1.5 hover:text-white transition-colors flex items-center gap-2">
                 OpenRunner <ExternalLink className="w-3 h-3 opacity-50" />
               </a>
             </li>
@@ -98,8 +98,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 mt-8 pt-8 border-t border-white/10 text-center text-xs text-gray-400 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>© {new Date().getFullYear()} TOAC Cyclotourisme. Tous droits réservés.</p>
         <div className="flex gap-6">
-          <Link href="/mentions-legales" className="hover:text-white transition-colors">Mentions Légales</Link>
-          <Link href="/confidentialite" className="hover:text-white transition-colors">Confidentialité</Link>
+          <Link href="/mentions-legales" className="inline-block py-2 hover:text-white transition-colors">Mentions Légales</Link>
+          <Link href="/confidentialite" className="inline-block py-2 hover:text-white transition-colors">Confidentialité</Link>
         </div>
       </div>
     </footer>

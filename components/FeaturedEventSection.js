@@ -64,8 +64,8 @@ export default function FeaturedEventSection() {
                   <Image
                     src={event.image}
                     alt={event.imageAlt}
-                    width={800}
-                    height={600}
+                    width={711}
+                    height={614}
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="w-full h-auto transform transition duration-700 group-hover:scale-105"
                   />
