@@ -1,6 +1,5 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import { Calendar, MapPin, ArrowRight } from 'lucide-react'
+import { Calendar, MapPin } from 'lucide-react'
 import event from '@/data/featured-event.json'
 import agenda from '@/data/agenda.json'
 import calendrier from '@/data/calendrier.json'
@@ -29,14 +28,6 @@ export default function AgendaSection() {
               light
               eyebrow="À l'agenda"
               title="Prochains rendez-vous"
-              action={
-                <Link
-                  href="/calendrier"
-                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/60 hover:border-white hover:bg-white/10 text-white font-bold rounded-sm transition-colors text-sm flex-shrink-0 self-start md:self-auto"
-                >
-                  Tout le calendrier 2027 <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                </Link>
-              }
             />
           </Reveal>
 
