@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { MapPin, Mail, ExternalLink, Facebook, Instagram } from 'lucide-react'
 import social from '@/data/social.json'
+import { NAV_ITEMS } from '@/lib/navigation'
 
 // Strava n'existe pas dans lucide
 function StravaIcon({ className }) {
@@ -16,8 +17,8 @@ const SOCIAL_ICONS = { Facebook, Instagram, Strava: StravaIcon }
 export default function Footer() {
   return (
     <footer id="contact" className="bg-[#00205b] text-white pt-12 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8 text-sm">
-        <div className="col-span-1 md:col-span-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 lg:grid-cols-5 gap-8 text-sm">
+        <div className="md:col-span-2">
           <div className="flex items-center gap-2 mb-6">
             <span className="font-bold text-2xl tracking-tight">TOAC<span className="text-[#00b5e2]">CYCLO</span></span>
           </div>
@@ -58,12 +59,21 @@ export default function Footer() {
             </li>
           </ul>
         </div>
+        <nav aria-label="Plan du site">
+          <h2 className="font-bold mb-6 text-lg text-[#00b5e2]">Le site</h2>
+          <ul className="space-y-3 text-gray-300">
+            {NAV_ITEMS.filter((i) => i.children).flatMap((i) => i.children)
+              .filter((c) => !c.href.includes('#'))
+              .map((c) => (
+                <li key={c.href}>
+                  <Link href={c.href} className="hover:text-white transition-colors">{c.name}</Link>
+                </li>
+              ))}
+          </ul>
+        </nav>
         <div>
           <h2 className="font-bold mb-6 text-lg text-[#00b5e2]">Liens Utiles</h2>
           <ul className="space-y-3 text-gray-300">
-            <li>
-              <Link href="/calendrier" className="hover:text-white transition-colors">Calendrier 2027</Link>
-            </li>
             <li>
               <a href="https://meteofrance.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
                 Météo France <ExternalLink className="w-3 h-3 opacity-50" />

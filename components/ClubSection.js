@@ -68,12 +68,18 @@ export default function ClubSection() {
           />
         </div>
 
-        <div className="text-center mb-12 md:hidden">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start mb-12">
           <Link
             href="/histoire"
-            className="inline-flex items-center px-6 py-3 bg-[#00205b] text-white font-bold rounded-sm hover:bg-[#00b5e2] transition-colors text-sm shadow-sm"
+            className="inline-flex items-center justify-center px-6 py-3 bg-[#00205b] text-white font-bold rounded-sm hover:bg-[#00b5e2] transition-colors text-sm shadow-sm md:hidden"
           >
             Découvrir notre histoire →
+          </Link>
+          <Link
+            href="/adhesion"
+            className="inline-flex items-center justify-center px-6 py-3 border-2 border-[#00205b] text-[#00205b] font-bold rounded-sm hover:bg-[#00205b] hover:text-white transition-colors text-sm"
+          >
+            Adhésion et tarifs →
           </Link>
         </div>
 

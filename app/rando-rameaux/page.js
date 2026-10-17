@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { SITE_URL } from '@/lib/site'
-import ShareButton from '@/components/ShareButton'
 import { Calendar, MapPin, Trophy, Users, Heart, ArrowLeft, Bike } from 'lucide-react'
+import SeeAlso from '@/components/SeeAlso'
 
 export const metadata = {
   title: 'Randonnée des Rameaux',
@@ -57,7 +57,6 @@ export default function RandoRameauxPage() {
             par le TOAC Cyclo. Un événement qui rassemble cyclistes de tous horizons pour une journée
             de convivialité sur les routes autour de Toulouse.
           </p>
-          <ShareButton title="Randonnée des Rameaux - TOAC Cyclo" className="mt-6" />
         </div>
       </div>
 
@@ -181,6 +180,7 @@ export default function RandoRameauxPage() {
             </div>
           </div>
 
+          <SeeAlso dark current="/rando-rameaux" />
         </div>
       </div>
     </div>

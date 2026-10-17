@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, Calendar, MapPin, Bike, Home, Mail } from 'lucide-react'
 import ShareButton from '@/components/ShareButton'
+import SeeAlso from '@/components/SeeAlso'
 
 export const metadata = {
   title: 'Montagnarde 2027 : à vos agendas',
@@ -101,6 +102,7 @@ export default function Montagnarde2027Page() {
             <Mail className="w-5 h-5" /> Contacter le bureau du TOAC Cyclo
           </a>
         </div>
+        <SeeAlso current="/actualites/montagnarde-2027" />
       </div>
     </div>
   )

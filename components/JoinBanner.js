@@ -20,12 +20,20 @@ export default function JoinBanner() {
             Une sortie d'essai, une question, un conseil : écrivez-nous, on vous répond vite.
           </p>
         </div>
-        <Link
-          href="/rejoindre"
-          className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors text-lg shadow-lg flex-shrink-0"
-        >
-          Venir essayer <ArrowRight className="w-5 h-5" />
-        </Link>
+        <div className="flex flex-col gap-3 flex-shrink-0">
+          <Link
+            href="/rejoindre"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors text-lg shadow-lg"
+          >
+            Venir essayer <ArrowRight className="w-5 h-5" />
+          </Link>
+          <Link
+            href="/adhesion"
+            className="inline-flex items-center justify-center px-8 py-3 border-2 border-white/60 hover:border-white hover:bg-white/10 text-white font-bold rounded-sm transition-colors"
+          >
+            Adhésion et tarifs
+          </Link>
+        </div>
       </div>
     </div>
   )

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, FileText, CreditCard, Shield, AlertCircle, CheckCircle, Mail } from 'lucide-react'
 import adhesion from '@/data/adhesion.json'
+import SeeAlso from '@/components/SeeAlso'
 
 const { season, nextSeason, campaignOpen } = adhesion
 
@@ -57,6 +58,7 @@ export default function AdhesionPage() {
                 src="/images/maillot_toac.jpg"
                 alt="Maillot TOAC Cyclo"
                 fill
+                sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover"
               />
             </div>
@@ -203,6 +205,7 @@ export default function AdhesionPage() {
           </div>
         </div>
 
+        <SeeAlso current="/adhesion" />
       </div>
     </div>
   )

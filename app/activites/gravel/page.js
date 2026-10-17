@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, Mountain, Sunset, Calendar, MapPin, Clock } from 'lucide-react'
+import SeeAlso from '@/components/SeeAlso'
 
 export const metadata = {
   title: 'Sorties Gravel & Aventure',
@@ -127,7 +128,7 @@ export default function GravelPage() {
           </div>
         </div>
 
-        {/* Contact */}
+        <SeeAlso group="activites" current="/activites/gravel" />
 
 
       </div>

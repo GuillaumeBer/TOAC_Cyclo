@@ -59,7 +59,7 @@ const clubJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={`${inter.variable} ${barlow.variable}`} suppressHydrationWarning>
+    <html lang="fr" data-scroll-behavior="smooth" className={`${inter.variable} ${barlow.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased text-gray-900 bg-white">
         <script
           type="application/ld+json"

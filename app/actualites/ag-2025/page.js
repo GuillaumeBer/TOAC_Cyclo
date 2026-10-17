@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, Calendar, Users, Target, Award, FileText } from 'lucide-react'
+import SeeAlso from '@/components/SeeAlso'
 
 export const metadata = {
   title: 'Assemblée Générale 2025',
@@ -128,6 +129,7 @@ export default function AG2025Page() {
           </p>
         </div>
 
+        <SeeAlso current="/actualites/ag-2025" />
       </div>
     </div>
   )

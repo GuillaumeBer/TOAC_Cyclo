@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, Mountain, Map, Route, Calendar } from 'lucide-react'
+import SeeAlso from '@/components/SeeAlso'
 
 export const metadata = {
   title: 'Cyclomontagnardes',
@@ -88,7 +89,7 @@ export default function CyclomontagnardesPage() {
           </div>
         </div>
 
-        {/* Contact */}
+        <SeeAlso group="activites" current="/activites/cyclomontagnardes" />
 
 
       </div>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowLeft, Map, Download, Calendar, ExternalLink } from 'lucide-react'
+import SeeAlso from '@/components/SeeAlso'
 
 export const metadata = {
   title: 'Brevets & Randonnées',
@@ -167,7 +168,7 @@ export default function LongueDistancePage() {
           </a>
         </div>
 
-        {/* Contact */}
+        <SeeAlso group="activites" current="/activites/longue-distance" />
 
 
       </div>

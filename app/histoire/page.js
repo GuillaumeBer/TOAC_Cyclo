@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, Calendar, Users, Trophy, Heart, Bike } from 'lucide-react'
+import SeeAlso from '@/components/SeeAlso'
 
 export const metadata = {
   title: 'Notre Histoire',
@@ -145,6 +146,7 @@ export default function HistoirePage() {
             </div>
           </div>
 
+          <SeeAlso dark current="/histoire" />
         </div>
       </div>
     </div>
