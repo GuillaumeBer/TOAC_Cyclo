@@ -67,7 +67,7 @@ export default function RejoindrePage() {
             Envie de rouler en bonne compagnie à Toulouse ? Venez faire une sortie avec nous avant de vous décider.
           </p>
           <a
-            href="mailto:toac.cyclo@gmail.com?subject=Je souhaite essayer une sortie"
+            href="mailto:toac.cyclo@gmail.com?subject=Je%20souhaite%20essayer%20une%20sortie"
             className="mt-8 inline-flex items-center gap-2 px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors text-lg"
           >
             <Mail className="w-5 h-5" /> Demander une sortie d'essai
@@ -146,7 +146,7 @@ export default function RejoindrePage() {
           <p className="text-gray-300 mb-6">Une question ? Écrivez au bureau, on vous répond rapidement.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:toac.cyclo@gmail.com?subject=Je souhaite essayer une sortie"
+              href="mailto:toac.cyclo@gmail.com?subject=Je%20souhaite%20essayer%20une%20sortie"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors"
             >
               <Mail className="w-5 h-5" /> Nous écrire

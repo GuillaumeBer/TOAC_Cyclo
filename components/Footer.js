@@ -26,8 +26,8 @@ export default function Footer() {
             La passion du vélo, l'excellence de l'organisation.
           </p>
 
-          {/* URL à renseigner dans data/social.json (placeholders pour le moment) */}
-          <div className="flex gap-4 mt-6">
+          {/* Ajouter { name, url } dans data/social.json pour afficher les icônes (Facebook, Instagram, Strava) */}
+          {social.length > 0 && <div className="flex gap-4 mt-6">
             {social.map(({ name, url }) => {
               const Icon = SOCIAL_ICONS[name]
               return (
@@ -43,10 +43,10 @@ export default function Footer() {
                 </a>
               )
             })}
-          </div>
+          </div>}
         </div>
         <div>
-          <h4 className="font-bold mb-6 text-lg text-[#00b5e2]">Contact</h4>
+          <h2 className="font-bold mb-6 text-lg text-[#00b5e2]">Contact</h2>
           <ul className="space-y-4 text-gray-300">
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#00b5e2] mt-0.5 flex-shrink-0" />
@@ -59,7 +59,7 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="font-bold mb-6 text-lg text-[#00b5e2]">Liens Utiles</h4>
+          <h2 className="font-bold mb-6 text-lg text-[#00b5e2]">Liens Utiles</h2>
           <ul className="space-y-3 text-gray-300">
             <li>
               <Link href="/calendrier" className="hover:text-white transition-colors">Calendrier 2027</Link>

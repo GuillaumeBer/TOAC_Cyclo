@@ -95,7 +95,7 @@ export default function Montagnarde2027Page() {
         <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-100 text-center">
           <p className="text-gray-600 mb-4">Une question, une idée de destination ?</p>
           <a
-            href="mailto:toac.cyclo@gmail.com?subject=[montagnarde 2027]"
+            href="mailto:toac.cyclo@gmail.com?subject=Montagnarde%202027"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#00b5e2] text-[#00205b] font-bold rounded-sm hover:bg-[#009bc2] transition-colors"
           >
             <Mail className="w-5 h-5" /> Contacter le bureau du TOAC Cyclo

@@ -12,6 +12,26 @@ function nextDay(isoDate) {
 
 const escapeText = (text) => text.replace(/([,;\\])/g, '\\$1').replace(/\n/g, '\\n')
 
+// RFC 5545 : lignes de 75 octets maximum, repliées avec CRLF + espace.
+function fold(line) {
+  const enc = new TextEncoder()
+  const parts = []
+  let current = ''
+  let size = 0
+  for (const ch of line) {
+    const n = enc.encode(ch).length
+    if (size + n > (parts.length ? 74 : 75)) {
+      parts.push(current)
+      current = ''
+      size = 0
+    }
+    current += ch
+    size += n
+  }
+  parts.push(current)
+  return parts.join('\r\n ')
+}
+
 export function GET() {
   const stamp = new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z'
   const events = calendrier.evenements.map((e) =>
@@ -26,7 +46,7 @@ export function GET() {
       `LOCATION:${escapeText(e.location)}`,
       `URL:${SITE_URL}${e.link}`,
       'END:VEVENT',
-    ].join('\r\n')
+    ].map(fold).join('\r\n')
   )
 
   const body = [

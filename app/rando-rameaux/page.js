@@ -55,7 +55,7 @@ export default function RandoRameauxPage() {
           <p className="text-xl text-gray-300 leading-relaxed max-w-3xl">
             Le rendez-vous incontournable du printemps, organisé chaque année le dimanche des Rameaux
             par le TOAC Cyclo. Un événement qui rassemble cyclistes de tous horizons pour une journée
-            de convivialité au cœur des côteaux du Gers.
+            de convivialité sur les routes autour de Toulouse.
           </p>
           <ShareButton title="Randonnée des Rameaux - TOAC Cyclo" className="mt-6" />
         </div>
@@ -129,7 +129,7 @@ export default function RandoRameauxPage() {
             </h2>
             <p className="text-gray-300 leading-relaxed mb-6">
               Plusieurs circuits sont proposés pour s'adapter à tous les niveaux, vous permettant
-              de découvrir les magnifiques paysages vallonnés du Gers sur des routes peu fréquentées.
+              de découvrir de beaux paysages sur des routes peu fréquentées.
             </p>
             <div className="grid sm:grid-cols-3 gap-4">
               <div className="bg-white/5 rounded-lg p-4 text-center">

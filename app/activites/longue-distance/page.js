@@ -84,7 +84,7 @@ export default function LongueDistancePage() {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <div className="flex items-center gap-2 mb-2">
-                <h3 className="font-bold text-[#00205b] text-lg"><a href="https://crmuret.org/brevet-200-km/" target="_blank" rel="noopener noreferrer" className="hover:text-[#0077b6] transition-colors">Muret ↗</a></h3>
+                <h3 className="font-bold text-[#00205b] text-lg">Muret</h3>
                 
               </div>
               <p className="text-sm text-gray-600">200 km</p>

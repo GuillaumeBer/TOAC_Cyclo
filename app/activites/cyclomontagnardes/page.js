@@ -74,7 +74,6 @@ export default function CyclomontagnardesPage() {
             <ActivityCard
               title="Cyclomontagnarde Vosges Alsace"
               location="Wihr-au-Val (68)"
-              link="https://www.cmvalsace.fr/"
             />
             <ActivityCard
               title="Cyclomontagnarde Luchon-Bayonne"
@@ -102,9 +101,13 @@ function ActivityCard({ title, location, link }) {
     <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
       <div className="flex flex-col md:flex-row justify-between md:items-start gap-4">
         <div>
-          <a href={link} target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-[#00205b] hover:text-[#0077b6] transition-colors">
-            {title} ↗
-          </a>
+          {link ? (
+            <a href={link} target="_blank" rel="noopener noreferrer" className="text-xl font-bold text-[#00205b] hover:text-[#0077b6] transition-colors">
+              {title} ↗
+            </a>
+          ) : (
+            <span className="text-xl font-bold text-[#00205b]">{title}</span>
+          )}
           <div className="flex items-center gap-2 text-sm text-gray-500 mt-1">
             <Map className="w-4 h-4" /> {location}
           </div>
