@@ -219,7 +219,7 @@ export default function RejoindrePage() {
                   <div key={lic.name} className="bg-white rounded-lg border border-gray-200 p-4 hover:border-[#00b5e2] transition-colors">
                     <div className="flex items-center justify-between mb-3">
                       <h4 className="font-bold text-[#00205b]">{lic.name}</h4>
-                      <span className="px-2 py-1 bg-gray-100 text-xs font-bold text-gray-500 rounded">{lic.tag}</span>
+                      <span className="px-2 py-1 bg-gray-100 text-xs font-bold text-gray-700 rounded">{lic.tag}</span>
                     </div>
                     <p className="text-sm text-gray-600 mb-4">{lic.text}</p>
                     <ul className="space-y-2">

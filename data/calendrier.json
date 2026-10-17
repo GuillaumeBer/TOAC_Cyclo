@@ -7,7 +7,7 @@
             "start": "2027-03-21",
             "end": "2027-03-21",
             "dateLabel": "Dimanche 21 mars 2027",
-            "detail": "Départ à partir de 08h00 · Complexe TOAC, Toulouse",
+            "detail": "Départ à partir de 08h00",
             "location": "Complexe TOAC, Toulouse",
             "link": "/rando-rameaux"
         },
@@ -18,7 +18,7 @@
             "start": "2027-05-06",
             "end": "2027-05-09",
             "dateLabel": "Week-end de l'Ascension, à partir du jeudi 6 mai 2027",
-            "detail": "Destination et programme à venir",
+            "detail": "Programme à venir",
             "location": "Destination à définir",
             "link": "/actualites/montagnarde-2027"
         },

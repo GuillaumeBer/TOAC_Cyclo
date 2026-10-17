@@ -7,14 +7,11 @@ import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { NAV_ITEMS, CTA } from '@/lib/navigation'
 
-const SECTIONS = ['top', 'sorties', 'evenements', 'actualites', 'activites', 'club', 'contact']
-
 const linkBase = 'relative whitespace-nowrap px-3 2xl:px-4 py-4 text-sm font-bold uppercase tracking-wider transition-colors duration-200'
 
 export default function NavigationBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
-  const [activeSection, setActiveSection] = useState('')
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -33,34 +30,9 @@ export default function NavigationBar() {
 
   useEffect(() => setIsMobileMenuOpen(false), [pathname])
 
-  // Scrollspy sur la page d'accueil uniquement
-  useEffect(() => {
-    if (pathname !== '/') return
-
-    const handleScroll = () => {
-      if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 50) {
-        setActiveSection('contact')
-        return
-      }
-
-      const scrollPosition = window.scrollY + 100 // Offset pour la navbar
-      for (const section of SECTIONS) {
-        const element = document.getElementById(section)
-        if (element && element.offsetTop <= scrollPosition && (element.offsetTop + element.offsetHeight) > scrollPosition) {
-          setActiveSection(section)
-        }
-      }
-    }
-
-    handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [pathname])
-
-  const isActive = (item) => {
-    if (pathname === '/') return item.sections.includes(activeSection)
-    return (item.paths || []).some((p) => pathname === p || pathname.startsWith(`${p}/`))
-  }
+  // Chaque entrée du menu est une vraie page : l'état actif ne dépend que de l'URL.
+  const isActive = (item) =>
+    item.href === '/' ? pathname === '/' : item.paths.some((p) => pathname === p || pathname.startsWith(`${p}/`))
 
   return (
     <nav
@@ -70,10 +42,10 @@ export default function NavigationBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo Area */}
-          <Link href="/#top" className="flex items-center gap-3 cursor-pointer">
+          <Link href="/" className="flex items-center gap-3 cursor-pointer">
             <Image
               src="/images/logo-toac-header.png"
-              alt="Logo TOAC Cyclo"
+              alt=""
               width={50}
               height={50}
               className="w-12 h-12 rounded"
@@ -130,10 +102,8 @@ export default function NavigationBar() {
                 <Link
                   href={item.href}
                   className="block px-4 py-3 text-sm font-bold uppercase tracking-wider text-white hover:text-[#00b5e2]"
-                  onClick={() => {
-                    setIsMobileMenuOpen(false)
-                    if (item.href === '/#top') window.scrollTo({ top: 0, behavior: 'smooth' })
-                  }}
+                  aria-current={isActive(item) ? 'true' : undefined}
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>

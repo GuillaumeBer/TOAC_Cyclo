@@ -29,7 +29,7 @@ export default function NextUp() {
   return (
     <ul className="grid md:grid-cols-3 gap-px bg-white/10 rounded-lg overflow-hidden shadow-2xl">
       <li>
-        <Link href="/#sorties" className={`${cardBase} h-full`}>
+        <Link href="/rejoindre" className={`${cardBase} h-full`}>
           <span className="w-11 h-11 rounded-full bg-[#00b5e2] text-[#00205b] flex items-center justify-center flex-shrink-0">
             <Bike className="w-5 h-5" aria-hidden="true" />
           </span>

@@ -52,7 +52,7 @@ export default function ClubSection() {
               >
                 <dt className="sr-only">{c.label}</dt>
                 <dd>
-                  <span className="display block text-6xl md:text-7xl font-bold text-[#00205b]">{c.value}</span>
+                  <span className="display block whitespace-nowrap text-5xl sm:text-6xl md:text-7xl font-bold text-[#00205b]">{c.value}</span>
                   <span className="block text-sm text-gray-600 mt-3 leading-snug max-w-[16rem] mx-auto lg:mx-0">{c.label}</span>
                 </dd>
               </div>

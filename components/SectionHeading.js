@@ -4,8 +4,8 @@ export default function SectionHeading({ eyebrow, title, text, action, light = f
     <div className="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
       <div className="max-w-2xl">
         {eyebrow && (
-          <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#00b5e2] mb-4">
-            <span className="h-px w-10 bg-[#00b5e2]" aria-hidden="true" />
+          <p className={`flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] mb-4 ${light ? 'text-[#00b5e2]' : 'text-[#0077b6]'}`}>
+            <span className={`h-px w-10 ${light ? 'bg-[#00b5e2]' : 'bg-[#0077b6]'}`} aria-hidden="true" />
             {eyebrow}
           </p>
         )}

@@ -95,7 +95,7 @@ export default function Confidentialite() {
                   Pour exercer vos droits ou pour toute question concernant cette politique, contactez-nous :
                   <br /><br />
                   <strong>TOAC Cyclotourisme</strong><br />
-                  Email : <a href="mailto:toac.cyclo@gmail.com" className="text-[#0077b6] hover:underline">toac.cyclo@gmail.com</a>
+                  Email : <a href="mailto:toac.cyclo@gmail.com" className="text-[#0077b6] underline hover:no-underline">toac.cyclo@gmail.com</a>
                 </p>
               </section>
 

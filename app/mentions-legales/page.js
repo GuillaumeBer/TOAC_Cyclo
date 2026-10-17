@@ -75,7 +75,7 @@ export default function MentionsLegales() {
                 <h2 className="text-xl font-bold text-[#00205b] mb-4">6. Contact</h2>
                 <p>
                   Pour toute question concernant ces mentions légales, vous pouvez nous contacter à l'adresse : 
-                  <a href="mailto:toac.cyclo@gmail.com" className="text-[#0077b6] hover:underline ml-1">
+                  <a href="mailto:toac.cyclo@gmail.com" className="text-[#0077b6] underline hover:no-underline ml-1">
                     toac.cyclo@gmail.com
                   </a>
                 </p>

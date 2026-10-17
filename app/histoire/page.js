@@ -15,11 +15,11 @@ export default function HistoirePage() {
       <div className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto flex flex-col items-start">
           <Link
-            href="/#club"
+            href="/"
             className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
-            Retour au Club
+            Retour à l'accueil
           </Link>
 
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
@@ -86,7 +86,7 @@ export default function HistoirePage() {
             <div className="absolute left-0 top-0 w-4 h-4 -translate-x-1/2 rounded-full bg-amber-500"></div>
             <div className="bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border border-amber-500/30 rounded-lg p-6 ml-4">
               <div className="flex items-center gap-3 mb-4">
-                <div className="px-3 py-1 bg-amber-500 text-white text-sm font-bold rounded">2014</div>
+                <div className="px-3 py-1 bg-amber-400 text-[#00205b] text-sm font-bold rounded">2014</div>
                 <h2 className="text-2xl font-bold text-white">Trophée André Lafarge</h2>
               </div>
               <p className="text-gray-300 leading-relaxed mb-4">
