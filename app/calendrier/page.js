@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowLeft, Calendar, CalendarPlus, MapPin, ArrowRight, Repeat } from 'lucide-react'
+import { ArrowLeft, Calendar, MapPin, ArrowRight, Repeat } from 'lucide-react'
 import calendrier from '@/data/calendrier.json'
 
 export const metadata = {
@@ -18,14 +18,8 @@ export default function CalendrierPage() {
           </Link>
           <h1 className="text-3xl md:text-5xl font-bold mb-4">Calendrier 2027</h1>
           <p className="text-xl text-gray-300 max-w-2xl">
-            Les grands rendez-vous du club et de la saison. Ajoutez-les à votre agenda pour ne rien manquer.
+            Les grands rendez-vous du club et de la saison.
           </p>
-          <a
-            href="/calendrier.ics"
-            className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#00b5e2] hover:bg-white text-[#00205b] font-bold rounded-sm transition-colors"
-          >
-            <CalendarPlus className="w-5 h-5" /> Ajouter à mon agenda (.ics)
-          </a>
         </div>
       </div>
 

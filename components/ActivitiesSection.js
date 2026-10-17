@@ -1,73 +1,63 @@
-'use client'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Mountain, Map, Bike } from 'lucide-react'
-
-// Images placeholders que l'utilisateur pourra remplacer
 import activitiesData from '@/data/activities.json'
+import Reveal from '@/components/Reveal'
+import SectionHeading from '@/components/SectionHeading'
 
-const ICON_MAP = {
-  Bike: Bike,
-  Map: Map,
-  Mountain: Mountain
-}
+const ICON_MAP = { Bike, Map, Mountain }
 
-const ACTIVITIES = activitiesData.map(activity => ({
+const ACTIVITIES = activitiesData.map((activity) => ({
   ...activity,
-  icon: ICON_MAP[activity.iconName]
+  icon: ICON_MAP[activity.iconName],
 }))
 
 export default function ActivitiesSection() {
   return (
     <div id="activites" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Plus loin, plus haut"
+            title="Nos activités"
+            text="Au-delà des sorties club hebdomadaires, le TOAC Cyclo vous propose des défis variés pour tous les goûts."
+          />
+        </Reveal>
 
-        <div className="mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#00205b] mb-4">Nos Activités</h2>
-          <div className="h-1 w-16 bg-[#00b5e2] mb-6"></div>
-          <p className="text-gray-600 max-w-2xl text-lg">
-            Au-delà des sorties club hebdomadaires, le TOAC Cyclo vous propose des défis variés pour tous les goûts.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {ACTIVITIES.map((activity, index) => (
-            <Link
-              href={activity.link}
-              key={index}
-              className="group relative h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 block"
-            >
-              {/* Background Image (Placeholder gradient if no image) */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${activity.color}`}>
+            <Reveal key={activity.title} delay={index * 120}>
+              <Link
+                href={activity.link}
+                className="group relative h-[28rem] rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500 block"
+              >
                 <Image
                   src={activity.image}
-                  alt={activity.title}
+                  alt=""
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover opacity-60 transition-transform duration-700 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-              </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#00205b] via-[#00205b]/50 to-transparent"></div>
 
-              <div className="absolute inset-0 p-8 flex flex-col justify-end text-white z-10">
-                <div className="mb-4 md:transform md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center mb-4">
-                    <activity.icon className="w-6 h-6 text-white" />
+                <span className="display absolute top-5 right-6 text-7xl font-bold text-white/25" aria-hidden="true">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+
+                <div className="absolute inset-0 p-7 flex flex-col justify-end text-white z-10">
+                  <div className="w-12 h-12 bg-[#00b5e2] text-[#00205b] rounded-lg flex items-center justify-center mb-4">
+                    <activity.icon className="w-6 h-6" aria-hidden="true" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">{activity.title}</h3>
-                  <p className="text-gray-100 mb-6 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                    {activity.desc}
-                  </p>
+                  <h3 className="display text-3xl font-bold mb-3">{activity.title}</h3>
+                  <p className="text-gray-100 leading-relaxed mb-5">{activity.desc}</p>
+                  <span className="inline-flex items-center gap-2 font-bold text-sm uppercase tracking-wider text-[#fcd34d]">
+                    Découvrir <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" aria-hidden="true" />
+                  </span>
                 </div>
-
-                <div className="flex items-center gap-2 font-bold text-sm uppercase tracking-wider md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 delay-200 md:translate-y-4 md:group-hover:translate-y-0">
-                  Découvrir <ArrowRight className="w-4 h-4" />
-                </div>
-              </div>
-            </Link>
+              </Link>
+            </Reveal>
           ))}
         </div>
-
       </div>
     </div>
   )

@@ -65,6 +65,9 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(clubJsonLd) }}
         />
+        <noscript>
+          <style>{'.reveal{opacity:1;transform:none}'}</style>
+        </noscript>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#00b5e2] focus:text-[#00205b] focus:font-bold focus:rounded-sm"

@@ -33,6 +33,34 @@ h2 {
 
 h1 {
   font-size-adjust: 0.55;
+  text-transform: uppercase;
+}
+
+/* Titre d'affichage : condensé, majuscules, serré (sections de l'accueil) */
+.display {
+  font-family: var(--font-display), var(--font-inter), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+}
+
+/* Apparition douce au défilement (voir components/Reveal.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Grain léger pour donner du relief aux aplats bleus */
+.bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 18px 18px;
 }
 
 /* Smooth scrolling */
@@ -55,6 +83,11 @@ html {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   *,

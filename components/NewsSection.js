@@ -4,12 +4,14 @@ import Link from 'next/link'
 import { Calendar, ArrowRight, MapPin, FileText } from 'lucide-react'
 
 import newsData from '@/data/news.json'
+import Reveal from '@/components/Reveal'
+import SectionHeading from '@/components/SectionHeading'
 
 const NEWS_ITEMS = newsData
 
 function NewsCard({ item }) {
   return (
-    <div className="group bg-white flex flex-col h-full shadow-lg rounded-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <div className="group bg-white flex flex-col h-full shadow-md rounded-2xl overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5">
       <div className="h-48 md:h-56 relative overflow-hidden bg-gray-200">
         <Image
           src={item.image}
@@ -86,24 +88,27 @@ export default function NewsSection() {
   return (
     <div id="actualites" className="bg-gray-50 py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
-          <div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#00205b] mb-3">Actualités du Club</h2>
-            <div className="h-1 w-16 bg-[#00b5e2] mb-4"></div>
-            <p className="text-gray-600 max-w-2xl">Événements, séjours et vie de la section.</p>
-          </div>
-          <Link
-            href="/calendrier"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#00205b] text-white font-bold rounded-sm hover:bg-[#00b5e2] hover:text-[#00205b] transition-colors text-sm flex-shrink-0"
-          >
-            Tout le calendrier 2027 <ArrowRight className="w-4 h-4" />
-          </Link>
-
-        </div>
+        <Reveal>
+          <SectionHeading
+            eyebrow="La vie du club"
+            title="Actualités"
+            text="Événements, séjours et vie de la section."
+            action={
+              <Link
+                href="/calendrier"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#00205b] text-white font-bold rounded-sm hover:bg-[#00b5e2] hover:text-[#00205b] transition-colors text-sm flex-shrink-0 self-start md:self-auto"
+              >
+                Tout le calendrier 2027 <ArrowRight className="w-4 h-4" />
+              </Link>
+            }
+          />
+        </Reveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {NEWS_ITEMS.map((item, index) => (
-            <NewsCard key={index} item={item} />
+            <Reveal key={index} delay={index * 120}>
+              <NewsCard item={item} />
+            </Reveal>
           ))}
 
         </div>
