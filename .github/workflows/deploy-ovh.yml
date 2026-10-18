@@ -1,0 +1,41 @@
+name: Deploy to OVH
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Permet de déclencher le déploiement manuellement depuis l'interface GitHub
+
+concurrency:
+  group: deploy-ovh
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v4
+
+      - name: Configuration de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Installation des dépendances
+        run: npm ci
+
+      - name: Build statique Next.js (génération de out/)
+        run: npm run build
+
+      - name: Synchronisation FTP vers OVH
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.OVH_FTP_SERVER }}
+          username: ${{ secrets.OVH_FTP_USERNAME }}
+          password: ${{ secrets.OVH_FTP_PASSWORD }}
+          server-dir: ./www/
+          local-dir: ./out/
+          dangerous-clean-slate: false # Synchronisation incrémentale rapide (seuls les fichiers modifiés sont transférés)
