@@ -44,8 +44,9 @@ export const metadata = {
   ],
   authors: [{ name: 'TOAC Cyclotourisme' }],
   icons: {
-    icon: '/favicon.jpg',
-    apple: '/favicon.jpg',
+    // Icônes redimensionnées par scripts/optimize-images.mjs (le favicon source fait 1024 px)
+    icon: { url: '/_img/icon-48.png', sizes: '48x48', type: 'image/png' },
+    apple: { url: '/_img/icon-180.png', sizes: '180x180' },
   },
   openGraph: {
     title: 'TOAC Cyclotourisme — Club de vélo route & gravel à Toulouse',

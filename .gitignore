@@ -33,3 +33,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# images WebP générées (scripts/optimize-images.mjs)
+/public/_img/
+/lib/image-manifest.json
