@@ -1,0 +1,4 @@
+# Lecture des affiches (optionnel : sans elles, les liens de tracé imprimés dans les images/PDF ne sont pas retrouvés)
+opencv-python-headless  # décodage des QR codes
+pymupdf                 # conversion des affiches PDF en images
+openpyxl                # export XLSX mis en forme (Google Sheets)

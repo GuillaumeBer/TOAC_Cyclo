@@ -9,19 +9,19 @@ export const metadata = {
 export default function Confidentialite() {
   return (
     <>
-      <div className="pt-20 pb-16 min-h-screen bg-gray-50">
+      <div className="pt-28 pb-16 min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <Link href="/" className="inline-flex items-center text-[#0077b6] hover:text-[#00205b] mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" /> Retour à l'accueil
           </Link>
           
-          <div className="bg-white p-8 md:p-12 shadow-sm border border-gray-100">
+          <div className="bg-white p-8 md:p-12 shadow-sm border border-gray-100 rounded-lg">
             <h1 className="text-3xl md:text-4xl font-bold text-[#00205b] mb-8">Politique de Confidentialité</h1>
             
             <div className="prose prose-lg max-w-none text-gray-600">
               
-              <p className="text-sm text-gray-500 mb-8">Dernière mise à jour : Décembre 2025</p>
+              <p className="text-sm text-gray-500 mb-8">Dernière mise à jour : Octobre 2026</p>
 
               <section className="mb-8">
                 <h2 className="text-xl font-bold text-[#00205b] mb-4">1. Introduction</h2>
@@ -36,9 +36,9 @@ export default function Confidentialite() {
                 <h2 className="text-xl font-bold text-[#00205b] mb-4">2. Données collectées</h2>
                 <p className="mb-4">Nous pouvons collecter les informations suivantes :</p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Nom et prénom (lors de l'inscription)</li>
+                  <li>Nom et prénom (lors d'une demande d'adhésion ou d'essai par email)</li>
                   <li>Adresse email</li>
-                  <li>Données de navigation (cookies techniques)</li>
+                  <li>Statistiques de fréquentation anonymisées (pages consultées, sans identification personnelle)</li>
                 </ul>
               </section>
 
@@ -54,10 +54,10 @@ export default function Confidentialite() {
               </section>
 
               <section className="mb-8">
-                <h2 className="text-xl font-bold text-[#00205b] mb-4">4. Cookies</h2>
+                <h2 className="text-xl font-bold text-[#00205b] mb-4">4. Cookies et mesure d'audience</h2>
                 <p>
-                  Ce site utilise uniquement des cookies techniques essentiels au fonctionnement du site. 
-                  Aucun cookie de tracking ou publicitaire n'est utilisé.
+                  Ce site n'utilise aucun cookie publicitaire ni traceur de profilage individuel. 
+                  La mesure d'audience est réalisée de manière strictement anonyme et sans dépôt de cookie, conformément aux recommandations de la CNIL.
                 </p>
               </section>
 

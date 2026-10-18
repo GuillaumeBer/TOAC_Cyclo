@@ -1,0 +1,25 @@
+# Configuration Apache pour hébergement mutualisé OVH
+Options -MultiViews -Indexes
+RewriteEngine On
+
+# Forcer HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirections permanentes des anciennes adresses
+RewriteRule ^activites/gravel/?$ /activites#gravel [R=301,NE,L]
+RewriteRule ^activites/longue-distance/?$ /activites#longue-distance [R=301,NE,L]
+RewriteRule ^activites/cyclomontagnardes/?$ /activites#cyclomontagnardes [R=301,NE,L]
+RewriteRule ^adhesion/?$ /rejoindre#adhesion [R=301,NE,L]
+RewriteRule ^rando-rameaux/?$ /#rameaux-2027 [R=301,NE,L]
+RewriteRule ^actualites/ag-2025/?$ / [R=301,L]
+RewriteRule ^actualites/montagnarde-2027/?$ /#montagnarde-2027 [R=301,NE,L]
+
+# URLs propres sans .html (servir /page.html quand on appelle /page)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# Page d'erreur 404 personnalisée
+ErrorDocument 404 /404.html

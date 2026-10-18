@@ -1,13 +1,43 @@
 {
     "evenements": [
         {
+            "id": "ag-2026",
+            "title": "Assemblée Générale 2026",
+            "type": "members",
+            "category": "Vie du club · Réservé aux adhérents",
+            "start": "2026-12-12",
+            "end": "2026-12-12",
+            "dateLabel": "Samedi 12 décembre 2026 (date proposée)",
+            "detail": "Bilan de la saison 2026, projets 2027 et moment convivial entre adhérents du club",
+            "location": "Complexe TOAC, Toulouse",
+            "link": "/calendrier#ag-2026",
+            "details": [
+                {
+                    "icon": "Calendar",
+                    "label": "Date proposée",
+                    "text": "Samedi 12 décembre 2026 (date proposée aux adhérents du TOAC Cyclo)."
+                },
+                {
+                    "icon": "ClipboardList",
+                    "label": "Ordre du jour",
+                    "text": "Rapport moral et financier de la saison 2026, présentation du calendrier et des grands projets 2027 (Randonnée des Rameaux, Montagnarde, Paris-Brest-Paris), questions diverses."
+                },
+                {
+                    "icon": "Users",
+                    "label": "Convivialité",
+                    "text": "Temps d'échange entre tous les membres de la section et préparation des renouvellements de licences pour la saison à venir."
+                }
+            ]
+        },
+        {
             "id": "rameaux-2027",
             "title": "Randonnée des Rameaux",
-            "category": "Événement Club",
+            "type": "public",
+            "category": "Organisé par le TOAC · Ouvert à tous",
             "start": "2027-03-21",
             "end": "2027-03-21",
             "dateLabel": "Dimanche 21 mars 2027",
-            "detail": "Départ à partir de 08h00",
+            "detail": "La grande randonnée annuelle du club, ouverte à tous les cyclotouristes",
             "location": "Complexe TOAC, Toulouse",
             "link": "/calendrier#rameaux-2027",
             "details": [
@@ -19,7 +49,7 @@
                 {
                     "icon": "ClipboardList",
                     "label": "Inscriptions",
-                    "text": "Sur place, le matin de la randonnée."
+                    "text": "Sur place, le matin de la randonnée. Ouvert aux licenciés et non-licenciés."
                 },
                 {
                     "icon": "Trophy",
@@ -29,18 +59,19 @@
                 {
                     "icon": "Users",
                     "label": "Organisation",
-                    "text": "Le seul moment de l'année où tous les membres du club sont mobilisés : accueil des participants, ravitaillement, assistance technique."
+                    "text": "Le seul moment de l'année où tous les membres du club sont mobilisés : accueil des participants extérieurs, ravitaillement, assistance technique."
                 }
             ]
         },
         {
             "id": "montagnarde-2027",
             "title": "Montagnarde 2027",
-            "category": "Séjour Club",
+            "type": "members",
+            "category": "Organisé par le TOAC · Réservé aux adhérents",
             "start": "2027-05-06",
             "end": "2027-05-09",
             "dateLabel": "Week-end de l'Ascension, à partir du jeudi 6 mai 2027",
-            "detail": "Programme à venir",
+            "detail": "Le séjour club annuel entre adhérents (destination à venir)",
             "location": "Destination à définir",
             "link": "/calendrier#montagnarde-2027",
             "details": [
@@ -69,11 +100,12 @@
         {
             "id": "pbp-2027",
             "title": "Paris-Brest-Paris 2027",
-            "category": "Longue distance",
+            "type": "external",
+            "category": "Épreuve extérieure · Participation du club",
             "start": "2027-08-22",
             "end": "2027-08-26",
             "dateLabel": "Du 22 au 26 août 2027",
-            "detail": "Plusieurs membres du TOAC Cyclo envisagent d'y participer",
+            "detail": "Organisé par l'Audax Club Parisien — Plusieurs membres du TOAC s'y préparent",
             "location": "Paris - Brest - Paris",
             "link": "/calendrier#pbp-2027",
             "details": [
@@ -107,24 +139,29 @@
     "rendezVousAnnuels": [
         {
             "title": "Journée du Souvenir",
+            "tag": "Vie du club · Adhérents",
             "when": "Mi-octobre",
-            "detail": "À Mérenvielle, en mémoire des anciens du club"
+            "detail": "À Mérenvielle, souvenir des anciens et repas convivial du club"
         },
         {
             "title": "Assemblée Générale",
-            "when": "Décembre",
-            "detail": "Bilan de la saison et perspectives, ouverte à tous les adhérents"
+            "tag": "Vie du club · Adhérents",
+            "when": "12 décembre 2026 (proposée)",
+            "detail": "Bilan de la saison et perspectives, réservée aux adhérents",
+            "link": "/calendrier#ag-2026"
         },
         {
             "title": "Cyclomontagnardes",
+            "tag": "Épreuves extérieures · Participation club",
             "when": "De mai à juillet",
-            "detail": "Alpes, Pyrénées, Vosges, Jura, Massif Central : dates 2027 à venir",
+            "detail": "Organisées par la FFVélo (Pyrénées, Alpes, Jura...) : participation de membres du club",
             "link": "/activites#cyclomontagnardes"
         },
         {
             "title": "Brevets randonneurs (BRM)",
-            "when": "De mars à juin, et plus tard dans la saison",
-            "detail": "200 à 1000 km près de Toulouse : dates 2027 à venir",
+            "tag": "Épreuves extérieures · Participation club",
+            "when": "De mars à juin, et plus tard",
+            "detail": "Brevets de 200 à 1000 km organisés par les clubs de la région : certains adhérents y participent",
             "link": "/activites#longue-distance"
         }
     ]

@@ -34,7 +34,12 @@ export default function AgendaSection() {
           {/* Événement phare */}
           <div id="rameaux-2027" className="scroll-mt-24 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             <Reveal className="lg:w-1/2 space-y-6">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#00b5e2]">{event.category}</p>
+              <div>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Ouvert à tous · Cyclos extérieurs bienvenus
+                </span>
+              </div>
               <div>
                 <h3 className="display text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">{event.title}</h3>
                 <p className="text-lg text-gray-300 font-light leading-relaxed">{event.description}</p>

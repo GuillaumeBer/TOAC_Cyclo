@@ -3,17 +3,20 @@ import Image from 'next/image'
 import { ArrowLeft, Calendar, Users, Trophy, Heart, Bike } from 'lucide-react'
 
 export const metadata = {
-  title: 'Notre Histoire',
-  description: "Depuis 1976, l'histoire de la section cyclotourisme du TOAC à Toulouse.",
+  title: 'Notre Histoire depuis 1976',
+  description: "Fondé en 1976 par André Lafarge, découvrez l'histoire de la section cyclotourisme du TOAC à Toulouse (Trophée André Lafarge, affiliations FFVélo et FSGT).",
+  alternates: {
+    canonical: '/histoire',
+  },
 }
 
 export default function HistoirePage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-[#00205b] pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="bg-[#00205b] pt-28 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
-        <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-start">
+        <div className="max-w-[76rem] mx-auto relative z-10 flex flex-col items-start">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8"
@@ -35,7 +38,7 @@ export default function HistoirePage() {
 
       {/* Timeline */}
       <div className="px-4 sm:px-6 lg:px-8 py-12">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-[76rem] mx-auto [&>*]:max-w-4xl">
 
           {/* 1976 - Fondation */}
           <div className="relative pl-8 pb-12 border-l-2 border-[#00b5e2]/40">
@@ -109,15 +112,16 @@ export default function HistoirePage() {
                 <h2 className="text-2xl font-bold text-[#00205b]">Un Club Ouvert</h2>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Le TOAC Cyclo accueille principalement des employés et retraités d'Airbus et leurs ayants droit,
-                mais le club reste <strong className="text-[#0077b6]">ouvert aux personnes extérieures</strong>
-                (sous réserve d'approbation par le bureau).
+                Le TOAC Cyclo accueille les salariés, retraités et ayants droit d'Airbus,
+                mais le club est aussi <strong className="text-[#0077b6]">ouvert aux personnes extérieures</strong>,
+                avec une cotisation différente.
               </p>
               <div className="mt-4 relative h-64 md:h-96 rounded-lg overflow-hidden shadow-sm mb-4">
                 <Image
                   src="/images/TOAC2.jpg"
                   alt="Le Club TOAC aujourd'hui"
                   fill
+                  sizes="(min-width: 896px) 840px, 100vw"
                   className="object-cover"
                 />
               </div>

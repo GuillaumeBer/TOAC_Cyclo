@@ -1,0 +1,124 @@
+{
+  "brm": [
+    {
+      "title": "Muret (CRMuret)",
+      "text": "200 km (13 mars), 300 km (3 avr.), 400 km (23-24 avr.), 600 km (28-29 mai)",
+      "date": "13 mars – 29 mai",
+      "href": "https://crmuret.org/brevet-randonneurs-mondiaux/"
+    },
+    {
+      "title": "Castanet (CCC31)",
+      "text": "200, 300, 400 et 600 km (parcours reconduits, départs les samedis de mars à juin)",
+      "date": "Mars – Juin",
+      "href": "https://www.ccc31.fr/brm-2026/"
+    },
+    {
+      "title": "Montauban (VC Montalbanais)",
+      "text": "200, 300 et 600 km dans le Tarn-et-Garonne et le Lot",
+      "date": "Dates ACP en janvier",
+      "href": "https://www.veloce-club-montalbanais.com/"
+    },
+    {
+      "title": "L'Isle-sur-Tarn (Les Déjantés)",
+      "text": "200 km (fin avril) et 1 000 km (début mai / 6 800 m D+)",
+      "date": "Avril – Mai",
+      "href": "http://lesdejantes81.free.fr/brevet_presentation2026.php"
+    }
+  ],
+  "longueDistance": [
+    {
+      "title": "Bordeaux - Saint-Malo",
+      "text": "840 km (ou 430 km en « Little BSM »)",
+      "date": "12-16 mai",
+      "href": "https://www.bordeauxsaintmalo.com/"
+    },
+    {
+      "title": "Tour cyclotouriste FFVélo (Épinal)",
+      "text": "~2 800 km en 21 jours",
+      "date": "5-27 juin",
+      "href": "https://ffvelo.fr/voyages-velo/2027-tour-cyclotouriste/"
+    },
+    {
+      "title": "Race Across France",
+      "text": "200 à 2 500 km",
+      "date": "16-27 juin",
+      "href": "https://www.raceacrossseries.com/race-across-france"
+    }
+  ],
+  "cyclomontagnardes": [
+    {
+      "title": "Cyclomontagnarde du Haut-Bugey",
+      "text": "Oyonnax (01) : massif du Jura, de 100 km à l'Ultra Grimpeur (333 km / 7 900 m D+) dans les monts et combes de l'Ain.",
+      "date": "22-23 mai 2027",
+      "href": "https://ffvelo.fr/cyclomontagnardes/"
+    },
+    {
+      "title": "Cyclomontagnarde des Volcans",
+      "text": "Mozac (63) : 230 km (4 400 m D+) à 300 km (5 600 m D+). Sancy, Pas de Peyrol (Cantal) et montée du Puy de Dôme.",
+      "date": "29-30 mai 2027",
+      "href": "https://puy-de-dome.ffvelo.fr/cmv/"
+    },
+    {
+      "title": "Cyclomontagnarde du Vercors",
+      "text": "Crest (26) : massif des Alpes, parcours sauvage à travers les gorges et cols du Vercors.",
+      "date": "12-13 juin 2027",
+      "href": "https://cyclotourisme26.org/"
+    },
+    {
+      "title": "La Bretzel Altitude Alsace (BAA - Vosges)",
+      "text": "Wihr-au-Val (68) : les grands ballons vosgiens, dont le Bretzel de Diamant (204 km / 4 210 m D+).",
+      "date": "20 juin 2027",
+      "href": "https://bretzalsace.fr/"
+    },
+    {
+      "title": "Cyclomontagnarde des Hautes-Pyrénées",
+      "text": "Bagnères-de-Bigorre (65) : col d'Aspin, Hourquette d'Ancizan, Baronnies. Formule Grimpeur (1 j) ou Baroudeur (2 j).",
+      "date": "10-11 juillet 2027",
+      "href": "https://codep65-ffvelo.fr/"
+    },
+    {
+      "title": "Brevet Randonneur des Alpes (BRA / Super BRA)",
+      "text": "Le monument alpin bisannuel des années impaires : 210 à 250 km, +4 500 à 5 000 m D+ (Galibier, Croix de Fer, Glandon...).",
+      "date": "Mi-juillet 2027",
+      "href": "https://cyclotouristes-grenoblois.assoconnect.com/"
+    },
+    {
+      "title": "Cyclomontagnarde Luchon-Bayonne",
+      "text": "Luchon → Bayonne : 320 km et 5 250 m D+ (Peyresourde, Aspin, Tourmalet, Aubisque...). Épreuve bisannuelle (années paires).",
+      "date": "Juin 2028 (bisannuelle)",
+      "href": "https://www.luchonbayonne.fr/"
+    }
+  ],
+  "gravel": [
+    {
+      "title": "POU100 (Poussan)",
+      "text": "Poussan (34) : 100 km, 100 miles (160 km) ou 270 km en bikepacking à travers les garrigues et l'Espinouse.",
+      "date": "3-4 avril 2027",
+      "href": "https://727bikepacking.fr/pou100/"
+    },
+    {
+      "title": "Occitanie 600 (Garidech)",
+      "text": "Garidech (31) : 666 km et 8 500 m D+ en autonomie à travers l'Occitanie (Tarn-et-Garonne, Lot, Aveyron, Tarn). Sans chrono.",
+      "date": "3-8 avril 2027",
+      "href": "https://ogravel.com/"
+    },
+    {
+      "title": "Ô Gravel Toulouse Grand Tour",
+      "text": "Agglomération toulousaine & Gers : 5 parcours de 30 à 200 km entre Bouconne, Save et Aussonnelle. Ambiance festive.",
+      "date": "Fin mai 2027",
+      "href": "https://ogravel.com/"
+    },
+    {
+      "title": "GravelMan Tourmalet",
+      "text": "Hautes-Pyrénées (65) : les grands cols pyrénéens en gravel bikepacking (120 à 350 km) en autonomie.",
+      "date": "18-20 juin 2027",
+      "href": "https://gravelmanseries.com/"
+    },
+    {
+      "title": "g727 (Grand Départ)",
+      "text": "Poussan (34) : grande boucle de 727 km (7 000 m D+) avec raccourcis possibles (250 à 550 km). Bivouac en autonomie.",
+      "date": "Fin septembre 2027",
+      "href": "https://727bikepacking.fr/"
+    }
+  ]
+}

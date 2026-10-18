@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Export statique dans le dossier `out/` prêt à déposer dans `/www` sur un hébergement OVH
+  output: 'export',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -11,15 +14,5 @@ const nextConfig = {
   },
 }
 
-// Anciennes adresses regroupées : les liens existants continuent de fonctionner.
-nextConfig.redirects = async () => [
-  { source: '/activites/gravel', destination: '/activites#gravel', permanent: true },
-  { source: '/activites/longue-distance', destination: '/activites#longue-distance', permanent: true },
-  { source: '/activites/cyclomontagnardes', destination: '/activites#cyclomontagnardes', permanent: true },
-  { source: '/adhesion', destination: '/rejoindre#adhesion', permanent: true },
-  { source: '/rando-rameaux', destination: '/#rameaux-2027', permanent: true },
-  { source: '/actualites/ag-2025', destination: '/', permanent: true },
-  { source: '/actualites/montagnarde-2027', destination: '/#montagnarde-2027', permanent: true },
-]
-
 module.exports = nextConfig
+

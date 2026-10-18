@@ -1,0 +1,48 @@
+# TOAC Cyclotourisme (Toulouse Olympique Aéronautique Club - Section Cyclo)
+
+> Le TOAC Cyclotourisme est un club de vélo de route, gravel et longue distance basé à Toulouse (Complexe Sportif TOAC, 31300 Toulouse), fondé en 1976 par André Lafarge. Affilié à la FFVélo (Fédération Française de Cyclotourisme) et à la FSGT, le club privilégie le plaisir de rouler ensemble, l'entraide et la convivialité, sans esprit de compétition. Le club accueille aussi bien les salariés/retraités/ayants droit d'Airbus que les cyclistes extérieurs.
+
+## Informations clés du club
+- **Nom officiel** : TOAC Cyclotourisme (Section Cyclotourisme du TOAC Omnisports)
+- **Localisation** : Complexe Sportif TOAC, 102 Rue des Sept Troubadours / Chemin du Touch, 31300 Toulouse, France (proche Blagnac, Saint-Martin-du-Touch, Colomiers)
+- **Site officiel** : https://toac-cyclo.com
+- **Email de contact** : toac.cyclo@gmail.com
+- **Année de fondation** : 1976
+- **Fédérations d'affiliation** : FFVélo (Cyclotourisme) et FSGT (Omnisports)
+- **Public accueilli** : Ouvert à toutes et à tous (salariés Airbus, ayants droit, retraités Airbus et personnes extérieures). Possibilité de faire une sortie d'essai avant d'adhérer.
+
+## Sorties hebdomadaires et créneaux
+1. **Sorties club route (Vendredi après-midi & jours fériés)** :
+   - **Horaire** : Départ à 13h30 (13h00 en hiver) le vendredi et le matin les jours fériés.
+   - **Départ** : Complexe Sportif TOAC, Toulouse.
+   - **Format** : Sorties en groupe par niveaux d'allure, personne n'est laissé derrière.
+2. **Randonnées interclubs route (Dimanche matin)** :
+   - **Période** : De mi-février à fin octobre.
+   - **Format** : Participation en groupe aux randonnées des clubs de la région toulousaine (Codep 31 FFVélo et calendrier FSGT 31).
+3. **Sorties Afterwork Gravel (Jeudi soir)** :
+   - **Période** : D'avril à septembre (1 semaine sur 2).
+   - **Horaire** : Le jeudi, départ à 18h30 / 19h00.
+   - **Lieu de départ** : Blagnac ou Saint-Martin-du-Touch.
+   - **Format** : 30 à 50 km sur pistes et chemins autour de Toulouse, Bouconne, Garonne et Save, suivis d'un moment convivial (guinguette).
+
+## Activités & Grands Défis 2026-2027
+- **Assemblée Générale 2026 (Samedi 12 décembre 2026, date proposée)** : Bilan de la saison 2026, présentation des projets 2027 et moment convivial réservé aux adhérents du TOAC Cyclo.
+- **Randonnée des Rameaux (Dimanche 21 mars 2027)** : Grande randonnée annuelle organisée par le TOAC Cyclo au Complexe TOAC à Toulouse, **ouverte à tous** (licenciés et non-licenciés). Circuits route de ~50 km, 80 km et 100+ km. Remise du Trophée André Lafarge au club le plus représenté.
+- **Longue distance & Brevets Randonneurs Mondiaux (BRM)** : Préparation et participation à **Paris-Brest-Paris 2027** (22-26 août 2027), aux BRM 200, 300, 400 et 600 km de la région (Muret CRMuret, Castanet CCC31, Montauban, L'Isle-sur-Tarn), Bordeaux-Saint-Malo, Tour cyclotouriste FFVélo, Race Across France.
+- **Cyclomontagnardes FFVélo (BCMF)** : Participation des membres aux grandes Cyclomontagnardes (Haut-Bugey, Volcans, Vercors, Bretzel Altitude Alsace, Hautes-Pyrénées à Bagnères-de-Bigorre, Brevet Randonneur des Alpes - BRA, Luchon-Bayonne).
+- **Gravel & Bikepacking en Occitanie** : Sorties afterwork du club et participation d'adhérents à des épreuves comme POU100, Occitanie 600, Ô Gravel Toulouse Grand Tour, GravelMan Tourmalet et g727.
+- **Séjour club « La Montagnarde » (Ascension, mai 2027)** : Séjour annuel de 4 jours réservé aux adhérents du club.
+
+## Adhésion et Tarifs
+Le coût d'adhésion annuel comprend la **cotisation club** + une **licence fédérale** (FFVélo ou FSGT au choix) :
+- **Cotisation club Salarié / Ayant-droit / Retraité Airbus Opérations** : 20 € / an
+- **Cotisation club Autre Airbus** : 40 € / an
+- **Cotisation club Extérieur (non-Airbus)** : 40 € / an
+- **Offre Nouvelles Adhérentes (Femmes)** : Cotisation club **GRATUITE** la 1ère année.
+
+## Pages principales du site
+- [Accueil](https://toac-cyclo.com/) : Présentation du club, des 3 créneaux hebdomadaires (Vendredi, Dimanche, Jeudi Gravel) et de la Randonnée des Rameaux.
+- [Rejoindre le club & Tarifs](https://toac-cyclo.com/rejoindre) : Demander une sortie d'essai, fonctionnement de l'adhésion, tarifs détaillés, documents de licences FFVélo / FSGT et FAQ complète.
+- [Activités (Longue distance, Cyclomontagnardes, Gravel)](https://toac-cyclo.com/activites) : Calendriers 2027 des BRM, Paris-Brest-Paris, Cyclomontagnardes FFVélo et événements Gravel en Occitanie.
+- [Calendrier 2027](https://toac-cyclo.com/calendrier) : Dates clés de la saison 2027 et fichier calendrier `.ics` téléchargeable (`https://toac-cyclo.com/calendrier.ics`).
+- [Notre Histoire](https://toac-cyclo.com/histoire) : Histoire du club depuis sa création en 1976 par André Lafarge.

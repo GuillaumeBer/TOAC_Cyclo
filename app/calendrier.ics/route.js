@@ -1,6 +1,8 @@
 import calendrier from '@/data/calendrier.json'
 import { SITE_URL } from '@/lib/site'
 
+export const dynamic = 'force-static'
+
 const compact = (isoDate) => isoDate.replaceAll('-', '')
 
 // Les événements « toute la journée » ont une date de fin exclusive en iCalendar.

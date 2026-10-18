@@ -9,14 +9,14 @@ export const metadata = {
 export default function MentionsLegales() {
   return (
     <>
-      <div className="pt-20 pb-16 min-h-screen bg-gray-50">
+      <div className="pt-28 pb-16 min-h-screen bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <Link href="/" className="inline-flex items-center text-[#0077b6] hover:text-[#00205b] mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" /> Retour à l'accueil
           </Link>
           
-          <div className="bg-white p-8 md:p-12 shadow-sm border border-gray-100">
+          <div className="bg-white p-8 md:p-12 shadow-sm border border-gray-100 rounded-lg">
             <h1 className="text-3xl md:text-4xl font-bold text-[#00205b] mb-8">Mentions Légales</h1>
             
             <div className="prose prose-lg max-w-none text-gray-600">
@@ -39,9 +39,10 @@ export default function MentionsLegales() {
                 <h2 className="text-xl font-bold text-[#00205b] mb-4">2. Hébergement</h2>
                 <p>
                   Ce site est hébergé par :<br />
-                  <strong>Vercel Inc.</strong><br />
-                  340 S Lemon Ave #4133<br />
-                  Walnut, CA 91789, États-Unis
+                  <strong>OVH SAS</strong><br />
+                  2 rue Kellermann<br />
+                  59100 Roubaix, France<br />
+                  RCS Lille Métropole 424 761 419 00045
                 </p>
               </section>
 

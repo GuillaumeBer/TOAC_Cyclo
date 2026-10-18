@@ -1,9 +1,9 @@
 import './globals.css'
 import { Inter, Barlow_Condensed } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/react'
+import Script from 'next/script'
 import NavigationBar from '@/components/NavigationBar'
 import Footer from '@/components/Footer'
-import { SITE_URL, CLUB } from '@/lib/site'
+import { SITE_URL, CLUB, UMAMI_WEBSITE_ID, UMAMI_SCRIPT_URL } from '@/lib/site'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,20 +21,37 @@ const barlow = Barlow_Condensed({
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: 'TOAC Cyclotourisme - Club de vélo Toulouse',
-    template: '%s | TOAC Cyclotourisme',
+  alternates: {
+    canonical: '/',
   },
-  description: 'TOAC Cyclotourisme - Le club cycliste historique du TOAC à Toulouse. Découvrez nos sorties, événements et rejoignez notre communauté de passionnés.',
-  keywords: ['cyclotourisme', 'vélo', 'Toulouse', 'TOAC', 'club cycliste', 'randonnée vélo'],
+  title: {
+    default: 'TOAC Cyclotourisme — Club de vélo route & gravel à Toulouse',
+    template: '%s | TOAC Cyclotourisme Toulouse',
+  },
+  description: 'Club de cyclotourisme du TOAC à Toulouse (route, gravel afterwork, longue distance BRM, cyclomontagnardes). Sorties conviviales sans compétition, ouvert à tous (Airbus et extérieurs).',
+  keywords: [
+    'club vélo Toulouse',
+    'cyclotourisme Toulouse',
+    'club vélo Blagnac',
+    'club gravel Toulouse',
+    'TOAC Cyclo',
+    'TOAC Cyclotourisme',
+    'randonnée vélo Toulouse',
+    'Randonnée des Rameaux Toulouse',
+    'FFVélo 31',
+    'FSGT vélo Toulouse',
+    'BRM Toulouse',
+  ],
   authors: [{ name: 'TOAC Cyclotourisme' }],
   icons: {
     icon: '/favicon.jpg',
     apple: '/favicon.jpg',
   },
   openGraph: {
-    title: 'TOAC Cyclotourisme - Club de vélo Toulouse',
-    description: 'Le club cycliste historique du TOAC à Toulouse. La passion du vélo, l\'excellence de l\'organisation.',
+    title: 'TOAC Cyclotourisme — Club de vélo route & gravel à Toulouse',
+    description: 'Sorties vélo de route, gravel afterwork et défis longue distance à Toulouse. Sans compétition, ouvert à tous.',
+    url: SITE_URL,
+    siteName: 'TOAC Cyclotourisme',
     type: 'website',
     locale: 'fr_FR',
     images: ['/images/hero-toac.jpg'],
@@ -49,12 +66,30 @@ const clubJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SportsClub',
   name: CLUB.name,
-  description: 'Section cyclotourisme du TOAC à Toulouse : sorties conviviales, tous niveaux, sans compétition.',
+  alternateName: CLUB.alternateName,
+  description: 'Section cyclotourisme du TOAC à Toulouse (depuis 1976) : sorties vélo de route le vendredi et le dimanche, sorties gravel afterwork le jeudi, randonnées longue distance (BRM, Paris-Brest-Paris) et cyclomontagnardes FFVélo. Ouvert à tous sans compétition.',
   url: SITE_URL,
+  logo: `${SITE_URL}/favicon.png`,
+  image: `${SITE_URL}/images/hero-toac.jpg`,
   email: CLUB.email,
   foundingDate: CLUB.foundingDate,
-  sport: 'Cyclotourisme',
+  sport: ['Cyclotourisme', 'Vélo de route', 'Gravel', 'Bikepacking'],
+  knowsAbout: [
+    'Cyclotourisme',
+    'Vélo de route',
+    'Gravel',
+    'Brevet des Randonneurs Mondiaux (BRM)',
+    'Paris-Brest-Paris',
+    'Cyclomontagnardes FFVélo',
+    'Randonnée des Rameaux',
+  ],
   address: { '@type': 'PostalAddress', ...CLUB.address },
+  geo: { '@type': 'GeoCoordinates', ...CLUB.geo },
+  areaServed: ['Toulouse', 'Blagnac', 'Colomiers', 'Tournefeuille', 'Haute-Garonne'],
+  memberOf: [
+    { '@type': 'SportsOrganization', name: 'Fédération Française de Cyclotourisme (FFVélo)', url: 'https://ffvelo.fr' },
+    { '@type': 'SportsOrganization', name: 'Fédération Sportive et Gymnique du Travail (FSGT)', url: 'https://www.fsgt.org' },
+  ],
 }
 
 export default function RootLayout({ children }) {
@@ -77,7 +112,13 @@ export default function RootLayout({ children }) {
         <NavigationBar />
         <main id="main">{children}</main>
         <Footer />
-        <Analytics />
+        {UMAMI_WEBSITE_ID && (
+          <Script
+            src={UMAMI_SCRIPT_URL}
+            data-website-id={UMAMI_WEBSITE_ID}
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   )

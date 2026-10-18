@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { trackEvent } from '@/lib/analytics'
 
 const VARIANTS = {
   // Barre pleine largeur en bas d'une carte sombre
@@ -37,9 +38,16 @@ export default function Disclosure({ hashId, closedLabel = 'Plus d\'infos', open
     return () => window.removeEventListener('hashchange', check)
   }, [hashId])
 
+  const toggle = () => {
+    setOpen((o) => {
+      if (!o) trackEvent('deplier_detail', { section: hashId || closedLabel })
+      return !o
+    })
+  }
+
   return (
     <>
-      <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-controls={panelId} className={v.button}>
+      <button type="button" onClick={toggle} aria-expanded={open} aria-controls={panelId} className={v.button}>
         {open ? openLabel : closedLabel}
         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
       </button>

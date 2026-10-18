@@ -1,0 +1,662 @@
+'use client'
+
+import { useEffect, useMemo, useState } from 'react'
+import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, AlertTriangle, Route, Euro, Users, Sparkles, Filter, ChevronRight } from 'lucide-react'
+import { trackEvent } from '@/lib/analytics'
+
+const DISCIPLINE_LABELS = {
+  route: 'Route',
+  gravel: 'Gravel',
+  vtt: 'VTT',
+}
+
+const DISCIPLINE_STYLES = {
+  route: 'bg-sky-50 text-sky-900 border-sky-200',
+  gravel: 'bg-amber-50 text-amber-900 border-amber-200',
+  vtt: 'bg-emerald-50 text-emerald-900 border-emerald-200',
+}
+
+const FEDERATION_STYLES = {
+  FSGT: 'bg-[#00205b] text-white',
+  'FFVélo': 'bg-[#0077b6] text-white',
+  FFC: 'bg-slate-700 text-white',
+  UFOLEP: 'bg-indigo-700 text-white',
+}
+
+function formatKm(val) {
+  if (val == null) return ''
+  return `${Number(val).toLocaleString('fr-FR', { maximumFractionDigits: 1 })} km`
+}
+
+function formatUpdatedAt(isoStr) {
+  if (!isoStr) return null
+  const d = new Date(isoStr)
+  if (Number.isNaN(d.getTime())) return null
+  return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+}
+
+function formatHorairesLabel(s) {
+  const rdv = s.heure_rdv
+  const depart = s.heure_depart
+  if (rdv && depart && rdv !== depart) {
+    return `À partir de ${depart} (RDV ${rdv})`
+  }
+  if (rdv || depart) {
+    return `À partir de ${rdv || depart}`
+  }
+  return s.horaires_label || 'Horaire à confirmer'
+}
+
+function toIsoDate(d) {
+  const yyyy = d.getFullYear()
+  const mm = String(d.getMonth() + 1).padStart(2, '0')
+  const dd = String(d.getDate()).padStart(2, '0')
+  return `${yyyy}-${mm}-${dd}`
+}
+
+function addDays(baseDate, days) {
+  const d = new Date(baseDate)
+  d.setDate(d.getDate() + days)
+  return d
+}
+
+function formatShortRange(startDate, endDate) {
+  const sameMonth = startDate.getMonth() === endDate.getMonth()
+  const startDay = startDate.getDate()
+  const endStr = endDate.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' })
+  if (sameMonth) {
+    return `${startDay} – ${endStr}`
+  }
+  const startStr = startDate.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' })
+  return `${startStr} – ${endStr}`
+}
+
+function isPastSortie(s, now) {
+  const todayIso = toIsoDate(now)
+  if (!s.date || s.date < todayIso) return true
+  if (s.date > todayIso) return false
+  // Même jour : vérifier si le créneau de départ est déjà passé
+  const timeStr = s.heure_depart || s.heure_rdv
+  if (timeStr && /^\d{1,2}:\d{2}$/.test(timeStr)) {
+    const [hh, mm] = timeStr.split(':').map(Number)
+    const nowMinutes = now.getHours() * 60 + now.getMinutes()
+    const cutoffMinutes = hh * 60 + mm + 120 // 2h de battement pour les départs libres
+    return nowMinutes >= cutoffMinutes
+  }
+  return now.getHours() >= 12
+}
+
+export default function WeekendRidesClient({ initialData }) {
+  const [data, setData] = useState(initialData)
+  const [weekFilter, setWeekFilter] = useState('week-0') // Par défaut : 7 prochains jours
+  const [disciplineFilter, setDisciplineFilter] = useState('route') // Par défaut : Route
+  const [federationFilter, setFederationFilter] = useState('all')
+
+  // Sur OVH, permet de lire directement /data/sorties-weekend.json s'il a été mis à jour sans rebuild complet
+  useEffect(() => {
+    fetch('/data/sorties-weekend.json', { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((fresh) => {
+        if (fresh && Array.isArray(fresh.sorties)) {
+          setData(fresh)
+        }
+      })
+      .catch(() => {})
+  }, [])
+
+  // Découpage des 4 prochaines semaines en tranches de 7 jours (par défaut : 7 jours à venir)
+  const { weeks, maxDateIso, now } = useMemo(() => {
+    const currentNow = new Date()
+    const w0Start = new Date(currentNow)
+    const w0End = addDays(currentNow, 7)
+    const w1Start = addDays(currentNow, 8)
+    const w1End = addDays(currentNow, 14)
+    const w2Start = addDays(currentNow, 15)
+    const w2End = addDays(currentNow, 21)
+    const w3Start = addDays(currentNow, 22)
+    const w3End = addDays(currentNow, 28)
+
+    const weekRanges = [
+      {
+        id: 'week-0',
+        title: '7 prochains jours',
+        rangeLabel: formatShortRange(w0Start, w0End),
+        startIso: toIsoDate(w0Start),
+        endIso: toIsoDate(w0End),
+      },
+      {
+        id: 'week-1',
+        title: 'Semaine +2',
+        rangeLabel: formatShortRange(w1Start, w1End),
+        startIso: toIsoDate(w1Start),
+        endIso: toIsoDate(w1End),
+      },
+      {
+        id: 'week-2',
+        title: 'Semaine +3',
+        rangeLabel: formatShortRange(w2Start, w2End),
+        startIso: toIsoDate(w2Start),
+        endIso: toIsoDate(w2End),
+      },
+      {
+        id: 'week-3',
+        title: 'Semaine +4',
+        rangeLabel: formatShortRange(w3Start, w3End),
+        startIso: toIsoDate(w3Start),
+        endIso: toIsoDate(w3End),
+      },
+    ]
+
+    return {
+      weeks: weekRanges,
+      maxDateIso: toIsoDate(w3End),
+      now: currentNow,
+    }
+  }, [])
+
+  // Toutes les sorties à venir (non passées) sur la fenêtre glissante de 4 semaines
+  const upcomingSorties = useMemo(
+    () => (data?.sorties || []).filter((s) => !isPastSortie(s, now) && s.date <= maxDateIso),
+    [data, now, maxDateIso]
+  )
+
+  // Nombre de sorties par semaine (après filtres discipline / fédération pour guider l'utilisateur)
+  const matchesPracticeAndFed = useMemo(() => {
+    return (s) => {
+      if (disciplineFilter !== 'all' && !(s.disciplines || []).includes(disciplineFilter)) return false
+      if (federationFilter !== 'all') {
+        if (federationFilter === 'autre') {
+          if (s.federation === 'FSGT' || s.federation === 'FFVélo') return false
+        } else if (s.federation !== federationFilter) {
+          return false
+        }
+      }
+      return true
+    }
+  }, [disciplineFilter, federationFilter])
+
+  const weeksWithCounts = useMemo(() => {
+    return weeks.map((w) => ({
+      ...w,
+      count: upcomingSorties.filter(
+        (s) => s.date >= w.startIso && s.date <= w.endIso && matchesPracticeAndFed(s)
+      ).length,
+    }))
+  }, [weeks, upcomingSorties, matchesPracticeAndFed])
+
+  const totalMatchingAllWeeks = useMemo(
+    () => upcomingSorties.filter(matchesPracticeAndFed).length,
+    [upcomingSorties, matchesPracticeAndFed]
+  )
+
+  const activeWeekObj = useMemo(
+    () => weeksWithCounts.find((w) => w.id === weekFilter) || null,
+    [weeksWithCounts, weekFilter]
+  )
+
+  const nextWeekWithEvents = useMemo(() => {
+    if (weekFilter === 'all') return null
+    const currentIndex = weeksWithCounts.findIndex((w) => w.id === weekFilter)
+    if (currentIndex === -1) return null
+    return weeksWithCounts.slice(currentIndex + 1).find((w) => w.count > 0) || weeksWithCounts[currentIndex + 1] || null
+  }, [weeksWithCounts, weekFilter])
+
+  const filteredSorties = useMemo(() => {
+    return upcomingSorties.filter((s) => {
+      if (!matchesPracticeAndFed(s)) return false
+      if (weekFilter !== 'all' && activeWeekObj) {
+        if (s.date < activeWeekObj.startIso || s.date > activeWeekObj.endIso) return false
+      }
+      return true
+    })
+  }, [upcomingSorties, matchesPracticeAndFed, weekFilter, activeWeekObj])
+
+  // Regrouper par date (AAAA-MM-JJ)
+  const groupedByDate = useMemo(() => {
+    const groups = []
+    let current = null
+    for (const s of filteredSorties) {
+      if (!current || current.date !== s.date) {
+        current = { date: s.date, dateLabel: s.date_label, items: [] }
+        groups.push(current)
+      }
+      current.items.push(s)
+    }
+    return groups
+  }, [filteredSorties])
+
+  const updatedLabel = formatUpdatedAt(data?.updatedAt)
+
+  return (
+    <div className="space-y-8">
+      {/* Bandeau d'information & filtres */}
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-5 md:p-6 space-y-5">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-gray-100">
+          <div className="flex items-start gap-3">
+            <Sparkles className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" aria-hidden="true" />
+            <div className="text-sm text-gray-600">
+              <strong className="text-[#00205b]">Sorties à venir autour de Toulouse (~60 km) :</strong> affichage par défaut sur les <strong className="text-[#00205b]">7 prochains jours</strong>. Sélectionnez une semaine ci-dessous pour consulter les week-ends suivants.
+              {updatedLabel && (
+                <span className="block text-xs text-gray-400 mt-1">
+                  Dernière mise à jour : {updatedLabel}
+                </span>
+              )}
+            </div>
+          </div>
+
+          <span className="px-3 py-1.5 bg-[#00205b] text-white text-xs font-bold rounded self-start md:self-center flex-shrink-0">
+            {upcomingSorties.length} {upcomingSorties.length > 1 ? 'sorties à venir (4 sem.)' : 'sortie à venir (4 sem.)'}
+          </span>
+        </div>
+
+        {/* Avertissement Contenu généré par IA */}
+        <div className="flex items-start gap-2.5 p-3.5 rounded-md bg-amber-50/90 border border-amber-200 text-xs text-amber-950 leading-relaxed">
+          <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
+          <p>
+            <strong className="font-bold">Contenu généré par IA :</strong> ces informations sont collectées automatiquement sur le web et peuvent comporter des erreurs ou des changements de dernière minute (horaires, tracés, météo).{' '}
+            <strong className="font-bold underline decoration-amber-400 underline-offset-2">
+              Vérifiez toujours les informations sur le site officiel de l&apos;organisateur
+            </strong>{' '}
+            avant de vous déplacer.
+          </p>
+        </div>
+
+        {/* Sélecteur de période par tranches de 7 jours (par défaut : 7 prochains jours) */}
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center gap-1.5 mr-1">
+            <Calendar className="w-3.5 h-3.5 text-[#0077b6]" aria-hidden="true" /> Dates :
+          </span>
+          {weeksWithCounts.map((w) => {
+            const active = weekFilter === w.id
+            return (
+              <button
+                key={w.id}
+                type="button"
+                onClick={() => {
+                  setWeekFilter(w.id)
+                  trackEvent('filtre_sorties_semaine', { semaine: w.id })
+                }}
+                className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-md border text-xs font-bold transition-all ${
+                  active
+                    ? 'bg-[#00205b] text-white border-[#00205b] shadow-xs'
+                    : 'bg-gray-50/80 hover:bg-gray-100 text-gray-700 border-gray-200'
+                }`}
+              >
+                <span>{w.rangeLabel}</span>
+                <span
+                  className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
+                    active
+                      ? 'bg-[#00b5e2] text-[#00205b]'
+                      : w.count > 0
+                      ? 'bg-sky-100 text-[#00205b]'
+                      : 'bg-gray-200 text-gray-500'
+                  }`}
+                >
+                  {w.count}
+                </span>
+              </button>
+            )
+          })}
+
+          <button
+            type="button"
+            onClick={() => {
+              setWeekFilter('all')
+              trackEvent('filtre_sorties_semaine', { semaine: 'all' })
+            }}
+            className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-md border text-xs font-bold transition-all ${
+              weekFilter === 'all'
+                ? 'bg-[#00205b] text-white border-[#00205b] shadow-xs'
+                : 'bg-gray-50/80 hover:bg-gray-100 text-gray-700 border-gray-200'
+            }`}
+          >
+            <span>Tout afficher</span>
+            <span
+              className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
+                weekFilter === 'all'
+                  ? 'bg-[#00b5e2] text-[#00205b]'
+                  : 'bg-sky-100 text-[#00205b]'
+              }`}
+            >
+              {totalMatchingAllWeeks}
+            </span>
+          </button>
+        </div>
+
+        {/* Filtres par discipline et fédération */}
+        <div className="flex flex-wrap items-center gap-4 text-sm pt-2 border-t border-gray-100">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center gap-1">
+              <Filter className="w-3.5 h-3.5" aria-hidden="true" /> Pratique :
+            </span>
+            {[
+              ['all', 'Toutes'],
+              ['route', 'Route'],
+              ['gravel', 'Gravel'],
+              ['vtt', 'VTT'],
+            ].map(([id, label]) => (
+              <button
+                key={id}
+                type="button"
+                onClick={() => {
+                  setDisciplineFilter(id)
+                  trackEvent('filtre_sorties_weekend', { discipline: id })
+                }}
+                className={`px-3 py-1 rounded-full text-xs font-bold border transition-colors ${
+                  disciplineFilter === id
+                    ? 'bg-[#00b5e2] text-[#00205b] border-[#00b5e2]'
+                    : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          <div className="h-4 w-px bg-gray-200 hidden sm:block" aria-hidden="true" />
+
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
+              Fédération :
+            </span>
+            {[
+              ['all', 'Toutes'],
+              ['FSGT', 'FSGT'],
+              ['FFVélo', 'FFVélo'],
+              ['autre', 'FFC / Autres'],
+            ].map(([id, label]) => (
+              <button
+                key={id}
+                type="button"
+                onClick={() => {
+                  setFederationFilter(id)
+                  trackEvent('filtre_sorties_weekend', { federation: id })
+                }}
+                className={`px-3 py-1 rounded-full text-xs font-bold border transition-colors ${
+                  federationFilter === id
+                    ? 'bg-[#00205b] text-white border-[#00205b]'
+                    : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Liste des sorties groupées par journée */}
+      {groupedByDate.length === 0 ? (
+        <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-10 text-center">
+          <p className="text-lg font-bold text-[#00205b] mb-2">
+            {upcomingSorties.length === 0
+              ? 'Aucune sortie à venir enregistrée pour le moment'
+              : activeWeekObj
+              ? `Aucune sortie recensée sur la période ${activeWeekObj.rangeLabel}`
+              : 'Aucune sortie à venir ne correspond à ces filtres'}
+          </p>
+          <p className="text-sm text-gray-600 mb-5">
+            {upcomingSorties.length === 0
+              ? 'Les prochaines randonnées du week-end seront publiées dès la prochaine recherche.'
+              : 'Consultez les semaines suivantes ou élargissez vos filtres.'}
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {nextWeekWithEvents && nextWeekWithEvents.count > 0 && (
+              <button
+                type="button"
+                onClick={() => setWeekFilter(nextWeekWithEvents.id)}
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#00205b] text-white text-sm font-bold rounded-sm hover:bg-[#003380] transition-colors"
+              >
+                Voir la période {nextWeekWithEvents.rangeLabel}
+                <ChevronRight className="w-4 h-4" aria-hidden="true" />
+              </button>
+            )}
+            {weekFilter !== 'all' && totalMatchingAllWeeks > 0 && (
+              <button
+                type="button"
+                onClick={() => setWeekFilter('all')}
+                className="px-4 py-2 bg-gray-100 text-[#00205b] text-sm font-bold rounded-sm hover:bg-gray-200 transition-colors"
+              >
+                Afficher toutes les 4 semaines ({totalMatchingAllWeeks})
+              </button>
+            )}
+            {(disciplineFilter !== 'all' || federationFilter !== 'all') && (
+              <button
+                type="button"
+                onClick={() => {
+                  setDisciplineFilter('all')
+                  setFederationFilter('all')
+                }}
+                className="px-4 py-2 bg-white border border-gray-300 text-gray-700 text-sm font-bold rounded-sm hover:bg-gray-50 transition-colors"
+              >
+                Réinitialiser les filtres
+              </button>
+            )}
+          </div>
+        </div>
+      ) : (
+        <div className="space-y-10">
+          {groupedByDate.map((group) => (
+            <section key={group.date} className="space-y-4">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#00205b] text-white text-sm font-bold rounded-sm shadow-xs">
+                  <Calendar className="w-4 h-4 text-[#00b5e2]" aria-hidden="true" />
+                  {group.dateLabel}
+                </span>
+                <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
+                  {group.items.length} {group.items.length > 1 ? 'sorties recensées' : 'sortie recensée'}
+                </span>
+                <div className="flex-1 h-px bg-gray-200" aria-hidden="true" />
+              </div>
+
+              <div className="space-y-4">
+                {group.items.map((s) => {
+                  const editionYear = s.date?.slice(0, 4)
+                  const isConfirmed = s.fiabilite === 'confirmee'
+                  const isCancelled = s.statut === 'annulee'
+                  return (
+                    <article
+                      key={s.id}
+                      className={`bg-white rounded-lg shadow-sm border transition-shadow hover:shadow-md overflow-hidden ${
+                        isCancelled
+                          ? 'border-red-300 opacity-75'
+                          : isConfirmed
+                          ? 'border-gray-200 border-l-4 border-l-emerald-500'
+                          : 'border-gray-200 border-l-4 border-l-amber-400'
+                      }`}
+                    >
+                      <div className="p-6 space-y-4">
+                        {/* Ligne supérieure : badges + titre */}
+                        <div className="flex flex-wrap items-start justify-between gap-3">
+                          <div className="space-y-1.5">
+                            <div className="flex flex-wrap items-center gap-2">
+                              {s.federation && (
+                                <span className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded ${FEDERATION_STYLES[s.federation] || 'bg-gray-800 text-white'}`}>
+                                  {s.federation}
+                                </span>
+                              )}
+                              {(s.disciplines || []).map((d) => (
+                                <span
+                                  key={d}
+                                  className={`text-xs font-bold px-2.5 py-0.5 rounded-full border ${DISCIPLINE_STYLES[d] || 'bg-gray-100 text-gray-700 border-gray-200'}`}
+                                >
+                                  {DISCIPLINE_LABELS[d] || d}
+                                </span>
+                              ))}
+                              {isCancelled ? (
+                                <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-red-50 text-red-800 border border-red-200">
+                                  Annulée
+                                </span>
+                              ) : isConfirmed ? (
+                                <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
+                                  Vérifié chez l'organisateur
+                                </span>
+                              ) : (
+                                <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200">
+                                  <AlertTriangle className="w-3.5 h-3.5 text-amber-600" aria-hidden="true" />
+                                  Infos à vérifier auprès du club
+                                </span>
+                              )}
+                            </div>
+
+                            <h2 className="text-xl md:text-2xl font-bold text-[#00205b]">
+                              {s.titre}
+                            </h2>
+                            {s.organisateur && (
+                              <p className="text-sm text-gray-500 flex items-center gap-1.5">
+                                <Users className="w-4 h-4 text-[#0077b6]" aria-hidden="true" />
+                                Organisé par <strong className="text-gray-700">{s.organisateur}</strong>
+                              </p>
+                            )}
+                          </div>
+
+                          {s.url && (
+                            <a
+                              href={s.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              data-umami-event="clic_sortie_weekend_infos"
+                              data-umami-event-titre={s.titre}
+                              className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-gray-100 hover:bg-[#00205b] text-[#00205b] hover:text-white text-xs font-bold rounded-sm transition-colors self-start"
+                            >
+                              Site de l'événement <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+                            </a>
+                          )}
+                        </div>
+
+                        {/* Infos pratiques : Horaires & Lieu de départ */}
+                        <div className="grid sm:grid-cols-2 gap-3 p-3.5 bg-gray-50 rounded-md border border-gray-100 text-sm">
+                          <div className="flex items-start gap-2.5">
+                            <Clock className="w-4 h-4 text-[#0077b6] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                            <div>
+                              <span className="font-bold text-[#00205b] block">{formatHorairesLabel(s)}</span>
+                              {s.preuve_date && (
+                                <span className="text-xs text-gray-500 block mt-0.5 leading-relaxed">
+                                  « {s.preuve_date} »
+                                </span>
+                              )}
+                            </div>
+                          </div>
+
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="flex items-start gap-2.5">
+                              <MapPin className="w-4 h-4 text-[#0077b6] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                              <div>
+                                <span className="font-bold text-[#00205b]">
+                                  {s.lieu_depart || 'Lieu à préciser'}
+                                  {s.code_postal ? ` (${s.code_postal})` : ''}
+                                </span>
+                                {s.distance_toulouse_km != null && (
+                                  <span className="text-xs text-gray-500 ml-1.5">
+                                    · ~{Math.round(s.distance_toulouse_km)} km de Toulouse
+                                  </span>
+                                )}
+                                {s.adresse_depart && (
+                                  <span className="block text-xs text-gray-600 mt-0.5">
+                                    {s.adresse_depart}
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                            {s.maps_url && (
+                              <a
+                                href={s.maps_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                data-umami-event="clic_sortie_weekend_maps"
+                                data-umami-event-commune={s.lieu_depart}
+                                className="text-xs font-bold text-[#0077b6] hover:underline whitespace-nowrap flex-shrink-0"
+                              >
+                                Carte ↗
+                              </a>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Circuits & Traces GPX / OpenRunner */}
+                        {(s.circuits?.length > 0 || s.circuits_non_precises > 0) && (
+                          <div className="space-y-2">
+                            <h3 className="text-xs font-bold uppercase tracking-wider text-gray-500 flex items-center gap-1.5">
+                              <Route className="w-3.5 h-3.5 text-[#00b5e2]" aria-hidden="true" />
+                              Circuits proposés
+                            </h3>
+                            <div className="flex flex-wrap gap-2">
+                              {s.circuits.map((c, idx) => {
+                                const staleYear = c.trace_annee && c.trace_annee !== editionYear
+                                const discLabel = DISCIPLINE_LABELS[c.discipline] || c.discipline
+                                const content = (
+                                  <>
+                                    <span className="font-bold text-[#00205b]">
+                                      {discLabel} {formatKm(c.distance_km)}
+                                    </span>
+                                    {c.denivele_m != null && (
+                                      <span className="text-gray-500">· D+ {Math.round(c.denivele_m)} m</span>
+                                    )}
+                                    {c.lien_trace && (
+                                      <span className="text-[#0077b6] font-bold ml-1">
+                                        Tracé ↗
+                                      </span>
+                                    )}
+                                    {staleYear && (
+                                      <span
+                                        className="ml-1 px-1.5 py-0.5 text-[10px] font-bold bg-amber-100 text-amber-900 rounded"
+                                        title={`Le titre du tracé sur OpenRunner mentionne l'année ${c.trace_annee}`}
+                                      >
+                                        ⚠ tracé {c.trace_annee}
+                                      </span>
+                                    )}
+                                  </>
+                                )
+
+                                return c.lien_trace ? (
+                                  <a
+                                    key={idx}
+                                    href={c.lien_trace}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    data-umami-event="clic_trace_openrunner"
+                                    data-umami-event-sortie={s.titre}
+                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs bg-sky-50/70 hover:bg-sky-100 border border-sky-200 transition-colors"
+                                  >
+                                    {content}
+                                  </a>
+                                ) : (
+                                  <span
+                                    key={idx}
+                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs bg-gray-50 border border-gray-200"
+                                  >
+                                    {content}
+                                  </span>
+                                )
+                              })}
+                              {s.circuits_non_precises > 0 && (
+                                <span className="inline-flex items-center px-3 py-1.5 rounded-md text-xs bg-gray-50 text-gray-600 border border-gray-200 italic">
+                                  {s.circuits_non_precises} circuit(s) annoncé(s) (distances non publiées en ligne)
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Tarif éventuel */}
+                        {s.tarif_inscription && (
+                          <div className="pt-2 border-t border-gray-100 flex items-start gap-2 text-xs text-gray-600">
+                            <Euro className="w-4 h-4 text-[#0077b6] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                            <span>
+                              <strong className="text-gray-700">Inscription :</strong> {s.tarif_inscription}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </article>
+                  )
+                })}
+              </div>
+            </section>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}

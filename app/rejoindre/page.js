@@ -1,12 +1,16 @@
 import Link from 'next/link'
 import { ArrowLeft, Mail, Bike, ShieldCheck, Gift, CheckCircle, ChevronDown, FileText, Shield, AlertCircle, CreditCard } from 'lucide-react'
 import adhesion from '@/data/adhesion.json'
+import CopyEmailButton from '@/components/CopyEmailButton'
 
 const { season, nextSeason, campaignOpen } = adhesion
 
 export const metadata = {
-  title: 'Rejoindre le club',
-  description: "Envie de rouler avec le TOAC Cyclo à Toulouse ? Essayer une sortie, comprendre l'adhésion, les tarifs et les licences FFVélo et FSGT.",
+  title: 'Rejoindre le club : essai, adhésion et tarifs',
+  description: "Envie de rouler avec le TOAC Cyclo à Toulouse ? Essayer une sortie gratuitement, comprendre l'adhésion, les tarifs (20€ Airbus / 40€ extérieur / gratuit 1ère année femmes) et les licences FFVélo et FSGT.",
+  alternates: {
+    canonical: '/rejoindre',
+  },
 }
 
 const MAIL_ESSAI = 'mailto:toac.cyclo@gmail.com?subject=Je%20souhaite%20essayer%20une%20sortie'
@@ -52,6 +56,19 @@ const FAQ = [
   },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+}
+
 const COTISATIONS_AIRBUS = [
   ['Salarié Airbus Opérations', '20€'],
   ['Ayant-droit Airbus Opérations', '20€'],
@@ -85,10 +102,14 @@ const LICENCES = [
 export default function RejoindrePage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* Header */}
-      <div className="bg-[#00205b] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="bg-[#00205b] text-white pt-28 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
-        <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-start">
+        <div className="max-w-[76rem] mx-auto relative z-10 flex flex-col items-start">
           <Link href="/" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8">
             <ArrowLeft className="w-4 h-4" /> Retour à l'accueil
           </Link>
@@ -99,21 +120,25 @@ export default function RejoindrePage() {
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <a
               href={MAIL_ESSAI}
+              data-umami-event="clic_mailto_essai_header"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors text-lg"
             >
               <Mail className="w-5 h-5" /> Demander une sortie d'essai
             </a>
             <a
               href="#adhesion"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white/60 hover:border-white hover:bg-white/10 font-bold rounded-sm transition-colors text-lg"
+              className="inline-flex md:hidden items-center justify-center px-8 py-4 border-2 border-white/60 hover:border-white hover:bg-white/10 font-bold rounded-sm transition-colors text-lg"
             >
               Adhésion et tarifs
             </a>
           </div>
+          <div className="mt-3">
+            <CopyEmailButton dark />
+          </div>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-14 [&>*]:max-w-4xl">
         {/* Étapes */}
         <section>
           <h2 className="text-3xl font-bold text-[#00205b] mb-6">Comment ça se passe ?</h2>
@@ -212,6 +237,9 @@ export default function RejoindrePage() {
                               href={doc.href}
                               target="_blank"
                               rel="noopener noreferrer"
+                              data-umami-event="clic_document_licence"
+                              data-umami-event-licence={lic.name}
+                              data-umami-event-document={doc.label}
                               className={`flex items-center gap-2 text-sm ${doc.main ? 'text-[#0077b6] hover:underline' : 'text-gray-500 hover:text-[#0077b6]'}`}
                             >
                               <Icon className="w-4 h-4" aria-hidden="true" /> {doc.label}
@@ -249,12 +277,16 @@ export default function RejoindrePage() {
         <section className="bg-[#00205b] text-white rounded-lg p-8 text-center">
           <h2 className="text-3xl font-bold mb-3">Prêt à pédaler avec nous ?</h2>
           <p className="text-gray-300 mb-6">Une question ? Écrivez au bureau, on vous répond rapidement.</p>
-          <a
-            href={MAIL_ESSAI}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors"
-          >
-            <Mail className="w-5 h-5" /> Nous écrire
-          </a>
+          <div className="flex flex-col items-center gap-3">
+            <a
+              href={MAIL_ESSAI}
+              data-umami-event="clic_mailto_essai_footer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors"
+            >
+              <Mail className="w-5 h-5" /> Nous écrire
+            </a>
+            <CopyEmailButton dark />
+          </div>
         </section>
       </div>
     </div>

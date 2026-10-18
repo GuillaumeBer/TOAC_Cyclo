@@ -74,7 +74,7 @@ export default function NavigationBar() {
             <Link
               href={CTA.href}
               aria-current={pathname === CTA.href ? 'true' : undefined}
-              className="ml-2 px-5 py-2.5 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] text-sm font-bold uppercase tracking-wider rounded-sm transition-colors"
+              className={`ml-2 px-5 py-2.5 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] text-sm font-bold uppercase tracking-wider rounded-sm transition-colors ${pathname === CTA.href ? 'ring-2 ring-white ring-offset-2 ring-offset-[#00205b]' : ''}`}
             >
               {CTA.name}
             </Link>
@@ -97,22 +97,26 @@ export default function NavigationBar() {
       {isMobileMenuOpen && (
         <div className="xl:hidden bg-[#00205b] border-t border-white/10 max-h-[calc(100vh-5rem)] overflow-y-auto">
           <ul className="px-4 pt-2 pb-4 flex flex-col">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.name}>
-                <Link
-                  href={item.href}
-                  className="block px-4 py-3 text-sm font-bold uppercase tracking-wider text-white hover:text-[#00b5e2]"
-                  aria-current={isActive(item) ? 'true' : undefined}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
+            {NAV_ITEMS.map((item) => {
+              const active = isActive(item)
+              return (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className={`block px-4 py-3 text-sm font-bold uppercase tracking-wider border-l-4 ${active ? 'text-[#00b5e2] border-[#00b5e2]' : 'text-white border-transparent hover:text-[#00b5e2]'}`}
+                    aria-current={active ? 'true' : undefined}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              )
+            })}
             <li className="pt-3">
               <Link
                 href={CTA.href}
-                className="block text-center px-4 py-3 bg-[#fcd34d] text-[#00205b] text-sm font-bold uppercase tracking-wider rounded-sm"
+                className={`block text-center px-4 py-3 bg-[#fcd34d] text-[#00205b] text-sm font-bold uppercase tracking-wider rounded-sm ${pathname === CTA.href ? 'ring-2 ring-white ring-offset-2 ring-offset-[#00205b]' : ''}`}
+                aria-current={pathname === CTA.href ? 'true' : undefined}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Rejoindre le club

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Calendar, MapPin } from 'lucide-react'
+import { Calendar, MapPin, Lock, Users } from 'lucide-react'
 import Disclosure from '@/components/Disclosure'
 import EventDetails from '@/components/EventDetails'
 
@@ -18,7 +18,12 @@ export default function ExpandableEvent({ id, item, details }) {
           />
         </div>
         <div className="p-6 md:p-8 flex flex-col justify-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-[#00b5e2] mb-2">{item.category}</p>
+          <div className="mb-2.5">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/15 text-amber-300 border border-amber-500/30">
+              <Lock className="w-3.5 h-3.5" aria-hidden="true" />
+              Réservé aux adhérents du club
+            </span>
+          </div>
           <h3 className="display text-2xl md:text-3xl font-bold mb-2">{item.title}</h3>
           <p className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-300 mb-3">
             <span className="inline-flex items-center gap-1.5"><Calendar className="w-4 h-4 text-[#00b5e2]" aria-hidden="true" /> {item.date}</span>
