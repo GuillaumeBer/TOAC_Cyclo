@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ChevronDown } from 'lucide-react'
 import ElevationProfile from '@/components/ElevationProfile'
 
 export default function HeroSection() {
   return (
     <div id="top" className="relative bg-[#00205b] overflow-hidden">
-      <div className="relative min-h-[92vh] sm:min-h-[95vh] flex flex-col justify-between md:justify-center pt-24 sm:pt-28 md:pt-24 pb-6 sm:pb-8 md:pb-12">
+      <div className="relative min-h-[86vh] sm:min-h-[88vh] md:min-h-[90vh] flex flex-col justify-between md:justify-center pt-24 sm:pt-28 md:pt-24 pb-4 sm:pb-6 md:pb-12">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero-toac.jpg"
@@ -63,8 +63,8 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Zone Basse sur MOBILE uniquement (bouton et citation en bas pour laisser les cyclistes au milieu) */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pb-4 sm:pb-6 md:hidden">
+        {/* Zone Basse sur MOBILE uniquement (bouton, citation et indicateur de scroll) */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pb-3 sm:pb-5 md:hidden">
           <div className="flex flex-col gap-3">
             <Link
               href="/rejoindre"
@@ -74,11 +74,43 @@ export default function HeroSection() {
             </Link>
           </div>
 
-          <div className="mt-3 text-center">
+          <div className="mt-2.5 text-center">
             <p className="text-[11px] text-gray-300 italic">
               « Des tours de quoi ? Des tours d'vélo pardi ! » — Bourvil
             </p>
           </div>
+
+          {/* Indicateur de défilement animé mobile */}
+          <div className="mt-2 flex justify-center">
+            <a
+              href="#sorties"
+              aria-label="Faire défiler vers nos sorties"
+              className="group inline-flex flex-col items-center gap-1 text-white/80 hover:text-white transition-colors cursor-pointer py-1"
+            >
+              <span className="text-[10px] font-bold tracking-widest uppercase text-[#89d3e8] group-hover:text-white transition-colors">
+                Découvrir la suite
+              </span>
+              <div className="w-7 h-7 rounded-full border border-white/30 bg-white/10 flex items-center justify-center animate-bounce shadow-sm">
+                <ChevronDown className="w-4 h-4 text-white" />
+              </div>
+            </a>
+          </div>
+        </div>
+
+        {/* Indicateur de défilement animé GRAND ÉCRAN (discret en bas au centre) */}
+        <div className="hidden md:flex absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex-col items-center">
+          <a
+            href="#sorties"
+            aria-label="Faire défiler vers nos sorties"
+            className="group inline-flex flex-col items-center gap-1.5 text-white/80 hover:text-white transition-colors cursor-pointer"
+          >
+            <span className="text-xs font-bold tracking-widest uppercase text-[#89d3e8] group-hover:text-white transition-colors">
+              Découvrir le club
+            </span>
+            <div className="w-8 h-8 rounded-full border border-white/30 bg-white/10 flex items-center justify-center animate-bounce shadow-md group-hover:border-white/60 group-hover:bg-white/20 transition-all">
+              <ChevronDown className="w-4 h-4 text-white" />
+            </div>
+          </a>
         </div>
       </div>
       <ElevationProfile fill="#ffffff" className="-mb-px" />
