@@ -1,4 +1,4 @@
-import { Mail, Bike, ShieldCheck, Gift, CheckCircle, ChevronDown, FileText, Shield, AlertCircle, CreditCard } from 'lucide-react'
+import { Mail, Bike, ShieldCheck, Gift, CheckCircle, ChevronDown, FileText, Shield, AlertCircle, CreditCard, ExternalLink } from 'lucide-react'
 import adhesion from '@/data/adhesion.json'
 import CopyEmailButton from '@/components/CopyEmailButton'
 import PageHeader from '@/components/PageHeader'
@@ -29,7 +29,24 @@ const MAIL_ESSAI_BODY = [
   'Merci !',
 ].join('\n')
 
-const MAIL_ESSAI = `mailto:toac.cyclo@gmail.com?subject=${encodeURIComponent('Je souhaite essayer une sortie')}&body=${encodeURIComponent(MAIL_ESSAI_BODY)}`
+const MAIL_ESSAI_SUBJECT = 'Je souhaite essayer une sortie'
+const MAIL_ESSAI = `mailto:toac.cyclo@gmail.com?subject=${encodeURIComponent(MAIL_ESSAI_SUBJECT)}&body=${encodeURIComponent(MAIL_ESSAI_BODY)}`
+// Même message dans Gmail web : utile quand aucune application mail n'est configurée pour les liens mailto.
+const GMAIL_ESSAI = `https://mail.google.com/mail/?view=cm&fs=1&to=toac.cyclo@gmail.com&su=${encodeURIComponent(MAIL_ESSAI_SUBJECT)}&body=${encodeURIComponent(MAIL_ESSAI_BODY)}`
+
+function GmailLink({ event }) {
+  return (
+    <a
+      href={GMAIL_ESSAI}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-umami-event={event}
+      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-xs font-bold text-white transition-colors"
+    >
+      Ouvrir dans Gmail <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+    </a>
+  )
+}
 
 const ETAPES = [
   {
@@ -150,7 +167,9 @@ export default function RejoindrePage() {
             </a>
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-2 text-sm text-gray-300">
-            <span>Un email pré-rempli s'ouvre. Rien ne se passe ? Copiez l'adresse :</span>
+            <span>Un email pré-rempli s'ouvre. Rien ne se passe ?</span>
+            <GmailLink event="clic_gmail_essai_header" />
+            <span>ou copiez l'adresse :</span>
             <CopyEmailButton dark />
           </div>
       </PageHeader>
@@ -303,7 +322,10 @@ export default function RejoindrePage() {
             >
               <Mail className="w-5 h-5" aria-hidden="true" /> Nous écrire
             </a>
-            <CopyEmailButton dark />
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              <GmailLink event="clic_gmail_essai_footer" />
+              <CopyEmailButton dark />
+            </div>
           </div>
         </section>
       </div>
