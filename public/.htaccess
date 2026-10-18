@@ -1,6 +1,8 @@
 # Configuration Apache pour hébergement mutualisé OVH
+DirectoryIndex index.html
 Options -MultiViews -Indexes
 RewriteEngine On
+
 
 # Forcer HTTPS (en préservant le challenge ACME de validation SSL d'OVH / Let's Encrypt)
 RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/ [NC]

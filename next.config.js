@@ -2,6 +2,7 @@
 const nextConfig = {
   // Export statique dans le dossier `out/` prêt à déposer dans `/www` sur un hébergement OVH
   output: 'export',
+  trailingSlash: true,
   images: {
     unoptimized: true,
     remotePatterns: [

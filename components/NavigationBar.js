@@ -37,7 +37,7 @@ export default function NavigationBar() {
   return (
     <nav
       aria-label="Navigation principale"
-      className={`fixed w-full z-50 top-0 bg-[#00205b]/95 backdrop-blur text-white transition-shadow duration-300 ${scrolled ? 'shadow-lg' : 'shadow-none'}`}
+      className={`fixed w-full z-50 top-0 bg-[#00205b] text-white transition-shadow duration-300 ${scrolled ? 'shadow-lg' : 'shadow-none'}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -93,17 +93,17 @@ export default function NavigationBar() {
         </div>
       </div>
 
-      {/* Menu mobile plein écran */}
+      {/* Menu mobile plein écran propre sans bug de positionnement */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-x-0 top-20 bottom-0 z-50 xl:hidden bg-[#00205b] border-t border-white/10 overflow-y-auto flex flex-col justify-between px-6 py-6 shadow-2xl">
-          <ul className="flex flex-col divide-y divide-white/5">
+        <div className="xl:hidden bg-[#00205b] border-t border-white/10 h-[calc(100dvh-5rem)] overflow-y-auto flex flex-col justify-between px-6 py-6">
+          <ul className="flex flex-col divide-y divide-white/10">
             {NAV_ITEMS.map((item) => {
               const active = isActive(item)
               return (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className={`block py-4 text-base font-bold uppercase tracking-wider transition-colors ${active ? 'text-[#00b5e2]' : 'text-white hover:text-[#00b5e2]'}`}
+                    className={`block py-4 text-lg font-bold uppercase tracking-wider transition-colors ${active ? 'text-[#00b5e2]' : 'text-white hover:text-[#00b5e2]'}`}
                     aria-current={active ? 'true' : undefined}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -114,17 +114,17 @@ export default function NavigationBar() {
             })}
           </ul>
 
-          <div className="pt-6 pb-4 border-t border-white/10 flex flex-col gap-3">
+          <div className="pt-6 pb-6 border-t border-white/10 flex flex-col gap-3">
             <Link
               href={CTA.href}
-              className={`w-full py-3.5 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] text-center text-sm font-bold uppercase tracking-wider rounded-sm shadow-lg transition-transform active:scale-95 ${pathname === CTA.href ? 'ring-2 ring-white ring-offset-2 ring-offset-[#00205b]' : ''}`}
+              className={`w-full py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] text-center text-base font-bold uppercase tracking-wider rounded-sm shadow-lg transition-transform active:scale-95 ${pathname === CTA.href ? 'ring-2 ring-white ring-offset-2 ring-offset-[#00205b]' : ''}`}
               aria-current={pathname === CTA.href ? 'true' : undefined}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Rejoindre le club
             </Link>
             <p className="text-center text-xs text-gray-400">
-              Cyclotourisme convivial à Toulouse · Sans compétition
+              Cyclotourisme à Toulouse depuis 1976 · Sans compétition
             </p>
           </div>
         </div>
