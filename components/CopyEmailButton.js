@@ -19,11 +19,13 @@ export default function CopyEmailButton({ email = 'toac.cyclo@gmail.com' }) {
   }
 
   return (
+    <>
     <button
       type="button"
       onClick={handleCopy}
       className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-xs font-medium text-gray-200 hover:text-white transition-colors cursor-pointer"
       title="Copier l'adresse email"
+      aria-label={`Copier l'adresse email ${email}`}
     >
       <span className="font-mono">{email}</span>
       {copied ? (
@@ -34,5 +36,10 @@ export default function CopyEmailButton({ email = 'toac.cyclo@gmail.com' }) {
         <Copy className="w-3.5 h-3.5 opacity-80" aria-hidden="true" />
       )}
     </button>
+    {/* Annonce la copie aux lecteurs d'écran */}
+    <span className="sr-only" role="status" aria-live="polite">
+      {copied ? 'Adresse email copiée' : ''}
+    </span>
+    </>
   )
 }

@@ -238,7 +238,7 @@ export default function WeekendRidesClient({ initialData }) {
             <div className="text-sm text-gray-600">
               <strong className="text-[#00205b]">Sorties à venir autour de Toulouse (~60 km) :</strong> affichage par défaut sur les <strong className="text-[#00205b]">7 prochains jours</strong>. Sélectionnez une semaine ci-dessous pour consulter les week-ends suivants.
               {updatedLabel && (
-                <span className="block text-xs text-gray-400 mt-1">
+                <span className="block text-xs text-gray-500 mt-1">
                   Dernière mise à jour : {updatedLabel}
                 </span>
               )}
@@ -357,7 +357,7 @@ export default function WeekendRidesClient({ initialData }) {
                 }}
                 className="inline-flex items-center gap-1 font-bold text-[#0077b6] hover:text-[#00205b] hover:underline cursor-pointer"
               >
-                <RotateCcw className="w-3 h-3" /> Réinitialiser les filtres
+                <RotateCcw className="w-3 h-3" aria-hidden="true" /> Réinitialiser les filtres
               </button>
             )}
           </div>
@@ -422,7 +422,7 @@ export default function WeekendRidesClient({ initialData }) {
                   <Calendar className="w-4 h-4 text-[#00b5e2]" aria-hidden="true" />
                   {group.dateLabel}
                 </span>
-                <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
+                <span className="text-xs font-bold uppercase tracking-wider text-gray-500">
                   {group.items.length} {group.items.length > 1 ? 'sorties recensées' : 'sortie recensée'}
                 </span>
                 <div className="flex-1 h-px bg-gray-200" aria-hidden="true" />
@@ -450,7 +450,7 @@ export default function WeekendRidesClient({ initialData }) {
                           <div className="space-y-1.5">
                             <div className="flex flex-wrap items-center gap-2">
                               {s.federation && (
-                                <span className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded ${FEDERATION_STYLES[s.federation] || 'bg-gray-800 text-white'}`}>
+                                <span className={`text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded ${FEDERATION_STYLES[s.federation] || 'bg-gray-800 text-white'}`}>
                                   {s.federation}
                                 </span>
                               )}
@@ -583,7 +583,7 @@ export default function WeekendRidesClient({ initialData }) {
                                     )}
                                     {staleYear && (
                                       <span
-                                        className="ml-1 px-1.5 py-0.5 text-[10px] font-bold bg-amber-100 text-amber-900 rounded"
+                                        className="ml-1 px-1.5 py-0.5 text-xs font-bold bg-amber-100 text-amber-900 rounded"
                                         title={`Le titre du tracé sur OpenRunner mentionne l'année ${c.trace_annee}`}
                                       >
                                         ⚠ tracé {c.trace_annee}

@@ -21,7 +21,7 @@ export default function JoinBanner() {
             href="/rejoindre"
             className="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors text-lg shadow-md"
           >
-            Venir essayer <ArrowRight className="w-5 h-5" />
+            Venir essayer <ArrowRight className="w-5 h-5" aria-hidden="true" />
           </Link>
         </Reveal>
 

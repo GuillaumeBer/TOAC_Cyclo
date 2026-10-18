@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -13,6 +13,8 @@ export default function NavigationBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
+  const buttonRef = useRef(null)
+  const menuRef = useRef(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -21,11 +23,30 @@ export default function NavigationBar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Menu mobile ouvert : page figée derrière, focus gardé dans le menu (Tab / Maj+Tab), Échap pour fermer.
   useEffect(() => {
     if (!isMobileMenuOpen) return
-    const onKey = (e) => e.key === 'Escape' && setIsMobileMenuOpen(false)
+    const button = buttonRef.current
+    const { overflow } = document.body.style
+    document.body.style.overflow = 'hidden'
+
+    const onKey = (e) => {
+      if (e.key === 'Escape') {
+        setIsMobileMenuOpen(false)
+        return button?.focus({ preventScroll: true })
+      }
+      if (e.key !== 'Tab') return
+      const focusables = [button, ...menuRef.current.querySelectorAll('a')]
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus() }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus() }
+    }
     window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      document.body.style.overflow = overflow
+    }
   }, [isMobileMenuOpen])
 
   useEffect(() => setIsMobileMenuOpen(false), [pathname])
@@ -87,12 +108,14 @@ export default function NavigationBar() {
 
           <div className="-mr-2 flex lg:hidden">
             <button
+              ref={buttonRef}
+              aria-controls="menu-mobile"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-white p-2"
               aria-label={isMobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
               aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -100,7 +123,7 @@ export default function NavigationBar() {
 
       {/* Menu mobile plein écran propre sans bug de positionnement */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#00205b] border-t border-white/10 h-[calc(100dvh-5rem)] overflow-y-auto flex flex-col justify-between px-6 py-6">
+        <div id="menu-mobile" ref={menuRef} className="lg:hidden bg-[#00205b] border-t border-white/10 h-[calc(100dvh-5rem)] overflow-y-auto flex flex-col justify-between px-6 py-6">
           <ul className="flex flex-col divide-y divide-white/10">
             {NAV_ITEMS.map((item) => {
               const active = isActive(item)

@@ -140,7 +140,7 @@ export default function RejoindrePage() {
               data-umami-event="clic_mailto_essai_header"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors text-lg"
             >
-              <Mail className="w-5 h-5" /> Demander une sortie d'essai
+              <Mail className="w-5 h-5" aria-hidden="true" /> Demander une sortie d'essai
             </a>
             <a
               href="#adhesion"
@@ -301,7 +301,7 @@ export default function RejoindrePage() {
               data-umami-event="clic_mailto_essai_footer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-colors"
             >
-              <Mail className="w-5 h-5" /> Nous écrire
+              <Mail className="w-5 h-5" aria-hidden="true" /> Nous écrire
             </a>
             <CopyEmailButton dark />
           </div>

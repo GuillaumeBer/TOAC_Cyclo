@@ -40,7 +40,7 @@ export default function Footer() {
                   aria-label={name}
                   className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#00b5e2] transition-colors group"
                 >
-                  <Icon className="w-5 h-5 text-white group-hover:text-[#00205b]" />
+                  <Icon className="w-5 h-5 text-white group-hover:text-[#00205b]" aria-hidden="true" />
                 </a>
               )
             })}
@@ -50,11 +50,11 @@ export default function Footer() {
           <h2 className="font-bold mb-3 text-base text-[#00b5e2]">Contact</h2>
           <ul className="flex flex-wrap gap-x-6 gap-y-2 md:block md:space-y-2 text-gray-300">
             <li className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-[#00b5e2] mt-0.5 flex-shrink-0" />
+              <MapPin className="w-5 h-5 text-[#00b5e2] mt-0.5 flex-shrink-0" aria-hidden="true" />
               <a href="https://www.google.com/maps/search/?api=1&query=TOAC+Omnisports+Toulouse" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Complexe Sportif TOAC<br />Toulouse, France</a>
             </li>
             <li className="flex items-center gap-3">
-              <Mail className="w-5 h-5 text-[#00b5e2] flex-shrink-0" />
+              <Mail className="w-5 h-5 text-[#00b5e2] flex-shrink-0" aria-hidden="true" />
               <a href="mailto:toac.cyclo@gmail.com" className="hover:text-white transition-colors">toac.cyclo@gmail.com</a>
             </li>
           </ul>
@@ -74,22 +74,22 @@ export default function Footer() {
           <ul className="flex flex-wrap gap-x-5 lg:block text-gray-300">
             <li>
               <a href="https://meteofrance.com" target="_blank" rel="noopener noreferrer" className="py-1 hover:text-white transition-colors flex items-center gap-2">
-                Météo France <ExternalLink className="w-3 h-3 opacity-50" />
+                Météo France <ExternalLink className="w-3 h-3 opacity-50" aria-hidden="true" />
               </a>
             </li>
             <li>
               <a href="https://ffvelo.fr" target="_blank" rel="noopener noreferrer" className="py-1 hover:text-white transition-colors flex items-center gap-2">
-                FF Vélo <ExternalLink className="w-3 h-3 opacity-50" />
+                FF Vélo <ExternalLink className="w-3 h-3 opacity-50" aria-hidden="true" />
               </a>
             </li>
             <li>
               <a href="https://www.cyclotourisme-31.com/" target="_blank" rel="noopener noreferrer" className="py-1 hover:text-white transition-colors flex items-center gap-2">
-                FSGT Cyclotourisme 31 <ExternalLink className="w-3 h-3 opacity-50" />
+                FSGT Cyclotourisme 31 <ExternalLink className="w-3 h-3 opacity-50" aria-hidden="true" />
               </a>
             </li>
             <li>
               <a href="https://openrunner.com" target="_blank" rel="noopener noreferrer" className="py-1 hover:text-white transition-colors flex items-center gap-2">
-                OpenRunner <ExternalLink className="w-3 h-3 opacity-50" />
+                OpenRunner <ExternalLink className="w-3 h-3 opacity-50" aria-hidden="true" />
               </a>
             </li>
           </ul>

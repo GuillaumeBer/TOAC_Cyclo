@@ -13,7 +13,7 @@ export default function MentionsLegales() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <Link href="/" className="inline-flex items-center text-[#0077b6] hover:text-[#00205b] mb-8 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" /> Retour à l'accueil
+            <ArrowLeft className="w-4 h-4 mr-2" aria-hidden="true" /> Retour à l'accueil
           </Link>
           
           <div className="bg-white p-8 md:p-12 shadow-sm border border-gray-100 rounded-lg">

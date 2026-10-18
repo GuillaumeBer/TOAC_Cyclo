@@ -26,7 +26,7 @@ export default function HeroSection() {
         {/* Zone Titre & Description (Sur mobile : calé dans la fougère en haut ; Sur desktop : centré à gauche) */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-4 sm:pt-6 md:pt-0">
           <div className="max-w-4xl animate-fade-in-up">
-            <p className="flex items-center gap-2 sm:gap-3 text-[11px] sm:text-sm font-bold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#89d3e8] mb-2 sm:mb-5">
+            <p className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#89d3e8] mb-2 sm:mb-5">
               <span className="h-px w-6 sm:w-10 bg-[#89d3e8]" aria-hidden="true" />
               <span>Cyclotourisme · Toulouse · <span className="whitespace-nowrap">depuis 1976</span></span>
             </p>
@@ -43,7 +43,7 @@ export default function HeroSection() {
                 href="/rejoindre"
                 className="px-8 py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-all flex items-center justify-center gap-2 text-lg shadow-xl hover:shadow-2xl active:scale-95"
               >
-                Venir essayer <ArrowRight className="w-5 h-5" />
+                Venir essayer <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </Link>
             </div>
 
@@ -70,12 +70,12 @@ export default function HeroSection() {
               href="/rejoindre"
               className="w-full px-6 py-3.5 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] font-bold rounded-sm transition-all flex items-center justify-center gap-2 text-base shadow-xl active:scale-95"
             >
-              Venir essayer <ArrowRight className="w-5 h-5" />
+              Venir essayer <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
           </div>
 
           <div className="mt-2.5 text-center">
-            <p className="text-[11px] text-gray-300 italic">
+            <p className="text-xs text-gray-300 italic">
               « Des tours de quoi ? Des tours d'vélo pardi ! » — Bourvil
             </p>
           </div>
@@ -87,11 +87,11 @@ export default function HeroSection() {
               aria-label="Faire défiler vers nos sorties"
               className="group inline-flex flex-col items-center gap-1 text-white/80 hover:text-white transition-colors cursor-pointer py-1"
             >
-              <span className="text-[10px] font-bold tracking-widest uppercase text-[#89d3e8] group-hover:text-white transition-colors">
+              <span className="text-xs font-bold tracking-widest uppercase text-[#89d3e8] group-hover:text-white transition-colors">
                 Découvrir la suite
               </span>
               <div className="w-7 h-7 rounded-full border border-white/30 bg-white/10 flex items-center justify-center animate-bounce shadow-sm">
-                <ChevronDown className="w-4 h-4 text-white" />
+                <ChevronDown className="w-4 h-4 text-white" aria-hidden="true" />
               </div>
             </a>
           </div>
@@ -108,7 +108,7 @@ export default function HeroSection() {
               Découvrir le club
             </span>
             <div className="w-8 h-8 rounded-full border border-white/30 bg-white/10 flex items-center justify-center animate-bounce shadow-md group-hover:border-white/60 group-hover:bg-white/20 transition-all">
-              <ChevronDown className="w-4 h-4 text-white" />
+              <ChevronDown className="w-4 h-4 text-white" aria-hidden="true" />
             </div>
           </a>
         </div>

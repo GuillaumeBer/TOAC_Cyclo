@@ -109,7 +109,7 @@ export default function CalendrierPage() {
 
         <section>
           <h2 className="text-2xl font-bold text-[#00205b] mb-6 flex items-center gap-2">
-            <Repeat className="w-6 h-6 text-[#00b5e2]" /> Rendez-vous annuels
+            <Repeat className="w-6 h-6 text-[#00b5e2]" aria-hidden="true" /> Rendez-vous annuels
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {calendrier.rendezVousAnnuels.map((r) => {
@@ -119,7 +119,7 @@ export default function CalendrierPage() {
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <span className="text-xs font-bold uppercase tracking-wider text-[#0077b6]">{r.when}</span>
                     {r.tag && (
-                      <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
+                      <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
                         isInternal 
                           ? 'bg-amber-50 text-amber-900 border border-amber-200' 
                           : 'bg-sky-50 text-sky-900 border border-sky-200'
