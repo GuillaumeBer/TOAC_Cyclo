@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, AlertTriangle, Route, Euro, Users, Sparkles, Filter, ChevronRight } from 'lucide-react'
+import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, AlertTriangle, Route, Euro, Users, Sparkles, Filter, ChevronRight, ChevronDown, RotateCcw, Shield } from 'lucide-react'
 import { trackEvent } from '@/lib/analytics'
 
 const DISCIPLINE_LABELS = {
@@ -261,126 +261,104 @@ export default function WeekendRidesClient({ initialData }) {
           </p>
         </div>
 
-        {/* Sélecteur de période par tranches de 7 jours (par défaut : 7 prochains jours) */}
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center gap-1.5 mr-1">
-            <Calendar className="w-3.5 h-3.5 text-[#0077b6]" aria-hidden="true" /> Dates :
-          </span>
-          {weeksWithCounts.map((w) => {
-            const active = weekFilter === w.id
-            return (
-              <button
-                key={w.id}
-                type="button"
-                onClick={() => {
-                  setWeekFilter(w.id)
-                  trackEvent('filtre_sorties_semaine', { semaine: w.id })
-                }}
-                className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-md border text-xs font-bold transition-all ${
-                  active
-                    ? 'bg-[#00205b] text-white border-[#00205b] shadow-xs'
-                    : 'bg-gray-50/80 hover:bg-gray-100 text-gray-700 border-gray-200'
-                }`}
-              >
-                <span>{w.rangeLabel}</span>
-                <span
-                  className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
-                    active
-                      ? 'bg-[#00b5e2] text-[#00205b]'
-                      : w.count > 0
-                      ? 'bg-sky-100 text-[#00205b]'
-                      : 'bg-gray-200 text-gray-500'
-                  }`}
+        {/* Barre de filtres modernes en menus déroulants */}
+        <div className="pt-2 border-t border-gray-100">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            {/* 1. Menu déroulant Dates */}
+            <div>
+              <label htmlFor="filter-dates" className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5 flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-[#0077b6]" aria-hidden="true" /> Dates &amp; période :
+              </label>
+              <div className="relative">
+                <select
+                  id="filter-dates"
+                  value={weekFilter}
+                  onChange={(e) => {
+                    setWeekFilter(e.target.value)
+                    trackEvent('filtre_sorties_semaine', { semaine: e.target.value })
+                  }}
+                  className="w-full appearance-none bg-gray-50/80 hover:bg-white focus:bg-white border border-gray-300 hover:border-gray-400 focus:border-[#00205b] focus:ring-2 focus:ring-[#00205b]/20 rounded-md py-2.5 pl-3.5 pr-10 text-xs sm:text-sm font-bold text-gray-800 shadow-xs transition-all cursor-pointer"
                 >
-                  {w.count}
-                </span>
-              </button>
-            )
-          })}
+                  {weeksWithCounts.map((w) => (
+                    <option key={w.id} value={w.id}>
+                      {w.rangeLabel} ({w.count} {w.count > 1 ? 'sorties' : 'sortie'})
+                    </option>
+                  ))}
+                  <option value="all">
+                    Toutes les 4 semaines ({totalMatchingAllWeeks} {totalMatchingAllWeeks > 1 ? 'sorties' : 'sortie'})
+                  </option>
+                </select>
+                <ChevronDown className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true" />
+              </div>
+            </div>
 
-          <button
-            type="button"
-            onClick={() => {
-              setWeekFilter('all')
-              trackEvent('filtre_sorties_semaine', { semaine: 'all' })
-            }}
-            className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-md border text-xs font-bold transition-all ${
-              weekFilter === 'all'
-                ? 'bg-[#00205b] text-white border-[#00205b] shadow-xs'
-                : 'bg-gray-50/80 hover:bg-gray-100 text-gray-700 border-gray-200'
-            }`}
-          >
-            <span>Tout afficher</span>
-            <span
-              className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
-                weekFilter === 'all'
-                  ? 'bg-[#00b5e2] text-[#00205b]'
-                  : 'bg-sky-100 text-[#00205b]'
-              }`}
-            >
-              {totalMatchingAllWeeks}
-            </span>
-          </button>
-        </div>
+            {/* 2. Menu déroulant Pratique */}
+            <div>
+              <label htmlFor="filter-practice" className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5 flex items-center gap-1.5">
+                <Filter className="w-3.5 h-3.5 text-[#0077b6]" aria-hidden="true" /> Pratique :
+              </label>
+              <div className="relative">
+                <select
+                  id="filter-practice"
+                  value={disciplineFilter}
+                  onChange={(e) => {
+                    setDisciplineFilter(e.target.value)
+                    trackEvent('filtre_sorties_weekend', { discipline: e.target.value })
+                  }}
+                  className="w-full appearance-none bg-gray-50/80 hover:bg-white focus:bg-white border border-gray-300 hover:border-gray-400 focus:border-[#00205b] focus:ring-2 focus:ring-[#00205b]/20 rounded-md py-2.5 pl-3.5 pr-10 text-xs sm:text-sm font-bold text-gray-800 shadow-xs transition-all cursor-pointer"
+                >
+                  <option value="all">Toutes les pratiques (Route, Gravel, VTT)</option>
+                  <option value="route">Route (Cyclotourisme)</option>
+                  <option value="gravel">Gravel</option>
+                  <option value="vtt">VTT</option>
+                </select>
+                <ChevronDown className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true" />
+              </div>
+            </div>
 
-        {/* Filtres par discipline et fédération */}
-        <div className="flex flex-wrap items-center gap-4 text-sm pt-2 border-t border-gray-100">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-xs font-bold uppercase tracking-wider text-gray-400 flex items-center gap-1">
-              <Filter className="w-3.5 h-3.5" aria-hidden="true" /> Pratique :
-            </span>
-            {[
-              ['all', 'Toutes'],
-              ['route', 'Route'],
-              ['gravel', 'Gravel'],
-              ['vtt', 'VTT'],
-            ].map(([id, label]) => (
-              <button
-                key={id}
-                type="button"
-                onClick={() => {
-                  setDisciplineFilter(id)
-                  trackEvent('filtre_sorties_weekend', { discipline: id })
-                }}
-                className={`px-3 py-1 rounded-full text-xs font-bold border transition-colors ${
-                  disciplineFilter === id
-                    ? 'bg-[#00b5e2] text-[#00205b] border-[#00b5e2]'
-                    : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'
-                }`}
-              >
-                {label}
-              </button>
-            ))}
+            {/* 3. Menu déroulant Fédération */}
+            <div className="sm:col-span-2 lg:col-span-1">
+              <label htmlFor="filter-fed" className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1.5 flex items-center gap-1.5">
+                <Shield className="w-3.5 h-3.5 text-[#0077b6]" aria-hidden="true" /> Fédération :
+              </label>
+              <div className="relative">
+                <select
+                  id="filter-fed"
+                  value={federationFilter}
+                  onChange={(e) => {
+                    setFederationFilter(e.target.value)
+                    trackEvent('filtre_sorties_weekend', { federation: e.target.value })
+                  }}
+                  className="w-full appearance-none bg-gray-50/80 hover:bg-white focus:bg-white border border-gray-300 hover:border-gray-400 focus:border-[#00205b] focus:ring-2 focus:ring-[#00205b]/20 rounded-md py-2.5 pl-3.5 pr-10 text-xs sm:text-sm font-bold text-gray-800 shadow-xs transition-all cursor-pointer"
+                >
+                  <option value="all">Toutes les fédérations</option>
+                  <option value="FSGT">FSGT 31 (Cyclotourisme)</option>
+                  <option value="FFVélo">FFVélo (FFCT)</option>
+                  <option value="autre">FFC / Autres organisateurs</option>
+                </select>
+                <ChevronDown className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true" />
+              </div>
+            </div>
           </div>
 
-          <div className="h-4 w-px bg-gray-200 hidden sm:block" aria-hidden="true" />
-
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
-              Fédération :
+          {/* Résumé des résultats et bouton de réinitialisation */}
+          <div className="mt-3.5 flex items-center justify-between text-xs text-gray-500 pt-2 border-t border-gray-50">
+            <span>
+              <strong className="text-[#00205b] font-bold">{filteredSorties.length}</strong> {filteredSorties.length > 1 ? 'sorties trouvées' : 'sortie trouvée'} avec ces critères
             </span>
-            {[
-              ['all', 'Toutes'],
-              ['FSGT', 'FSGT'],
-              ['FFVélo', 'FFVélo'],
-              ['autre', 'FFC / Autres'],
-            ].map(([id, label]) => (
+            {(weekFilter !== 'week-0' || disciplineFilter !== 'route' || federationFilter !== 'all') && (
               <button
-                key={id}
                 type="button"
                 onClick={() => {
-                  setFederationFilter(id)
-                  trackEvent('filtre_sorties_weekend', { federation: id })
+                  setWeekFilter('week-0')
+                  setDisciplineFilter('route')
+                  setFederationFilter('all')
                 }}
-                className={`px-3 py-1 rounded-full text-xs font-bold border transition-colors ${
-                  federationFilter === id
-                    ? 'bg-[#00205b] text-white border-[#00205b]'
-                    : 'bg-white text-gray-600 border-gray-200 hover:border-gray-300'
-                }`}
+                className="inline-flex items-center gap-1 font-bold text-[#0077b6] hover:text-[#00205b] hover:underline cursor-pointer"
               >
-                {label}
+                <RotateCcw className="w-3 h-3" /> Réinitialiser les filtres
               </button>
-            ))}
+            )}
           </div>
         </div>
       </div>

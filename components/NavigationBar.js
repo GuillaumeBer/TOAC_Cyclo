@@ -93,17 +93,17 @@ export default function NavigationBar() {
         </div>
       </div>
 
-      {/* Menu mobile */}
+      {/* Menu mobile plein écran */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden bg-[#00205b] border-t border-white/10 max-h-[calc(100vh-5rem)] overflow-y-auto">
-          <ul className="px-4 pt-2 pb-4 flex flex-col">
+        <div className="fixed inset-x-0 top-20 bottom-0 z-50 xl:hidden bg-[#00205b] border-t border-white/10 overflow-y-auto flex flex-col justify-between px-6 py-6 shadow-2xl">
+          <ul className="flex flex-col divide-y divide-white/5">
             {NAV_ITEMS.map((item) => {
               const active = isActive(item)
               return (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className={`block px-4 py-3 text-sm font-bold uppercase tracking-wider border-l-4 ${active ? 'text-[#00b5e2] border-[#00b5e2]' : 'text-white border-transparent hover:text-[#00b5e2]'}`}
+                    className={`block py-4 text-base font-bold uppercase tracking-wider transition-colors ${active ? 'text-[#00b5e2]' : 'text-white hover:text-[#00b5e2]'}`}
                     aria-current={active ? 'true' : undefined}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -112,17 +112,21 @@ export default function NavigationBar() {
                 </li>
               )
             })}
-            <li className="pt-3">
-              <Link
-                href={CTA.href}
-                className={`block text-center px-4 py-3 bg-[#fcd34d] text-[#00205b] text-sm font-bold uppercase tracking-wider rounded-sm ${pathname === CTA.href ? 'ring-2 ring-white ring-offset-2 ring-offset-[#00205b]' : ''}`}
-                aria-current={pathname === CTA.href ? 'true' : undefined}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Rejoindre le club
-              </Link>
-            </li>
           </ul>
+
+          <div className="pt-6 pb-4 border-t border-white/10 flex flex-col gap-3">
+            <Link
+              href={CTA.href}
+              className={`w-full py-3.5 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] text-center text-sm font-bold uppercase tracking-wider rounded-sm shadow-lg transition-transform active:scale-95 ${pathname === CTA.href ? 'ring-2 ring-white ring-offset-2 ring-offset-[#00205b]' : ''}`}
+              aria-current={pathname === CTA.href ? 'true' : undefined}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Rejoindre le club
+            </Link>
+            <p className="text-center text-xs text-gray-400">
+              Cyclotourisme convivial à Toulouse · Sans compétition
+            </p>
+          </div>
         </div>
       )}
     </nav>
