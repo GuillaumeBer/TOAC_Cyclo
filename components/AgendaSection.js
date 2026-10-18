@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import { Calendar, MapPin } from 'lucide-react'
+import Link from 'next/link'
+import { Calendar, MapPin, ArrowRight } from 'lucide-react'
 import event from '@/data/featured-event.json'
-import agenda from '@/data/agenda.json'
 import calendrier from '@/data/calendrier.json'
 import Reveal from '@/components/Reveal'
-import ExpandableEvent from '@/components/ExpandableEvent'
+import UntilDate from '@/components/UntilDate'
 import Disclosure from '@/components/Disclosure'
 import EventDetails from '@/components/EventDetails'
 import SectionHeading from '@/components/SectionHeading'
@@ -12,7 +12,22 @@ import ElevationProfile from '@/components/ElevationProfile'
 
 const detailsOf = (id) => calendrier.evenements.find((e) => e.id === id).details
 
-// Prochains rendez-vous : l'événement phare en grand, puis les autres rendez-vous datés.
+// Une fois l'événement phare passé, on renvoie vers le calendrier.
+const afterEvent = (
+  <div className="max-w-2xl">
+    <p className="text-lg text-gray-300 leading-relaxed">
+      La {event.title} revient au printemps prochain. Retrouvez la date de la prochaine édition et les autres rendez-vous du club dans le calendrier.
+    </p>
+    <Link
+      href="/calendrier"
+      className="mt-6 inline-flex items-center gap-2 px-7 py-3.5 bg-[#00b5e2] text-[#00205b] font-bold rounded-sm hover:bg-white transition-colors"
+    >
+      Voir le calendrier <ArrowRight className="w-4 h-4" aria-hidden="true" />
+    </Link>
+  </div>
+)
+
+// Prochains rendez-vous : l'événement phare ouvert à tous, masqué automatiquement une fois passé.
 export default function AgendaSection() {
   return (
     <div id="evenements">
@@ -32,6 +47,7 @@ export default function AgendaSection() {
           </Reveal>
 
           {/* Événement phare */}
+          <UntilDate date={event.date} fallback={afterEvent}>
           <div id="rameaux-2027" className="scroll-mt-24 flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
             <Reveal className="lg:w-1/2 space-y-6">
               <div>
@@ -91,17 +107,7 @@ export default function AgendaSection() {
               </div>
             </Reveal>
           </div>
-
-          {/* Autres rendez-vous : le détail se déplie sur place */}
-          <ul className="mt-14 md:mt-20 grid gap-6">
-            {agenda.map((item, i) => (
-              <li key={item.title}>
-                <Reveal delay={i * 120}>
-                  <ExpandableEvent id="montagnarde-2027" item={item} details={detailsOf('montagnarde-2027')} />
-                </Reveal>
-              </li>
-            ))}
-          </ul>
+          </UntilDate>
         </div>
       </div>
     </div>

@@ -31,8 +31,12 @@ export default function NavigationBar() {
   useEffect(() => setIsMobileMenuOpen(false), [pathname])
 
   // Chaque entrée du menu est une vraie page : l'état actif ne dépend que de l'URL.
+  // trailingSlash est activé : on retire le « / » final avant de comparer.
+  const path = pathname.length > 1 ? pathname.replace(/\/$/, '') : pathname
   const isActive = (item) =>
-    item.href === '/' ? pathname === '/' : item.paths.some((p) => pathname === p || pathname.startsWith(`${p}/`))
+    item.href === '/'
+      ? path === '/'
+      : item.paths.some((p) => path === p || (!item.exact && path.startsWith(`${p}/`)))
 
   return (
     <nav
@@ -56,8 +60,9 @@ export default function NavigationBar() {
             </div>
           </Link>
 
-          <div className="hidden xl:flex items-center gap-1 2xl:gap-2">
-            {NAV_ITEMS.map((item) => {
+          <div className="hidden lg:flex items-center gap-1 2xl:gap-2">
+            {/* Le logo mène déjà à l'accueil : pas d'entrée « Accueil » sur grand écran */}
+            {NAV_ITEMS.filter((item) => item.href !== '/').map((item) => {
               const active = isActive(item)
               return (
                 <Link
@@ -73,14 +78,14 @@ export default function NavigationBar() {
             })}
             <Link
               href={CTA.href}
-              aria-current={pathname === CTA.href ? 'true' : undefined}
-              className={`ml-2 px-5 py-2.5 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] text-sm font-bold uppercase tracking-wider rounded-sm transition-colors ${pathname === CTA.href ? 'ring-2 ring-white ring-offset-2 ring-offset-[#00205b]' : ''}`}
+              aria-current={path === CTA.href ? 'true' : undefined}
+              className={`ml-2 px-5 py-2.5 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] text-sm font-bold uppercase tracking-wider rounded-sm transition-colors ${path === CTA.href ? 'ring-2 ring-white ring-offset-2 ring-offset-[#00205b]' : ''}`}
             >
               {CTA.name}
             </Link>
           </div>
 
-          <div className="-mr-2 flex xl:hidden">
+          <div className="-mr-2 flex lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-white p-2"
@@ -95,7 +100,7 @@ export default function NavigationBar() {
 
       {/* Menu mobile plein écran propre sans bug de positionnement */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden bg-[#00205b] border-t border-white/10 h-[calc(100dvh-5rem)] overflow-y-auto flex flex-col justify-between px-6 py-6">
+        <div className="lg:hidden bg-[#00205b] border-t border-white/10 h-[calc(100dvh-5rem)] overflow-y-auto flex flex-col justify-between px-6 py-6">
           <ul className="flex flex-col divide-y divide-white/10">
             {NAV_ITEMS.map((item) => {
               const active = isActive(item)
@@ -117,8 +122,8 @@ export default function NavigationBar() {
           <div className="pt-6 pb-6 border-t border-white/10 flex flex-col gap-3">
             <Link
               href={CTA.href}
-              className={`w-full py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] text-center text-base font-bold uppercase tracking-wider rounded-sm shadow-lg transition-transform active:scale-95 ${pathname === CTA.href ? 'ring-2 ring-white ring-offset-2 ring-offset-[#00205b]' : ''}`}
-              aria-current={pathname === CTA.href ? 'true' : undefined}
+              className={`w-full py-4 bg-[#fcd34d] hover:bg-[#fde68a] text-[#00205b] text-center text-base font-bold uppercase tracking-wider rounded-sm shadow-lg transition-transform active:scale-95 ${path === CTA.href ? 'ring-2 ring-white ring-offset-2 ring-offset-[#00205b]' : ''}`}
+              aria-current={path === CTA.href ? 'true' : undefined}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Rejoindre le club

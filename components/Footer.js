@@ -70,7 +70,7 @@ export default function Footer() {
           </ul>
         </nav>
         <div>
-          <h2 className="font-bold mb-3 text-base text-[#00b5e2]">Liens Utiles</h2>
+          <h2 className="font-bold mb-3 text-base text-[#00b5e2]">Liens utiles</h2>
           <ul className="flex flex-wrap gap-x-5 lg:block text-gray-300">
             <li>
               <a href="https://meteofrance.com" target="_blank" rel="noopener noreferrer" className="py-1 hover:text-white transition-colors flex items-center gap-2">
@@ -98,7 +98,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 mt-6 pt-2 border-t border-white/10 text-center text-xs text-gray-400 flex flex-col md:flex-row justify-between items-center gap-4">
         <p>© {new Date().getFullYear()} TOAC Cyclotourisme. Tous droits réservés.</p>
         <div className="flex gap-6">
-          <Link href="/mentions-legales" className="inline-block py-2 hover:text-white transition-colors">Mentions Légales</Link>
+          <Link href="/mentions-legales" className="inline-block py-2 hover:text-white transition-colors">Mentions légales</Link>
           <Link href="/confidentialite" className="inline-block py-2 hover:text-white transition-colors">Confidentialité</Link>
         </div>
       </div>

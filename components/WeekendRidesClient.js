@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, AlertTriangle, Route, Euro, Users, Sparkles, Filter, ChevronRight, ChevronDown, RotateCcw, Shield } from 'lucide-react'
+import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, AlertTriangle, Route, Euro, Users, Sparkles, Filter, ChevronRight, ChevronDown, RotateCcw, Shield, Bike, Trees, Mountain } from 'lucide-react'
 import { trackEvent } from '@/lib/analytics'
 
 const DISCIPLINE_LABELS = {
@@ -10,10 +10,11 @@ const DISCIPLINE_LABELS = {
   vtt: 'VTT',
 }
 
-const DISCIPLINE_STYLES = {
-  route: 'bg-sky-50 text-sky-900 border-sky-200',
-  gravel: 'bg-amber-50 text-amber-900 border-amber-200',
-  vtt: 'bg-emerald-50 text-emerald-900 border-emerald-200',
+// Disciplines en gris neutre + icône : le vert et l'ambre restent réservés à la fiabilité (vérifié / à vérifier).
+const DISCIPLINE_ICONS = {
+  route: Bike,
+  gravel: Trees,
+  vtt: Mountain,
 }
 
 const FEDERATION_STYLES = {
@@ -453,14 +454,18 @@ export default function WeekendRidesClient({ initialData }) {
                                   {s.federation}
                                 </span>
                               )}
-                              {(s.disciplines || []).map((d) => (
-                                <span
-                                  key={d}
-                                  className={`text-xs font-bold px-2.5 py-0.5 rounded-full border ${DISCIPLINE_STYLES[d] || 'bg-gray-100 text-gray-700 border-gray-200'}`}
-                                >
-                                  {DISCIPLINE_LABELS[d] || d}
-                                </span>
-                              ))}
+                              {(s.disciplines || []).map((d) => {
+                                const Icon = DISCIPLINE_ICONS[d]
+                                return (
+                                  <span
+                                    key={d}
+                                    className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full border bg-gray-100 text-gray-700 border-gray-200"
+                                  >
+                                    {Icon && <Icon className="w-3.5 h-3.5 text-gray-500" aria-hidden="true" />}
+                                    {DISCIPLINE_LABELS[d] || d}
+                                  </span>
+                                )
+                              })}
                               {isCancelled ? (
                                 <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-red-50 text-red-800 border border-red-200">
                                   Annulée
@@ -482,9 +487,9 @@ export default function WeekendRidesClient({ initialData }) {
                               {s.titre}
                             </h2>
                             {s.organisateur && (
-                              <p className="text-sm text-gray-500 flex items-center gap-1.5">
-                                <Users className="w-4 h-4 text-[#0077b6]" aria-hidden="true" />
-                                Organisé par <strong className="text-gray-700">{s.organisateur}</strong>
+                              <p className="text-sm text-gray-500 flex items-start gap-1.5">
+                                <Users className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#0077b6]" aria-hidden="true" />
+                                <span>Organisé par <strong className="text-gray-700">{s.organisateur}</strong></span>
                               </p>
                             )}
                           </div>

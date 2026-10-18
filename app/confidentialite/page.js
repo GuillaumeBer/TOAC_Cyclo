@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
 export const metadata = {
-  title: 'Politique de Confidentialité',
+  title: 'Politique de confidentialité',
   description: 'Politique de confidentialité et protection des données personnelles du site TOAC Cyclotourisme'
 }
 
@@ -17,7 +17,7 @@ export default function Confidentialite() {
           </Link>
           
           <div className="bg-white p-8 md:p-12 shadow-sm border border-gray-100 rounded-lg">
-            <h1 className="text-3xl md:text-4xl font-bold text-[#00205b] mb-8">Politique de Confidentialité</h1>
+            <h1 className="text-3xl md:text-4xl font-bold text-[#00205b] mb-8">Politique de confidentialité</h1>
             
             <div className="prose prose-lg max-w-none text-gray-600">
               

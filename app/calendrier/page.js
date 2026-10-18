@@ -1,7 +1,8 @@
 import Link from 'next/link'
-import { ArrowLeft, ArrowRight, Calendar, Repeat, Compass } from 'lucide-react'
+import { ArrowRight, Calendar, CalendarPlus, Repeat, Compass } from 'lucide-react'
 import calendrier from '@/data/calendrier.json'
 import EventCard from '@/components/EventCard'
+import PageHeader from '@/components/PageHeader'
 import { SITE_URL } from '@/lib/site'
 
 export const metadata = {
@@ -42,18 +43,11 @@ export default function CalendrierPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }} />
-      <div className="bg-[#00205b] text-white pt-28 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
-        <div className="max-w-[76rem] mx-auto relative z-10 flex flex-col items-start">
-          <Link href="/" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8">
-            <ArrowLeft className="w-4 h-4" /> Retour à l'accueil
-          </Link>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">Calendrier 2027</h1>
-          <p className="text-xl text-gray-300 max-w-2xl">
-            Les grands rendez-vous du club et de la saison.
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        title="Calendrier 2027"
+        breadcrumb={[{ name: 'Calendrier' }]}
+        intro="Les grands rendez-vous du club et de la saison."
+      />
 
       <div className="max-w-[76rem] mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-14 [&>*]:max-w-4xl">
         {/* Encart Sorties des week-ends */}
@@ -83,9 +77,29 @@ export default function CalendrierPage() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-[#00205b] mb-6 flex items-center gap-2">
-            <Calendar className="w-6 h-6 text-[#00b5e2]" /> Dates à retenir
-          </h2>
+          <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <h2 className="text-2xl font-bold text-[#00205b] flex items-center gap-2">
+              <Calendar className="w-6 h-6 text-[#00b5e2]" aria-hidden="true" /> Dates à retenir
+            </h2>
+            {/* webcal:// : abonnement mis à jour automatiquement (Apple, Outlook) ; le .ics reste téléchargeable */}
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+              <a
+                href={`${SITE_URL.replace(/^https?:/, 'webcal:')}/calendrier.ics`}
+                data-umami-event="clic_abonnement_agenda"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#00205b] hover:bg-[#003580] text-white font-bold rounded-sm transition-colors"
+              >
+                <CalendarPlus className="w-4 h-4" aria-hidden="true" /> S'abonner au calendrier
+              </a>
+              <a
+                href="/calendrier.ics"
+                download
+                data-umami-event="clic_telechargement_ics"
+                className="font-bold text-[#0077b6] hover:text-[#00205b] underline underline-offset-2 hover:no-underline"
+              >
+                ou télécharger (.ics)
+              </a>
+            </div>
+          </div>
           <div className="space-y-4">
             {calendrier.evenements.map((e) => (
               <EventCard key={e.id} event={e} />

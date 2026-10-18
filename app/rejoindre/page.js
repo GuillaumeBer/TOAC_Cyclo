@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import { ArrowLeft, Mail, Bike, ShieldCheck, Gift, CheckCircle, ChevronDown, FileText, Shield, AlertCircle, CreditCard } from 'lucide-react'
+import { Mail, Bike, ShieldCheck, Gift, CheckCircle, ChevronDown, FileText, Shield, AlertCircle, CreditCard } from 'lucide-react'
 import adhesion from '@/data/adhesion.json'
 import CopyEmailButton from '@/components/CopyEmailButton'
+import PageHeader from '@/components/PageHeader'
 
 const { season, nextSeason, campaignOpen } = adhesion
 
@@ -13,7 +13,23 @@ export const metadata = {
   },
 }
 
-const MAIL_ESSAI = 'mailto:toac.cyclo@gmail.com?subject=Je%20souhaite%20essayer%20une%20sortie'
+// Le corps du mail reprend les questions de l'étape 1 : le visiteur n'a plus qu'à compléter.
+const MAIL_ESSAI_BODY = [
+  'Bonjour,',
+  '',
+  "J'aimerais faire une sortie d'essai avec le TOAC Cyclo.",
+  '',
+  'Prénom : ',
+  'Niveau (débutant / régulier / confirmé) : ',
+  'Distance habituelle par sortie : ',
+  'Vélo (route / gravel) : ',
+  'Disponibilités (vendredi après-midi / dimanche matin / jeudi soir) : ',
+  'Questions éventuelles : ',
+  '',
+  'Merci !',
+].join('\n')
+
+const MAIL_ESSAI = `mailto:toac.cyclo@gmail.com?subject=${encodeURIComponent('Je souhaite essayer une sortie')}&body=${encodeURIComponent(MAIL_ESSAI_BODY)}`
 
 const ETAPES = [
   {
@@ -107,16 +123,17 @@ export default function RejoindrePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       {/* Header */}
-      <div className="bg-[#00205b] text-white pt-28 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 transform translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
-        <div className="max-w-[76rem] mx-auto relative z-10 flex flex-col items-start">
-          <Link href="/" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8">
-            <ArrowLeft className="w-4 h-4" /> Retour à l'accueil
-          </Link>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Rejoindre le club</h1>
-          <p className="text-xl text-gray-300 max-w-2xl">
-            Envie de rouler en bonne compagnie à Toulouse ? Venez faire une sortie avec nous avant de vous décider.
-          </p>
+      <PageHeader
+        title="Rejoindre le club"
+        breadcrumb={[{ name: 'Rejoindre le club' }]}
+        intro="Envie de rouler en bonne compagnie à Toulouse ? Venez faire une sortie avec nous avant de vous décider."
+      >
+          <a
+            href="#adhesion"
+            className="mt-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#fcd34d]/15 border border-[#fcd34d]/40 text-[#fcd34d] text-sm font-bold hover:bg-[#fcd34d]/25 transition-colors"
+          >
+            <Gift className="w-4 h-4 flex-shrink-0" aria-hidden="true" /> Mesdames : cotisation club offerte la 1ère année
+          </a>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <a
               href={MAIL_ESSAI}
@@ -132,11 +149,11 @@ export default function RejoindrePage() {
               Adhésion et tarifs
             </a>
           </div>
-          <div className="mt-3">
+          <div className="mt-3 flex flex-wrap items-center gap-2 text-sm text-gray-300">
+            <span>Un email pré-rempli s'ouvre. Rien ne se passe ? Copiez l'adresse :</span>
             <CopyEmailButton dark />
           </div>
-        </div>
-      </div>
+      </PageHeader>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-14 [&>*]:max-w-4xl">
         {/* Étapes */}
@@ -163,7 +180,8 @@ export default function RejoindrePage() {
               <CreditCard className="w-6 h-6 text-[#00b5e2]" aria-hidden="true" /> Adhésion et tarifs
             </h2>
             <p className="text-gray-600 mt-2">
-              Le coût total comprend la cotisation du club (obligatoire) et une licence fédérale (au choix).
+              Le coût total comprend la cotisation du club (obligatoire) et une licence fédérale (au choix).{' '}
+              <strong className="text-[#00205b]">Le prix de la licence s'ajoute à la cotisation</strong> : il est détaillé dans les documents de chaque fédération (section B).
             </p>
           </div>
 
@@ -275,7 +293,7 @@ export default function RejoindrePage() {
 
         {/* CTA final */}
         <section className="bg-[#00205b] text-white rounded-lg p-8 text-center">
-          <h2 className="text-3xl font-bold mb-3">Prêt à pédaler avec nous ?</h2>
+          <h2 className="text-3xl font-bold mb-3">Prêt à pédaler avec nous&nbsp;?</h2>
           <p className="text-gray-300 mb-6">Une question ? Écrivez au bureau, on vous répond rapidement.</p>
           <div className="flex flex-col items-center gap-3">
             <a

@@ -33,11 +33,11 @@ export default function EventCard({ event }) {
     <article id={event.id} className="scroll-mt-24 bg-white rounded-lg shadow-sm p-6 border-l-4 border-[#00b5e2]">
       <EventBadge type={event.type} label={event.category} />
       <h3 className="text-xl font-bold text-[#00205b]">{event.title}</h3>
-      <p className="flex items-center gap-2 text-gray-700 font-medium mt-2">
-        <Calendar className="w-4 h-4 text-[#0077b6]" aria-hidden="true" /> {event.dateLabel}
+      <p className="flex items-start gap-2 text-gray-700 font-medium mt-2">
+        <Calendar className="w-4 h-4 mt-1 flex-shrink-0 text-[#0077b6]" aria-hidden="true" /> {event.dateLabel}
       </p>
-      <p className="flex items-center gap-2 text-sm text-gray-600 mt-1">
-        <MapPin className="w-4 h-4 text-[#0077b6]" aria-hidden="true" /> {event.location}
+      <p className="flex items-start gap-2 text-sm text-gray-600 mt-1">
+        <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#0077b6]" aria-hidden="true" /> {event.location}
       </p>
       {event.detail && <p className="text-sm text-gray-600 mt-2">{event.detail}</p>}
 

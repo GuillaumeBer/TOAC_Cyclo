@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { trackEvent } from '@/lib/analytics'
+import PageHeader from '@/components/PageHeader'
 
-// En-tête sombre avec trois onglets, puis le panneau de l'activité choisie.
+// En-tête sombre (props de PageHeader) avec trois onglets, puis le panneau de l'activité choisie.
 // Motif ARIA « tabs » : flèches gauche/droite, Début/Fin, un seul onglet dans l'ordre de tabulation.
 // L'ancre de l'adresse (#gravel, #longue-distance, #cyclomontagnardes) choisit l'onglet à l'ouverture.
 export default function ActivityTabs({ header, tabs }) {
@@ -38,10 +39,7 @@ export default function ActivityTabs({ header, tabs }) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-[#00205b] text-white pt-28 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
-        <div className="max-w-[76rem] mx-auto relative z-10 flex flex-col items-start">
-          {header}
+      <PageHeader {...header}>
           <div role="tablist" aria-label="Activités" className="mt-8 grid grid-cols-3 gap-3 sm:gap-4 w-full max-w-2xl">
             {tabs.map((t, i) => {
               const selected = t.id === active
@@ -85,8 +83,7 @@ export default function ActivityTabs({ header, tabs }) {
               )
             })}
           </div>
-        </div>
-      </div>
+      </PageHeader>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 [&>*]:max-w-4xl">
         {tabs.map((t) => (

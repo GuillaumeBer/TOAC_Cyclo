@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import { ArrowLeft, Bike, Map, Mountain, Sunset, Calendar, Clock, MapPin, ExternalLink } from 'lucide-react'
+import { Bike, Map, Mountain, Sunset, Calendar, Clock, MapPin, ExternalLink } from 'lucide-react'
 import ActivityTabs from '@/components/ActivityTabs'
 import activites from '@/data/activites.json'
 
@@ -58,17 +57,11 @@ function EventRow({ title, text, href, date, tag }) {
   )
 }
 
-const header = (
-  <>
-    <Link href="/" className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8">
-      <ArrowLeft className="w-4 h-4" /> Retour à l'accueil
-    </Link>
-    <h1 className="text-4xl md:text-6xl font-bold mb-4">Nos activités</h1>
-    <p className="text-xl text-gray-300 max-w-2xl">
-      Au-delà des sorties club, trois univers pour se faire plaisir et se dépasser : la longue distance, les cyclomontagnardes et l'aventure gravel.
-    </p>
-  </>
-)
+const header = {
+  title: 'Nos activités',
+  breadcrumb: [{ name: 'Activités' }],
+  intro: "Au-delà des sorties club, trois univers pour se faire plaisir et se dépasser : la longue distance, les cyclomontagnardes et l'aventure gravel.",
+}
 
 export default function ActivitesPage() {
   const tabs = [

@@ -28,7 +28,7 @@ export default function HeroSection() {
           <div className="max-w-4xl animate-fade-in-up">
             <p className="flex items-center gap-2 sm:gap-3 text-[11px] sm:text-sm font-bold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#89d3e8] mb-2 sm:mb-5">
               <span className="h-px w-6 sm:w-10 bg-[#89d3e8]" aria-hidden="true" />
-              Cyclotourisme · Toulouse · depuis 1976
+              <span>Cyclotourisme · Toulouse · <span className="whitespace-nowrap">depuis 1976</span></span>
             </p>
             <h1 className="display text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[8.5rem] font-bold text-white tracking-tight leading-[1.05]">
               Roulez avec <span className="text-[#00b5e2]">le TOAC</span> Cyclo

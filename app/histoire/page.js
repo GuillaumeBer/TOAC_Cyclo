@@ -1,9 +1,9 @@
-import Link from 'next/link'
+import PageHeader from '@/components/PageHeader'
 import Image from 'next/image'
-import { ArrowLeft, Calendar, Users, Trophy, Heart, Bike } from 'lucide-react'
+import { Users, Trophy, Heart, Bike } from 'lucide-react'
 
 export const metadata = {
-  title: 'Notre Histoire depuis 1976',
+  title: 'Notre histoire depuis 1976',
   description: "Fondé en 1976 par André Lafarge, découvrez l'histoire de la section cyclotourisme du TOAC à Toulouse (Trophée André Lafarge, affiliations FFVélo et FSGT).",
   alternates: {
     canonical: '/histoire',
@@ -14,27 +14,11 @@ export default function HistoirePage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-[#00205b] pt-28 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#00b5e2] rounded-full blur-[128px] opacity-20 translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
-        <div className="max-w-[76rem] mx-auto relative z-10 flex flex-col items-start">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-[#00b5e2] hover:text-white transition-colors mb-8"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Retour à l'accueil
-          </Link>
-
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Notre Histoire
-          </h1>
-
-          <p className="text-xl text-gray-300 leading-relaxed max-w-3xl">
-            Depuis 1976, le TOAC Cyclo rassemble les passionnés de vélo autour de valeurs
-            communes : convivialité, entraide et plaisir de rouler ensemble.
-          </p>
-        </div>
-      </div>
+      <PageHeader
+        title="Notre histoire"
+        breadcrumb={[{ name: 'Notre histoire' }]}
+        intro="Depuis 1976, le TOAC Cyclo rassemble les passionnés de vélo autour de valeurs communes : convivialité, entraide et plaisir de rouler ensemble."
+      />
 
       {/* Timeline */}
       <div className="px-4 sm:px-6 lg:px-8 py-12">
@@ -46,7 +30,7 @@ export default function HistoirePage() {
             <div className="bg-white shadow-sm border border-gray-100 rounded-lg p-6 ml-4">
               <div className="flex items-center gap-3 mb-4">
                 <div className="px-3 py-1 bg-[#00b5e2] text-[#00205b] text-sm font-bold rounded">1976</div>
-                <h2 className="text-2xl font-bold text-[#00205b]">Fondation du Club</h2>
+                <h2 className="text-2xl font-bold text-[#00205b]">Fondation du club</h2>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
                 <strong className="text-[#00205b]">André Lafarge</strong> fonde la section Cyclotourisme du TOAC
@@ -54,7 +38,7 @@ export default function HistoirePage() {
                 pas de compétition, mais le <strong className="text-[#0077b6]">plaisir de rouler ensemble</strong>.
               </p>
               <div className="flex items-center gap-2 text-[#0077b6]">
-                <Users className="w-5 h-5" />
+                <Users className="w-5 h-5" aria-hidden="true" />
                 <span className="text-sm">Club du CSE d'Airbus Toulouse</span>
               </div>
             </div>
@@ -66,7 +50,7 @@ export default function HistoirePage() {
             <div className="bg-white shadow-sm border border-gray-100 rounded-lg p-6 ml-4">
               <div className="flex items-center gap-3 mb-4">
                 <div className="px-3 py-1 bg-gray-100 text-[#00205b] text-sm font-bold rounded">Affiliations</div>
-                <h2 className="text-2xl font-bold text-[#00205b]">Double Affiliation</h2>
+                <h2 className="text-2xl font-bold text-[#00205b]">Double affiliation</h2>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Le club s'affilie à deux fédérations majeures de la randonnée cyclo en France :
@@ -97,7 +81,7 @@ export default function HistoirePage() {
                 décerné chaque année lors de la Randonnée des Rameaux au club le plus représenté.
               </p>
               <div className="flex items-center gap-2 text-amber-700">
-                <Trophy className="w-5 h-5" />
+                <Trophy className="w-5 h-5" aria-hidden="true" />
                 <span className="text-sm">Un symbole de convivialité et de rassemblement</span>
               </div>
             </div>
@@ -109,7 +93,7 @@ export default function HistoirePage() {
             <div className="bg-white shadow-sm border border-gray-100 rounded-lg p-6 ml-4">
               <div className="flex items-center gap-3 mb-4">
                 <div className="px-3 py-1 bg-[#00b5e2] text-[#00205b] text-sm font-bold rounded">Aujourd'hui</div>
-                <h2 className="text-2xl font-bold text-[#00205b]">Un Club Ouvert</h2>
+                <h2 className="text-2xl font-bold text-[#00205b]">Un club ouvert</h2>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Le TOAC Cyclo accueille les salariés, retraités et ayants droit d'Airbus,
@@ -137,12 +121,12 @@ export default function HistoirePage() {
             <div className="absolute left-0 top-0 w-4 h-4 -translate-x-1/2 rounded-full bg-[#00205b]"></div>
             <div className="bg-white shadow-sm border border-gray-100 rounded-lg p-6 ml-4">
               <h2 className="text-2xl font-bold text-[#00205b] mb-6 flex items-center gap-3">
-                <Heart className="w-6 h-6 text-[#0077b6]" /> Nos Valeurs
+                <Heart className="w-6 h-6 text-[#0077b6]" aria-hidden="true" /> Nos valeurs
               </h2>
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {['Convivialité', 'Ténacité', 'Dépassement de soi', 'Entraide', 'Plaisir', 'Respect'].map((value) => (
                   <div key={value} className="flex items-center gap-3 text-gray-600">
-                    <Bike className="w-5 h-5 text-[#0077b6]" />
+                    <Bike className="w-5 h-5 text-[#0077b6]" aria-hidden="true" />
                     <span>{value}</span>
                   </div>
                 ))}
