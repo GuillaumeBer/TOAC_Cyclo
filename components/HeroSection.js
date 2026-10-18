@@ -63,7 +63,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Zone Basse sur MOBILE uniquement (bouton, citation et indicateur de scroll) */}
+        {/* Zone Basse sur MOBILE uniquement (bouton et indicateur de scroll) */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pb-3 sm:pb-5 md:hidden">
           <div className="flex flex-col gap-3">
             <Link
@@ -74,14 +74,8 @@ export default function HeroSection() {
             </Link>
           </div>
 
-          <div className="mt-2.5 text-center">
-            <p className="text-xs text-gray-300 italic">
-              « Des tours de quoi ? Des tours d'vélo pardi ! » — Bourvil
-            </p>
-          </div>
-
-          {/* Indicateur de défilement animé mobile */}
-          <div className="mt-2 flex justify-center">
+          {/* Indicateur de défilement animé mobile (la citation de Bourvil reste sur grand écran) */}
+          <div className="mt-4 flex justify-center">
             <a
               href="#sorties"
               aria-label="Faire défiler vers nos sorties"
