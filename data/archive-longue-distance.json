@@ -1,0 +1,48 @@
+{
+  "brm": [
+    {
+      "title": "Muret (CRMuret)",
+      "text": "200 km (13 mars), 300 km (3 avr.), 400 km (23-24 avr.), 600 km (28-29 mai)",
+      "date": "13 mars – 29 mai",
+      "href": "https://crmuret.org/brevet-randonneurs-mondiaux/"
+    },
+    {
+      "title": "Castanet (CCC31)",
+      "text": "200, 300, 400 et 600 km (parcours reconduits, départs les samedis de mars à juin)",
+      "date": "Mars – Juin",
+      "href": "https://www.ccc31.fr/brm-2026/"
+    },
+    {
+      "title": "Montauban (VC Montalbanais)",
+      "text": "200, 300 et 600 km dans le Tarn-et-Garonne et le Lot",
+      "date": "Dates ACP en janvier",
+      "href": "https://www.veloce-club-montalbanais.com/"
+    },
+    {
+      "title": "L'Isle-sur-Tarn (Les Déjantés)",
+      "text": "200 km (fin avril) et 1 000 km (début mai / 6 800 m D+)",
+      "date": "Avril – Mai",
+      "href": "http://lesdejantes81.free.fr/brevet_presentation2026.php"
+    }
+  ],
+  "longueDistance": [
+    {
+      "title": "Bordeaux - Saint-Malo",
+      "text": "840 km (ou 430 km en « Little BSM »)",
+      "date": "12-16 mai",
+      "href": "https://www.bordeauxsaintmalo.com/"
+    },
+    {
+      "title": "Tour cyclotouriste FFVélo (Épinal)",
+      "text": "~2 800 km en 21 jours",
+      "date": "5-27 juin",
+      "href": "https://ffvelo.fr/voyages-velo/2027-tour-cyclotouriste/"
+    },
+    {
+      "title": "Race Across France",
+      "text": "200 à 2 500 km",
+      "date": "16-27 juin",
+      "href": "https://www.raceacrossseries.com/race-across-france"
+    }
+  ]
+}

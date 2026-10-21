@@ -1,12 +1,12 @@
-import { Bike, Map, Mountain, Sunset, Calendar, Clock, MapPin, ExternalLink } from 'lucide-react'
+import { Bike, Map, Mountain, Sunset, Calendar, Clock, MapPin, ExternalLink, Hammer } from 'lucide-react'
 import ActivityTabs from '@/components/ActivityTabs'
 import activites from '@/data/activites.json'
 
-const { brm: BRM, longueDistance: LONGUE_EVENTS, cyclomontagnardes: CMV, gravel: GRAVEL_EVENTS } = activites
+const { cyclomontagnardes: CMV, gravel: GRAVEL_EVENTS } = activites
 
 export const metadata = {
   title: 'Activités : longue distance (BRM, PBP), cyclomontagnardes & gravel',
-  description: 'Brevets randonneurs (BRM) et Paris-Brest-Paris 2027, Cyclomontagnardes FFVélo, sorties gravel afterwork le jeudi à Toulouse/Blagnac et bikepacking en Occitanie avec le TOAC Cyclo.',
+  description: 'Paris-Brest-Paris 2027, Cyclomontagnardes FFVélo, sorties gravel afterwork le jeudi à Toulouse/Blagnac et bikepacking en Occitanie avec le TOAC Cyclo.',
   alternates: {
     canonical: '/activites',
   },
@@ -87,20 +87,13 @@ export default function ActivitesPage() {
         <p className="text-xs text-gray-500 mt-3">Infos à vérifier sur le site officiel de l'événement avant de vous inscrire.</p>
       </div>
 
-      <h3 className="font-bold text-[#00205b] text-lg mb-1">BRM près de chez nous, 2027</h3>
-      <p className="text-sm text-gray-500 mb-4">Les calendriers seront publiés par les clubs organisateurs : cliquez sur le nom pour accéder à leur site.</p>
-      <ul className="space-y-3 mb-10">
-        {BRM.map((e) => <EventRow key={e.title} {...e} />)}
-      </ul>
-
-      <h3 className="font-bold text-[#00205b] text-lg mb-1">Autres événements notables, 2027</h3>
-      <p className="text-sm text-gray-500 mb-4">Organisés par des clubs tiers : les dates ci-dessous sont celles annoncées par les organisateurs.</p>
-      <ul className="space-y-3 mb-6">
-        {LONGUE_EVENTS.map((e) => <EventRow key={e.title} {...e} />)}
-      </ul>
-      <a href="https://www.audax-club-parisien.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-[#00205b] rounded-sm hover:bg-gray-200 transition-colors text-sm font-bold">
-        <ExternalLink className="w-4 h-4" aria-hidden="true" /> Site Audax Club Parisien
-      </a>
+      <div className="bg-white rounded-lg border border-dashed border-[#00b5e2] p-6 text-center">
+        <Hammer className="w-8 h-8 text-[#00b5e2] mx-auto mb-3" aria-hidden="true" />
+        <h3 className="font-bold text-[#00205b] text-lg mb-1">Le calendrier des brevets est en construction</h3>
+        <p className="text-sm text-gray-600 max-w-xl mx-auto">
+          Nous préparons une sélection de BRM et d'événements longue distance autour de Toulouse. Revenez bientôt !
+        </p>
+      </div>
         </>
       ),
     },
