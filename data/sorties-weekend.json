@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-18T17:10:13",
-  "windowStart": "2026-10-18",
-  "windowEnd": "2026-11-15",
+  "updatedAt": "2026-10-24T15:13:47",
+  "windowStart": "2026-10-24",
+  "windowEnd": "2026-11-22",
   "lastPeriodLabel": "4 prochaines semaines",
   "sorties": [
     {
@@ -13,11 +13,11 @@
       "heure_depart": "20:00",
       "titre": "La Dahu Lézatoise",
       "organisateur": "Cyclo-Club Lézatois",
-      "federation": "FFVélo",
+      "federation": null,
       "lieu_depart": "Lézat-sur-Lèze",
-      "code_postal": "09210",
+      "code_postal": "31430",
       "adresse_depart": "Foyer rural, Lézat-sur-Lèze",
-      "maps_url": "https://maps.google.com/?q=Foyer+rural+Lezat+sur+Leze+09210",
+      "maps_url": "https://maps.google.com/?q=Foyer+rural+Lezat+sur+Leze+31430",
       "disciplines": [
         "vtt",
         "gravel"
@@ -30,25 +30,17 @@
           "lien_trace": "https://www.openrunner.com/route-details/25383346",
           "trace_titre": "Lézat-sur-Lèze - LA DAHU 2026 VTT",
           "trace_annee": "2026"
-        },
-        {
-          "discipline": "gravel",
-          "distance_km": 31.7,
-          "denivele_m": 551.0,
-          "lien_trace": "https://www.openrunner.com/route-details/25383346",
-          "trace_titre": "Lézat-sur-Lèze - LA DAHU 2026 VTT",
-          "trace_annee": "2026"
         }
       ],
       "circuits_non_precises": 0,
-      "tarif_inscription": "6 € (soupe à l'oignon offerte à l'arrivée)",
+      "tarif_inscription": null,
       "contact": null,
       "url": "https://cycloclublezatois.assoconnect.com/page/4094972-la-dahu-lezatoise",
       "statut": "maintenue",
       "fiabilite": "confirmee",
-      "preuve_date": "SAMEDI 24 OCTOBRE 2026 - Accueil à partir de 19h00, départ à 20h00 au Foyer rural de Lézat-sur-Lèze",
-      "distance_toulouse_km": 40.0,
-      "derniere_vue": "2026-10-18T17:03:35"
+      "preuve_date": "SAMEDI 24 OCTOBRE 2026",
+      "distance_toulouse_km": null,
+      "derniere_vue": "2026-10-24T15:13:46"
     },
     {
       "id": "2026-W43|escalquens",
@@ -62,8 +54,8 @@
       "federation": "FSGT",
       "lieu_depart": "Escalquens",
       "code_postal": "31750",
-      "adresse_depart": "Salle de l'Oustal, Chemin des Écoles",
-      "maps_url": "https://maps.google.com/?q=Salle+de+l+Oustal+Chemin+des+Ecoles+Escalquens+31750",
+      "adresse_depart": "Salle de l'Oustal, chemin des Écoles, Escalquens",
+      "maps_url": "https://maps.google.com/?q=Salle+de+l+Oustal+chemin+des+Ecoles+Escalquens+31750",
       "disciplines": [
         "route",
         "gravel"
@@ -71,7 +63,7 @@
       "circuits": [
         {
           "discipline": "route",
-          "distance_km": 57.2,
+          "distance_km": 57.0,
           "denivele_m": 637.0,
           "lien_trace": "https://www.openrunner.com/route-details/25275609",
           "trace_titre": "Escalquens - Lauragaise 2026 - Petit",
@@ -79,7 +71,7 @@
         },
         {
           "discipline": "route",
-          "distance_km": 78.5,
+          "distance_km": 78.0,
           "denivele_m": 938.0,
           "lien_trace": "https://www.openrunner.com/route-details/25275571",
           "trace_titre": "Escalquens - Lauragaise 2026 - Parcours moyen",
@@ -87,7 +79,7 @@
         },
         {
           "discipline": "route",
-          "distance_km": 92.9,
+          "distance_km": 93.0,
           "denivele_m": 1204.0,
           "lien_trace": "https://www.openrunner.com/route-details/25275185",
           "trace_titre": "Escalquens - Lauragaise 2026 - Grand parcours",
@@ -95,22 +87,22 @@
         },
         {
           "discipline": "gravel",
-          "distance_km": 55.0,
-          "denivele_m": 608.0,
+          "distance_km": 50.0,
+          "denivele_m": 698.0,
           "lien_trace": "https://www.openrunner.com/route-details/25422593",
-          "trace_titre": null,
-          "trace_annee": null
+          "trace_titre": "Escalquens - Lauragaise 2026 - Gravel",
+          "trace_annee": "2026"
         }
       ],
       "circuits_non_precises": 0,
-      "tarif_inscription": "5 €",
+      "tarif_inscription": null,
       "contact": null,
-      "url": "http://www.cycloescalquens.fr/Lauragaise.htm",
+      "url": "https://www.cyclotourisme-31.com/evenement-153-escalquens.html",
       "statut": "maintenue",
       "fiabilite": "confirmee",
-      "preuve_date": "Dimanche 25 octobre 2026, accueil et départs libres de 7h30 à 9h30 - La Lauragaise organisée par l'Amicale Cyclo d'Escalquens sous l'égide de la FSGT 31",
+      "preuve_date": "Le 25/10/2026 de 07h30 à 12h30",
       "distance_toulouse_km": 12.0,
-      "derniere_vue": "2026-10-18T17:03:35"
+      "derniere_vue": "2026-10-24T15:13:46"
     },
     {
       "id": "2026-W45|cugnaux",
@@ -119,55 +111,55 @@
       "horaires_label": "À partir de 08:00",
       "heure_rdv": "08:00",
       "heure_depart": null,
-      "titre": "34ème Randonnée Humanitaire",
-      "organisateur": "Commission Cyclo FSGT 31 & Cyclo Club de Cugnaux",
+      "titre": "Rando Humanitaire",
+      "organisateur": "Commission Cyclos FSGT31 / club de Cugnaux",
       "federation": "FSGT",
       "lieu_depart": "Cugnaux",
       "code_postal": "31270",
-      "adresse_depart": "Salle Albert Camus, 1 Place de la République",
-      "maps_url": "https://maps.google.com/?q=Salle+Albert+Camus+1+Place+de+la+Republique+Cugnaux+31270",
+      "adresse_depart": "Salle Albert Camus, 1 place de la République, 31270 Cugnaux",
+      "maps_url": "https://maps.google.com/?q=Salle+Albert+Camus+1+place+de+la+Republique+31270+Cugnaux",
       "disciplines": [
         "route"
       ],
       "circuits": [],
       "circuits_non_precises": 0,
-      "tarif_inscription": "Participation libre / dons au profit d'une association humanitaire",
+      "tarif_inscription": "Don libre pour l'association ETRE LA",
       "contact": null,
       "url": "https://www.cyclotourisme-31.com/evenement-501-34y-me-rando-humanitaire.html",
       "statut": "maintenue",
       "fiabilite": "a_verifier",
-      "preuve_date": "Dimanche 8 novembre 2026 de 08h00 à 12h00 : 34ème Randonnée Humanitaire, Salle Albert Camus, 1 Place de la République, 31270 Cugnaux",
-      "distance_toulouse_km": 11.0,
-      "derniere_vue": "2026-10-18T17:03:35"
+      "preuve_date": "34e Rando Humanitaire (Cugnaux) – 8 novembre 2026, de 08h00 à 12h00",
+      "distance_toulouse_km": 12.0,
+      "derniere_vue": "2026-10-24T15:13:46"
     },
     {
       "id": "2026-W45|veilhes",
       "date": "2026-11-08",
       "date_label": "Dimanche 8 novembre",
-      "horaires_label": "À partir de 09:00",
-      "heure_rdv": "09:00",
+      "horaires_label": "Horaire à confirmer",
+      "heure_rdv": null,
       "heure_depart": null,
       "titre": "Clôture du CoDep Tarn",
       "organisateur": "Veilhes Sport Détente Cyclo / CoDep 81 FFVélo",
-      "federation": "FFVélo",
+      "federation": null,
       "lieu_depart": "Veilhes",
-      "code_postal": "81500",
-      "adresse_depart": "Route de Lacougotte-Cadoul, Veilhes",
-      "maps_url": "https://maps.google.com/?q=Route+de+Lacougotte+Cadoul+Veilhes+81500",
+      "code_postal": null,
+      "adresse_depart": null,
+      "maps_url": "https://maps.google.com/?q=Veilhes",
       "disciplines": [
         "route",
         "vtt"
       ],
       "circuits": [],
       "circuits_non_precises": 0,
-      "tarif_inscription": "Licenciés FFVélo : gratuit ; non-licenciés : 3 € (jeunes gratuit)",
-      "contact": "Maurice Pages - 05 63 58 70 01 / 06 33 70 38 41 / vsdcyclo81@gmail.com",
+      "tarif_inscription": null,
+      "contact": null,
       "url": "https://tarn.ffvelo.fr/ou-et-quand-pratiquer/",
       "statut": "maintenue",
       "fiabilite": "a_verifier",
-      "preuve_date": "Dimanche 8 novembre 2026 à 09h00 : Clôture du Comité Départemental du Tarn FFVélo à Veilhes (Veilhes Sport Détente Cyclo)",
-      "distance_toulouse_km": 31.0,
-      "derniere_vue": "2026-10-18T17:03:35"
+      "preuve_date": null,
+      "distance_toulouse_km": null,
+      "derniere_vue": "2026-10-24T15:13:46"
     },
     {
       "id": "2026-W46|toulouse",
@@ -177,12 +169,12 @@
       "heure_rdv": "07:00",
       "heure_depart": null,
       "titre": "Point Café du Stade Toulousain Cyclo",
-      "organisateur": "Stade Toulousain Cyclo",
+      "organisateur": "Stade Toulousain Cyclo (interclubs FSGT 31)",
       "federation": "FSGT",
       "lieu_depart": "Toulouse",
       "code_postal": "31200",
-      "adresse_depart": "Stade des Sept Deniers, 114 rue des Troënes",
-      "maps_url": "https://maps.google.com/?q=Stade+des+Sept+Deniers+114+rue+des+Troenes+Toulouse+31200",
+      "adresse_depart": "Stade des Septs Deniers, 114 rue des Troënes, 31200 Toulouse",
+      "maps_url": "https://maps.google.com/?q=Stade+des+Septs+Deniers+114+rue+des+Troenes+31200+Toulouse",
       "disciplines": [
         "route"
       ],
@@ -193,9 +185,37 @@
       "url": "https://www.cyclotourisme-31.com/evenement-262-point-cafy-du-stade-toulousain-cyclo.html",
       "statut": "maintenue",
       "fiabilite": "a_verifier",
-      "preuve_date": "Dimanche 15 novembre 2026, de 07h00 à 11h00 : Point Café du Stade Toulousain Cyclo - Circuits InterClubs, Stade des Sept Deniers",
+      "preuve_date": "15/11/2026",
       "distance_toulouse_km": 3.0,
-      "derniere_vue": "2026-10-18T17:03:35"
+      "derniere_vue": "2026-10-24T15:13:46"
+    },
+    {
+      "id": "2026-W47|castelmaurou",
+      "date": "2026-11-22",
+      "date_label": "Dimanche 22 novembre",
+      "horaires_label": "À partir de 08:30",
+      "heure_rdv": "08:30",
+      "heure_depart": null,
+      "titre": "Point-Café Castelmaurou",
+      "organisateur": "Cyclo Club des Violettes Castelmaurou (FSGT 31)",
+      "federation": "FSGT",
+      "lieu_depart": "Castelmaurou",
+      "code_postal": "31180",
+      "adresse_depart": "Place de la Mairie, Castelmaurou - GPS 43°40'40\"N 1°31'56\"E",
+      "maps_url": "https://maps.google.com/?q=Place+de+la+Mairie+Castelmaurou+GPS+4340+40+N+131+56+E+31180",
+      "disciplines": [
+        "route"
+      ],
+      "circuits": [],
+      "circuits_non_precises": 0,
+      "tarif_inscription": null,
+      "contact": "Via le formulaire de contact du site : https://www.cyclotourisme-31.com/contact.php",
+      "url": "https://www.cyclotourisme-31.com/evenement-409-point-cafy-castelmaurou.html",
+      "statut": "maintenue",
+      "fiabilite": "a_verifier",
+      "preuve_date": "Date : 22/11/2026",
+      "distance_toulouse_km": 13.0,
+      "derniere_vue": "2026-10-24T15:13:46"
     }
   ]
 }
