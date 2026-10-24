@@ -89,7 +89,7 @@ function isPastSortie(s, now) {
 
 export default function WeekendRidesClient({ initialData }) {
   const [data, setData] = useState(initialData)
-  const [weekFilter, setWeekFilter] = useState('week-0') // Par défaut : 7 prochains jours
+  const [weekFilter, setWeekFilter] = useState('all') // Par défaut : les 4 prochaines semaines
   const [disciplineFilter, setDisciplineFilter] = useState('route') // Par défaut : Route
   const [federationFilter, setFederationFilter] = useState('all')
 
@@ -236,7 +236,7 @@ export default function WeekendRidesClient({ initialData }) {
           <div className="flex items-start gap-3">
             <Sparkles className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" aria-hidden="true" />
             <div className="text-sm text-gray-600">
-              <strong className="text-[#00205b]">Sorties à venir autour de Toulouse (~60 km) :</strong> affichage par défaut sur les <strong className="text-[#00205b]">7 prochains jours</strong>. Sélectionnez une semaine ci-dessous pour consulter les week-ends suivants.
+              <strong className="text-[#00205b]">Sorties à venir autour de Toulouse (~60 km) :</strong> affichage par défaut sur les <strong className="text-[#00205b]">4 prochaines semaines</strong>. Sélectionnez une semaine ci-dessous pour affiner.
               {updatedLabel && (
                 <span className="block text-xs text-gray-500 mt-1">
                   Dernière mise à jour : {updatedLabel}
@@ -347,11 +347,11 @@ export default function WeekendRidesClient({ initialData }) {
             <span>
               <strong className="text-[#00205b] font-bold">{filteredSorties.length}</strong> {filteredSorties.length > 1 ? 'sorties trouvées' : 'sortie trouvée'} avec ces critères
             </span>
-            {(weekFilter !== 'week-0' || disciplineFilter !== 'route' || federationFilter !== 'all') && (
+            {(weekFilter !== 'all' || disciplineFilter !== 'route' || federationFilter !== 'all') && (
               <button
                 type="button"
                 onClick={() => {
-                  setWeekFilter('week-0')
+                  setWeekFilter('all')
                   setDisciplineFilter('route')
                   setFederationFilter('all')
                 }}
