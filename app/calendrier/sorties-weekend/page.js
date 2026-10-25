@@ -1,4 +1,4 @@
-import { Compass } from 'lucide-react'
+import { Compass, ChevronDown } from 'lucide-react'
 import sortiesWeekend from '@/data/sorties-weekend.json'
 import WeekendRidesClient from '@/components/WeekendRidesClient'
 import PageHeader from '@/components/PageHeader'
@@ -35,14 +35,17 @@ export default function SortiesWeekendPage() {
 
           <section className="mt-16" aria-labelledby="faq-sorties">
             <h2 id="faq-sorties" className="display text-3xl font-bold text-[#00205b] mb-6">Questions fréquentes</h2>
-            <dl className="space-y-5">
+            <div className="space-y-3">
               {FAQ.map(({ q, a }) => (
-                <div key={q} className="bg-white rounded-lg border border-gray-100 p-5 shadow-sm">
-                  <dt className="font-bold text-[#00205b] mb-1">{q}</dt>
-                  <dd className="text-sm text-gray-600 leading-relaxed">{a}</dd>
-                </div>
+                <details key={q} className="group bg-white rounded-lg border border-gray-100 shadow-sm">
+                  <summary className="flex items-center justify-between gap-4 cursor-pointer list-none p-5 font-bold text-[#00205b] [&::-webkit-details-marker]:hidden">
+                    {q}
+                    <ChevronDown className="w-4 h-4 flex-shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+                  </summary>
+                  <p className="px-5 pb-5 text-sm text-gray-600 leading-relaxed">{a}</p>
+                </details>
               ))}
-            </dl>
+            </div>
           </section>
         </div>
       </div>
