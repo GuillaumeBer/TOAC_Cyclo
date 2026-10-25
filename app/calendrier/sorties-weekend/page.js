@@ -2,7 +2,7 @@ import { Compass } from 'lucide-react'
 import sortiesWeekend from '@/data/sorties-weekend.json'
 import WeekendRidesClient from '@/components/WeekendRidesClient'
 import PageHeader from '@/components/PageHeader'
-import { sortiesJsonLd, faqJsonLd, FAQ } from '@/lib/sorties-seo'
+import { sortiesJsonLd, faqJsonLd, upcomingSummary, FAQ } from '@/lib/sorties-seo'
 
 export const metadata = {
   title: 'Sorties vélo ce week-end à Toulouse : toutes les randonnées cyclo, gravel, interclubs',
@@ -13,6 +13,7 @@ export const metadata = {
 }
 
 export default function SortiesWeekendPage() {
+  const summary = upcomingSummary([...sortiesWeekend.sorties, ...(sortiesWeekend.apercu || [])])
   return (
     <div className="min-h-screen bg-gray-50">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(sortiesJsonLd(sortiesWeekend.sorties)) }} />
@@ -31,6 +32,11 @@ export default function SortiesWeekendPage() {
 
       <div className="px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-[76rem] mx-auto [&>*]:max-w-4xl">
+          {summary && (
+            <p className="mb-6 text-sm text-gray-700 leading-relaxed">
+              <strong className="text-[#00205b]">Prochaines sorties autour de Toulouse :</strong> {summary}.
+            </p>
+          )}
           <WeekendRidesClient initialData={sortiesWeekend} />
 
           <section className="mt-16" aria-labelledby="faq-sorties">
