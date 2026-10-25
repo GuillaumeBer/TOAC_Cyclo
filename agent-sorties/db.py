@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS sorties (
     date                 TEXT NOT NULL,             -- AAAA-MM-JJ
     titre                TEXT,
     organisateur         TEXT,
-    federation           TEXT,                      -- FFVélo | FSGT | UFOLEP | FFC | autre | NULL si aucun indice explicite
+    federation           TEXT,                      -- FFVélo | FSGT | UFOLEP | autre | NULL si aucun indice explicite
     lieu_depart          TEXT,
     code_postal          TEXT,
     adresse_depart       TEXT,

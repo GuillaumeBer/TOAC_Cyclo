@@ -33,7 +33,7 @@ import unicodedata
 import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 import db
@@ -56,6 +56,8 @@ Méthode :
   comités départementaux 31/32/81/82/09, sites de clubs, sites d'inscription, agendas locaux).
 - Ouvre les pages pour vérifier date, lieu de départ, horaires et distances. Ne te fie pas aux seuls extraits de recherche.
 - Ne retiens que les sorties dont la date tombe dans la période demandée (bornes comprises).
+- Exclus les compétitions (courses, cyclosportives chronométrées, championnats, épreuves FFC/UFOLEP avec classement, enduros ou
+  courses VTT) : ne garde que les randonnées et sorties de cyclotourisme sans classement, VTT et gravel compris.
 - N'invente jamais une information. Si un champ est introuvable, mets null. Chaque sortie doit avoir une URL source réelle
   que tu as consultée.
 - Dédoublonne : une même sortie annoncée sur plusieurs sites ne doit apparaître qu'une fois.
@@ -241,9 +243,9 @@ Méthode :
 - Si plusieurs pages du même organisateur se contredisent (distances, dénivelés), retiens la page dédiée à l'événement
   (rubrique agenda/événement) plutôt qu'un article d'actualité.
 - Fédération : indique quelle fédération organise ou labellise l'événement : "FFVélo" (anciennement FFCT, cyclotourisme), "FSGT",
-  "UFOLEP", "FFC", ou "autre" (club indépendant, association, triathlon...). Appuie-toi sur un indice EXPLICITE et recopie-le dans
+  "UFOLEP", ou "autre" (tout le reste : FFC, club indépendant, association, triathlon...). Appuie-toi sur un indice EXPLICITE et recopie-le dans
   "federation_preuve" : logo ou mention « FFVélo / FFCT », « FSGT », « UFOLEP » sur les pages ou l'affiche, calendrier fédéral où
-  l'événement figure (ex. calendrier FSGT 31, comité départemental FFVélo), club affilié annoncé. Une simple mention « tarif
+  l'événement figure (ex. calendrier FSGT 31, comité départemental FFVélo), club affilié annoncé. Le nom de l'organisateur compte quand il cite explicitement la fédération (ex. « CoDep 81 FFVélo », « Comité FSGT 31 »). Une simple mention « tarif
   licenciés FFVélo » indique quelles licences sont acceptées, pas la fédération organisatrice. Sans indice explicite : null,
   ne devine jamais d'après le nom du club.
 - N'invente rien : champ introuvable = null.
@@ -263,7 +265,7 @@ Réponse finale : uniquement un bloc ```json
   "circuits": [{"discipline": "route" | "gravel" | "vtt", "distance_km": 72, "denivele_m": 770 ou null, "lien_trace": "https://..." ou null}],
   "tarif_inscription": "texte court" ou null,
   "contact": "téléphone / e-mail de l'organisateur" ou null,
-  "federation": "FFVélo" | "FSGT" | "UFOLEP" | "FFC" | "autre" ou null,
+  "federation": "FFVélo" | "FSGT" | "UFOLEP" | "autre" ou null,
   "federation_preuve": "indice explicite : citation courte, logo ou calendrier fédéral où l'événement figure" ou null,
   "affiches": ["URL ABSOLUE (https://...) de chaque fichier image ou PDF d'affiche, flyer ou carte de cet événement (pas les logos ni les partenaires) ; reconstitue l'adresse complète si la page donne un chemin relatif comme /documents/flyer.pdf"]
 }"""
@@ -549,7 +551,8 @@ def year_proven(s: dict) -> bool:
 
 
 DISCIPLINES = {"route": "Route", "gravel": "Gravel", "vtt": "VTT"}
-FEDERATIONS = ("FFVélo", "FSGT", "UFOLEP", "FFC")
+FEDERATIONS = ("FFVélo", "FSGT", "UFOLEP")
+HORIZON_WEEKS = 13  # vision « 3 mois » publiée sur le site, en plus des 4 semaines détaillées
 
 
 def format_horaires(s: dict) -> str:
@@ -880,8 +883,29 @@ def publier_site(depuis: str | None = None, jusqu_a: str | None = None) -> tuple
             "derniere_vue": s.get("derniere_vue"),
         })
 
+    # Vision à ~3 mois : au-delà de la fenêtre détaillée, seulement les infos utiles pour bloquer une date.
+    horizon_start = (date.fromisoformat(max_date) + timedelta(days=1)).isoformat()
+    horizon_end = (now.date() + timedelta(weeks=HORIZON_WEEKS)).isoformat()
+    apercu = [
+        {
+            "id": s["id"],
+            "date": s["date"],
+            "titre": s.get("titre") or "Sortie cyclo",
+            "organisateur": s.get("organisateur"),
+            "federation": s.get("federation") if s.get("federation") in FEDERATIONS else None,
+            "lieu_depart": s.get("lieu_depart"),
+            "disciplines": s.get("disciplines") or [],
+            "url": s.get("url") if str(s.get("url") or "").startswith("http") else None,
+            "fiabilite": s.get("fiabilite") or "a_verifier",
+        }
+        for s in db.all_retenues(depuis=horizon_start, jusqu_a=horizon_end)
+        if s.get("statut") != "annulee"
+    ]
+
     payload = {
         "updatedAt": db._now(),
+        "horizonEnd": horizon_end,
+        "apercu": apercu,
         "windowStart": min_date,
         "windowEnd": max_date,
         "lastPeriodLabel": (last_search or {}).get("libelle") or window.label,

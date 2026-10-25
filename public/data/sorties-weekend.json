@@ -1,109 +1,38 @@
 {
-  "updatedAt": "2026-10-24T15:13:47",
-  "windowStart": "2026-10-24",
-  "windowEnd": "2026-11-22",
-  "lastPeriodLabel": "4 prochaines semaines",
-  "sorties": [
+  "updatedAt": "2026-10-25T10:53:46",
+  "horizonEnd": "2027-01-24",
+  "apercu": [
     {
-      "id": "2026-W43|lezat-sur-leze",
-      "date": "2026-10-24",
-      "date_label": "Samedi 24 octobre",
-      "horaires_label": "À partir de 20:00 (RDV 19:00)",
-      "heure_rdv": "19:00",
-      "heure_depart": "20:00",
-      "titre": "La Dahu Lézatoise",
-      "organisateur": "Cyclo-Club Lézatois",
+      "id": "2026-W49|castelginest",
+      "date": "2026-12-06",
+      "titre": "Point Café Téléthon Castelginest",
+      "organisateur": "FSGT Commission Cyclotourisme Haute-Garonne",
       "federation": null,
-      "lieu_depart": "Lézat-sur-Lèze",
-      "code_postal": "31430",
-      "adresse_depart": "Foyer rural, Lézat-sur-Lèze",
-      "maps_url": "https://maps.google.com/?q=Foyer+rural+Lezat+sur+Leze+31430",
+      "lieu_depart": "Castelginest",
       "disciplines": [
-        "vtt",
-        "gravel"
+        "route"
       ],
-      "circuits": [
-        {
-          "discipline": "vtt",
-          "distance_km": 31.7,
-          "denivele_m": 551.0,
-          "lien_trace": "https://www.openrunner.com/route-details/25383346",
-          "trace_titre": "Lézat-sur-Lèze - LA DAHU 2026 VTT",
-          "trace_annee": "2026"
-        }
-      ],
-      "circuits_non_precises": 0,
-      "tarif_inscription": null,
-      "contact": null,
-      "url": "https://cycloclublezatois.assoconnect.com/page/4094972-la-dahu-lezatoise",
-      "statut": "maintenue",
-      "fiabilite": "confirmee",
-      "preuve_date": "SAMEDI 24 OCTOBRE 2026",
-      "distance_toulouse_km": null,
-      "derniere_vue": "2026-10-24T15:13:46"
+      "url": "https://www.cyclotourisme-31.com/evenement-57-p-cafy-castelginest-ty-ly-thon-2026.html",
+      "fiabilite": "a_verifier"
     },
     {
-      "id": "2026-W43|escalquens",
-      "date": "2026-10-25",
-      "date_label": "Dimanche 25 octobre",
-      "horaires_label": "À partir de 07:30",
-      "heure_rdv": "07:30",
-      "heure_depart": null,
-      "titre": "La Lauragaise",
-      "organisateur": "Amicale Cyclo Escalquens",
-      "federation": "FSGT",
-      "lieu_depart": "Escalquens",
-      "code_postal": "31750",
-      "adresse_depart": "Salle de l'Oustal, chemin des Écoles, Escalquens",
-      "maps_url": "https://maps.google.com/?q=Salle+de+l+Oustal+chemin+des+Ecoles+Escalquens+31750",
+      "id": "2027-W03|blagnac",
+      "date": "2027-01-24",
+      "titre": "Point Café Blagnac",
+      "organisateur": "Vélo Club Blagnacais (VCBl)",
+      "federation": null,
+      "lieu_depart": "Blagnac",
       "disciplines": [
-        "route",
-        "gravel"
+        "route"
       ],
-      "circuits": [
-        {
-          "discipline": "route",
-          "distance_km": 57.0,
-          "denivele_m": 637.0,
-          "lien_trace": "https://www.openrunner.com/route-details/25275609",
-          "trace_titre": "Escalquens - Lauragaise 2026 - Petit",
-          "trace_annee": "2026"
-        },
-        {
-          "discipline": "route",
-          "distance_km": 78.0,
-          "denivele_m": 938.0,
-          "lien_trace": "https://www.openrunner.com/route-details/25275571",
-          "trace_titre": "Escalquens - Lauragaise 2026 - Parcours moyen",
-          "trace_annee": "2026"
-        },
-        {
-          "discipline": "route",
-          "distance_km": 93.0,
-          "denivele_m": 1204.0,
-          "lien_trace": "https://www.openrunner.com/route-details/25275185",
-          "trace_titre": "Escalquens - Lauragaise 2026 - Grand parcours",
-          "trace_annee": "2026"
-        },
-        {
-          "discipline": "gravel",
-          "distance_km": 50.0,
-          "denivele_m": 698.0,
-          "lien_trace": "https://www.openrunner.com/route-details/25422593",
-          "trace_titre": "Escalquens - Lauragaise 2026 - Gravel",
-          "trace_annee": "2026"
-        }
-      ],
-      "circuits_non_precises": 0,
-      "tarif_inscription": null,
-      "contact": null,
-      "url": "https://www.cyclotourisme-31.com/evenement-153-escalquens.html",
-      "statut": "maintenue",
-      "fiabilite": "confirmee",
-      "preuve_date": "Le 25/10/2026 de 07h30 à 12h30",
-      "distance_toulouse_km": 12.0,
-      "derniere_vue": "2026-10-24T15:13:46"
-    },
+      "url": "https://www.cyclotourisme-31.com/evenement-405-point-cafy-blagnac.html",
+      "fiabilite": "a_verifier"
+    }
+  ],
+  "windowStart": "2026-10-25",
+  "windowEnd": "2026-11-22",
+  "lastPeriodLabel": "2026-11-23 au 2027-01-24",
+  "sorties": [
     {
       "id": "2026-W45|cugnaux",
       "date": "2026-11-08",
@@ -141,7 +70,7 @@
       "heure_depart": null,
       "titre": "Clôture du CoDep Tarn",
       "organisateur": "Veilhes Sport Détente Cyclo / CoDep 81 FFVélo",
-      "federation": null,
+      "federation": "FFVélo",
       "lieu_depart": "Veilhes",
       "code_postal": null,
       "adresse_depart": null,

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, AlertTriangle, Route, Euro, Users, Sparkles, Filter, ChevronRight, ChevronDown, RotateCcw, Shield, Bike, Trees, Mountain } from 'lucide-react'
 import { trackEvent } from '@/lib/analytics'
+import OutlookCalendar from '@/components/OutlookCalendar'
 
 const DISCIPLINE_LABELS = {
   route: 'Route',
@@ -167,7 +168,7 @@ export default function WeekendRidesClient({ initialData }) {
       if (disciplineFilter !== 'all' && !(s.disciplines || []).includes(disciplineFilter)) return false
       if (federationFilter !== 'all') {
         if (federationFilter === 'autre') {
-          if (s.federation === 'FSGT' || s.federation === 'FFVélo') return false
+          if (['FSGT', 'FFVélo', 'UFOLEP'].includes(s.federation)) return false
         } else if (s.federation !== federationFilter) {
           return false
         }
@@ -201,6 +202,16 @@ export default function WeekendRidesClient({ initialData }) {
     if (currentIndex === -1) return null
     return weeksWithCounts.slice(currentIndex + 1).find((w) => w.count > 0) || weeksWithCounts[currentIndex + 1] || null
   }, [weeksWithCounts, weekFilter])
+
+  // Vision à ~3 mois : même filtres pratique / fédération, à partir du lendemain de la fenêtre détaillée
+  const outlookStartIso = useMemo(() => toIsoDate(addDays(new Date(`${maxDateIso}T12:00:00`), 1)), [maxDateIso])
+  const outlookItems = useMemo(
+    () =>
+      [...(data?.sorties || []), ...(data?.apercu || [])]
+        .filter((s) => s.date >= outlookStartIso && matchesPracticeAndFed(s))
+        .sort((x, y) => x.date.localeCompare(y.date)),
+    [data, outlookStartIso, matchesPracticeAndFed]
+  )
 
   const filteredSorties = useMemo(() => {
     return upcomingSorties.filter((s) => {
@@ -334,8 +345,9 @@ export default function WeekendRidesClient({ initialData }) {
                 >
                   <option value="all">Toutes les fédérations</option>
                   <option value="FSGT">FSGT 31 (Cyclotourisme)</option>
-                  <option value="FFVélo">FFVélo (FFCT)</option>
-                  <option value="autre">FFC / Autres organisateurs</option>
+                  <option value="FFVélo">FFVélo</option>
+                  <option value="UFOLEP">UFOLEP</option>
+                  <option value="autre">Autres organisateurs</option>
                 </select>
                 <ChevronDown className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true" />
               </div>
@@ -640,6 +652,8 @@ export default function WeekendRidesClient({ initialData }) {
           ))}
         </div>
       )}
+
+      <OutlookCalendar items={outlookItems} startIso={outlookStartIso} endIso={data?.horizonEnd} />
     </div>
   )
 }

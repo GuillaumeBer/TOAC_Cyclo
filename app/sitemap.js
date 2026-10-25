@@ -1,4 +1,5 @@
 import { SITE_URL } from '@/lib/site'
+import sortiesWeekend from '@/data/sorties-weekend.json'
 
 export const dynamic = 'force-static'
 
@@ -6,7 +7,7 @@ const ROUTES = [
   { path: '', priority: 1 },
   { path: '/rejoindre', priority: 0.9 },
   { path: '/calendrier', priority: 0.8 },
-  { path: '/calendrier/sorties-weekend', priority: 0.8 },
+  { path: '/calendrier/sorties-weekend', priority: 0.9, lastModified: new Date(sortiesWeekend.updatedAt) },
   { path: '/activites', priority: 0.7 },
   { path: '/histoire', priority: 0.5 },
   { path: '/mentions-legales', priority: 0.2 },
@@ -14,9 +15,9 @@ const ROUTES = [
 ]
 
 export default function sitemap() {
-  return ROUTES.map(({ path, priority }) => ({
+  return ROUTES.map(({ path, priority, lastModified }) => ({
     url: `${SITE_URL}${path}`,
-    lastModified: new Date(),
+    lastModified: lastModified || new Date(),
     priority,
   }))
 }
