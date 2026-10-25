@@ -60,10 +60,10 @@ export default function CalendrierPage() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div className="space-y-1.5">
                 <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#00b5e2]">
-                  <Compass className="w-4 h-4" aria-hidden="true" /> Où rouler ce week-end ?
+                  <Compass className="w-4 h-4" aria-hidden="true" /> Où rouler prochainement ?
                 </span>
                 <h2 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#fcd34d] transition-colors">
-                  Sorties cyclo & interclubs des week-ends autour de Toulouse
+                  Sorties cyclo & interclubs à venir autour de Toulouse
                 </h2>
                 <p className="text-sm text-gray-300 max-w-2xl">
                   Consultez les randonnées route, gravel et VTT (FSGT 31, FFVélo, clubs voisins) recensées dans un rayon de 60 km, avec horaires, lieux de départ et traces OpenRunner.

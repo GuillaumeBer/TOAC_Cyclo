@@ -61,6 +61,12 @@ Si une sortie vérifiée possède des URLs d'affiches (`affiches`) et qu'il manq
 
 ---
 
+## Vision à 6 mois
+
+Avec la période par défaut (`4 prochaines semaines`), `python agent-sorties/agent.py rechercher` fait en plus un repérage **allégé** (sans vérification chez les organisateurs, `--max-verif 0`) des dates annoncées jusqu'à 26 semaines, par tranches de 8 semaines. Ces sorties apparaissent dans le calendrier « Et dans les 6 prochains mois » de la page, marquées « à confirmer ». `--sans-horizon` désactive cette étape.
+
+---
+
 ## Autres commandes utiles (communes à Antigravity et Claude Code)
 
 - **Lister les sorties des 4 prochaines semaines en base** :

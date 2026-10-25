@@ -5,8 +5,8 @@ import PageHeader from '@/components/PageHeader'
 import { sortiesJsonLd, faqJsonLd, FAQ } from '@/lib/sorties-seo'
 
 export const metadata = {
-  title: 'Sorties vélo ce week-end à Toulouse : toutes les randonnées cyclo, gravel, interclubs',
-  description: "Quelles sorties vélo ce week-end autour de Toulouse ? Toutes les randonnées cyclotouristes sans compétition, quel que soit l'organisateur (FSGT, FFVélo, UFOLEP, clubs), et le gravel, mises à jour chaque semaine : horaires, départs, distances et traces GPS.",
+  title: 'Sorties vélo à venir autour de Toulouse : randonnées cyclo, gravel, interclubs',
+  description: "Quelles sorties vélo ce week-end ou dans les prochains mois autour de Toulouse ? Toutes les randonnées cyclotouristes sans compétition, quel que soit l'organisateur (FSGT, FFVélo, UFOLEP, clubs), et le gravel, mises à jour chaque semaine : horaires, départs, distances et traces GPS.",
   alternates: {
     canonical: '/calendrier/sorties-weekend',
   },
@@ -19,8 +19,8 @@ export default function SortiesWeekendPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }} />
       {/* Header */}
       <PageHeader
-        title="Sorties vélo ce week-end à Toulouse"
-        breadcrumb={[{ name: 'Calendrier', href: '/calendrier' }, { name: 'Sorties du week-end' }]}
+        title="Sorties vélo à venir autour de Toulouse"
+        breadcrumb={[{ name: 'Calendrier', href: '/calendrier' }, { name: 'Sorties à venir' }]}
         badge={
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00b5e2]/20 border border-[#00b5e2]/40 text-[#00b5e2] text-xs font-bold uppercase tracking-wider mb-4">
             <Compass className="w-3.5 h-3.5" aria-hidden="true" /> Autour de Toulouse (~60 km)

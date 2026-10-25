@@ -142,7 +142,7 @@ function MonthCard({ year, month, items, startIso, endIso }) {
   )
 }
 
-// Vision à ~3 mois : un calendrier dont on choisit le mois, et une liste légère (sans horaires ni circuits, encore inconnus).
+// Vision à ~6 mois : un calendrier dont on choisit le mois, et une liste légère (sans horaires ni circuits, encore inconnus).
 export default function OutlookCalendar({ items, startIso, endIso }) {
   const months = startIso && endIso && startIso <= endIso ? monthsBetween(startIso, endIso) : []
   const keyOf = ({ year, month }) => `${year}-${String(month + 1).padStart(2, '0')}`
@@ -160,13 +160,13 @@ export default function OutlookCalendar({ items, startIso, endIso }) {
   }
 
   return (
-    <section className="mt-16" aria-labelledby="apercu-3-mois">
+    <section className="mt-16" aria-labelledby="apercu-6-mois">
       <div className="mb-6">
         <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.25em] text-[#0077b6] mb-3">
           <span className="h-px w-10 bg-[#0077b6]" aria-hidden="true" /> Pour planifier
         </p>
-        <h2 id="apercu-3-mois" className="display text-3xl md:text-4xl font-bold text-[#00205b] flex items-center gap-3">
-          <CalendarRange className="w-7 h-7 text-[#00b5e2]" aria-hidden="true" /> Et dans les 3 prochains mois
+        <h2 id="apercu-6-mois" className="display text-3xl md:text-4xl font-bold text-[#00205b] flex items-center gap-3">
+          <CalendarRange className="w-7 h-7 text-[#00b5e2]" aria-hidden="true" /> Et dans les 6 prochains mois
         </h2>
         <p className="mt-2 text-gray-600 max-w-2xl text-sm">
           Les dates déjà annoncées, sans le détail : horaires et circuits seront précisés à l’approche de la sortie. Les jours en bleu foncé ont au moins une sortie.

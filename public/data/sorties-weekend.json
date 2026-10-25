@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-10-25T10:53:46",
-  "horizonEnd": "2027-01-24",
+  "updatedAt": "2026-10-25T11:10:17",
+  "horizonEnd": "2027-04-25",
   "apercu": [
     {
       "id": "2026-W49|castelginest",
@@ -27,11 +27,24 @@
       ],
       "url": "https://www.cyclotourisme-31.com/evenement-405-point-cafy-blagnac.html",
       "fiabilite": "a_verifier"
+    },
+    {
+      "id": "2027-W13|garidech",
+      "date": "2027-04-03",
+      "titre": "Ô Gravel Occitanie 600",
+      "organisateur": "Ô Gravel",
+      "federation": null,
+      "lieu_depart": "Garidech",
+      "disciplines": [
+        "gravel"
+      ],
+      "url": "https://www.gravelpassion.fr/evenements-calendrier-gravel/o-gravel-occitanie-600/",
+      "fiabilite": "a_verifier"
     }
   ],
   "windowStart": "2026-10-25",
   "windowEnd": "2026-11-22",
-  "lastPeriodLabel": "2026-11-23 au 2027-01-24",
+  "lastPeriodLabel": "2027-03-26 au 2027-04-25",
   "sorties": [
     {
       "id": "2026-W45|cugnaux",

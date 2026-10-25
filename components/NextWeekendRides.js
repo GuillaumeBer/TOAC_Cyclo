@@ -15,7 +15,7 @@ export default function NextWeekendRides() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <SectionHeading
-            eyebrow="Ce week-end autour de Toulouse"
+            eyebrow="À venir autour de Toulouse"
             title="Les prochaines sorties vélo"
             text="Randonnées ouvertes à tous organisées par les clubs de la région, mises à jour chaque semaine."
           />
@@ -40,7 +40,7 @@ export default function NextWeekendRides() {
           data-umami-event="clic_sorties_weekend_accueil"
           className="mt-8 inline-flex items-center gap-1.5 font-bold text-[#0077b6] hover:text-[#00205b] transition-colors"
         >
-          Voir toutes les sorties du week-end <ArrowRight className="w-4 h-4" aria-hidden="true" />
+          Voir toutes les sorties à venir <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </Link>
       </div>
     </div>

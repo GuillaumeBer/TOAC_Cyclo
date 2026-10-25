@@ -552,7 +552,7 @@ def year_proven(s: dict) -> bool:
 
 DISCIPLINES = {"route": "Route", "gravel": "Gravel", "vtt": "VTT"}
 FEDERATIONS = ("FFVélo", "FSGT", "UFOLEP")
-HORIZON_WEEKS = 13  # vision « 3 mois » publiée sur le site, en plus des 4 semaines détaillées
+HORIZON_WEEKS = 26  # vision « 6 mois » publiée sur le site, en plus des 4 semaines détaillées
 
 
 def format_horaires(s: dict) -> str:
@@ -922,9 +922,26 @@ def publier_site(depuis: str | None = None, jusqu_a: str | None = None) -> tuple
     return len(items), targets
 
 
+def horizon_periodes(today: date, window_end: date) -> list[Periode]:
+    """Périodes de la vision longue (jusqu'à HORIZON_WEEKS semaines), découpées pour rester sous la limite de 2 mois par recherche."""
+    end = today + timedelta(weeks=HORIZON_WEEKS)
+    periodes, start = [], window_end + timedelta(days=1)
+    while start <= end:
+        stop = min(start + timedelta(days=55), end)
+        periodes.append(Periode(start, stop, "vision longue"))
+        start = stop + timedelta(days=1)
+    return periodes
+
+
 def cmd_rechercher(args: argparse.Namespace) -> int:
     periode = parse_periode(args.periode)
     kept = search(periode, args.max_verif)
+    # Fenêtre glissante par défaut : en plus du détail des 4 semaines, repérage allégé (sans vérification chez
+    # les organisateurs) des dates annoncées jusqu'à HORIZON_WEEKS semaines.
+    if periode.label == "4 prochaines semaines" and not args.sans_horizon:
+        for longue in horizon_periodes(date.today(), periode.end):
+            print(f"\n--- Vision longue : {longue.describe()} (repérage allégé) ---")
+            kept += search(longue, 0)
     count, _ = publier_site()
     print(f"\n{len(kept)} sortie(s) enregistrée(s) dans {db.DB_PATH.name} ({count} dans la fenêtre des 4 prochaines semaines sur le site web).")
     print(f"Voir la base :        python agent.py lister --periode \"{args.periode}\"")
@@ -1151,6 +1168,7 @@ def main() -> int:
     p = commands.add_parser("rechercher", help="chercher les sorties (via Claude Code headless) et les enregistrer en base")
     add_periode(p)
     p.add_argument("--max-verif", type=int, default=MAX_VERIFIED_DEFAULT, help="nombre maximal de sorties vérifiées chez l'organisateur")
+    p.add_argument("--sans-horizon", action="store_true", help="ne pas faire le repérage allégé des mois suivants (fenêtre glissante par défaut)")
     p.set_defaults(run=cmd_rechercher)
 
     p = commands.add_parser("preparer", help="préparer les prompts et le découpage pour exécution depuis Antigravity (Gemini)")

@@ -203,7 +203,7 @@ export default function WeekendRidesClient({ initialData }) {
     return weeksWithCounts.slice(currentIndex + 1).find((w) => w.count > 0) || weeksWithCounts[currentIndex + 1] || null
   }, [weeksWithCounts, weekFilter])
 
-  // Vision à ~3 mois : même filtres pratique / fédération, à partir du lendemain de la fenêtre détaillée
+  // Vision à ~6 mois : même filtres pratique / fédération, à partir du lendemain de la fenêtre détaillée
   const outlookStartIso = useMemo(() => toIsoDate(addDays(new Date(`${maxDateIso}T12:00:00`), 1)), [maxDateIso])
   const outlookItems = useMemo(
     () =>
@@ -388,7 +388,7 @@ export default function WeekendRidesClient({ initialData }) {
           </p>
           <p className="text-sm text-gray-600 mb-5">
             {upcomingSorties.length === 0
-              ? 'Les prochaines randonnées du week-end seront publiées dès la prochaine recherche.'
+              ? 'Les prochaines randonnées seront publiées dès la prochaine recherche.'
               : 'Consultez les semaines suivantes ou élargissez vos filtres.'}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
