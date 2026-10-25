@@ -247,7 +247,7 @@ export default function WeekendRidesClient({ initialData }) {
           <div className="flex items-start gap-3">
             <Sparkles className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" aria-hidden="true" />
             <div className="text-sm text-gray-600">
-              <strong className="text-[#00205b]">Sorties à venir autour de Toulouse (~60 km) :</strong> affichage par défaut sur les <strong className="text-[#00205b]">4 prochaines semaines</strong>. Sélectionnez une semaine ci-dessous pour affiner.
+              <strong className="text-[#00205b]">Sorties à venir autour de Toulouse (~60 km) :</strong> affichage par défaut sur les <strong className="text-[#00205b]">4 prochaines semaines</strong>. Sélectionnez une semaine ci-dessous pour affiner. Le TOAC Cyclo ne participe pas à toutes ces sorties.
               {updatedLabel && (
                 <span className="block text-xs text-gray-500 mt-1">
                   Dernière mise à jour : {updatedLabel}
