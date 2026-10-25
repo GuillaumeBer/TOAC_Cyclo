@@ -11,11 +11,11 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 
 # Redirections permanentes des anciennes adresses
-RewriteRule ^calendrier/sorties-weekend/?$ /sorties [R=301,L]
-RewriteRule ^calendrier/?$ /club [R=301,L]
-RewriteRule ^activites/?$ /sorties#plus-loin [R=301,NE,L]
-RewriteRule ^activites/longue-distance/?$ /sorties#longue-distance [R=301,NE,L]
-RewriteRule ^activites/(gravel|cyclomontagnardes|randonnees)/?$ /sorties#plus-loin [R=301,NE,L]
+RewriteRule ^calendrier/sorties-weekend/?$ /sorties/ [R=301,L]
+RewriteRule ^calendrier/?$ /club/ [R=301,L]
+RewriteRule ^activites/?$ /sorties/#plus-loin [R=301,NE,L]
+RewriteRule ^activites/longue-distance/?$ /sorties/#longue-distance [R=301,NE,L]
+RewriteRule ^activites/(gravel|cyclomontagnardes|randonnees)/?$ /sorties/#plus-loin [R=301,NE,L]
 RewriteRule ^adhesion/?$ /rejoindre#adhesion [R=301,NE,L]
 RewriteRule ^rando-rameaux/?$ /#rameaux-2027 [R=301,NE,L]
 RewriteRule ^actualites/ag-2025/?$ / [R=301,L]

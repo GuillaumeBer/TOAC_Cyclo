@@ -2,16 +2,15 @@ import { Mail, Bike, ShieldCheck, Gift, CheckCircle, ChevronDown, FileText, Shie
 import adhesion from '@/data/adhesion.json'
 import CopyEmailButton from '@/components/CopyEmailButton'
 import PageHeader from '@/components/PageHeader'
+import { pageMetadata } from '@/lib/seo'
 
 const { season, nextSeason, campaignOpen } = adhesion
 
-export const metadata = {
-  title: 'Rejoindre le club : essai, adhésion et tarifs',
-  description: "Envie de rouler avec le TOAC Cyclo à Toulouse ? Essayer une sortie gratuitement, comprendre l'adhésion, les tarifs (20€ Airbus / 40€ extérieur / gratuit 1ère année femmes) et les licences FFVélo et FSGT.",
-  alternates: {
-    canonical: '/rejoindre',
-  },
-}
+export const metadata = pageMetadata({
+  title: "Rejoindre le club : essai et tarifs",
+  description: "Rouler avec le TOAC Cyclo à Toulouse : sortie d'essai gratuite, adhésion et tarifs (20 € Airbus, 40 € extérieurs, offerte la 1re année aux femmes).",
+  path: '/rejoindre',
+})
 
 // Le corps du mail reprend les questions de l'étape 1 : le visiteur n'a plus qu'à compléter.
 const MAIL_ESSAI_BODY = [

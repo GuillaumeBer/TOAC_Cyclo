@@ -5,17 +5,17 @@ import ActivityTabs from '@/components/ActivityTabs'
 import Randonnees from '@/components/Randonnees'
 import LongueDistance from '@/components/LongueDistance'
 import { sortiesJsonLd, faqJsonLd, FAQ } from '@/lib/sorties-seo'
+import activites from '@/data/activites.json'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Sorties vélo à venir autour de Toulouse : randonnées cyclo, gravel, interclubs',
-  description: "Quelles sorties vélo ce week-end ou dans les prochains mois autour de Toulouse ? Toutes les randonnées cyclotouristes sans compétition, quel que soit l'organisateur (FSGT, FFVélo, UFOLEP, clubs), et les grands événements plus loin : mises à jour chaque semaine, avec horaires, départs, distances et traces GPS.",
-  alternates: {
-    canonical: '/sorties',
-  },
-}
+export const metadata = pageMetadata({
+  title: "Sorties vélo autour de Toulouse",
+  description: "Toutes les sorties vélo autour de Toulouse, quel que soit l'organisateur : randonnées cyclo, gravel et VTT sans compétition, mises à jour chaque semaine.",
+  path: '/sorties',
+})
 
 const header = {
-  title: 'Sorties vélo à venir',
+  title: 'Sorties vélo à venir autour de Toulouse',
   breadcrumb: [{ name: 'Sorties' }],
   intro: "Toutes les randonnées cyclo ouvertes à tous, sans compétition, quel que soit l'organisateur : autour de Toulouse, sorties d'exception, ultra et endurance.",
 }
@@ -30,6 +30,7 @@ const ALIASES = {
 }
 
 export default function SortiesPage() {
+  const eventsJsonLd = sortiesJsonLd(sortiesWeekend.sorties, activites.randonnees)
   const tabs = [
     {
       id: 'pres-de-toulouse',
@@ -69,7 +70,7 @@ export default function SortiesPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(sortiesJsonLd(sortiesWeekend.sorties)) }} />
+      {eventsJsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsJsonLd) }} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd()) }} />
       <ActivityTabs header={header} tabs={tabs} aliases={ALIASES} />
     </>

@@ -1,14 +1,13 @@
 import PageHeader from '@/components/PageHeader'
 import Image from 'next/image'
 import { Users, Trophy, Heart, Bike } from 'lucide-react'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Notre histoire depuis 1976',
+export const metadata = pageMetadata({
+  title: "Notre histoire depuis 1976",
   description: "Fondé en 1976 par André Lafarge, découvrez l'histoire de la section cyclotourisme du TOAC à Toulouse (Trophée André Lafarge, affiliations FFVélo et FSGT).",
-  alternates: {
-    canonical: '/histoire',
-  },
-}
+  path: '/histoire',
+})
 
 export default function HistoirePage() {
   return (

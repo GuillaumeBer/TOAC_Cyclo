@@ -5,14 +5,13 @@ import reguliere from '@/data/sorties.json'
 import EventCard, { EventBadge } from '@/components/EventCard'
 import PageHeader from '@/components/PageHeader'
 import { SITE_URL } from '@/lib/site'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Le club et son calendrier 2027 : Randonnée des Rameaux, AG, Montagnarde',
-  description: "Les grands rendez-vous du TOAC Cyclo à Toulouse en 2027 : Randonnée des Rameaux organisée par le club (21 mars 2027, ouverte à tous), Montagnarde et Assemblée Générale (adhérents), participation de membres à Paris-Brest-Paris.",
-  alternates: {
-    canonical: '/club',
-  },
-}
+export const metadata = pageMetadata({
+  title: "Le club et son calendrier 2027",
+  description: "Ce qu'organise le TOAC Cyclo à Toulouse : sorties du vendredi et du jeudi, Randonnée des Rameaux ouverte à tous, AG et Montagnarde pour les adhérents.",
+  path: '/club',
+})
 
 const eventJsonLd = {
   '@context': 'https://schema.org',
@@ -22,7 +21,6 @@ const eventJsonLd = {
   endDate: '2027-03-21T14:00:00+01:00',
   eventStatus: 'https://schema.org/EventScheduled',
   eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-  isAccessibleForFree: false,
   location: {
     '@type': 'Place',
     name: 'Complexe Sportif TOAC',

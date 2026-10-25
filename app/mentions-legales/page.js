@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Mentions légales',
-  description: 'Mentions légales du site TOAC Cyclotourisme'
-}
+export const metadata = pageMetadata({
+  title: "Mentions légales",
+  description: "Mentions légales du site TOAC Cyclotourisme.",
+  path: '/mentions-legales',
+})
 
 export default function MentionsLegales() {
   return (

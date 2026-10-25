@@ -21,14 +21,11 @@ const barlow = Barlow_Condensed({
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  alternates: {
-    canonical: '/',
-  },
   title: {
-    default: 'TOAC Cyclotourisme — Club de vélo route & gravel à Toulouse',
-    template: '%s | TOAC Cyclotourisme Toulouse',
+    default: 'TOAC Cyclo : club de vélo route et gravel à Toulouse',
+    template: '%s | TOAC Cyclo',
   },
-  description: 'Club de cyclotourisme du TOAC à Toulouse (route, gravel afterwork, longue distance BRM, cyclomontagnardes). Sorties conviviales sans compétition, ouvert à tous (Airbus et extérieurs).',
+  description: 'Club de cyclotourisme du TOAC à Toulouse : sorties route le vendredi, gravel le jeudi, randonnées interclubs le dimanche. Sans compétition, ouvert à tous.',
   keywords: [
     'club vélo Toulouse',
     'cyclotourisme Toulouse',
@@ -49,8 +46,8 @@ export const metadata = {
     apple: { url: '/_img/icon-180.png', sizes: '180x180' },
   },
   openGraph: {
-    title: 'TOAC Cyclotourisme — Club de vélo route & gravel à Toulouse',
-    description: 'Sorties vélo de route, gravel afterwork et défis longue distance à Toulouse. Sans compétition, ouvert à tous.',
+    title: 'TOAC Cyclo : club de vélo route et gravel à Toulouse',
+    description: 'Club de cyclotourisme du TOAC à Toulouse : sorties route le vendredi, gravel le jeudi, randonnées interclubs le dimanche. Sans compétition, ouvert à tous.',
     url: SITE_URL,
     siteName: 'TOAC Cyclotourisme',
     type: 'website',

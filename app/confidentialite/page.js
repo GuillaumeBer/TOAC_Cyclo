@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import { pageMetadata } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Politique de confidentialité',
-  description: 'Politique de confidentialité et protection des données personnelles du site TOAC Cyclotourisme'
-}
+export const metadata = pageMetadata({
+  title: "Politique de confidentialité",
+  description: "Politique de confidentialité et protection des données personnelles du site TOAC Cyclotourisme.",
+  path: '/confidentialite',
+})
 
 export default function Confidentialite() {
   return (
