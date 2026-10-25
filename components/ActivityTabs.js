@@ -1,26 +1,27 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
 import { trackEvent } from '@/lib/analytics'
 import PageHeader from '@/components/PageHeader'
 
-// En-tête sombre (props de PageHeader) avec trois onglets, puis le panneau de l'activité choisie.
+// En-tête sombre (props de PageHeader) avec ses onglets, puis le panneau de l'activité choisie.
 // Motif ARIA « tabs » : flèches gauche/droite, Début/Fin, un seul onglet dans l'ordre de tabulation.
-// L'ancre de l'adresse (#gravel, #longue-distance, #cyclomontagnardes) choisit l'onglet à l'ouverture.
-export default function ActivityTabs({ header, tabs }) {
+// L'ancre de l'adresse (#pres-de-toulouse, #plus-loin, #longue-distance) choisit l'onglet à l'ouverture.
+// `aliases` : anciennes ancres redirigées vers un onglet (ex. { cyclomontagnardes: 'randonnees' }).
+export default function ActivityTabs({ header, tabs, aliases = {} }) {
   const [active, setActive] = useState(tabs[0].id)
   const refs = useRef({})
 
   useEffect(() => {
     const fromHash = () => {
-      const id = window.location.hash.slice(1)
+      const raw = window.location.hash.slice(1)
+      const id = aliases[raw] || raw
       if (tabs.some((t) => t.id === id)) setActive(id)
     }
     fromHash()
     window.addEventListener('hashchange', fromHash)
     return () => window.removeEventListener('hashchange', fromHash)
-  }, [tabs])
+  }, [tabs, aliases])
 
   const select = (id, focus = false) => {
     setActive(id)
@@ -40,7 +41,7 @@ export default function ActivityTabs({ header, tabs }) {
   return (
     <div className="min-h-screen bg-gray-50">
       <PageHeader {...header}>
-          <div role="tablist" aria-label="Activités" className="mt-8 grid grid-cols-3 gap-3 sm:gap-4 w-full max-w-2xl">
+          <div role="tablist" aria-label="Choisir la vue" className="mt-8 flex flex-wrap gap-3">
             {tabs.map((t, i) => {
               const selected = t.id === active
               return (
@@ -55,30 +56,13 @@ export default function ActivityTabs({ header, tabs }) {
                   tabIndex={selected ? 0 : -1}
                   onClick={() => select(t.id)}
                   onKeyDown={(e) => onKeyDown(e, i)}
-                  className="group text-left min-w-0"
+                  className={`px-5 py-2.5 rounded-full text-sm sm:text-base font-bold border-2 transition-colors ${
+                    selected
+                      ? 'bg-[#00b5e2] border-[#00b5e2] text-[#00205b]'
+                      : 'border-white/30 text-white hover:border-white hover:bg-white/10'
+                  }`}
                 >
-                  <span
-                    className={`relative block aspect-[4/3] sm:aspect-[16/10] rounded-xl overflow-hidden border-2 transition-all duration-300 ${
-                      selected ? 'border-[#00b5e2] shadow-lg shadow-[#00b5e2]/20' : 'border-transparent group-hover:border-white/60'
-                    }`}
-                  >
-                    <Image
-                      src={t.image}
-                      alt=""
-                      fill
-                      sizes="(min-width: 672px) 220px, 33vw"
-                      className={`object-cover transition-all duration-500 ${selected ? 'scale-105' : 'opacity-50 grayscale-[40%] group-hover:opacity-90 group-hover:grayscale-0'}`}
-                    />
-                    {selected && <span className="absolute inset-x-0 bottom-0 h-1 bg-[#00b5e2]" aria-hidden="true" />}
-                  </span>
-                  <span
-                    lang="fr"
-                    className={`mt-2 flex items-start gap-1.5 text-xs sm:text-sm font-bold leading-tight hyphens-auto [overflow-wrap:anywhere] transition-colors ${
-                      selected ? 'text-white' : 'text-gray-300 group-hover:text-white'
-                    }`}
-                  >
-                    {t.label}
-                  </span>
+                  {t.label}
                 </button>
               )
             })}

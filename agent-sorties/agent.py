@@ -1136,6 +1136,23 @@ def cmd_publier(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_exceptions(args: argparse.Namespace) -> int:
+    """Sorties d'exception (plus longues ou plus lointaines que l'autour de Toulouse) : voir exceptions.py."""
+    import exceptions as exc
+
+    if args.publier_seulement:
+        count, targets = exc.publish()
+        print(f"{count} sortie(s) d'exception publiée(s) pour le site web dans :")
+        for t in targets:
+            print(f"  - {t}")
+        return 0
+    themes = [t.strip() for t in args.themes.split(",")] if args.themes else None
+    if unknown := [t for t in (themes or []) if t not in exc.THEMES]:
+        raise SystemExit(f"Thème inconnu : {', '.join(unknown)} (thèmes : {', '.join(exc.THEMES)})")
+    exc.run(run_claude, months=args.mois, max_verif=args.max_verif, themes=themes)
+    return 0
+
+
 def cmd_exporter(args: argparse.Namespace) -> int:
     periode = parse_periode(args.periode)
     sorties = db.sorties_between(periode)
@@ -1211,6 +1228,13 @@ def main() -> int:
     p.add_argument("--depuis", default=None, help="date minimale AAAA-MM-JJ (défaut : aujourd'hui)")
     p.add_argument("--jusqu-a", default=None, help="date maximale AAAA-MM-JJ (défaut : +4 semaines)")
     p.set_defaults(run=cmd_publier)
+
+    p = commands.add_parser("exceptions", help="rechercher les sorties d'exception (plus longues ou plus lointaines) et publier data/activites.json")
+    p.add_argument("--mois", type=int, default=12, help="horizon de la recherche en mois (défaut : 12)")
+    p.add_argument("--max-verif", type=int, default=10, help="nombre maximal d'événements vérifiés chez l'organisateur")
+    p.add_argument("--themes", help="thèmes à chercher, séparés par des virgules (défaut : tous)")
+    p.add_argument("--publier-seulement", action="store_true", help="republier à partir de la base, sans recherche")
+    p.set_defaults(run=cmd_exceptions)
 
     p = commands.add_parser("exporter", help="exporter les sorties de la base en XLSX mis en forme ou en CSV (import Google Sheets)")
     add_periode(p)

@@ -16,10 +16,10 @@ const detailsOf = (id) => calendrier.evenements.find((e) => e.id === id).details
 const afterEvent = (
   <div className="max-w-2xl">
     <p className="text-lg text-gray-300 leading-relaxed">
-      La {event.title} revient au printemps prochain. Retrouvez la date de la prochaine édition et les autres rendez-vous du club dans le calendrier.
+      La {event.title} revient au printemps prochain. Retrouvez la date de la prochaine édition et les autres rendez-vous du club dans le calendrier du club.
     </p>
     <Link
-      href="/calendrier"
+      href="/club"
       className="mt-6 inline-flex items-center gap-2 px-7 py-3.5 bg-[#00b5e2] text-[#00205b] font-bold rounded-sm hover:bg-white transition-colors"
     >
       Voir le calendrier <ArrowRight className="w-4 h-4" aria-hidden="true" />

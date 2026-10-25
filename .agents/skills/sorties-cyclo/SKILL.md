@@ -67,6 +67,16 @@ Avec la période par défaut (`4 prochaines semaines`), `python agent-sorties/ag
 
 ---
 
+## Sorties d'exception (onglet « Sorties d'exception » de la page Sorties)
+
+```powershell
+python agent-sorties/agent.py exceptions [--mois 12] [--max-verif 10] [--themes cyclomontagnardes,gravel,randos]
+```
+
+Recherche les événements cyclotouristes plus longs ou plus lointains que l'« autour de Toulouse » (cyclomontagnardes FFVélo, grands événements gravel, grandes randonnées route), sans compétition : 3 recherches parallèles (une par thème, sources dans `agent-sorties/sources-exceptions.md`), puis vérification de chaque édition chez l'organisateur. Les règles sont déterministes (voir `exceptions.py`) : seulement les événements ouverts à tous, jamais une compétition, hors du rayon de 65 km de Toulouse, et une date n'est « confirmée » que si une page de l'organisateur la prouve avec une citation contenant l'année. Les événements de 200 km et plus sont classés « ultra » : enregistrés dans `agent-sorties/db/exceptions.json` mais pas encore publiés. La commande régénère `data/activites.json` et `public/data/activites.json`. `--publier-seulement` republie sans recherche. À lancer environ une fois par mois (les organisateurs annoncent leurs dates progressivement).
+
+---
+
 ## Autres commandes utiles (communes à Antigravity et Claude Code)
 
 - **Lister les sorties des 4 prochaines semaines en base** :

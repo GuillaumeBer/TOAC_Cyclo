@@ -44,5 +44,47 @@
       "date": "16-27 juin",
       "href": "https://www.raceacrossseries.com/race-across-france"
     }
+  ],
+  "classeLongueDistance": [
+    {
+      "title": "Cyclomontagnarde des Volcans",
+      "text": "Mozac (63) : 230 km (4 400 m D+) à 300 km (5 600 m D+). Sancy, Pas de Peyrol (Cantal) et montée du Puy de Dôme.",
+      "date": "29-30 mai 2027",
+      "href": "https://puy-de-dome.ffvelo.fr/cmv/",
+      "federation": "FFVélo",
+      "terrain": "montagne"
+    },
+    {
+      "title": "Brevet Randonneur des Alpes (BRA / Super BRA)",
+      "text": "Le monument alpin bisannuel des années impaires : 210 à 250 km, +4 500 à 5 000 m D+ (Galibier, Croix de Fer, Glandon...).",
+      "date": "Mi-juillet 2027",
+      "href": "https://cyclotouristes-grenoblois.assoconnect.com/",
+      "federation": "FFVélo",
+      "terrain": "montagne"
+    },
+    {
+      "title": "Cyclomontagnarde Luchon-Bayonne",
+      "text": "Luchon → Bayonne : 320 km et 5 250 m D+ (Peyresourde, Aspin, Tourmalet, Aubisque...). Épreuve bisannuelle (années paires).",
+      "date": "Juin 2028 (bisannuelle)",
+      "href": "https://www.luchonbayonne.fr/",
+      "federation": "FFVélo",
+      "terrain": "montagne"
+    },
+    {
+      "title": "Occitanie 600 (Garidech)",
+      "text": "Garidech (31) : 666 km et 8 500 m D+ en autonomie à travers l'Occitanie (Tarn-et-Garonne, Lot, Aveyron, Tarn). Sans chrono.",
+      "date": "3-8 avril 2027",
+      "href": "https://ogravel.com/",
+      "federation": "autre",
+      "terrain": "gravel"
+    },
+    {
+      "title": "g727 (Grand Départ)",
+      "text": "Poussan (34) : grande boucle de 727 km (7 000 m D+) avec raccourcis possibles (250 à 550 km). Bivouac en autonomie.",
+      "date": "Fin septembre 2027",
+      "href": "https://727bikepacking.fr/",
+      "federation": "autre",
+      "terrain": "gravel"
+    }
   ]
 }

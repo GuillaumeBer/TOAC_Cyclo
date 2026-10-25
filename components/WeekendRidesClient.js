@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, AlertTriangle, Route, Euro, Users, Sparkles, Filter, ChevronRight, ChevronDown, RotateCcw, Shield, Bike, Trees, Mountain } from 'lucide-react'
+import { Calendar, Clock, MapPin, ExternalLink, CheckCircle2, Info, Route, Euro, Users, Filter, ChevronRight, ChevronDown, RotateCcw, Shield, Bike, Trees, Mountain } from 'lucide-react'
 import { trackEvent } from '@/lib/analytics'
 import OutlookCalendar from '@/components/OutlookCalendar'
 
@@ -35,6 +35,20 @@ function formatUpdatedAt(isoStr) {
   const d = new Date(isoStr)
   if (Number.isNaN(d.getTime())) return null
   return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+}
+
+// Quand un filtre ne laisse que quelques sorties, on les déplie toutes d'emblée
+const MAX_AUTO_OPEN = 2
+
+const startTime = (s) => s.heure_depart || s.heure_rdv
+
+// « 57 à 93 km » (ou « 57 km ») : fourchette des circuits annoncés, vide si aucune distance connue.
+function kmSummary(s) {
+  const kms = (s.circuits || []).map((c) => c.distance_km).filter((d) => d != null).map(Number)
+  if (kms.length === 0) return ''
+  const lo = Math.round(Math.min(...kms))
+  const hi = Math.round(Math.max(...kms))
+  return lo === hi ? `${lo} km` : `${lo} à ${hi} km`
 }
 
 function formatHorairesLabel(s) {
@@ -90,7 +104,7 @@ function isPastSortie(s, now) {
 
 export default function WeekendRidesClient({ initialData }) {
   const [data, setData] = useState(initialData)
-  const [weekFilter, setWeekFilter] = useState('all') // Par défaut : les 4 prochaines semaines
+  const [weekFilter, setWeekFilter] = useState('week-0') // Par défaut : les 7 prochains jours
   const [disciplineFilter, setDisciplineFilter] = useState('route') // Par défaut : Route
   const [federationFilter, setFederationFilter] = useState('all')
 
@@ -224,6 +238,12 @@ export default function WeekendRidesClient({ initialData }) {
   }, [upcomingSorties, matchesPracticeAndFed, weekFilter, activeWeekObj])
 
   // Regrouper par date (AAAA-MM-JJ)
+  // La prochaine sortie confirmée est dépliée : un exemple ouvert, les autres se déplient d'un clic
+  const firstOpenId = useMemo(
+    () => filteredSorties.find((x) => x.fiabilite === 'confirmee' && x.statut !== 'annulee')?.id,
+    [filteredSorties]
+  )
+
   const groupedByDate = useMemo(() => {
     const groups = []
     let current = null
@@ -243,34 +263,35 @@ export default function WeekendRidesClient({ initialData }) {
     <div className="space-y-8">
       {/* Bandeau d'information & filtres */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-5 md:p-6 space-y-5">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-gray-100">
-          <div className="flex items-start gap-3">
-            <Sparkles className="w-5 h-5 text-[#00b5e2] flex-shrink-0 mt-0.5" aria-hidden="true" />
-            <div className="text-sm text-gray-600">
-              <strong className="text-[#00205b]">Sorties à venir autour de Toulouse (~60 km) :</strong> affichage par défaut sur les <strong className="text-[#00205b]">4 prochaines semaines</strong>. Sélectionnez une semaine ci-dessous pour affiner. Le TOAC Cyclo ne participe pas à toutes ces sorties.
-              {updatedLabel && (
-                <span className="block text-xs text-gray-500 mt-1">
-                  Dernière mise à jour : {updatedLabel}
-                </span>
-              )}
-            </div>
-          </div>
-
-          <span className="px-3 py-1.5 bg-[#00205b] text-white text-xs font-bold rounded self-start md:self-center flex-shrink-0">
-            {upcomingSorties.length} {upcomingSorties.length > 1 ? 'sorties à venir (4 sem.)' : 'sortie à venir (4 sem.)'}
-          </span>
-        </div>
-
-        {/* Avertissement Contenu généré par IA */}
-        <div className="flex items-start gap-2.5 p-3.5 rounded-md bg-amber-50/90 border border-amber-200 text-xs text-amber-950 leading-relaxed">
-          <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" aria-hidden="true" />
-          <p>
-            <strong className="font-bold">Contenu généré par IA :</strong> ces informations sont collectées automatiquement sur le web et peuvent comporter des erreurs ou des changements de dernière minute (horaires, tracés, météo).{' '}
-            <strong className="font-bold underline decoration-amber-400 underline-offset-2">
-              Vérifiez toujours les informations sur le site officiel de l&apos;organisateur
-            </strong>{' '}
-            avant de vous déplacer.
+        {/* Bandeau court : l'essentiel d'une ligne, le reste au survol, au toucher ou au clavier */}
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 pb-4 border-b border-gray-100">
+          <p className="text-sm text-gray-600 flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span>
+              Sorties d&apos;autres clubs, collectées automatiquement : <strong className="text-[#00205b]">vérifiez auprès de l&apos;organisateur</strong>.
+            </span>
+            {updatedLabel && <span className="text-xs text-gray-500">Mis à jour le {updatedLabel}</span>}
+            <span className="relative group inline-flex">
+              <button
+                type="button"
+                aria-describedby="infos-sorties"
+                aria-label="Plus d'informations sur ces sorties"
+                className="inline-flex items-center justify-center w-6 h-6 rounded-full text-[#0077b6] hover:bg-sky-50 focus-visible:bg-sky-50"
+              >
+                <Info className="w-4 h-4" aria-hidden="true" />
+              </button>
+              <span
+                id="infos-sorties"
+                role="tooltip"
+                className="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 transition-opacity absolute left-0 top-full mt-2 z-20 w-72 max-w-[80vw] rounded-md bg-[#00205b] text-white text-xs leading-relaxed p-3 shadow-lg"
+              >
+                Affichage par défaut sur les 7 prochains jours : choisissez une autre semaine, ou les 4 semaines, pour voir plus loin. Le TOAC Cyclo ne participe pas à toutes ces sorties. Les informations, générées par IA, peuvent comporter des erreurs ou des changements de dernière minute (horaires, tracés, météo).
+              </span>
+            </span>
           </p>
+
+          <span className="px-3 py-1.5 bg-[#00205b] text-white text-xs font-bold rounded flex-shrink-0">
+            {upcomingSorties.length} {upcomingSorties.length > 1 ? 'sorties' : 'sortie'}
+          </span>
         </div>
 
         {/* Barre de filtres modernes en menus déroulants */}
@@ -359,11 +380,11 @@ export default function WeekendRidesClient({ initialData }) {
             <span>
               <strong className="text-[#00205b] font-bold">{filteredSorties.length}</strong> {filteredSorties.length > 1 ? 'sorties trouvées' : 'sortie trouvée'} avec ces critères
             </span>
-            {(weekFilter !== 'all' || disciplineFilter !== 'route' || federationFilter !== 'all') && (
+            {(weekFilter !== 'week-0' || disciplineFilter !== 'route' || federationFilter !== 'all') && (
               <button
                 type="button"
                 onClick={() => {
-                  setWeekFilter('all')
+                  setWeekFilter('week-0')
                   setDisciplineFilter('route')
                   setFederationFilter('all')
                 }}
@@ -411,18 +432,6 @@ export default function WeekendRidesClient({ initialData }) {
                 Afficher toutes les 4 semaines ({totalMatchingAllWeeks})
               </button>
             )}
-            {(disciplineFilter !== 'all' || federationFilter !== 'all') && (
-              <button
-                type="button"
-                onClick={() => {
-                  setDisciplineFilter('all')
-                  setFederationFilter('all')
-                }}
-                className="px-4 py-2 bg-white border border-gray-300 text-gray-700 text-sm font-bold rounded-sm hover:bg-gray-50 transition-colors"
-              >
-                Réinitialiser les filtres
-              </button>
-            )}
           </div>
         </div>
       ) : (
@@ -446,9 +455,10 @@ export default function WeekendRidesClient({ initialData }) {
                   const isConfirmed = s.fiabilite === 'confirmee'
                   const isCancelled = s.statut === 'annulee'
                   return (
-                    <article
+                    <details
                       key={s.id}
-                      className={`bg-white rounded-lg shadow-sm border transition-shadow hover:shadow-md overflow-hidden ${
+                      open={filteredSorties.length <= MAX_AUTO_OPEN || s.id === firstOpenId}
+                      className={`group bg-white rounded-lg shadow-sm border transition-shadow hover:shadow-md overflow-hidden ${
                         isCancelled
                           ? 'border-red-300 opacity-75'
                           : isConfirmed
@@ -456,48 +466,62 @@ export default function WeekendRidesClient({ initialData }) {
                           : 'border-gray-200 border-l-4 border-l-amber-400'
                       }`}
                     >
-                      <div className="p-6 space-y-4">
-                        {/* Ligne supérieure : badges + titre */}
+                      {/* Résumé toujours visible : l'essentiel pour comparer d'un coup d'œil */}
+                      <summary
+                        onClick={() => trackEvent('deplier_sortie', { sortie: s.titre })}
+                        className="flex items-center gap-3 sm:gap-4 cursor-pointer list-none px-4 sm:px-5 py-3.5 [&::-webkit-details-marker]:hidden hover:bg-gray-50/70"
+                      >
+                        <span className="w-12 sm:w-14 flex-shrink-0 text-center">
+                          <Clock className="w-3.5 h-3.5 text-[#0077b6] mx-auto mb-0.5" aria-hidden="true" />
+                          <span className="display block text-xl font-bold leading-none text-[#00205b]">{startTime(s) || '–'}</span>
+                        </span>
+                        <span className="min-w-0 flex-1">
+                          <h2 className="text-base sm:text-lg font-bold text-[#00205b] leading-snug">{s.titre}</h2>
+                          <span className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-600 mt-0.5">
+                            <span className="inline-flex items-center gap-1">
+                              <MapPin className="w-3.5 h-3.5 text-gray-400" aria-hidden="true" /> {s.lieu_depart || 'Lieu à préciser'}
+                            </span>
+                            {kmSummary(s) && <span className="text-gray-500">· {kmSummary(s)}</span>}
+                            {s.federation && (
+                              <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${FEDERATION_STYLES[s.federation] || 'bg-gray-800 text-white'}`}>
+                                {s.federation}
+                              </span>
+                            )}
+                            {(s.disciplines || []).map((d) => {
+                              const Icon = DISCIPLINE_ICONS[d]
+                              return (
+                                <span key={d} className="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full border bg-gray-100 text-gray-700 border-gray-200">
+                                  {Icon && <Icon className="w-3 h-3 text-gray-500" aria-hidden="true" />}
+                                  {DISCIPLINE_LABELS[d] || d}
+                                </span>
+                              )
+                            })}
+                          </span>
+                        </span>
+                        {isCancelled ? (
+                          <span className="flex-shrink-0 text-xs font-bold px-2 py-0.5 rounded-full bg-red-50 text-red-800 border border-red-200">Annulée</span>
+                        ) : isConfirmed ? (
+                          <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" aria-label="Vérifié chez l'organisateur" />
+                        ) : null}
+                        <ChevronDown className="w-4 h-4 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+                      </summary>
+
+                      <div className="p-5 sm:p-6 space-y-4 border-t border-gray-100">
+                        {/* Fiabilité, organisateur et lien officiel */}
                         <div className="flex flex-wrap items-start justify-between gap-3">
                           <div className="space-y-1.5">
-                            <div className="flex flex-wrap items-center gap-2">
-                              {s.federation && (
-                                <span className={`text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded ${FEDERATION_STYLES[s.federation] || 'bg-gray-800 text-white'}`}>
-                                  {s.federation}
-                                </span>
-                              )}
-                              {(s.disciplines || []).map((d) => {
-                                const Icon = DISCIPLINE_ICONS[d]
-                                return (
-                                  <span
-                                    key={d}
-                                    className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full border bg-gray-100 text-gray-700 border-gray-200"
-                                  >
-                                    {Icon && <Icon className="w-3.5 h-3.5 text-gray-500" aria-hidden="true" />}
-                                    {DISCIPLINE_LABELS[d] || d}
-                                  </span>
-                                )
-                              })}
-                              {isCancelled ? (
-                                <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-red-50 text-red-800 border border-red-200">
-                                  Annulée
-                                </span>
-                              ) : isConfirmed ? (
-                                <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
-                                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
-                                  Vérifié chez l'organisateur
-                                </span>
-                              ) : (
-                                <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200">
-                                  <AlertTriangle className="w-3.5 h-3.5 text-amber-600" aria-hidden="true" />
-                                  Infos à vérifier auprès du club
-                                </span>
-                              )}
-                            </div>
-
-                            <h2 className="text-xl md:text-2xl font-bold text-[#00205b]">
-                              {s.titre}
-                            </h2>
+                            {isCancelled ? (
+                              <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-red-50 text-red-800 border border-red-200">Annulée</span>
+                            ) : isConfirmed ? (
+                              <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" aria-hidden="true" />
+                                Vérifié chez l'organisateur
+                              </span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200">
+                                Infos à vérifier auprès du club
+                              </span>
+                            )}
                             {s.organisateur && (
                               <p className="text-sm text-gray-500 flex items-start gap-1.5">
                                 <Users className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#0077b6]" aria-hidden="true" />
@@ -644,7 +668,7 @@ export default function WeekendRidesClient({ initialData }) {
                           </div>
                         )}
                       </div>
-                    </article>
+                    </details>
                   )
                 })}
               </div>

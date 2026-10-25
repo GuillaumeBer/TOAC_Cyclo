@@ -26,10 +26,10 @@ export default function NotFound() {
             <ArrowLeft className="w-4 h-4" aria-hidden="true" /> Retour à l'accueil
           </Link>
           <Link
-            href="/calendrier"
+            href="/sorties"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-white/40 hover:border-white hover:bg-white/10 text-white font-bold rounded-sm transition-colors"
           >
-            <Calendar className="w-4 h-4" aria-hidden="true" /> Voir le calendrier
+            <Calendar className="w-4 h-4" aria-hidden="true" /> Voir les sorties
           </Link>
         </div>
       </div>

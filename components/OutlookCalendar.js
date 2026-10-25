@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { trackEvent } from '@/lib/analytics'
-import { CalendarRange, Bike, Trees, Mountain, MapPin, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react'
+import { CalendarRange, Bike, Trees, Mountain, MapPin, ArrowUpRight, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react'
 
 const DISCIPLINE_ICONS = { route: Bike, gravel: Trees, vtt: Mountain }
 const DISCIPLINE_LABELS = { route: 'Route', gravel: 'Gravel', vtt: 'VTT' }
@@ -184,26 +184,26 @@ export default function OutlookCalendar({ items, startIso, endIso }) {
           >
             <ChevronLeft className="w-5 h-5" aria-hidden="true" />
           </button>
-          <div role="tablist" aria-label="Choisir le mois" className="flex-1 flex flex-wrap justify-center gap-2">
-            {months.map((m, i) => {
-              const count = countOf(m)
-              const active = i === index
-              return (
-                <button
-                  key={keyOf(m)}
-                  type="button"
-                  role="tab"
-                  aria-selected={active}
-                  onClick={() => choose(i)}
-                  className={`px-3 py-1.5 rounded-full text-sm font-bold capitalize transition-colors ${
-                    active ? 'bg-[#00205b] text-white' : 'bg-gray-100 text-[#00205b] hover:bg-gray-200'
-                  }`}
-                >
-                  {monthName(m, { month: 'long' })}
-                  <span className={`ml-1.5 text-xs ${active ? 'text-[#00b5e2]' : 'text-gray-500'}`}>{count}</span>
-                </button>
-              )
-            })}
+          <div className="flex-1 flex justify-center">
+            <label htmlFor="outlook-month" className="sr-only">Choisir le mois</label>
+            <div className="relative w-full max-w-xs">
+              <select
+                id="outlook-month"
+                value={index}
+                onChange={(e) => choose(Number(e.target.value))}
+                className="w-full appearance-none bg-gray-50/80 hover:bg-white focus:bg-white border border-gray-300 hover:border-gray-400 focus:border-[#00205b] focus:ring-2 focus:ring-[#00205b]/20 rounded-md py-2.5 pl-3.5 pr-10 text-sm font-bold text-gray-800 capitalize shadow-xs transition-all cursor-pointer"
+              >
+                {months.map((m, i) => {
+                  const count = countOf(m)
+                  return (
+                    <option key={keyOf(m)} value={i}>
+                      {monthName(m, { month: 'long', year: 'numeric' })} ({count} {count > 1 ? 'sorties' : 'sortie'})
+                    </option>
+                  )
+                })}
+              </select>
+              <ChevronDown className="w-4 h-4 text-gray-500 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true" />
+            </div>
           </div>
           <button
             type="button"

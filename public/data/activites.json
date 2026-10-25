@@ -1,0 +1,185 @@
+{
+  "updatedAt": "2026-10-25T21:36:04",
+  "randonnees": [
+    {
+      "id": "gravel-pou100-grand-depart-270-km-bikepacking-100-km-100-miles-2027-2027",
+      "start": "2027-04-03",
+      "end": "2027-04-04",
+      "date_label": "3-4 avril 2027",
+      "titre": "Gravel POU100 – Grand Départ (270 km bikepacking, 100 km, 100 miles) 2027",
+      "organisateur": "727 Bikepacking (ECP)",
+      "lieu_depart": "Poussan (Hérault)",
+      "resume": "Week-end gravel avec traces GPX, parcours non balisés et chacun à son rythme. Samedi 3 avril : 270 km en bikepacking. Dimanche 4 avril : 100 km ou 100 miles. L'organisateur dit que les 727 sont « des randonnées et non des courses ». La page ne mentionne pas de chronométrage. Les inscriptions 2027 ne sont pas encore ouvertes (« Inscription 2027 non ouverte »). Le dénivelé n'est pas indiqué.",
+      "parcours": "100 à 270 km",
+      "federation": "autre",
+      "disciplines": [
+        "gravel"
+      ],
+      "montagne": false,
+      "url": "https://727bikepacking.fr/pou100_grand_depart",
+      "fiabilite": "a_verifier"
+    },
+    {
+      "id": "cyclomontagnarde-du-haut-bugey-2027",
+      "start": "2027-05-22",
+      "end": "2027-05-23",
+      "date_label": "22-23 mai 2027",
+      "titre": "Cyclomontagnarde du Haut-Bugey",
+      "organisateur": "Club Cycl'hôpital du Haut-Bugey",
+      "lieu_depart": "Oyonnax (Ain)",
+      "resume": "Cyclomontagnarde du Jura méridional. Méga Grimpeur de 213 km et environ 4 500 m D+ (cols de la Rochette et de Cuvéry), en un jour ou en Baroudeur sur deux jours. Autres options : Grimpeur 143 km/2 750 m, Super Grimpeur 173 km/3 600 m, Ultra Grimpeur 333 km/7 900 m. Tarif : 50 € licenciés, 75 € non licenciés.",
+      "parcours": "143 à 333 km  jusqu'à 7 900 m D+",
+      "federation": "FFVélo",
+      "disciplines": [
+        "route"
+      ],
+      "montagne": true,
+      "url": "https://ffvelo.fr/evenements/cyclomontagnarde-du-haut-bugey/",
+      "fiabilite": "a_verifier"
+    },
+    {
+      "id": "o-gravel-toulouse-grand-tour",
+      "start": "2027-05-29",
+      "end": "2027-05-30",
+      "date_label": "29-30 mai 2027",
+      "titre": "Ô Gravel Toulouse Grand Tour",
+      "organisateur": null,
+      "lieu_depart": "Agglomération toulousaine & Gers",
+      "resume": "5 parcours de 30 à 200 km entre Bouconne, Save et Aussonnelle. Ambiance festive.",
+      "parcours": null,
+      "federation": "autre",
+      "disciplines": [
+        "gravel"
+      ],
+      "montagne": false,
+      "url": "https://ogravel.com/",
+      "fiabilite": "a_verifier"
+    },
+    {
+      "id": "cyclomontagnarde-du-vercors-2027",
+      "start": "2027-06-12",
+      "end": "2027-06-13",
+      "date_label": "12-13 juin 2027",
+      "titre": "Cyclomontagnarde du Vercors",
+      "organisateur": "Cyclotourisme Drôme (CM Vercors)",
+      "lieu_depart": "Chabeuil (Drôme) – lieu de départ à confirmer",
+      "resume": "Traversée du Vercors en Baroudeur sur deux jours, avec étape à Vassieux-en-Vercors. En Grimpeur, une journée avec cinq distances. Les distances et dénivelés ne sont pas encore publiés, et la page ne précise pas le lieu de départ : le lien « Chabeuil » du menu est une piste non confirmée.",
+      "parcours": null,
+      "federation": "FFVélo",
+      "disciplines": [
+        "route"
+      ],
+      "montagne": true,
+      "url": "https://cmvercors.cyclotourisme26.org/epreuves/",
+      "fiabilite": "a_verifier"
+    },
+    {
+      "id": "gravelman-tourmalet",
+      "start": "2027-06-18",
+      "end": "2027-06-20",
+      "date_label": "18-20 juin 2027",
+      "titre": "GravelMan Tourmalet",
+      "organisateur": null,
+      "lieu_depart": "Hautes-Pyrénées (65)",
+      "resume": "les grands cols pyrénéens en gravel bikepacking (120 à 350 km) en autonomie.",
+      "parcours": null,
+      "federation": "autre",
+      "disciplines": [
+        "gravel"
+      ],
+      "montagne": true,
+      "url": "https://gravelmanseries.com/",
+      "fiabilite": "a_verifier"
+    },
+    {
+      "id": "cyclomontagnarde-des-alpes-brevet-randonneur-des-alpes-bourg-d-oisans-2027",
+      "start": "2027-06-19",
+      "end": "2027-06-20",
+      "date_label": "19-20 juin 2027",
+      "titre": "Cyclomontagnarde des Alpes (Brevet Randonneur des Alpes) – Bourg-d'Oisans",
+      "organisateur": "Cyclotouriste grenoblois",
+      "lieu_depart": "Bourg-d'Oisans (Isère)",
+      "resume": "Méga Grimpeur de 200 km et 5 300 m D+ avec montée de l'Alpe d'Huez et de la Croix de Fer, en un jour ou en Baroudeur sur deux jours. Autres formats : Super Grimpeur 180 km/4 300 m, Ultra Grimpeur 250 km/7 000 m, Grimpeur 60 km/2 000 m. Tarif : 50 € licenciés, 75 € non licenciés. Inscriptions en ligne pas encore ouvertes. Une fiche Miles Republic donne « juillet 2027 », mais la page FFVélo, plus fiable, indique juin.",
+      "parcours": "34 à 250 km  jusqu'à 7 000 m D+",
+      "federation": "FFVélo",
+      "disciplines": [
+        "route"
+      ],
+      "montagne": true,
+      "url": "https://ffvelo.fr/evenements/cyclomontagnarde-des-alpes/",
+      "fiabilite": "a_verifier"
+    },
+    {
+      "id": "la-bretzel-altitude-alsace-baa-vosges",
+      "start": "2027-06-20",
+      "end": "2027-06-20",
+      "date_label": "20 juin 2027",
+      "titre": "La Bretzel Altitude Alsace (BAA - Vosges)",
+      "organisateur": null,
+      "lieu_depart": "Wihr-au-Val (68)",
+      "resume": "les grands ballons vosgiens, dont le Bretzel de Diamant (204 km / 4 210 m D+).",
+      "parcours": "58 à 204 km  jusqu'à 4 210 m D+",
+      "federation": "FFVélo",
+      "disciplines": [
+        "route"
+      ],
+      "montagne": true,
+      "url": "https://bretzalsace.fr/",
+      "fiabilite": "confirmee"
+    },
+    {
+      "id": "cyclomontagnarde-des-pyrenees-audoises-limoux-2027",
+      "start": "2027-07-01",
+      "end": "2027-07-31",
+      "date_label": "Juillet 2027",
+      "titre": "Cyclomontagnarde des Pyrénées audoises (Limoux)",
+      "organisateur": null,
+      "lieu_depart": "Limoux (Aude)",
+      "resume": "Cyclomontagnarde proche de Toulouse, à environ 1 h 15, avec cinq parcours de 97 km/1 658 m à 268 km/5 277 m. Seul un agrégateur (Miles Republic) annonce l'édition 2027 : le mois est annoncé mais pas la date, et il n'y a pas de page d'organisateur. La mention FFVélo vient d'un calendrier 2026 et reste à confirmer. L'événement existait en 2026 les 5-6 juillet.",
+      "parcours": "97 à 268 km  jusqu'à 5 277 m D+",
+      "federation": "FFVélo",
+      "disciplines": [
+        "route"
+      ],
+      "montagne": true,
+      "url": "https://fr.milesrepublic.com/event/cyclomontagnarde-des-pyrenees-audoises-14362",
+      "fiabilite": "a_verifier"
+    },
+    {
+      "id": "cyclomontagnarde-des-vosges-2027",
+      "start": "2027-07-03",
+      "end": "2027-07-04",
+      "date_label": "3-4 juillet 2027",
+      "titre": "Cyclomontagnarde des Vosges",
+      "organisateur": "Comité départemental de cyclotourisme des Vosges",
+      "lieu_depart": "Remiremont (Vosges)",
+      "resume": "Méga Grimpeur de 220 km et 3 954 m D+ en un jour ou en Baroudeur sur deux jours. Autres options : Grimpeur 92 km/1 185 m ou 150 km/2 518 m, Néo-grimpeur 65 km/1 008 m. Tarif : 30 € licenciés, 55 € non licenciés, donc le moins cher des cyclomontagnardes trouvées. Il est aussi très éloigné de Toulouse.",
+      "parcours": "65 à 220 km  jusqu'à 3 954 m D+",
+      "federation": "FFVélo",
+      "disciplines": [
+        "route"
+      ],
+      "montagne": true,
+      "url": "https://ffvelo.fr/evenements/cyclomontagnarde-des-vosges/",
+      "fiabilite": "a_verifier"
+    },
+    {
+      "id": "cyclomontagnarde-des-pyrenees-grand-tetras-d-occitanie-bagneres-de-bigorre-2027",
+      "start": "2027-07-10",
+      "end": "2027-07-11",
+      "date_label": "10-11 juillet 2027",
+      "titre": "Cyclomontagnarde des Pyrénées – Grand Tétras d'Occitanie (Bagnères-de-Bigorre)",
+      "organisateur": "Coreg Occitanie FFVélo / CoDep 31 et 65 et clubs locaux",
+      "lieu_depart": "Bagnères-de-Bigorre (Hautes-Pyrénées)",
+      "resume": "Cyclomontagnarde du massif pyrénéen, à 2 h de Toulouse. Parcours Méga Grimpeur de 199 km et 4 700 m D+ (Hourquette d'Ancizan, Aspin), en un jour ou en Baroudeur sur deux jours. Existe aussi en Grimpeur de 95 km et 2 018 m, et en Néo-grimpeur de 72 km. La page FFVélo indique les 10-11 juillet, comme le site du Grand Tétras (https://www.grand-tetras-d-occitanie.fr/motos/), la page du CoDep 31 et celle du CoDep 65. Une autre source (liste générale FFVélo) mentionne le 11-12 septembre, ce qui est probablement une erreur. Selon le CoDep 65, le Grimpeur se ferait le 10 juillet, alors que le site Grand Tétras place le Grand Grimpeur le 11 juillet.",
+      "parcours": "72 à 199 km  jusqu'à 4 700 m D+",
+      "federation": "FFVélo",
+      "disciplines": [
+        "route"
+      ],
+      "montagne": true,
+      "url": "https://ffvelo.fr/evenements/cyclomontagnarde-des-pyrenees/",
+      "fiabilite": "a_verifier"
+    }
+  ]
+}

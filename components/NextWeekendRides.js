@@ -17,7 +17,7 @@ export default function NextWeekendRides() {
           <SectionHeading
             eyebrow="À venir autour de Toulouse"
             title="Les prochaines sorties vélo"
-            text="Randonnées ouvertes à tous organisées par les clubs de la région, mises à jour chaque semaine."
+            text="Randonnées ouvertes à tous organisées par les clubs de la région, mises à jour chaque semaine. Le TOAC Cyclo ne participe pas à toutes."
           />
         </Reveal>
         <ul className="grid md:grid-cols-3 gap-6">
@@ -36,7 +36,7 @@ export default function NextWeekendRides() {
           ))}
         </ul>
         <Link
-          href="/calendrier/sorties-weekend"
+          href="/sorties"
           data-umami-event="clic_sorties_weekend_accueil"
           className="mt-8 inline-flex items-center gap-1.5 font-bold text-[#0077b6] hover:text-[#00205b] transition-colors"
         >

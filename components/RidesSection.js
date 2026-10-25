@@ -27,6 +27,7 @@ export default function RidesSection() {
                   {sortie.badge}
                 </span>
                 <div className="relative">
+                  {sortie.tag && <p className="text-xs font-bold uppercase tracking-wider text-[#0077b6] mb-2">{sortie.tag}</p>}
                   <h3 className="display text-3xl font-bold mb-3 md:min-h-[2.5em]">{sortie.title}</h3>
                   <p className="text-gray-700 leading-relaxed mb-6">{sortie.desc}</p>
                   <ul className="space-y-3 text-sm text-gray-800">

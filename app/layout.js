@@ -68,7 +68,7 @@ const clubJsonLd = {
   '@type': 'SportsClub',
   name: CLUB.name,
   alternateName: CLUB.alternateName,
-  description: 'Section cyclotourisme du TOAC à Toulouse (depuis 1976) : sorties vélo de route le vendredi et le dimanche, sorties gravel afterwork le jeudi, randonnées longue distance (BRM, Paris-Brest-Paris) et cyclomontagnardes FFVélo. Ouvert à tous sans compétition.',
+  description: "Section cyclotourisme du TOAC à Toulouse (depuis 1976) : sorties club de route le vendredi et gravel afterwork le jeudi, participation aux randonnées interclubs du dimanche, Randonnée des Rameaux ouverte à tous. Des membres participent aussi aux BRM, à Paris-Brest-Paris et aux cyclomontagnardes FFVélo. Ouvert à tous sans compétition.",
   url: SITE_URL,
   logo: `${SITE_URL}/favicon.png`,
   image: `${SITE_URL}/images/hero-toac.jpg`,

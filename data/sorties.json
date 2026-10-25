@@ -6,7 +6,8 @@
         "where": "Complexe sportif TOAC, Toulouse",
         "desc": "La sortie conviviale de la semaine : un seul groupe qui roule ensemble et s'attend, sans compétition.",
         "detail": "Également des sorties club les jours fériés",
-        "badge": "VEN"
+        "badge": "VEN",
+        "tag": "Sortie du club · essai possible"
     },
     {
         "title": "Rando interclubs du dimanche",
@@ -16,8 +17,9 @@
         "detail": "Plusieurs distances au choix",
         "desc": "Les randonnées organisées par les clubs de la région : l'occasion de découvrir de nouvelles routes et de rencontrer d'autres cyclos.",
         "badge": "DIM",
-        "link": "/calendrier/sorties-weekend",
-        "linkLabel": "Voir les sorties des week-ends"
+        "link": "/sorties",
+        "linkLabel": "Voir les sorties à venir",
+        "tag": "Organisée par d'autres clubs"
     },
     {
         "title": "Afterwork gravel du jeudi",
@@ -26,6 +28,7 @@
         "when": "Un jeudi sur deux, d'avril à septembre",
         "where": "Blagnac ou Saint-Martin",
         "detail": "Départ 18h30-19h, 30 à 50 km, guinguette à l'arrivée",
-        "desc": "Pour décompresser après le travail sur les chemins et profiter des soirées d'été."
+        "desc": "Pour décompresser après le travail sur les chemins et profiter des soirées d'été.",
+        "tag": "Sortie du club · essai possible"
     }
 ]

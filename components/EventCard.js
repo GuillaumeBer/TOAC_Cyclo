@@ -2,27 +2,29 @@ import { Calendar, MapPin, Users, Lock, Compass } from 'lucide-react'
 import Disclosure from '@/components/Disclosure'
 import EventDetails from '@/components/EventDetails'
 
-function EventBadge({ type, label }) {
+// Pour qui : vert = organisé par le club, ouvert à tous ; ambre = organisé par le club, adhérents ;
+// bleu = autre organisateur. Libellés courts : « qui organise » est dit une fois dans la légende du calendrier.
+export function EventBadge({ type, label, className = 'mb-3' }) {
   if (type === 'public') {
     return (
-      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-50 text-emerald-800 border border-emerald-200 mb-3">
+      <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-50 text-emerald-800 border border-emerald-200 ${className}`}>
         <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-        {label || 'Organisé par le club · Ouvert à tous'}
+        {label || 'Ouvert à tous'}
       </span>
     )
   }
   if (type === 'members') {
     return (
-      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-50 text-amber-900 border border-amber-200 mb-3">
+      <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-50 text-amber-900 border border-amber-200 ${className}`}>
         <Lock className="w-3.5 h-3.5 text-amber-600" aria-hidden="true" />
-        {label || 'Organisé par le club · Réservé aux adhérents'}
+        {label || 'Adhérents'}
       </span>
     )
   }
   return (
-    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-sky-50 text-sky-900 border border-sky-200 mb-3">
+    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-sky-50 text-sky-900 border border-sky-200 ${className}`}>
       <Compass className="w-3.5 h-3.5 text-sky-600" aria-hidden="true" />
-      {label || 'Épreuve extérieure · Participation du club'}
+      {label || 'Organisateur extérieur'}
     </span>
   )
 }
@@ -31,7 +33,7 @@ function EventBadge({ type, label }) {
 export default function EventCard({ event }) {
   return (
     <article id={event.id} className="scroll-mt-24 bg-white rounded-lg shadow-sm p-6 border-l-4 border-[#00b5e2]">
-      <EventBadge type={event.type} label={event.category} />
+      <EventBadge type={event.type} />
       <h3 className="text-xl font-bold text-[#00205b]">{event.title}</h3>
       <p className="flex items-start gap-2 text-gray-700 font-medium mt-2">
         <Calendar className="w-4 h-4 mt-1 flex-shrink-0 text-[#0077b6]" aria-hidden="true" /> {event.dateLabel}
