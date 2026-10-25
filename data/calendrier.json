@@ -7,16 +7,11 @@
             "category": "Vie du club · Réservé aux adhérents",
             "start": "2026-12-12",
             "end": "2026-12-12",
-            "dateLabel": "Samedi 12 décembre 2026 (date proposée)",
+            "dateLabel": "Samedi 12 décembre 2026",
             "detail": "Bilan de la saison 2026, projets 2027 et moment convivial entre adhérents du club",
             "location": "Complexe TOAC, Toulouse",
             "link": "/calendrier#ag-2026",
             "details": [
-                {
-                    "icon": "Calendar",
-                    "label": "Date proposée",
-                    "text": "Samedi 12 décembre 2026 (date proposée aux adhérents du TOAC Cyclo)."
-                },
                 {
                     "icon": "ClipboardList",
                     "label": "Ordre du jour",
