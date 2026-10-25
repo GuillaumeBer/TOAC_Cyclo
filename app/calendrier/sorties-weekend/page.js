@@ -26,7 +26,7 @@ export default function SortiesWeekendPage() {
             <Compass className="w-3.5 h-3.5" aria-hidden="true" /> Autour de Toulouse (~60 km)
           </div>
         }
-        intro="Toutes les randonnées cyclotouristes sans compétition ouvertes à tous autour de Toulouse, quel que soit l'organisateur (FSGT, FFVélo, UFOLEP, clubs indépendants), route, gravel ou VTT, avec leurs circuits et traces GPX."
+        intro="Toutes les randonnées cyclo ouvertes à tous autour de Toulouse, sans compétition, quel que soit l'organisateur."
       />
 
       <div className="px-4 sm:px-6 lg:px-8 py-12">
