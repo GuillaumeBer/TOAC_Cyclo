@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-10-25T11:10:17",
-  "horizonEnd": "2027-04-25",
+  "updatedAt": "2026-10-31T14:47:44",
+  "horizonEnd": "2027-05-01",
   "apercu": [
     {
       "id": "2026-W49|castelginest",
       "date": "2026-12-06",
-      "titre": "Point Café Téléthon Castelginest",
-      "organisateur": "FSGT Commission Cyclotourisme Haute-Garonne",
+      "titre": "Point café Téléthon Castelginest",
+      "organisateur": null,
       "federation": null,
       "lieu_depart": "Castelginest",
       "disciplines": [
@@ -16,10 +16,36 @@
       "fiabilite": "a_verifier"
     },
     {
+      "id": "2026-W49|cugnaux",
+      "date": "2026-12-06",
+      "titre": "Point café Téléthon Cugnaux",
+      "organisateur": null,
+      "federation": null,
+      "lieu_depart": "Cugnaux",
+      "disciplines": [
+        "route"
+      ],
+      "url": "https://www.cyclotourisme-31.com/evenement-385-point-cafy-cugnaux-ty-ly-thon-2026.html",
+      "fiabilite": "a_verifier"
+    },
+    {
+      "id": "2027-W01|lherm",
+      "date": "2027-01-10",
+      "titre": "Point Café Lherm",
+      "organisateur": "Club de Lherm (FSGT 31)",
+      "federation": null,
+      "lieu_depart": "Lherm",
+      "disciplines": [
+        "route"
+      ],
+      "url": "https://www.cyclotourisme-31.com/uploaded/Les_Documents/2027/calendrier2027.pdf",
+      "fiabilite": "a_verifier"
+    },
+    {
       "id": "2027-W03|blagnac",
       "date": "2027-01-24",
       "titre": "Point Café Blagnac",
-      "organisateur": "Vélo Club Blagnacais (VCBl)",
+      "organisateur": "Vélo Club Blagnacais (FSGT)",
       "federation": null,
       "lieu_depart": "Blagnac",
       "disciplines": [
@@ -38,13 +64,13 @@
       "disciplines": [
         "gravel"
       ],
-      "url": "https://www.gravelpassion.fr/evenements-calendrier-gravel/o-gravel-occitanie-600/",
+      "url": "https://velo-occitanie.fr/gravels/evenements-gravel-haute-garonne-31/o-gravel-occitanie-600-2027",
       "fiabilite": "a_verifier"
     }
   ],
-  "windowStart": "2026-10-25",
-  "windowEnd": "2026-11-22",
-  "lastPeriodLabel": "2027-03-26 au 2027-04-25",
+  "windowStart": "2026-10-31",
+  "windowEnd": "2026-11-29",
+  "lastPeriodLabel": "vision longue",
   "sorties": [
     {
       "id": "2026-W45|cugnaux",
@@ -54,25 +80,62 @@
       "heure_rdv": "08:00",
       "heure_depart": null,
       "titre": "Rando Humanitaire",
-      "organisateur": "Commission Cyclos FSGT31 / club de Cugnaux",
+      "organisateur": "Club de Cugnaux, Commission Cyclos FSGT 31",
       "federation": "FSGT",
       "lieu_depart": "Cugnaux",
       "code_postal": "31270",
-      "adresse_depart": "Salle Albert Camus, 1 place de la République, 31270 Cugnaux",
-      "maps_url": "https://maps.google.com/?q=Salle+Albert+Camus+1+place+de+la+Republique+31270+Cugnaux",
+      "adresse_depart": "Salle Albert Camus, 1 Pl. de la République, 31270 Cugnaux",
+      "maps_url": "https://maps.google.com/?q=Salle+Albert+Camus+1+Pl+de+la+Republique+31270+Cugnaux",
       "disciplines": [
         "route"
       ],
       "circuits": [],
       "circuits_non_precises": 0,
-      "tarif_inscription": "Don libre pour l'association ETRE LA",
+      "tarif_inscription": "Don à l'association ETRE-LA, montant non précisé",
       "contact": null,
       "url": "https://www.cyclotourisme-31.com/evenement-501-34y-me-rando-humanitaire.html",
       "statut": "maintenue",
       "fiabilite": "a_verifier",
-      "preuve_date": "34e Rando Humanitaire (Cugnaux) – 8 novembre 2026, de 08h00 à 12h00",
-      "distance_toulouse_km": 12.0,
-      "derniere_vue": "2026-10-24T15:13:46"
+      "preuve_date": "Le 08/11/2026 de 08h00 à 12h00",
+      "distance_toulouse_km": 9.0,
+      "derniere_vue": "2026-10-31T09:37:18"
+    },
+    {
+      "id": "2026-W45|toulouse",
+      "date": "2026-11-08",
+      "date_label": "Dimanche 8 novembre",
+      "horaires_label": "À partir de 10:00",
+      "heure_rdv": null,
+      "heure_depart": "10:00",
+      "titre": "Rando-vélo À la découverte des graffitis",
+      "organisateur": "Toulouse Métropole",
+      "federation": null,
+      "lieu_depart": "Toulouse",
+      "code_postal": "31000",
+      "adresse_depart": "Allées Jean-Jaurès, au pied de la statue Riquet, Toulouse",
+      "maps_url": "https://maps.google.com/?q=Allees+Jean+Jaures+au+pied+de+la+statue+Riquet+Toulouse+31000",
+      "disciplines": [
+        "route"
+      ],
+      "circuits": [
+        {
+          "discipline": "route",
+          "distance_km": 15.0,
+          "denivele_m": null,
+          "lien_trace": null,
+          "trace_titre": null,
+          "trace_annee": null
+        }
+      ],
+      "circuits_non_precises": 0,
+      "tarif_inscription": "Gratuit, sur inscription : https://demarches-tm.eservices.toulouse-metropole.fr/randonnees-velo/",
+      "contact": "RandoVelo@toulouse-metropole.fr",
+      "url": "https://metropole.toulouse.fr/actualites/rando-velos-gratuites",
+      "statut": "maintenue",
+      "fiabilite": "confirmee",
+      "preuve_date": "Dimanche 8 novembre 2026",
+      "distance_toulouse_km": 0.0,
+      "derniere_vue": "2026-10-31T09:37:18"
     },
     {
       "id": "2026-W45|veilhes",
@@ -85,9 +148,9 @@
       "organisateur": "Veilhes Sport Détente Cyclo / CoDep 81 FFVélo",
       "federation": "FFVélo",
       "lieu_depart": "Veilhes",
-      "code_postal": null,
-      "adresse_depart": null,
-      "maps_url": "https://maps.google.com/?q=Veilhes",
+      "code_postal": "81500",
+      "adresse_depart": "Veilhes",
+      "maps_url": "https://maps.google.com/?q=Veilhes+81500",
       "disciplines": [
         "route",
         "vtt"
@@ -95,13 +158,13 @@
       "circuits": [],
       "circuits_non_precises": 0,
       "tarif_inscription": null,
-      "contact": null,
-      "url": "https://tarn.ffvelo.fr/ou-et-quand-pratiquer/",
+      "contact": "Maurice Pagès (VSD Cyclo) : 05.63.58.70.01 / vsd.cyclo@laposte.net",
+      "url": "https://tarn.ffvelo.fr/flash-info-news/",
       "statut": "maintenue",
       "fiabilite": "a_verifier",
-      "preuve_date": null,
+      "preuve_date": "Clôture du CODEP 81 le 08 Novembre 2026 à VEILHES (81)",
       "distance_toulouse_km": null,
-      "derniere_vue": "2026-10-24T15:13:46"
+      "derniere_vue": "2026-10-31T09:37:18"
     },
     {
       "id": "2026-W46|toulouse",
@@ -111,12 +174,12 @@
       "heure_rdv": "07:00",
       "heure_depart": null,
       "titre": "Point Café du Stade Toulousain Cyclo",
-      "organisateur": "Stade Toulousain Cyclo (interclubs FSGT 31)",
+      "organisateur": "Stade Toulousain Cyclo",
       "federation": "FSGT",
       "lieu_depart": "Toulouse",
       "code_postal": "31200",
-      "adresse_depart": "Stade des Septs Deniers, 114 rue des Troënes, 31200 Toulouse",
-      "maps_url": "https://maps.google.com/?q=Stade+des+Septs+Deniers+114+rue+des+Troenes+31200+Toulouse",
+      "adresse_depart": "RDV Stade Ernest Wallon ; lieu d'accueil : Stade des Septs Deniers, 114 rue des Troënes, 31200 Toulouse",
+      "maps_url": "https://maps.google.com/?q=RDV+Stade+Ernest+Wallon+lieu+d+accueil+Stade+des+Septs+Deniers+114+rue+des+Troenes+31200+Toulouse",
       "disciplines": [
         "route"
       ],
@@ -129,7 +192,7 @@
       "fiabilite": "a_verifier",
       "preuve_date": "15/11/2026",
       "distance_toulouse_km": 3.0,
-      "derniere_vue": "2026-10-24T15:13:46"
+      "derniere_vue": "2026-10-31T09:37:18"
     },
     {
       "id": "2026-W47|castelmaurou",
@@ -139,25 +202,25 @@
       "heure_rdv": "08:30",
       "heure_depart": null,
       "titre": "Point-Café Castelmaurou",
-      "organisateur": "Cyclo Club des Violettes Castelmaurou (FSGT 31)",
+      "organisateur": "Cyclo Club des Violettes Castelmaurou",
       "federation": "FSGT",
       "lieu_depart": "Castelmaurou",
       "code_postal": "31180",
-      "adresse_depart": "Place de la Mairie, Castelmaurou - GPS 43°40'40\"N 1°31'56\"E",
-      "maps_url": "https://maps.google.com/?q=Place+de+la+Mairie+Castelmaurou+GPS+4340+40+N+131+56+E+31180",
+      "adresse_depart": "Place de la Mairie, Castelmaurou",
+      "maps_url": "https://maps.google.com/?q=Place+de+la+Mairie+Castelmaurou+31180",
       "disciplines": [
         "route"
       ],
       "circuits": [],
       "circuits_non_precises": 0,
       "tarif_inscription": null,
-      "contact": "Via le formulaire de contact du site : https://www.cyclotourisme-31.com/contact.php",
-      "url": "https://www.cyclotourisme-31.com/evenement-409-point-cafy-castelmaurou.html",
+      "contact": null,
+      "url": "https://www.ccv-castelmaurou.com/evenements/2026/11/22/point-cafe-ccv-castelmaurou-2396164",
       "statut": "maintenue",
       "fiabilite": "a_verifier",
-      "preuve_date": "Date : 22/11/2026",
+      "preuve_date": "Le dimanche 22 nov. 2026",
       "distance_toulouse_km": 13.0,
-      "derniere_vue": "2026-10-24T15:13:46"
+      "derniere_vue": "2026-10-31T09:37:18"
     }
   ]
 }
