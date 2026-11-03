@@ -232,7 +232,9 @@ Méthode :
 - ÉDITION : ces pages mélangent souvent plusieurs années (édition précédente encore en ligne, anciens tarifs, anciennes distances,
   ancien règlement). Ne retiens que l'édition à la date demandée. Une page qui affiche une autre année n'est pas la bonne : ignore-la.
   "date_page" = date de l'édition telle qu'affichée sur la page (AAAA-MM-JJ), "preuve_date" = citation exacte et courte qui la prouve,
-  année comprise. Si aucune page de l'organisateur ne prouve cette édition, renvoie "edition_verifiee": false et rien d'autre.
+  année comprise. Les dates numériques comptent comme preuve : « Le 08/11/2026 », « 08.11.2026 » ou « 8-11-2026 » se lisent jour/mois/année
+  et donnent date_page "2026-11-08" ; recopie telle quelle la citation avec l'année. Ne renvoie pas date_page null quand la page affiche
+  clairement la date. Si aucune page de l'organisateur ne prouve cette édition, renvoie "edition_verifiee": false et rien d'autre.
 - Cherche activement les liens de tracé des circuits (OpenRunner, Strava, Komoot, Visorando, GPX) : ils se cachent souvent dans des
   blocs intégrés, des boutons « voir le parcours » ou des liens sur les distances. Ne renseigne un lien que si tu l'as vu sur la page
   de l'organisateur ; ne le devine ni ne le construis jamais. Recopie l'URL propre (sans paramètres de suivi utm_*).
