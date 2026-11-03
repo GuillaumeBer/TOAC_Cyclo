@@ -453,6 +453,8 @@ export default function WeekendRidesClient({ initialData }) {
                 {group.items.map((s) => {
                   const editionYear = s.date?.slice(0, 4)
                   const isConfirmed = s.fiabilite === 'confirmee'
+                  // Date prouvée par la page de l'organisateur, mais circuits ou tracés encore inconnus (ex. point café)
+                  const isDateProven = !!editionYear && (s.preuve_date || '').includes(editionYear)
                   const isCancelled = s.statut === 'annulee'
                   return (
                     <details
@@ -519,7 +521,7 @@ export default function WeekendRidesClient({ initialData }) {
                               </span>
                             ) : (
                               <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200">
-                                Infos à vérifier auprès du club
+                                {isDateProven ? 'Date vérifiée · circuits à confirmer' : 'Infos à vérifier auprès du club'}
                               </span>
                             )}
                             {s.organisateur && (
