@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-11-04T00:35:05",
-  "horizonEnd": "2027-05-05",
+  "updatedAt": "2026-11-06T22:19:07",
+  "horizonEnd": "2027-05-07",
   "apercu": [
     {
       "id": "2027-W01|lherm",
@@ -19,7 +19,7 @@
       "id": "2027-W03|blagnac",
       "date": "2027-01-24",
       "titre": "Point Café Blagnac",
-      "organisateur": "Vélo Club Blagnacais (VCBl) – FSGT",
+      "organisateur": "Vélo Club Blagnacais (FSGT)",
       "federation": null,
       "lieu_depart": "Blagnac",
       "disciplines": [
@@ -32,19 +32,19 @@
       "id": "2027-W13|garidech",
       "date": "2027-04-03",
       "titre": "Ô Gravel Occitanie 600",
-      "organisateur": null,
+      "organisateur": "Ô Gravel",
       "federation": null,
       "lieu_depart": "Garidech",
       "disciplines": [
         "gravel"
       ],
-      "url": "https://velo-occitanie.fr/gravels/evenements-gravel-haute-garonne-31/o-gravel-occitanie-600-2027",
+      "url": "https://www.gravelpassion.fr/evenements-calendrier-gravel/o-gravel-occitanie-600/",
       "fiabilite": "a_verifier"
     }
   ],
-  "windowStart": "2026-11-04",
+  "windowStart": "2026-11-06",
   "windowEnd": "2026-12-06",
-  "lastPeriodLabel": "4 prochaines semaines",
+  "lastPeriodLabel": "vision longue",
   "sorties": [
     {
       "id": "2026-W45|cugnaux",
@@ -54,25 +54,71 @@
       "heure_rdv": "08:00",
       "heure_depart": null,
       "titre": "Rando Humanitaire",
-      "organisateur": "Commission Cyclos FSGT31 et club de Cugnaux",
-      "federation": null,
+      "organisateur": "Cugnaux (Commission Cyclos FSGT31)",
+      "federation": "FSGT",
       "lieu_depart": "Cugnaux",
       "code_postal": "31270",
-      "adresse_depart": "Salle Albert Camus, 1 place de la République, 31270 Cugnaux",
-      "maps_url": "https://maps.google.com/?q=Salle+Albert+Camus+1+place+de+la+Republique+31270+Cugnaux",
+      "adresse_depart": "Salle Albert Camus, 1 Place de la République, 31270 Cugnaux",
+      "maps_url": "https://maps.google.com/?q=Salle+Albert+Camus+1+Place+de+la+Republique+31270+Cugnaux",
       "disciplines": [
         "route"
       ],
       "circuits": [],
       "circuits_non_precises": 0,
-      "tarif_inscription": null,
+      "tarif_inscription": "Dons à l'association ETRE-LA (pas de tarif fixe indiqué)",
       "contact": null,
       "url": "https://www.cyclotourisme-31.com/evenement-501-34y-me-rando-humanitaire.html",
       "statut": "maintenue",
       "fiabilite": "a_verifier",
-      "preuve_date": "Le 08/11/2026",
+      "preuve_date": "Le 08/11/2026 de 08h00 à 12h00",
+      "distance_toulouse_km": 12.0,
+      "derniere_vue": "2026-11-06T22:13:03"
+    },
+    {
+      "id": "2026-W45|veilhes",
+      "date": "2026-11-08",
+      "date_label": "Dimanche 8 novembre",
+      "horaires_label": "À partir de 09:00",
+      "heure_rdv": "09:00",
+      "heure_depart": null,
+      "titre": "Clôture du CoDep Tarn",
+      "organisateur": "Veilhes Sport Détente Cyclo / CoDep 81 FFVélo",
+      "federation": "FFVélo",
+      "lieu_depart": "Veilhes",
+      "code_postal": "81500",
+      "adresse_depart": "Route de Lacougotte-Cadoul, 81500 Veilhes",
+      "maps_url": "https://maps.google.com/?q=Route+de+Lacougotte+Cadoul+81500+Veilhes",
+      "disciplines": [
+        "route",
+        "vtt"
+      ],
+      "circuits": [
+        {
+          "discipline": "route",
+          "distance_km": 10.0,
+          "denivele_m": 350.0,
+          "lien_trace": null,
+          "trace_titre": null,
+          "trace_annee": null
+        },
+        {
+          "discipline": "vtt",
+          "distance_km": 10.0,
+          "denivele_m": 360.0,
+          "lien_trace": null,
+          "trace_titre": null,
+          "trace_annee": null
+        }
+      ],
+      "circuits_non_precises": 0,
+      "tarif_inscription": "Gratuit avec licence (adultes et moins de 18 ans) ; sans licence : 3 € adultes, gratuit moins de 18 ans",
+      "contact": "Maurice Pages – vsdcyclo81@gmail.com – 05 63 58 70 01",
+      "url": "https://tarn.ffvelo.fr/flash-info-news/",
+      "statut": "maintenue",
+      "fiabilite": "confirmee",
+      "preuve_date": "Clôture du CODEP 81 le 08 Novembre 2026 à VEILHES (81)",
       "distance_toulouse_km": null,
-      "derniere_vue": "2026-11-04T00:27:40"
+      "derniere_vue": "2026-11-06T22:13:03"
     },
     {
       "id": "2026-W45|toulouse",
@@ -86,8 +132,8 @@
       "federation": null,
       "lieu_depart": "Toulouse",
       "code_postal": "31000",
-      "adresse_depart": "Allées Jean-Jaurès, au pied de la statue Riquet, Toulouse",
-      "maps_url": "https://maps.google.com/?q=Allees+Jean+Jaures+au+pied+de+la+statue+Riquet+Toulouse+31000",
+      "adresse_depart": "En haut des allées Jean-Jaurès, à la statue Riquet, Toulouse",
+      "maps_url": "https://maps.google.com/?q=En+haut+des+allees+Jean+Jaures+a+la+statue+Riquet+Toulouse+31000",
       "disciplines": [
         "route"
       ],
@@ -102,43 +148,14 @@
         }
       ],
       "circuits_non_precises": 0,
-      "tarif_inscription": "Gratuit, inscription obligatoire sur metropole.toulouse.fr (à partir de 12 ans ; 12-16 ans accompagnés d'un adulte ; casque obligatoire pour les mineurs)",
-      "contact": "randovelo@toulouse-metropole.fr",
+      "tarif_inscription": "Gratuit, inscription obligatoire sur metropole.toulouse.fr",
+      "contact": "E-mail randovelotoulouse-metropolefr (adresse mal formatée sur la page). Aucun téléphone indiqué.",
       "url": "https://metropole.toulouse.fr/agenda/rando-velo-gratuite-organisee-par-toulouse-metropole-4",
       "statut": "maintenue",
       "fiabilite": "confirmee",
       "preuve_date": "dimanche 8 novembre 2026",
-      "distance_toulouse_km": 0.0,
-      "derniere_vue": "2026-11-04T00:27:40"
-    },
-    {
-      "id": "2026-W45|veilhes",
-      "date": "2026-11-08",
-      "date_label": "Dimanche 8 novembre",
-      "horaires_label": "Horaire à confirmer",
-      "heure_rdv": null,
-      "heure_depart": null,
-      "titre": "Clôture du CoDep Tarn",
-      "organisateur": "Veilhes Sport Détente Cyclo / CoDep 81 FFVélo",
-      "federation": "FFVélo",
-      "lieu_depart": "Veilhes",
-      "code_postal": null,
-      "adresse_depart": "Veilhes",
-      "maps_url": "https://maps.google.com/?q=Veilhes",
-      "disciplines": [
-        "route",
-        "vtt"
-      ],
-      "circuits": [],
-      "circuits_non_precises": 0,
-      "tarif_inscription": null,
-      "contact": null,
-      "url": "https://tarn.ffvelo.fr/flash-info-news/",
-      "statut": "maintenue",
-      "fiabilite": "a_verifier",
-      "preuve_date": "Clôture du CODEP 81 le 08 Novembre 2026 à VEILHES (81)",
       "distance_toulouse_km": null,
-      "derniere_vue": "2026-11-04T00:27:40"
+      "derniere_vue": "2026-11-06T22:13:03"
     },
     {
       "id": "2026-W46|toulouse",
@@ -148,36 +165,36 @@
       "heure_rdv": "07:00",
       "heure_depart": null,
       "titre": "Point Café du Stade Toulousain Cyclo",
-      "organisateur": "Stade Toulousain Cyclo",
+      "organisateur": "Stade Toulousain Cyclo (FSGT 31)",
       "federation": "FSGT",
       "lieu_depart": "Toulouse",
       "code_postal": "31200",
-      "adresse_depart": "Stade des Septs Deniers, 114 rue des Troënes, 31200 Toulouse. La page mentionne aussi « RDV Stade Ernest Wallon » comme point de retour.",
-      "maps_url": "https://maps.google.com/?q=Stade+des+Septs+Deniers+114+rue+des+Troenes+31200+Toulouse+La+page+mentionne+aussi+RDV+Stade+Ernest+Wallon+comme+point+de+retour",
+      "adresse_depart": "Stade des Septs Deniers, 114 rue des Troënes, 31200 Toulouse",
+      "maps_url": "https://maps.google.com/?q=Stade+des+Septs+Deniers+114+rue+des+Troenes+31200+Toulouse",
       "disciplines": [
         "route"
       ],
       "circuits": [],
       "circuits_non_precises": 0,
       "tarif_inscription": null,
-      "contact": null,
+      "contact": "Via le formulaire de contact du site cyclotourisme-31.com (aucune coordonnée directe sur la page)",
       "url": "https://www.cyclotourisme-31.com/evenement-262-point-cafy-du-stade-toulousain-cyclo.html",
       "statut": "maintenue",
       "fiabilite": "a_verifier",
-      "preuve_date": "15/11/2026",
-      "distance_toulouse_km": null,
-      "derniere_vue": "2026-11-04T00:27:40"
+      "preuve_date": "Le 15/11/2026",
+      "distance_toulouse_km": 4.0,
+      "derniere_vue": "2026-11-06T22:13:03"
     },
     {
       "id": "2026-W47|castelmaurou",
       "date": "2026-11-22",
       "date_label": "Dimanche 22 novembre",
-      "horaires_label": "Horaire à confirmer",
-      "heure_rdv": null,
+      "horaires_label": "À partir de 08:30",
+      "heure_rdv": "08:30",
       "heure_depart": null,
       "titre": "Point-Café Castelmaurou",
-      "organisateur": "Cyclo Club des Violettes Castelmaurou",
-      "federation": null,
+      "organisateur": "Cyclo Club des Violettes Castelmaurou (FSGT 31)",
+      "federation": "FSGT",
       "lieu_depart": "Castelmaurou",
       "code_postal": "31180",
       "adresse_depart": "Place de la Mairie, Castelmaurou",
@@ -189,12 +206,12 @@
       "circuits_non_precises": 0,
       "tarif_inscription": null,
       "contact": null,
-      "url": "https://www.ccv-castelmaurou.com/evenements/2026/11/22/point-cafe-ccv-castelmaurou-2396164",
+      "url": "https://www.cyclotourisme-31.com/evenement-409-point-cafy-castelmaurou.html",
       "statut": "maintenue",
       "fiabilite": "a_verifier",
-      "preuve_date": "Point Café / CCV Castelmaurou, dimanche 22 novembre 2026",
-      "distance_toulouse_km": null,
-      "derniere_vue": "2026-11-04T00:27:40"
+      "preuve_date": "Le 22/11/2026 de 08h30 à 11h00",
+      "distance_toulouse_km": 12.0,
+      "derniere_vue": "2026-11-06T22:13:03"
     },
     {
       "id": "2026-W49|castelginest",
@@ -203,7 +220,7 @@
       "horaires_label": "À partir de 08:00",
       "heure_rdv": "08:00",
       "heure_depart": null,
-      "titre": "Point café Téléthon Castelginest",
+      "titre": "Point Café Téléthon Castelginest",
       "organisateur": null,
       "federation": "FSGT",
       "lieu_depart": "Castelginest",
@@ -216,13 +233,13 @@
       "circuits": [],
       "circuits_non_precises": 0,
       "tarif_inscription": null,
-      "contact": null,
+      "contact": "Formulaire de contact : https://www.cyclotourisme-31.com/contact.php",
       "url": "https://www.cyclotourisme-31.com/evenement-57-p-cafy-castelginest-ty-ly-thon-2026.html",
       "statut": "maintenue",
       "fiabilite": "a_verifier",
-      "preuve_date": "Le 06/12/2026 de 08h00 à 11h00",
-      "distance_toulouse_km": null,
-      "derniere_vue": "2026-11-04T00:27:40"
+      "preuve_date": "P. Café Castelginest - Téléthon 2026 – Dimanche 6 décembre 2026",
+      "distance_toulouse_km": 11.0,
+      "derniere_vue": "2026-11-06T22:13:03"
     },
     {
       "id": "2026-W49|cugnaux",
@@ -244,13 +261,13 @@
       "circuits": [],
       "circuits_non_precises": 0,
       "tarif_inscription": null,
-      "contact": null,
+      "contact": "Formulaire de contact : https://www.cyclotourisme-31.com/contact.php",
       "url": "https://www.cyclotourisme-31.com/evenement-385-point-cafy-cugnaux-ty-ly-thon-2026.html",
       "statut": "maintenue",
       "fiabilite": "a_verifier",
       "preuve_date": "Le 06/12/2026 de 08h00 à 11h00",
       "distance_toulouse_km": null,
-      "derniere_vue": "2026-11-04T00:27:40"
+      "derniere_vue": "2026-11-06T22:13:03"
     },
     {
       "id": "2026-W49|moissac",
@@ -286,17 +303,33 @@
           "lien_trace": null,
           "trace_titre": null,
           "trace_annee": null
+        },
+        {
+          "discipline": "gravel",
+          "distance_km": 10.0,
+          "denivele_m": null,
+          "lien_trace": null,
+          "trace_titre": null,
+          "trace_annee": null
+        },
+        {
+          "discipline": "gravel",
+          "distance_km": 40.0,
+          "denivele_m": null,
+          "lien_trace": null,
+          "trace_titre": null,
+          "trace_annee": null
         }
       ],
       "circuits_non_precises": 0,
-      "tarif_inscription": "13 € ; 6 € pour les moins de 12 ans (ravitaillements et repas à l'arrivée)",
+      "tarif_inscription": "À partir de 13 € ; 6 € pour les moins de 12 ans",
       "contact": null,
       "url": "https://www.telethon-moissac.fr/programs/rando-du-tlthon",
       "statut": "maintenue",
       "fiabilite": "confirmee",
-      "preuve_date": "Rando du Téléthon 06/12/2026",
-      "distance_toulouse_km": 62.0,
-      "derniere_vue": "2026-11-04T00:27:40"
+      "preuve_date": "06/12/2026 (en-tête de la page Rando du Téléthon ; le lien d'inscription porte « rando-trail-vtt-2026 »)",
+      "distance_toulouse_km": 60.0,
+      "derniere_vue": "2026-11-06T22:13:03"
     }
   ]
 }
