@@ -67,7 +67,9 @@ Méthode :
   date est floue n'ont pas de date : ne les place pas à une date de la période, mets-les en type "permanente".
 - "type" : "ouverte" = événement daté ouvert à tous (randonnée, brevet, cyclosportive, gravel... avec inscription ou accueil
   des non-licenciés/non-membres) ; "sortie_club" = sortie régulière ou interne d'un club, réservée ou à confirmer avec ses
-  membres (ex. sorties dominicales hebdomadaires) ; "permanente" = voir ci-dessus. En cas de doute sur l'ouverture à tous,
+  membres (ex. sorties dominicales hebdomadaires) ; "permanente" = voir ci-dessus. Un point café, une concentration ou une
+  randonnée inscrits au calendrier d'un comité (FSGT 31, CoDep FFVélo, ligue...) sont "ouverte" : ils sont faits pour accueillir
+  les cyclos des autres clubs, même si la page ne l'écrit pas. Pour le reste, en cas de doute sur l'ouverture à tous,
   choisis "sortie_club".
 - "statut" = "annulee" seulement si une source (site du club, comité, réseaux, presse) annonce explicitement l'annulation de cet
   événement ; sinon "maintenue". Si une sortie est reportée à une autre date, donne sa nouvelle date.
@@ -782,11 +784,17 @@ def search(periode: Periode, max_verified: int = MAX_VERIFIED_DEFAULT) -> list[d
             if old.get("verifiee_organisateur") and not s.get("circuits"):
                 s["circuits"] = old.get("circuits") or []
                 s["verifiee_organisateur"] = True
+    reverified = set()
     for row_id, row in existing_by_id.items():
         if row_id not in keyed_kept and row["statut"] != "annulee":
             kept.append({**tracking.ref(row), "fiabilite": "a_verifier", "circuits": row.get("circuits") or [],
                          "verifiee_organisateur": row.get("verifiee_organisateur", False), "disciplines": row.get("disciplines") or []})
+            reverified.add(row_id)
             print(f"[déjà en base, revérifiée] {row['titre']}", file=sys.stderr)
+    # Une sortie revérifiée ne doit pas être aussi enregistrée comme écartée sous le même identifiant : écrite en dernier,
+    # l'écartée écraserait la fiche vérifiée (ex. un point café classé « sortie_club » au hasard d'une découverte).
+    rejected_keys = tracking.assign_keys([s for s, _ in rejected]) if rejected else {}
+    rejected = [r for r, key in zip(rejected, rejected_keys) if key not in reverified]
 
     kept.sort(key=lambda s: (s["date"], s.get("heure_depart") or s.get("heure_rdv") or "99:99"))
     to_verify = kept[:max_verified]
